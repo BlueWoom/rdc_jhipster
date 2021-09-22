@@ -1,0 +1,59 @@
+{
+  "name": "Esperienza",
+  "fields": [
+    {
+      "fieldName": "codice",
+      "fieldType": "String",
+      "fieldValidateRules": ["pattern"],
+      "fieldValidateRulesPattern": "[0-9]+"
+    },
+    {
+      "fieldName": "attivita",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "dal",
+      "fieldType": "LocalDate"
+    },
+    {
+      "fieldName": "al",
+      "fieldType": "LocalDate"
+    },
+    {
+      "fieldName": "datoreLavoro",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "sedeLavoro",
+      "fieldType": "String"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "cv",
+      "otherEntityRelationshipName": "esperienza",
+      "relationshipName": "cv",
+      "otherEntityField": "id"
+    },
+    {
+      "relationshipType": "many-to-many",
+      "otherEntityName": "occupazione",
+      "otherEntityRelationshipName": "esperienza",
+      "relationshipName": "occupazione",
+      "otherEntityField": "id",
+      "ownerSide": false
+    }
+  ],
+  "changelogDate": "20210922104520",
+  "entityTableName": "esperienza",
+  "dto": "no",
+  "pagination": "no",
+  "service": "no",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "clientRootFolder": "",
+  "applications": ["rdc"]
+}

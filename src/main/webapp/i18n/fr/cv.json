@@ -1,0 +1,27 @@
+{
+  "rdcApp": {
+    "cv": {
+      "home": {
+        "title": "Cvs",
+        "createLabel": "Créer un nouveau Cv",
+        "createOrEditLabel": "Créer ou éditer un Cv",
+        "notFound": "Aucun Cv trouvé"
+      },
+      "created": "Un nouveau Cv a été créé avec l'identifiant {{ param }}",
+      "updated": "Le Cv avec l'identifiant {{ param }} a été mis à jour",
+      "deleted": "Le Cv avec l'identifiant {{ param }} a été supprimé",
+      "delete": {
+        "question": "Etes-vous certain de vouloir supprimer le Cv {{ id }} ?"
+      },
+      "detail": {
+        "title": "Cv"
+      },
+      "cfUtente": "Cf Utente",
+      "codice": "Codice",
+      "inserimento": "Inserimento",
+      "cvIstruzione": "Cv Istruzione",
+      "esperienza": "Esperienza",
+      "candidato": "Candidato"
+    }
+  }
+}

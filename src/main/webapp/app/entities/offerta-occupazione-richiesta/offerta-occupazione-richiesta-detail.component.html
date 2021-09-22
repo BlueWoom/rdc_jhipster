@@ -1,0 +1,50 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="offertaOccupazioneRichiesta">
+            <h2><span jhiTranslate="rdcApp.offertaOccupazioneRichiesta.detail.title">Offerta Occupazione Richiesta</span> {{ offertaOccupazioneRichiesta.id }}</h2>
+
+            <hr>
+
+            <jhi-alert-error></jhi-alert-error>
+
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="rdcApp.offertaOccupazioneRichiesta.codiceOfferta">Codice Offerta</span></dt>
+                <dd>
+                    <span>{{ offertaOccupazioneRichiesta.codiceOfferta }}</span>
+                </dd>
+                <dt><span jhiTranslate="rdcApp.offertaOccupazioneRichiesta.codiceEscoOccupazione">Codice Esco Occupazione</span></dt>
+                <dd>
+                    <span>{{ offertaOccupazioneRichiesta.codiceEscoOccupazione }}</span>
+                </dd>
+                <dt><span jhiTranslate="rdcApp.offertaOccupazioneRichiesta.anni">Anni</span></dt>
+                <dd>
+                    <span>{{ offertaOccupazioneRichiesta.anni }}</span>
+                </dd>
+                <dt><span jhiTranslate="rdcApp.offertaOccupazioneRichiesta.offerta">Offerta</span></dt>
+                <dd>
+                    <div *ngIf="offertaOccupazioneRichiesta.offerta">
+                        <a [routerLink]="['/offerta', offertaOccupazioneRichiesta.offerta?.id, 'view']">{{ offertaOccupazioneRichiesta.offerta?.id }}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="rdcApp.offertaOccupazioneRichiesta.occupazione">Occupazione</span></dt>
+                <dd>
+                    <div *ngIf="offertaOccupazioneRichiesta.occupazione">
+                        <a [routerLink]="['/occupazione', offertaOccupazioneRichiesta.occupazione?.id, 'view']">{{ offertaOccupazioneRichiesta.occupazione?.id }}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/offerta-occupazione-richiesta', offertaOccupazioneRichiesta.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,64 @@
+{
+  "name": "Istruzione",
+  "fields": [
+    {
+      "fieldName": "codice",
+      "fieldType": "String",
+      "fieldValidateRules": ["pattern"],
+      "fieldValidateRulesPattern": "[0-9]+"
+    },
+    {
+      "fieldName": "codiceIsced",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "codiceLivello",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "nome",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "campoStudio",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "sinonimi",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "codiceIstituto",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "tipoIstituto",
+      "fieldType": "String"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "one-to-many",
+      "otherEntityName": "offerta",
+      "otherEntityRelationshipName": "istruzione",
+      "relationshipName": "offerta"
+    },
+    {
+      "relationshipType": "one-to-many",
+      "otherEntityName": "cvIstruzione",
+      "otherEntityRelationshipName": "istruzione",
+      "relationshipName": "cvIstruzione"
+    }
+  ],
+  "changelogDate": "20210922104720",
+  "entityTableName": "istruzione",
+  "dto": "no",
+  "pagination": "no",
+  "service": "no",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "clientRootFolder": "",
+  "applications": ["rdc"]
+}

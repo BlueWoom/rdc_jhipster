@@ -1,0 +1,54 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+            <h2 id="jhi-skill-utente-heading" jhiTranslate="rdcApp.skillUtente.home.createOrEditLabel">Create or edit a Skill Utente</h2>
+
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+
+                <div class="form-group" [hidden]="!editForm.get('id')!.value">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id" formControlName="id" readonly />
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="rdcApp.skillUtente.cfUtente" for="field_cfUtente">Cf Utente</label>
+                    <input type="text" class="form-control" name="cfUtente" id="field_cfUtente"
+                           formControlName="cfUtente"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="rdcApp.skillUtente.codiceEscoSkill" for="field_codiceEscoSkill">Codice Esco Skill</label>
+                    <input type="text" class="form-control" name="codiceEscoSkill" id="field_codiceEscoSkill"
+                           formControlName="codiceEscoSkill"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="rdcApp.skillUtente.skill" for="field_skill">Skill</label>
+                    <select class="form-control" id="field_skill" name="skill" formControlName="skill">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="skillOption.id === editForm.get('skill')!.value?.id ? editForm.get('skill')!.value : skillOption" *ngFor="let skillOption of skills; trackBy: trackById">{{ skillOption.id }}</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="rdcApp.skillUtente.candidato" for="field_candidato">Candidato</label>
+                    <select class="form-control" id="field_candidato" name="candidato" formControlName="candidato">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="candidatoOption.id === editForm.get('candidato')!.value?.id ? editForm.get('candidato')!.value : candidatoOption" *ngFor="let candidatoOption of candidatoes; trackBy: trackById">{{ candidatoOption.id }}</option>
+                    </select>
+                </div>
+            </div>
+
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary" (click)="previousState()">
+                    <fa-icon icon="ban"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+
+                <button type="submit" id="save-entity" [disabled]="editForm.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon icon="save"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

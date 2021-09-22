@@ -1,0 +1,65 @@
+<div>
+    <h2 id="page-heading">
+        <span jhiTranslate="rdcApp.gapAnalysis.home.title">Gap Analyses</span>
+
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-gap-analysis" [routerLink]="['/gap-analysis/new']">
+            <fa-icon icon="plus"></fa-icon>
+            <span  jhiTranslate="rdcApp.gapAnalysis.home.createLabel">
+            Create a new Gap Analysis
+            </span>
+        </button>
+    </h2>
+
+    <jhi-alert-error></jhi-alert-error>
+
+    <jhi-alert></jhi-alert>
+
+    <div class="alert alert-warning" id="no-result" *ngIf="gapAnalyses?.length === 0">
+        <span jhiTranslate="rdcApp.gapAnalysis.home.notFound">No gapAnalyses found</span>
+    </div>
+
+    <div class="table-responsive" id="entities" *ngIf="gapAnalyses && gapAnalyses.length > 0">
+        <table class="table table-striped" aria-describedby="page-heading">
+            <thead>
+                <tr>
+                    <th scope="col" ><span jhiTranslate="global.field.id">ID</span></th>
+                    <th scope="col" ><span jhiTranslate="rdcApp.gapAnalysis.codiceEsco">Codice Esco</span></th>
+                    <th scope="col" ><span jhiTranslate="rdcApp.gapAnalysis.nome">Nome</span></th>
+                    <th scope="col" ><span jhiTranslate="rdcApp.gapAnalysis.frequenza">Frequenza</span></th>
+                    <th scope="col"></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let gapAnalysis of gapAnalyses ;trackBy: trackId">
+                    <td><a [routerLink]="['/gap-analysis', gapAnalysis.id, 'view']">{{ gapAnalysis.id }}</a></td>
+                    <td>{{ gapAnalysis.codiceEsco }}</td>
+                    <td>{{ gapAnalysis.nome }}</td>
+                    <td>{{ gapAnalysis.frequenza }}</td>
+                    <td class="text-right">
+                        <div class="btn-group">
+                            <button type="submit"
+                                    [routerLink]="['/gap-analysis', gapAnalysis.id, 'view']"
+                                    class="btn btn-info btn-sm">
+                                <fa-icon icon="eye"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                            </button>
+
+                            <button type="submit"
+                                    [routerLink]="['/gap-analysis', gapAnalysis.id, 'edit']"
+                                    class="btn btn-primary btn-sm">
+                                <fa-icon icon="pencil-alt"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                            </button>
+
+                            <button type="submit" (click)="delete(gapAnalysis)"
+                                    class="btn btn-danger btn-sm">
+                                <fa-icon icon="times"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

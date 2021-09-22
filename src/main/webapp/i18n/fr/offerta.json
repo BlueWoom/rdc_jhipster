@@ -1,0 +1,32 @@
+{
+  "rdcApp": {
+    "offerta": {
+      "home": {
+        "title": "Offertas",
+        "createLabel": "Créer un nouveau Offerta",
+        "createOrEditLabel": "Créer ou éditer un Offerta",
+        "notFound": "Aucun Offerta trouvé"
+      },
+      "created": "Un nouveau Offerta a été créé avec l'identifiant {{ param }}",
+      "updated": "Le Offerta avec l'identifiant {{ param }} a été mis à jour",
+      "deleted": "Le Offerta avec l'identifiant {{ param }} a été supprimé",
+      "delete": {
+        "question": "Etes-vous certain de vouloir supprimer le Offerta {{ id }} ?"
+      },
+      "detail": {
+        "title": "Offerta"
+      },
+      "codice": "Codice",
+      "data": "Data",
+      "indirizzoSede": "Indirizzo Sede",
+      "cittaSede": "Citta Sede",
+      "capSede": "Cap Sede",
+      "provinciaSede": "Provincia Sede",
+      "offertaSkill": "Offerta Skill",
+      "offertaOccupazioneRichiesta": "Offerta Occupazione Richiesta",
+      "istruzione": "Istruzione",
+      "azienda": "Azienda",
+      "occupazione": "Occupazione"
+    }
+  }
+}

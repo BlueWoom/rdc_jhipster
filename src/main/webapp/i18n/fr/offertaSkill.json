@@ -1,0 +1,26 @@
+{
+  "rdcApp": {
+    "offertaSkill": {
+      "home": {
+        "title": "OffertaSkills",
+        "createLabel": "Créer un nouveau Offerta Skill",
+        "createOrEditLabel": "Créer ou éditer un Offerta Skill",
+        "notFound": "Aucun Offerta Skill trouvé"
+      },
+      "created": "Un nouveau Offerta Skill a été créé avec l'identifiant {{ param }}",
+      "updated": "Le Offerta Skill avec l'identifiant {{ param }} a été mis à jour",
+      "deleted": "Le Offerta Skill avec l'identifiant {{ param }} a été supprimé",
+      "delete": {
+        "question": "Etes-vous certain de vouloir supprimer le Offerta Skill {{ id }} ?"
+      },
+      "detail": {
+        "title": "Offerta Skill"
+      },
+      "codiceOfferta": "Codice Offerta",
+      "codiceEscoSkill": "Codice Esco Skill",
+      "optional": "Optional",
+      "skill": "Skill",
+      "offerta": "Offerta"
+    }
+  }
+}

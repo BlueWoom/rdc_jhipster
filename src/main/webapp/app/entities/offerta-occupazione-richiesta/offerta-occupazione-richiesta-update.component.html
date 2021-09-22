@@ -1,0 +1,66 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+            <h2 id="jhi-offerta-occupazione-richiesta-heading" jhiTranslate="rdcApp.offertaOccupazioneRichiesta.home.createOrEditLabel">Create or edit a Offerta Occupazione Richiesta</h2>
+
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+
+                <div class="form-group" [hidden]="!editForm.get('id')!.value">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id" formControlName="id" readonly />
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="rdcApp.offertaOccupazioneRichiesta.codiceOfferta" for="field_codiceOfferta">Codice Offerta</label>
+                    <input type="text" class="form-control" name="codiceOfferta" id="field_codiceOfferta"
+                           formControlName="codiceOfferta"/>
+                    <div *ngIf="editForm.get('codiceOfferta')!.invalid && (editForm.get('codiceOfferta')!.dirty || editForm.get('codiceOfferta')!.touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('codiceOfferta')?.errors?.pattern" jhiTranslate="entity.validation.pattern" [translateValues]="{ pattern: 'Codice Offerta' }">
+                            This field should follow pattern for "Codice Offerta".
+                        </small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="rdcApp.offertaOccupazioneRichiesta.codiceEscoOccupazione" for="field_codiceEscoOccupazione">Codice Esco Occupazione</label>
+                    <input type="text" class="form-control" name="codiceEscoOccupazione" id="field_codiceEscoOccupazione"
+                           formControlName="codiceEscoOccupazione"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="rdcApp.offertaOccupazioneRichiesta.anni" for="field_anni">Anni</label>
+                    <input type="number" class="form-control" name="anni" id="field_anni"
+                           formControlName="anni"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="rdcApp.offertaOccupazioneRichiesta.offerta" for="field_offerta">Offerta</label>
+                    <select class="form-control" id="field_offerta" name="offerta" formControlName="offerta">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="offertaOption.id === editForm.get('offerta')!.value?.id ? editForm.get('offerta')!.value : offertaOption" *ngFor="let offertaOption of offertas; trackBy: trackById">{{ offertaOption.id }}</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="rdcApp.offertaOccupazioneRichiesta.occupazione" for="field_occupazione">Occupazione</label>
+                    <select class="form-control" id="field_occupazione" name="occupazione" formControlName="occupazione">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="occupazioneOption.id === editForm.get('occupazione')!.value?.id ? editForm.get('occupazione')!.value : occupazioneOption" *ngFor="let occupazioneOption of occupaziones; trackBy: trackById">{{ occupazioneOption.id }}</option>
+                    </select>
+                </div>
+            </div>
+
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary" (click)="previousState()">
+                    <fa-icon icon="ban"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+
+                <button type="submit" id="save-entity" [disabled]="editForm.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon icon="save"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

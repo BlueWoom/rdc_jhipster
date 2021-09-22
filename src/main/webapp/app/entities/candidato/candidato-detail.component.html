@@ -1,0 +1,90 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="candidato">
+            <h2><span jhiTranslate="rdcApp.candidato.detail.title">Candidato</span> {{ candidato.id }}</h2>
+
+            <hr>
+
+            <jhi-alert-error></jhi-alert-error>
+
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="rdcApp.candidato.cf">Cf</span></dt>
+                <dd>
+                    <span>{{ candidato.cf }}</span>
+                </dd>
+                <dt><span jhiTranslate="rdcApp.candidato.nome">Nome</span></dt>
+                <dd>
+                    <span>{{ candidato.nome }}</span>
+                </dd>
+                <dt><span jhiTranslate="rdcApp.candidato.cognome">Cognome</span></dt>
+                <dd>
+                    <span>{{ candidato.cognome }}</span>
+                </dd>
+                <dt><span jhiTranslate="rdcApp.candidato.dataNascita">Data Nascita</span></dt>
+                <dd>
+                    <span>{{ candidato.dataNascita }}</span>
+                </dd>
+                <dt><span jhiTranslate="rdcApp.candidato.luogoNascita">Luogo Nascita</span></dt>
+                <dd>
+                    <span>{{ candidato.luogoNascita }}</span>
+                </dd>
+                <dt><span jhiTranslate="rdcApp.candidato.sesso">Sesso</span></dt>
+                <dd>
+                    <span>{{ candidato.sesso }}</span>
+                </dd>
+                <dt><span jhiTranslate="rdcApp.candidato.telefono">Telefono</span></dt>
+                <dd>
+                    <span>{{ candidato.telefono }}</span>
+                </dd>
+                <dt><span jhiTranslate="rdcApp.candidato.email">Email</span></dt>
+                <dd>
+                    <span>{{ candidato.email }}</span>
+                </dd>
+                <dt><span jhiTranslate="rdcApp.candidato.citta">Citta</span></dt>
+                <dd>
+                    <span>{{ candidato.citta }}</span>
+                </dd>
+                <dt><span jhiTranslate="rdcApp.candidato.indirizzo">Indirizzo</span></dt>
+                <dd>
+                    <span>{{ candidato.indirizzo }}</span>
+                </dd>
+                <dt><span jhiTranslate="rdcApp.candidato.cap">Cap</span></dt>
+                <dd>
+                    <span>{{ candidato.cap }}</span>
+                </dd>
+                <dt><span jhiTranslate="rdcApp.candidato.provincia">Provincia</span></dt>
+                <dd>
+                    <span>{{ candidato.provincia }}</span>
+                </dd>
+                <dt><span jhiTranslate="rdcApp.candidato.regione">Regione</span></dt>
+                <dd>
+                    <span>{{ candidato.regione }}</span>
+                </dd>
+                <dt><span jhiTranslate="rdcApp.candidato.navigator">Navigator</span></dt>
+                <dd>
+                    <div *ngIf="candidato.navigator">
+                        <a [routerLink]="['/navigator', candidato.navigator?.id, 'view']">{{ candidato.navigator?.id }}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="rdcApp.candidato.login">Login</span></dt>
+                <dd>
+                    <div *ngIf="candidato.login">
+                        <a [routerLink]="['/login', candidato.login?.id, 'view']">{{ candidato.login?.id }}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/candidato', candidato.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

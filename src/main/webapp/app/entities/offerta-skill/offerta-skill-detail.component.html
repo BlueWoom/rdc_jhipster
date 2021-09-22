@@ -1,0 +1,50 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="offertaSkill">
+            <h2><span jhiTranslate="rdcApp.offertaSkill.detail.title">Offerta Skill</span> {{ offertaSkill.id }}</h2>
+
+            <hr>
+
+            <jhi-alert-error></jhi-alert-error>
+
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="rdcApp.offertaSkill.codiceOfferta">Codice Offerta</span></dt>
+                <dd>
+                    <span>{{ offertaSkill.codiceOfferta }}</span>
+                </dd>
+                <dt><span jhiTranslate="rdcApp.offertaSkill.codiceEscoSkill">Codice Esco Skill</span></dt>
+                <dd>
+                    <span>{{ offertaSkill.codiceEscoSkill }}</span>
+                </dd>
+                <dt><span jhiTranslate="rdcApp.offertaSkill.optional">Optional</span></dt>
+                <dd>
+                    <span>{{ offertaSkill.optional }}</span>
+                </dd>
+                <dt><span jhiTranslate="rdcApp.offertaSkill.skill">Skill</span></dt>
+                <dd>
+                    <div *ngIf="offertaSkill.skill">
+                        <a [routerLink]="['/skill', offertaSkill.skill?.id, 'view']">{{ offertaSkill.skill?.id }}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="rdcApp.offertaSkill.offerta">Offerta</span></dt>
+                <dd>
+                    <div *ngIf="offertaSkill.offerta">
+                        <a [routerLink]="['/offerta', offertaSkill.offerta?.id, 'view']">{{ offertaSkill.offerta?.id }}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/offerta-skill', offertaSkill.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

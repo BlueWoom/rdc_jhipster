@@ -1,0 +1,77 @@
+<div>
+    <h2 id="page-heading">
+        <span jhiTranslate="rdcApp.esperienza.home.title">Esperienzas</span>
+
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-esperienza" [routerLink]="['/esperienza/new']">
+            <fa-icon icon="plus"></fa-icon>
+            <span  jhiTranslate="rdcApp.esperienza.home.createLabel">
+            Create a new Esperienza
+            </span>
+        </button>
+    </h2>
+
+    <jhi-alert-error></jhi-alert-error>
+
+    <jhi-alert></jhi-alert>
+
+    <div class="alert alert-warning" id="no-result" *ngIf="esperienzas?.length === 0">
+        <span jhiTranslate="rdcApp.esperienza.home.notFound">No esperienzas found</span>
+    </div>
+
+    <div class="table-responsive" id="entities" *ngIf="esperienzas && esperienzas.length > 0">
+        <table class="table table-striped" aria-describedby="page-heading">
+            <thead>
+                <tr>
+                    <th scope="col" ><span jhiTranslate="global.field.id">ID</span></th>
+                    <th scope="col" ><span jhiTranslate="rdcApp.esperienza.codice">Codice</span></th>
+                    <th scope="col" ><span jhiTranslate="rdcApp.esperienza.attivita">Attivita</span></th>
+                    <th scope="col" ><span jhiTranslate="rdcApp.esperienza.dal">Dal</span></th>
+                    <th scope="col" ><span jhiTranslate="rdcApp.esperienza.al">Al</span></th>
+                    <th scope="col" ><span jhiTranslate="rdcApp.esperienza.datoreLavoro">Datore Lavoro</span></th>
+                    <th scope="col" ><span jhiTranslate="rdcApp.esperienza.sedeLavoro">Sede Lavoro</span></th>
+                    <th scope="col" ><span jhiTranslate="rdcApp.esperienza.cv">Cv</span></th>
+                    <th scope="col"></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let esperienza of esperienzas ;trackBy: trackId">
+                    <td><a [routerLink]="['/esperienza', esperienza.id, 'view']">{{ esperienza.id }}</a></td>
+                    <td>{{ esperienza.codice }}</td>
+                    <td>{{ esperienza.attivita }}</td>
+                    <td>{{ esperienza.dal | date:'mediumDate' }}</td>
+                    <td>{{ esperienza.al | date:'mediumDate' }}</td>
+                    <td>{{ esperienza.datoreLavoro }}</td>
+                    <td>{{ esperienza.sedeLavoro }}</td>
+                    <td>
+                        <div *ngIf="esperienza.cv">
+                            <a [routerLink]="['/cv', esperienza.cv?.id, 'view']" >{{ esperienza.cv?.id }}</a>
+                        </div>
+                    </td>
+                    <td class="text-right">
+                        <div class="btn-group">
+                            <button type="submit"
+                                    [routerLink]="['/esperienza', esperienza.id, 'view']"
+                                    class="btn btn-info btn-sm">
+                                <fa-icon icon="eye"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                            </button>
+
+                            <button type="submit"
+                                    [routerLink]="['/esperienza', esperienza.id, 'edit']"
+                                    class="btn btn-primary btn-sm">
+                                <fa-icon icon="pencil-alt"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                            </button>
+
+                            <button type="submit" (click)="delete(esperienza)"
+                                    class="btn btn-danger btn-sm">
+                                <fa-icon icon="times"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

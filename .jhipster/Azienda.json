@@ -1,0 +1,57 @@
+{
+  "name": "Azienda",
+  "fields": [
+    {
+      "fieldName": "cf",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "ragioneSociale",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "indirizzoSede",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "provinciaSede",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "ragioneSede",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "capSede",
+      "fieldType": "String",
+      "fieldValidateRules": ["pattern"],
+      "fieldValidateRulesPattern": "[0-9]+"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "one-to-many",
+      "otherEntityName": "offerta",
+      "otherEntityRelationshipName": "azienda",
+      "relationshipName": "offerta"
+    },
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "login",
+      "otherEntityRelationshipName": "azienda",
+      "relationshipName": "login",
+      "otherEntityField": "id"
+    }
+  ],
+  "changelogDate": "20210922104320",
+  "entityTableName": "azienda",
+  "dto": "no",
+  "pagination": "no",
+  "service": "no",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "clientRootFolder": "",
+  "applications": ["rdc"]
+}

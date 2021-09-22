@@ -1,0 +1,51 @@
+{
+  "name": "Cv",
+  "fields": [
+    {
+      "fieldName": "cfUtente",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "codice",
+      "fieldType": "String",
+      "fieldValidateRules": ["pattern"],
+      "fieldValidateRulesPattern": "[0-9]+"
+    },
+    {
+      "fieldName": "inserimento",
+      "fieldType": "LocalDate"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "one-to-many",
+      "otherEntityName": "cvIstruzione",
+      "otherEntityRelationshipName": "cv",
+      "relationshipName": "cvIstruzione"
+    },
+    {
+      "relationshipType": "one-to-many",
+      "otherEntityName": "esperienza",
+      "otherEntityRelationshipName": "cv",
+      "relationshipName": "esperienza"
+    },
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "candidato",
+      "otherEntityRelationshipName": "cv",
+      "relationshipName": "candidato",
+      "otherEntityField": "id"
+    }
+  ],
+  "changelogDate": "20210922105420",
+  "entityTableName": "cv",
+  "dto": "no",
+  "pagination": "no",
+  "service": "no",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "clientRootFolder": "",
+  "applications": ["rdc"]
+}

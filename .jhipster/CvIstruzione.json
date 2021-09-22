@@ -1,0 +1,52 @@
+{
+  "name": "CvIstruzione",
+  "fields": [
+    {
+      "fieldName": "codiceIstruzione",
+      "fieldType": "String",
+      "fieldValidateRules": ["pattern"],
+      "fieldValidateRulesPattern": "[0-9]+"
+    },
+    {
+      "fieldName": "cfUtente",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "codiceCv",
+      "fieldType": "String",
+      "fieldValidateRules": ["pattern"],
+      "fieldValidateRulesPattern": "[0-9]+"
+    },
+    {
+      "fieldName": "punteggio",
+      "fieldType": "Integer"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "istruzione",
+      "otherEntityRelationshipName": "cvIstruzione",
+      "relationshipName": "istruzione",
+      "otherEntityField": "id"
+    },
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "cv",
+      "otherEntityRelationshipName": "cvIstruzione",
+      "relationshipName": "cv",
+      "otherEntityField": "id"
+    }
+  ],
+  "changelogDate": "20210922105520",
+  "entityTableName": "cv_istruzione",
+  "dto": "no",
+  "pagination": "no",
+  "service": "no",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "clientRootFolder": "",
+  "applications": ["rdc"]
+}

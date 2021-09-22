@@ -1,0 +1,56 @@
+{
+  "name": "Occupazione",
+  "fields": [
+    {
+      "fieldName": "codiceEsco",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "nome",
+      "fieldType": "String"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "one-to-many",
+      "otherEntityName": "offertaOccupazioneRichiesta",
+      "otherEntityRelationshipName": "occupazione",
+      "relationshipName": "offertaOccupazioneRichiesta"
+    },
+    {
+      "relationshipType": "many-to-many",
+      "otherEntityName": "esperienza",
+      "otherEntityRelationshipName": "occupazione",
+      "relationshipName": "esperienza",
+      "otherEntityField": "id",
+      "ownerSide": true
+    },
+    {
+      "relationshipType": "many-to-many",
+      "otherEntityName": "offerta",
+      "otherEntityRelationshipName": "occupazione",
+      "relationshipName": "offerta",
+      "otherEntityField": "id",
+      "ownerSide": true
+    },
+    {
+      "relationshipType": "many-to-many",
+      "otherEntityName": "skill",
+      "otherEntityRelationshipName": "occupazione",
+      "relationshipName": "skill",
+      "otherEntityField": "id",
+      "ownerSide": true
+    }
+  ],
+  "changelogDate": "20210922105020",
+  "entityTableName": "occupazione",
+  "dto": "no",
+  "pagination": "no",
+  "service": "no",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "clientRootFolder": "",
+  "applications": ["rdc"]
+}

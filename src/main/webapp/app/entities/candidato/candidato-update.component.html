@@ -1,0 +1,136 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+            <h2 id="jhi-candidato-heading" jhiTranslate="rdcApp.candidato.home.createOrEditLabel">Create or edit a Candidato</h2>
+
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+
+                <div class="form-group" [hidden]="!editForm.get('id')!.value">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id" formControlName="id" readonly />
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="rdcApp.candidato.cf" for="field_cf">Cf</label>
+                    <input type="text" class="form-control" name="cf" id="field_cf"
+                           formControlName="cf"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="rdcApp.candidato.nome" for="field_nome">Nome</label>
+                    <input type="text" class="form-control" name="nome" id="field_nome"
+                           formControlName="nome"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="rdcApp.candidato.cognome" for="field_cognome">Cognome</label>
+                    <input type="text" class="form-control" name="cognome" id="field_cognome"
+                           formControlName="cognome"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="rdcApp.candidato.dataNascita" for="field_dataNascita">Data Nascita</label>
+                    <div class="input-group">
+                        <input id="field_dataNascita" type="text" class="form-control" name="dataNascita" ngbDatepicker #dataNascitaDp="ngbDatepicker" formControlName="dataNascita"/>
+                        <span class="input-group-append">
+                            <button type="button" class="btn btn-secondary" (click)="dataNascitaDp.toggle()"><fa-icon icon="calendar-alt"></fa-icon></button>
+                        </span>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="rdcApp.candidato.luogoNascita" for="field_luogoNascita">Luogo Nascita</label>
+                    <input type="text" class="form-control" name="luogoNascita" id="field_luogoNascita"
+                           formControlName="luogoNascita"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="rdcApp.candidato.sesso" for="field_sesso">Sesso</label>
+                    <input type="text" class="form-control" name="sesso" id="field_sesso"
+                           formControlName="sesso"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="rdcApp.candidato.telefono" for="field_telefono">Telefono</label>
+                    <input type="text" class="form-control" name="telefono" id="field_telefono"
+                           formControlName="telefono"/>
+                    <div *ngIf="editForm.get('telefono')!.invalid && (editForm.get('telefono')!.dirty || editForm.get('telefono')!.touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('telefono')?.errors?.pattern" jhiTranslate="entity.validation.pattern" [translateValues]="{ pattern: 'Telefono' }">
+                            This field should follow pattern for "Telefono".
+                        </small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="rdcApp.candidato.email" for="field_email">Email</label>
+                    <input type="text" class="form-control" name="email" id="field_email"
+                           formControlName="email"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="rdcApp.candidato.citta" for="field_citta">Citta</label>
+                    <input type="text" class="form-control" name="citta" id="field_citta"
+                           formControlName="citta"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="rdcApp.candidato.indirizzo" for="field_indirizzo">Indirizzo</label>
+                    <input type="text" class="form-control" name="indirizzo" id="field_indirizzo"
+                           formControlName="indirizzo"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="rdcApp.candidato.cap" for="field_cap">Cap</label>
+                    <input type="text" class="form-control" name="cap" id="field_cap"
+                           formControlName="cap"/>
+                    <div *ngIf="editForm.get('cap')!.invalid && (editForm.get('cap')!.dirty || editForm.get('cap')!.touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('cap')?.errors?.pattern" jhiTranslate="entity.validation.pattern" [translateValues]="{ pattern: 'Cap' }">
+                            This field should follow pattern for "Cap".
+                        </small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="rdcApp.candidato.provincia" for="field_provincia">Provincia</label>
+                    <input type="text" class="form-control" name="provincia" id="field_provincia"
+                           formControlName="provincia"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="rdcApp.candidato.regione" for="field_regione">Regione</label>
+                    <input type="text" class="form-control" name="regione" id="field_regione"
+                           formControlName="regione"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="rdcApp.candidato.navigator" for="field_navigator">Navigator</label>
+                    <select class="form-control" id="field_navigator" name="navigator" formControlName="navigator">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="navigatorOption.id === editForm.get('navigator')!.value?.id ? editForm.get('navigator')!.value : navigatorOption" *ngFor="let navigatorOption of navigators; trackBy: trackById">{{ navigatorOption.id }}</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="rdcApp.candidato.login" for="field_login">Login</label>
+                    <select class="form-control" id="field_login" name="login" formControlName="login">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="loginOption.id === editForm.get('login')!.value?.id ? editForm.get('login')!.value : loginOption" *ngFor="let loginOption of logins; trackBy: trackById">{{ loginOption.id }}</option>
+                    </select>
+                </div>
+            </div>
+
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary" (click)="previousState()">
+                    <fa-icon icon="ban"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+
+                <button type="submit" id="save-entity" [disabled]="editForm.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon icon="save"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

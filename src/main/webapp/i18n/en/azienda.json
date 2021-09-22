@@ -1,0 +1,29 @@
+{
+  "rdcApp": {
+    "azienda": {
+      "home": {
+        "title": "Aziendas",
+        "createLabel": "Create a new Azienda",
+        "createOrEditLabel": "Create or edit a Azienda",
+        "notFound": "No Aziendas found"
+      },
+      "created": "A new Azienda is created with identifier {{ param }}",
+      "updated": "A Azienda is updated with identifier {{ param }}",
+      "deleted": "A Azienda is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Azienda {{ id }}?"
+      },
+      "detail": {
+        "title": "Azienda"
+      },
+      "cf": "Cf",
+      "ragioneSociale": "Ragione Sociale",
+      "indirizzoSede": "Indirizzo Sede",
+      "provinciaSede": "Provincia Sede",
+      "ragioneSede": "Ragione Sede",
+      "capSede": "Cap Sede",
+      "offerta": "Offerta",
+      "login": "Login"
+    }
+  }
+}

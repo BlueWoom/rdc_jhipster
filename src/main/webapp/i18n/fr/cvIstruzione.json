@@ -1,0 +1,27 @@
+{
+  "rdcApp": {
+    "cvIstruzione": {
+      "home": {
+        "title": "CvIstruziones",
+        "createLabel": "Créer un nouveau Cv Istruzione",
+        "createOrEditLabel": "Créer ou éditer un Cv Istruzione",
+        "notFound": "Aucun Cv Istruzione trouvé"
+      },
+      "created": "Un nouveau Cv Istruzione a été créé avec l'identifiant {{ param }}",
+      "updated": "Le Cv Istruzione avec l'identifiant {{ param }} a été mis à jour",
+      "deleted": "Le Cv Istruzione avec l'identifiant {{ param }} a été supprimé",
+      "delete": {
+        "question": "Etes-vous certain de vouloir supprimer le Cv Istruzione {{ id }} ?"
+      },
+      "detail": {
+        "title": "Cv Istruzione"
+      },
+      "codiceIstruzione": "Codice Istruzione",
+      "cfUtente": "Cf Utente",
+      "codiceCv": "Codice Cv",
+      "punteggio": "Punteggio",
+      "istruzione": "Istruzione",
+      "cv": "Cv"
+    }
+  }
+}

@@ -1,0 +1,54 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="cvIstruzione">
+            <h2><span jhiTranslate="rdcApp.cvIstruzione.detail.title">Cv Istruzione</span> {{ cvIstruzione.id }}</h2>
+
+            <hr>
+
+            <jhi-alert-error></jhi-alert-error>
+
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="rdcApp.cvIstruzione.codiceIstruzione">Codice Istruzione</span></dt>
+                <dd>
+                    <span>{{ cvIstruzione.codiceIstruzione }}</span>
+                </dd>
+                <dt><span jhiTranslate="rdcApp.cvIstruzione.cfUtente">Cf Utente</span></dt>
+                <dd>
+                    <span>{{ cvIstruzione.cfUtente }}</span>
+                </dd>
+                <dt><span jhiTranslate="rdcApp.cvIstruzione.codiceCv">Codice Cv</span></dt>
+                <dd>
+                    <span>{{ cvIstruzione.codiceCv }}</span>
+                </dd>
+                <dt><span jhiTranslate="rdcApp.cvIstruzione.punteggio">Punteggio</span></dt>
+                <dd>
+                    <span>{{ cvIstruzione.punteggio }}</span>
+                </dd>
+                <dt><span jhiTranslate="rdcApp.cvIstruzione.istruzione">Istruzione</span></dt>
+                <dd>
+                    <div *ngIf="cvIstruzione.istruzione">
+                        <a [routerLink]="['/istruzione', cvIstruzione.istruzione?.id, 'view']">{{ cvIstruzione.istruzione?.id }}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="rdcApp.cvIstruzione.cv">Cv</span></dt>
+                <dd>
+                    <div *ngIf="cvIstruzione.cv">
+                        <a [routerLink]="['/cv', cvIstruzione.cv?.id, 'view']">{{ cvIstruzione.cv?.id }}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/cv-istruzione', cvIstruzione.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

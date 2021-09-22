@@ -1,0 +1,40 @@
+{
+  "name": "SkillUtente",
+  "fields": [
+    {
+      "fieldName": "cfUtente",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "codiceEscoSkill",
+      "fieldType": "String"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "skill",
+      "otherEntityRelationshipName": "skillUtente",
+      "relationshipName": "skill",
+      "otherEntityField": "id"
+    },
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "candidato",
+      "otherEntityRelationshipName": "skillUtente",
+      "relationshipName": "candidato",
+      "otherEntityField": "id"
+    }
+  ],
+  "changelogDate": "20210922105620",
+  "entityTableName": "skill_utente",
+  "dto": "no",
+  "pagination": "no",
+  "service": "no",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "clientRootFolder": "",
+  "applications": ["rdc"]
+}

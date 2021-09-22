@@ -1,0 +1,71 @@
+<div>
+    <h2 id="page-heading">
+        <span jhiTranslate="rdcApp.cv.home.title">Cvs</span>
+
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-cv" [routerLink]="['/cv/new']">
+            <fa-icon icon="plus"></fa-icon>
+            <span  jhiTranslate="rdcApp.cv.home.createLabel">
+            Create a new Cv
+            </span>
+        </button>
+    </h2>
+
+    <jhi-alert-error></jhi-alert-error>
+
+    <jhi-alert></jhi-alert>
+
+    <div class="alert alert-warning" id="no-result" *ngIf="cvs?.length === 0">
+        <span jhiTranslate="rdcApp.cv.home.notFound">No cvs found</span>
+    </div>
+
+    <div class="table-responsive" id="entities" *ngIf="cvs && cvs.length > 0">
+        <table class="table table-striped" aria-describedby="page-heading">
+            <thead>
+                <tr>
+                    <th scope="col" ><span jhiTranslate="global.field.id">ID</span></th>
+                    <th scope="col" ><span jhiTranslate="rdcApp.cv.cfUtente">Cf Utente</span></th>
+                    <th scope="col" ><span jhiTranslate="rdcApp.cv.codice">Codice</span></th>
+                    <th scope="col" ><span jhiTranslate="rdcApp.cv.inserimento">Inserimento</span></th>
+                    <th scope="col" ><span jhiTranslate="rdcApp.cv.candidato">Candidato</span></th>
+                    <th scope="col"></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let cv of cvs ;trackBy: trackId">
+                    <td><a [routerLink]="['/cv', cv.id, 'view']">{{ cv.id }}</a></td>
+                    <td>{{ cv.cfUtente }}</td>
+                    <td>{{ cv.codice }}</td>
+                    <td>{{ cv.inserimento | date:'mediumDate' }}</td>
+                    <td>
+                        <div *ngIf="cv.candidato">
+                            <a [routerLink]="['/candidato', cv.candidato?.id, 'view']" >{{ cv.candidato?.id }}</a>
+                        </div>
+                    </td>
+                    <td class="text-right">
+                        <div class="btn-group">
+                            <button type="submit"
+                                    [routerLink]="['/cv', cv.id, 'view']"
+                                    class="btn btn-info btn-sm">
+                                <fa-icon icon="eye"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                            </button>
+
+                            <button type="submit"
+                                    [routerLink]="['/cv', cv.id, 'edit']"
+                                    class="btn btn-primary btn-sm">
+                                <fa-icon icon="pencil-alt"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                            </button>
+
+                            <button type="submit" (click)="delete(cv)"
+                                    class="btn btn-danger btn-sm">
+                                <fa-icon icon="times"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

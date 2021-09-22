@@ -1,0 +1,89 @@
+<div>
+    <h2 id="page-heading">
+        <span jhiTranslate="rdcApp.navigator.home.title">Navigators</span>
+
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-navigator" [routerLink]="['/navigator/new']">
+            <fa-icon icon="plus"></fa-icon>
+            <span  jhiTranslate="rdcApp.navigator.home.createLabel">
+            Create a new Navigator
+            </span>
+        </button>
+    </h2>
+
+    <jhi-alert-error></jhi-alert-error>
+
+    <jhi-alert></jhi-alert>
+
+    <div class="alert alert-warning" id="no-result" *ngIf="navigators?.length === 0">
+        <span jhiTranslate="rdcApp.navigator.home.notFound">No navigators found</span>
+    </div>
+
+    <div class="table-responsive" id="entities" *ngIf="navigators && navigators.length > 0">
+        <table class="table table-striped" aria-describedby="page-heading">
+            <thead>
+                <tr>
+                    <th scope="col" ><span jhiTranslate="global.field.id">ID</span></th>
+                    <th scope="col" ><span jhiTranslate="rdcApp.navigator.cf">Cf</span></th>
+                    <th scope="col" ><span jhiTranslate="rdcApp.navigator.nome">Nome</span></th>
+                    <th scope="col" ><span jhiTranslate="rdcApp.navigator.cognome">Cognome</span></th>
+                    <th scope="col" ><span jhiTranslate="rdcApp.navigator.dataNascita">Data Nascita</span></th>
+                    <th scope="col" ><span jhiTranslate="rdcApp.navigator.sesso">Sesso</span></th>
+                    <th scope="col" ><span jhiTranslate="rdcApp.navigator.telefono">Telefono</span></th>
+                    <th scope="col" ><span jhiTranslate="rdcApp.navigator.email">Email</span></th>
+                    <th scope="col" ><span jhiTranslate="rdcApp.navigator.citta">Citta</span></th>
+                    <th scope="col" ><span jhiTranslate="rdcApp.navigator.indirizzo">Indirizzo</span></th>
+                    <th scope="col" ><span jhiTranslate="rdcApp.navigator.cap">Cap</span></th>
+                    <th scope="col" ><span jhiTranslate="rdcApp.navigator.provincia">Provincia</span></th>
+                    <th scope="col" ><span jhiTranslate="rdcApp.navigator.regione">Regione</span></th>
+                    <th scope="col" ><span jhiTranslate="rdcApp.navigator.login">Login</span></th>
+                    <th scope="col"></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let navigator of navigators ;trackBy: trackId">
+                    <td><a [routerLink]="['/navigator', navigator.id, 'view']">{{ navigator.id }}</a></td>
+                    <td>{{ navigator.cf }}</td>
+                    <td>{{ navigator.nome }}</td>
+                    <td>{{ navigator.cognome }}</td>
+                    <td>{{ navigator.dataNascita | date:'mediumDate' }}</td>
+                    <td>{{ navigator.sesso }}</td>
+                    <td>{{ navigator.telefono }}</td>
+                    <td>{{ navigator.email }}</td>
+                    <td>{{ navigator.citta }}</td>
+                    <td>{{ navigator.indirizzo }}</td>
+                    <td>{{ navigator.cap }}</td>
+                    <td>{{ navigator.provincia }}</td>
+                    <td>{{ navigator.regione }}</td>
+                    <td>
+                        <div *ngIf="navigator.login">
+                            <a [routerLink]="['/login', navigator.login?.id, 'view']" >{{ navigator.login?.id }}</a>
+                        </div>
+                    </td>
+                    <td class="text-right">
+                        <div class="btn-group">
+                            <button type="submit"
+                                    [routerLink]="['/navigator', navigator.id, 'view']"
+                                    class="btn btn-info btn-sm">
+                                <fa-icon icon="eye"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                            </button>
+
+                            <button type="submit"
+                                    [routerLink]="['/navigator', navigator.id, 'edit']"
+                                    class="btn btn-primary btn-sm">
+                                <fa-icon icon="pencil-alt"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                            </button>
+
+                            <button type="submit" (click)="delete(navigator)"
+                                    class="btn btn-danger btn-sm">
+                                <fa-icon icon="times"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

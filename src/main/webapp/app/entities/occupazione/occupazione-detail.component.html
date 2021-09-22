@@ -1,0 +1,52 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="occupazione">
+            <h2><span jhiTranslate="rdcApp.occupazione.detail.title">Occupazione</span> {{ occupazione.id }}</h2>
+
+            <hr>
+
+            <jhi-alert-error></jhi-alert-error>
+
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="rdcApp.occupazione.codiceEsco">Codice Esco</span></dt>
+                <dd>
+                    <span>{{ occupazione.codiceEsco }}</span>
+                </dd>
+                <dt><span jhiTranslate="rdcApp.occupazione.nome">Nome</span></dt>
+                <dd>
+                    <span>{{ occupazione.nome }}</span>
+                </dd>
+                <dt><span jhiTranslate="rdcApp.occupazione.esperienza">Esperienza</span></dt>
+                <dd>
+                    <span *ngFor="let esperienza of occupazione.esperienzas; let last = last">
+                        <a [routerLink]="['/esperienza', esperienza?.id, 'view']">{{ esperienza.id }}</a>{{ last ? '' : ', ' }}
+                    </span>
+                </dd>
+                <dt><span jhiTranslate="rdcApp.occupazione.offerta">Offerta</span></dt>
+                <dd>
+                    <span *ngFor="let offerta of occupazione.offertas; let last = last">
+                        <a [routerLink]="['/offerta', offerta?.id, 'view']">{{ offerta.id }}</a>{{ last ? '' : ', ' }}
+                    </span>
+                </dd>
+                <dt><span jhiTranslate="rdcApp.occupazione.skill">Skill</span></dt>
+                <dd>
+                    <span *ngFor="let skill of occupazione.skills; let last = last">
+                        <a [routerLink]="['/skill', skill?.id, 'view']">{{ skill.id }}</a>{{ last ? '' : ', ' }}
+                    </span>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/occupazione', occupazione.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

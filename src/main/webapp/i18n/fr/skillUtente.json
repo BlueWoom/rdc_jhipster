@@ -1,0 +1,25 @@
+{
+  "rdcApp": {
+    "skillUtente": {
+      "home": {
+        "title": "SkillUtentes",
+        "createLabel": "Créer un nouveau Skill Utente",
+        "createOrEditLabel": "Créer ou éditer un Skill Utente",
+        "notFound": "Aucun Skill Utente trouvé"
+      },
+      "created": "Un nouveau Skill Utente a été créé avec l'identifiant {{ param }}",
+      "updated": "Le Skill Utente avec l'identifiant {{ param }} a été mis à jour",
+      "deleted": "Le Skill Utente avec l'identifiant {{ param }} a été supprimé",
+      "delete": {
+        "question": "Etes-vous certain de vouloir supprimer le Skill Utente {{ id }} ?"
+      },
+      "detail": {
+        "title": "Skill Utente"
+      },
+      "cfUtente": "Cf Utente",
+      "codiceEscoSkill": "Codice Esco Skill",
+      "skill": "Skill",
+      "candidato": "Candidato"
+    }
+  }
+}

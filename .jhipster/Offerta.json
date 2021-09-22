@@ -1,0 +1,80 @@
+{
+  "name": "Offerta",
+  "fields": [
+    {
+      "fieldName": "codice",
+      "fieldType": "String",
+      "fieldValidateRules": ["pattern"],
+      "fieldValidateRulesPattern": "[0-9]+"
+    },
+    {
+      "fieldName": "data",
+      "fieldType": "LocalDate"
+    },
+    {
+      "fieldName": "indirizzoSede",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "cittaSede",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "capSede",
+      "fieldType": "String",
+      "fieldValidateRules": ["pattern"],
+      "fieldValidateRulesPattern": "[0-9]+"
+    },
+    {
+      "fieldName": "provinciaSede",
+      "fieldType": "String"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "one-to-many",
+      "otherEntityName": "offertaSkill",
+      "otherEntityRelationshipName": "offerta",
+      "relationshipName": "offertaSkill"
+    },
+    {
+      "relationshipType": "one-to-many",
+      "otherEntityName": "offertaOccupazioneRichiesta",
+      "otherEntityRelationshipName": "offerta",
+      "relationshipName": "offertaOccupazioneRichiesta"
+    },
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "istruzione",
+      "otherEntityRelationshipName": "offerta",
+      "relationshipName": "istruzione",
+      "otherEntityField": "id"
+    },
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "azienda",
+      "otherEntityRelationshipName": "offerta",
+      "relationshipName": "azienda",
+      "otherEntityField": "id"
+    },
+    {
+      "relationshipType": "many-to-many",
+      "otherEntityName": "occupazione",
+      "otherEntityRelationshipName": "offerta",
+      "relationshipName": "occupazione",
+      "otherEntityField": "id",
+      "ownerSide": false
+    }
+  ],
+  "changelogDate": "20210922105120",
+  "entityTableName": "offerta",
+  "dto": "no",
+  "pagination": "no",
+  "service": "no",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "clientRootFolder": "",
+  "applications": ["rdc"]
+}

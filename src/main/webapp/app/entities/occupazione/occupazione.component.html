@@ -1,0 +1,81 @@
+<div>
+    <h2 id="page-heading">
+        <span jhiTranslate="rdcApp.occupazione.home.title">Occupaziones</span>
+
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-occupazione" [routerLink]="['/occupazione/new']">
+            <fa-icon icon="plus"></fa-icon>
+            <span  jhiTranslate="rdcApp.occupazione.home.createLabel">
+            Create a new Occupazione
+            </span>
+        </button>
+    </h2>
+
+    <jhi-alert-error></jhi-alert-error>
+
+    <jhi-alert></jhi-alert>
+
+    <div class="alert alert-warning" id="no-result" *ngIf="occupaziones?.length === 0">
+        <span jhiTranslate="rdcApp.occupazione.home.notFound">No occupaziones found</span>
+    </div>
+
+    <div class="table-responsive" id="entities" *ngIf="occupaziones && occupaziones.length > 0">
+        <table class="table table-striped" aria-describedby="page-heading">
+            <thead>
+                <tr>
+                    <th scope="col" ><span jhiTranslate="global.field.id">ID</span></th>
+                    <th scope="col" ><span jhiTranslate="rdcApp.occupazione.codiceEsco">Codice Esco</span></th>
+                    <th scope="col" ><span jhiTranslate="rdcApp.occupazione.nome">Nome</span></th>
+                    <th scope="col" ><span jhiTranslate="rdcApp.occupazione.esperienza">Esperienza</span></th>
+                    <th scope="col" ><span jhiTranslate="rdcApp.occupazione.offerta">Offerta</span></th>
+                    <th scope="col" ><span jhiTranslate="rdcApp.occupazione.skill">Skill</span></th>
+                    <th scope="col"></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let occupazione of occupaziones ;trackBy: trackId">
+                    <td><a [routerLink]="['/occupazione', occupazione.id, 'view']">{{ occupazione.id }}</a></td>
+                    <td>{{ occupazione.codiceEsco }}</td>
+                    <td>{{ occupazione.nome }}</td>
+                    <td>
+                        <span *ngFor="let esperienza of occupazione.esperienzas; let last = last">
+                            <a class="form-control-static" [routerLink]="['/esperienza', esperienza?.id, 'view']">{{ esperienza.id }}</a>{{ last ? '' : ', ' }}
+                        </span>
+                    </td>
+                    <td>
+                        <span *ngFor="let offerta of occupazione.offertas; let last = last">
+                            <a class="form-control-static" [routerLink]="['/offerta', offerta?.id, 'view']">{{ offerta.id }}</a>{{ last ? '' : ', ' }}
+                        </span>
+                    </td>
+                    <td>
+                        <span *ngFor="let skill of occupazione.skills; let last = last">
+                            <a class="form-control-static" [routerLink]="['/skill', skill?.id, 'view']">{{ skill.id }}</a>{{ last ? '' : ', ' }}
+                        </span>
+                    </td>
+                    <td class="text-right">
+                        <div class="btn-group">
+                            <button type="submit"
+                                    [routerLink]="['/occupazione', occupazione.id, 'view']"
+                                    class="btn btn-info btn-sm">
+                                <fa-icon icon="eye"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                            </button>
+
+                            <button type="submit"
+                                    [routerLink]="['/occupazione', occupazione.id, 'edit']"
+                                    class="btn btn-primary btn-sm">
+                                <fa-icon icon="pencil-alt"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                            </button>
+
+                            <button type="submit" (click)="delete(occupazione)"
+                                    class="btn btn-danger btn-sm">
+                                <fa-icon icon="times"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

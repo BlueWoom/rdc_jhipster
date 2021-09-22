@@ -1,0 +1,78 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+            <h2 id="jhi-cv-istruzione-heading" jhiTranslate="rdcApp.cvIstruzione.home.createOrEditLabel">Create or edit a Cv Istruzione</h2>
+
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+
+                <div class="form-group" [hidden]="!editForm.get('id')!.value">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id" formControlName="id" readonly />
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="rdcApp.cvIstruzione.codiceIstruzione" for="field_codiceIstruzione">Codice Istruzione</label>
+                    <input type="text" class="form-control" name="codiceIstruzione" id="field_codiceIstruzione"
+                           formControlName="codiceIstruzione"/>
+                    <div *ngIf="editForm.get('codiceIstruzione')!.invalid && (editForm.get('codiceIstruzione')!.dirty || editForm.get('codiceIstruzione')!.touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('codiceIstruzione')?.errors?.pattern" jhiTranslate="entity.validation.pattern" [translateValues]="{ pattern: 'Codice Istruzione' }">
+                            This field should follow pattern for "Codice Istruzione".
+                        </small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="rdcApp.cvIstruzione.cfUtente" for="field_cfUtente">Cf Utente</label>
+                    <input type="text" class="form-control" name="cfUtente" id="field_cfUtente"
+                           formControlName="cfUtente"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="rdcApp.cvIstruzione.codiceCv" for="field_codiceCv">Codice Cv</label>
+                    <input type="text" class="form-control" name="codiceCv" id="field_codiceCv"
+                           formControlName="codiceCv"/>
+                    <div *ngIf="editForm.get('codiceCv')!.invalid && (editForm.get('codiceCv')!.dirty || editForm.get('codiceCv')!.touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('codiceCv')?.errors?.pattern" jhiTranslate="entity.validation.pattern" [translateValues]="{ pattern: 'Codice Cv' }">
+                            This field should follow pattern for "Codice Cv".
+                        </small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="rdcApp.cvIstruzione.punteggio" for="field_punteggio">Punteggio</label>
+                    <input type="number" class="form-control" name="punteggio" id="field_punteggio"
+                           formControlName="punteggio"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="rdcApp.cvIstruzione.istruzione" for="field_istruzione">Istruzione</label>
+                    <select class="form-control" id="field_istruzione" name="istruzione" formControlName="istruzione">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="istruzioneOption.id === editForm.get('istruzione')!.value?.id ? editForm.get('istruzione')!.value : istruzioneOption" *ngFor="let istruzioneOption of istruziones; trackBy: trackById">{{ istruzioneOption.id }}</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="rdcApp.cvIstruzione.cv" for="field_cv">Cv</label>
+                    <select class="form-control" id="field_cv" name="cv" formControlName="cv">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="cvOption.id === editForm.get('cv')!.value?.id ? editForm.get('cv')!.value : cvOption" *ngFor="let cvOption of cvs; trackBy: trackById">{{ cvOption.id }}</option>
+                    </select>
+                </div>
+            </div>
+
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary" (click)="previousState()">
+                    <fa-icon icon="ban"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+
+                <button type="submit" id="save-entity" [disabled]="editForm.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon icon="save"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

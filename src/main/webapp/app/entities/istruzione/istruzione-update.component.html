@@ -1,0 +1,80 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+            <h2 id="jhi-istruzione-heading" jhiTranslate="rdcApp.istruzione.home.createOrEditLabel">Create or edit a Istruzione</h2>
+
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+
+                <div class="form-group" [hidden]="!editForm.get('id')!.value">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id" formControlName="id" readonly />
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="rdcApp.istruzione.codice" for="field_codice">Codice</label>
+                    <input type="text" class="form-control" name="codice" id="field_codice"
+                           formControlName="codice"/>
+                    <div *ngIf="editForm.get('codice')!.invalid && (editForm.get('codice')!.dirty || editForm.get('codice')!.touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('codice')?.errors?.pattern" jhiTranslate="entity.validation.pattern" [translateValues]="{ pattern: 'Codice' }">
+                            This field should follow pattern for "Codice".
+                        </small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="rdcApp.istruzione.codiceIsced" for="field_codiceIsced">Codice Isced</label>
+                    <input type="text" class="form-control" name="codiceIsced" id="field_codiceIsced"
+                           formControlName="codiceIsced"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="rdcApp.istruzione.codiceLivello" for="field_codiceLivello">Codice Livello</label>
+                    <input type="text" class="form-control" name="codiceLivello" id="field_codiceLivello"
+                           formControlName="codiceLivello"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="rdcApp.istruzione.nome" for="field_nome">Nome</label>
+                    <input type="text" class="form-control" name="nome" id="field_nome"
+                           formControlName="nome"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="rdcApp.istruzione.campoStudio" for="field_campoStudio">Campo Studio</label>
+                    <input type="text" class="form-control" name="campoStudio" id="field_campoStudio"
+                           formControlName="campoStudio"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="rdcApp.istruzione.sinonimi" for="field_sinonimi">Sinonimi</label>
+                    <input type="text" class="form-control" name="sinonimi" id="field_sinonimi"
+                           formControlName="sinonimi"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="rdcApp.istruzione.codiceIstituto" for="field_codiceIstituto">Codice Istituto</label>
+                    <input type="text" class="form-control" name="codiceIstituto" id="field_codiceIstituto"
+                           formControlName="codiceIstituto"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="rdcApp.istruzione.tipoIstituto" for="field_tipoIstituto">Tipo Istituto</label>
+                    <input type="text" class="form-control" name="tipoIstituto" id="field_tipoIstituto"
+                           formControlName="tipoIstituto"/>
+                </div>
+            </div>
+
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary" (click)="previousState()">
+                    <fa-icon icon="ban"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+
+                <button type="submit" id="save-entity" [disabled]="editForm.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon icon="save"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

@@ -1,0 +1,26 @@
+{
+  "rdcApp": {
+    "offertaOccupazioneRichiesta": {
+      "home": {
+        "title": "OffertaOccupazioneRichiestas",
+        "createLabel": "Créer un nouveau Offerta Occupazione Richiesta",
+        "createOrEditLabel": "Créer ou éditer un Offerta Occupazione Richiesta",
+        "notFound": "Aucun Offerta Occupazione Richiesta trouvé"
+      },
+      "created": "Un nouveau Offerta Occupazione Richiesta a été créé avec l'identifiant {{ param }}",
+      "updated": "Le Offerta Occupazione Richiesta avec l'identifiant {{ param }} a été mis à jour",
+      "deleted": "Le Offerta Occupazione Richiesta avec l'identifiant {{ param }} a été supprimé",
+      "delete": {
+        "question": "Etes-vous certain de vouloir supprimer le Offerta Occupazione Richiesta {{ id }} ?"
+      },
+      "detail": {
+        "title": "Offerta Occupazione Richiesta"
+      },
+      "codiceOfferta": "Codice Offerta",
+      "codiceEscoOccupazione": "Codice Esco Occupazione",
+      "anni": "Anni",
+      "offerta": "Offerta",
+      "occupazione": "Occupazione"
+    }
+  }
+}

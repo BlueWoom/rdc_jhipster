@@ -1,0 +1,75 @@
+<div>
+    <h2 id="page-heading">
+        <span jhiTranslate="rdcApp.istruzione.home.title">Istruziones</span>
+
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-istruzione" [routerLink]="['/istruzione/new']">
+            <fa-icon icon="plus"></fa-icon>
+            <span  jhiTranslate="rdcApp.istruzione.home.createLabel">
+            Create a new Istruzione
+            </span>
+        </button>
+    </h2>
+
+    <jhi-alert-error></jhi-alert-error>
+
+    <jhi-alert></jhi-alert>
+
+    <div class="alert alert-warning" id="no-result" *ngIf="istruziones?.length === 0">
+        <span jhiTranslate="rdcApp.istruzione.home.notFound">No istruziones found</span>
+    </div>
+
+    <div class="table-responsive" id="entities" *ngIf="istruziones && istruziones.length > 0">
+        <table class="table table-striped" aria-describedby="page-heading">
+            <thead>
+                <tr>
+                    <th scope="col" ><span jhiTranslate="global.field.id">ID</span></th>
+                    <th scope="col" ><span jhiTranslate="rdcApp.istruzione.codice">Codice</span></th>
+                    <th scope="col" ><span jhiTranslate="rdcApp.istruzione.codiceIsced">Codice Isced</span></th>
+                    <th scope="col" ><span jhiTranslate="rdcApp.istruzione.codiceLivello">Codice Livello</span></th>
+                    <th scope="col" ><span jhiTranslate="rdcApp.istruzione.nome">Nome</span></th>
+                    <th scope="col" ><span jhiTranslate="rdcApp.istruzione.campoStudio">Campo Studio</span></th>
+                    <th scope="col" ><span jhiTranslate="rdcApp.istruzione.sinonimi">Sinonimi</span></th>
+                    <th scope="col" ><span jhiTranslate="rdcApp.istruzione.codiceIstituto">Codice Istituto</span></th>
+                    <th scope="col" ><span jhiTranslate="rdcApp.istruzione.tipoIstituto">Tipo Istituto</span></th>
+                    <th scope="col"></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let istruzione of istruziones ;trackBy: trackId">
+                    <td><a [routerLink]="['/istruzione', istruzione.id, 'view']">{{ istruzione.id }}</a></td>
+                    <td>{{ istruzione.codice }}</td>
+                    <td>{{ istruzione.codiceIsced }}</td>
+                    <td>{{ istruzione.codiceLivello }}</td>
+                    <td>{{ istruzione.nome }}</td>
+                    <td>{{ istruzione.campoStudio }}</td>
+                    <td>{{ istruzione.sinonimi }}</td>
+                    <td>{{ istruzione.codiceIstituto }}</td>
+                    <td>{{ istruzione.tipoIstituto }}</td>
+                    <td class="text-right">
+                        <div class="btn-group">
+                            <button type="submit"
+                                    [routerLink]="['/istruzione', istruzione.id, 'view']"
+                                    class="btn btn-info btn-sm">
+                                <fa-icon icon="eye"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                            </button>
+
+                            <button type="submit"
+                                    [routerLink]="['/istruzione', istruzione.id, 'edit']"
+                                    class="btn btn-primary btn-sm">
+                                <fa-icon icon="pencil-alt"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                            </button>
+
+                            <button type="submit" (click)="delete(istruzione)"
+                                    class="btn btn-danger btn-sm">
+                                <fa-icon icon="times"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

@@ -1,0 +1,44 @@
+{
+  "name": "Login",
+  "fields": [
+    {
+      "fieldName": "username",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "ruolo",
+      "fieldType": "String"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "one-to-many",
+      "otherEntityName": "navigator",
+      "otherEntityRelationshipName": "login",
+      "relationshipName": "navigator"
+    },
+    {
+      "relationshipType": "one-to-many",
+      "otherEntityName": "azienda",
+      "otherEntityRelationshipName": "login",
+      "relationshipName": "azienda"
+    },
+    {
+      "relationshipType": "one-to-many",
+      "otherEntityName": "candidato",
+      "otherEntityRelationshipName": "login",
+      "relationshipName": "candidato"
+    }
+  ],
+  "changelogDate": "20210922104920",
+  "entityTableName": "login",
+  "dto": "no",
+  "pagination": "no",
+  "service": "no",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "clientRootFolder": "",
+  "applications": ["rdc"]
+}

@@ -1,0 +1,83 @@
+{
+  "name": "Navigator",
+  "fields": [
+    {
+      "fieldName": "cf",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "nome",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "cognome",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "dataNascita",
+      "fieldType": "LocalDate"
+    },
+    {
+      "fieldName": "sesso",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "telefono",
+      "fieldType": "String",
+      "fieldValidateRules": ["pattern"],
+      "fieldValidateRulesPattern": "[0-9]+"
+    },
+    {
+      "fieldName": "email",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "citta",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "indirizzo",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "cap",
+      "fieldType": "String",
+      "fieldValidateRules": ["pattern"],
+      "fieldValidateRulesPattern": "[0-9]+"
+    },
+    {
+      "fieldName": "provincia",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "regione",
+      "fieldType": "String"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "one-to-many",
+      "otherEntityName": "candidato",
+      "otherEntityRelationshipName": "navigator",
+      "relationshipName": "candidato"
+    },
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "login",
+      "otherEntityRelationshipName": "navigator",
+      "relationshipName": "login",
+      "otherEntityField": "id"
+    }
+  ],
+  "changelogDate": "20210922104820",
+  "entityTableName": "navigator",
+  "dto": "no",
+  "pagination": "no",
+  "service": "no",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "clientRootFolder": "",
+  "applications": ["rdc"]
+}

@@ -1,0 +1,100 @@
+{
+  "name": "Candidato",
+  "fields": [
+    {
+      "fieldName": "cf",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "nome",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "cognome",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "dataNascita",
+      "fieldType": "LocalDate"
+    },
+    {
+      "fieldName": "luogoNascita",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "sesso",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "telefono",
+      "fieldType": "String",
+      "fieldValidateRules": ["pattern"],
+      "fieldValidateRulesPattern": "[0-9]+"
+    },
+    {
+      "fieldName": "email",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "citta",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "indirizzo",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "cap",
+      "fieldType": "String",
+      "fieldValidateRules": ["pattern"],
+      "fieldValidateRulesPattern": "[0-9]+"
+    },
+    {
+      "fieldName": "provincia",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "regione",
+      "fieldType": "String"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "one-to-many",
+      "otherEntityName": "skillUtente",
+      "otherEntityRelationshipName": "candidato",
+      "relationshipName": "skillUtente"
+    },
+    {
+      "relationshipType": "one-to-many",
+      "otherEntityName": "cv",
+      "otherEntityRelationshipName": "candidato",
+      "relationshipName": "cv"
+    },
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "navigator",
+      "otherEntityRelationshipName": "candidato",
+      "relationshipName": "navigator",
+      "otherEntityField": "id"
+    },
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "login",
+      "otherEntityRelationshipName": "candidato",
+      "relationshipName": "login",
+      "otherEntityField": "id"
+    }
+  ],
+  "changelogDate": "20210922104420",
+  "entityTableName": "candidato",
+  "dto": "no",
+  "pagination": "no",
+  "service": "no",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "clientRootFolder": "",
+  "applications": ["rdc"]
+}

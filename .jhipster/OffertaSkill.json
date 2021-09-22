@@ -1,0 +1,46 @@
+{
+  "name": "OffertaSkill",
+  "fields": [
+    {
+      "fieldName": "codiceOfferta",
+      "fieldType": "String",
+      "fieldValidateRules": ["pattern"],
+      "fieldValidateRulesPattern": "[0-9]+"
+    },
+    {
+      "fieldName": "codiceEscoSkill",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "optional",
+      "fieldType": "Boolean"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "skill",
+      "otherEntityRelationshipName": "offertaSkill",
+      "relationshipName": "skill",
+      "otherEntityField": "id"
+    },
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "offerta",
+      "otherEntityRelationshipName": "offertaSkill",
+      "relationshipName": "offerta",
+      "otherEntityField": "id"
+    }
+  ],
+  "changelogDate": "20210922105220",
+  "entityTableName": "offerta_skill",
+  "dto": "no",
+  "pagination": "no",
+  "service": "no",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "clientRootFolder": "",
+  "applications": ["rdc"]
+}

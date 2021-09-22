@@ -1,0 +1,29 @@
+{
+  "rdcApp": {
+    "esperienza": {
+      "home": {
+        "title": "Esperienzas",
+        "createLabel": "Créer un nouveau Esperienza",
+        "createOrEditLabel": "Créer ou éditer un Esperienza",
+        "notFound": "Aucun Esperienza trouvé"
+      },
+      "created": "Un nouveau Esperienza a été créé avec l'identifiant {{ param }}",
+      "updated": "Le Esperienza avec l'identifiant {{ param }} a été mis à jour",
+      "deleted": "Le Esperienza avec l'identifiant {{ param }} a été supprimé",
+      "delete": {
+        "question": "Etes-vous certain de vouloir supprimer le Esperienza {{ id }} ?"
+      },
+      "detail": {
+        "title": "Esperienza"
+      },
+      "codice": "Codice",
+      "attivita": "Attivita",
+      "dal": "Dal",
+      "al": "Al",
+      "datoreLavoro": "Datore Lavoro",
+      "sedeLavoro": "Sede Lavoro",
+      "cv": "Cv",
+      "occupazione": "Occupazione"
+    }
+  }
+}

@@ -1,0 +1,159 @@
+
+application {
+  config {
+    baseName rdc,
+    applicationType monolith,
+    packageName it.dlvsystem,
+    authenticationType jwt,
+    prodDatabaseType mysql,
+    clientFramework angular
+  }
+  entities *
+}
+
+entity Azienda {
+	cf String,
+    ragioneSociale String,
+    indirizzoSede String,
+    provinciaSede String,
+    ragioneSede String,
+    capSede String pattern(/[0-9]+/)
+}
+
+entity Candidato {
+	cf String,
+    nome String,
+    cognome String,
+    dataNascita LocalDate,
+    luogoNascita String,
+    sesso String,
+    telefono String pattern(/[0-9]+/),
+    email String,
+    citta String,
+    indirizzo String,
+    cap String pattern(/[0-9]+/),
+    provincia String,
+    regione String
+}
+
+entity Esperienza {
+	codice String pattern(/[0-9]+/),
+    attivita String,
+    dal LocalDate,
+    al LocalDate,
+    datoreLavoro String,
+    sedeLavoro String
+}
+
+entity GapAnalysis {
+ 	codiceEsco String,
+ 	nome String,
+	frequenza Integer
+}
+
+entity Istruzione {
+	codice String pattern(/[0-9]+/),
+    codiceIsced String,
+    codiceLivello String,
+    nome String,
+    campoStudio String,
+    sinonimi String,
+    codiceIstituto String,
+    tipoIstituto String
+}
+
+entity Navigator {
+	cf String,
+    nome String,
+    cognome String,
+    dataNascita LocalDate,
+    sesso String,
+    telefono String pattern(/[0-9]+/),
+    email String,
+    citta String,
+    indirizzo String,
+    cap String pattern(/[0-9]+/),
+    provincia String,
+    regione String
+}
+
+entity Login {
+	username String,
+    ruolo String
+}
+
+entity Occupazione {
+	codiceEsco String,
+    nome String
+}
+
+entity Offerta {
+	codice String pattern(/[0-9]+/),
+    data LocalDate,
+    indirizzoSede String,
+    cittaSede String,
+    capSede String pattern(/[0-9]+/),
+    provinciaSede String
+}
+
+entity OffertaSkill {
+    codiceOfferta String pattern(/[0-9]+/),
+    codiceEscoSkill String, 
+	optional Boolean
+}
+
+entity Skill {
+	codiceEsco String pattern(/[0-9]+/),
+    nome String,
+    tipo String
+}
+
+entity Cv {
+  	cfUtente String,
+  	codice String pattern(/[0-9]+/), 
+	inserimento LocalDate
+}
+
+entity CvIstruzione {
+	codiceIstruzione String pattern(/[0-9]+/), 
+    cfUtente String,
+    codiceCv String pattern(/[0-9]+/),
+	punteggio Integer
+}
+
+entity SkillUtente {
+	cfUtente String,
+    codiceEscoSkill String
+}
+
+entity OffertaOccupazioneRichiesta {
+	codiceOfferta String pattern(/[0-9]+/),
+    codiceEscoOccupazione String,
+	anni Integer
+}
+
+relationship OneToMany {
+	Skill to SkillUtente,
+    Skill to OffertaSkill,
+    Offerta to OffertaSkill,
+    Offerta to OffertaOccupazioneRichiesta,
+    Istruzione to Offerta,
+    Istruzione to Offerta,
+    Istruzione to CvIstruzione,
+    Azienda to Offerta,
+    Candidato to SkillUtente,
+    Candidato to Cv,
+    Cv to CvIstruzione,
+    Cv to Esperienza,
+    Occupazione to OffertaOccupazioneRichiesta,
+    Navigator to Candidato,
+    Login to Navigator,
+    Login to Azienda,
+    Login to Candidato
+}
+
+relationship ManyToMany {
+	Occupazione to Esperienza,
+    Occupazione to Offerta,
+    Occupazione to Skill 
+}  

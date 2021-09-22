@@ -1,0 +1,46 @@
+{
+  "name": "OffertaOccupazioneRichiesta",
+  "fields": [
+    {
+      "fieldName": "codiceOfferta",
+      "fieldType": "String",
+      "fieldValidateRules": ["pattern"],
+      "fieldValidateRulesPattern": "[0-9]+"
+    },
+    {
+      "fieldName": "codiceEscoOccupazione",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "anni",
+      "fieldType": "Integer"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "offerta",
+      "otherEntityRelationshipName": "offertaOccupazioneRichiesta",
+      "relationshipName": "offerta",
+      "otherEntityField": "id"
+    },
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "occupazione",
+      "otherEntityRelationshipName": "offertaOccupazioneRichiesta",
+      "relationshipName": "occupazione",
+      "otherEntityField": "id"
+    }
+  ],
+  "changelogDate": "20210922105720",
+  "entityTableName": "offerta_occupazione_richiesta",
+  "dto": "no",
+  "pagination": "no",
+  "service": "no",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "clientRootFolder": "",
+  "applications": ["rdc"]
+}

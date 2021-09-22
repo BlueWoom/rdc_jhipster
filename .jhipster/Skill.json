@@ -1,0 +1,52 @@
+{
+  "name": "Skill",
+  "fields": [
+    {
+      "fieldName": "codiceEsco",
+      "fieldType": "String",
+      "fieldValidateRules": ["pattern"],
+      "fieldValidateRulesPattern": "[0-9]+"
+    },
+    {
+      "fieldName": "nome",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "tipo",
+      "fieldType": "String"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "one-to-many",
+      "otherEntityName": "skillUtente",
+      "otherEntityRelationshipName": "skill",
+      "relationshipName": "skillUtente"
+    },
+    {
+      "relationshipType": "one-to-many",
+      "otherEntityName": "offertaSkill",
+      "otherEntityRelationshipName": "skill",
+      "relationshipName": "offertaSkill"
+    },
+    {
+      "relationshipType": "many-to-many",
+      "otherEntityName": "occupazione",
+      "otherEntityRelationshipName": "skill",
+      "relationshipName": "occupazione",
+      "otherEntityField": "id",
+      "ownerSide": false
+    }
+  ],
+  "changelogDate": "20210922105320",
+  "entityTableName": "skill",
+  "dto": "no",
+  "pagination": "no",
+  "service": "no",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "clientRootFolder": "",
+  "applications": ["rdc"]
+}
