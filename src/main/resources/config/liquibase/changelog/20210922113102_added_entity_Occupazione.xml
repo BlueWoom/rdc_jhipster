@@ -17,7 +17,7 @@
                 <constraints primaryKey="true" nullable="false"/>
             </column>
             <column name="codice_esco" type="varchar(255)">
-                <constraints nullable="true" />
+                <constraints nullable="false" unique="true" uniqueConstraintName="ux_occupazione_codice_esco" />
             </column>
             <column name="nome" type="varchar(255)">
                 <constraints nullable="true" />

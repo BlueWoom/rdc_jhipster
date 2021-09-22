@@ -22,8 +22,9 @@ public class Skill implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @NotNull
     @Pattern(regexp = "[0-9]+")
-    @Column(name = "codice_esco")
+    @Column(name = "codice_esco", nullable = false, unique = true)
     private String codiceEsco;
 
     @Column(name = "nome")

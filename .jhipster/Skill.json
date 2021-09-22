@@ -4,9 +4,7 @@
     {
       "fieldName": "codiceEsco",
       "fieldType": "String",
-      "fieldValidateRules": [
-        "pattern"
-      ],
+      "fieldValidateRules": ["pattern", "required", "unique"],
       "fieldValidateRulesPattern": "[0-9]+"
     },
     {

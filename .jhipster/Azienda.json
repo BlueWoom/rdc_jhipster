@@ -22,11 +22,13 @@
       "fieldType": "String"
     },
     {
+      "fieldName": "cittaSede",
+      "fieldType": "String"
+    },
+    {
       "fieldName": "capSede",
       "fieldType": "String",
-      "fieldValidateRules": [
-        "pattern"
-      ],
+      "fieldValidateRules": ["pattern"],
       "fieldValidateRulesPattern": "[0-9]+"
     }
   ],
@@ -36,13 +38,6 @@
       "otherEntityName": "offerta",
       "otherEntityRelationshipName": "azienda",
       "relationshipName": "offerta"
-    },
-    {
-      "relationshipType": "many-to-one",
-      "otherEntityName": "login",
-      "otherEntityRelationshipName": "azienda",
-      "relationshipName": "login",
-      "otherEntityField": "id"
     }
   ],
   "changelogDate": "20210922112402",

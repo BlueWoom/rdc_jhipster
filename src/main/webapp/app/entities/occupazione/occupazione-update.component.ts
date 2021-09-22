@@ -28,7 +28,7 @@ export class OccupazioneUpdateComponent implements OnInit {
 
   editForm = this.fb.group({
     id: [],
-    codiceEsco: [],
+    codiceEsco: [null, [Validators.required]],
     nome: [],
     esperienzas: [],
     offertas: [],

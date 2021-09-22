@@ -28,8 +28,8 @@
                     <th scope="col" ><span jhiTranslate="rdcJhipsterApp.azienda.indirizzoSede">Indirizzo Sede</span></th>
                     <th scope="col" ><span jhiTranslate="rdcJhipsterApp.azienda.provinciaSede">Provincia Sede</span></th>
                     <th scope="col" ><span jhiTranslate="rdcJhipsterApp.azienda.ragioneSede">Ragione Sede</span></th>
+                    <th scope="col" ><span jhiTranslate="rdcJhipsterApp.azienda.cittaSede">Citta Sede</span></th>
                     <th scope="col" ><span jhiTranslate="rdcJhipsterApp.azienda.capSede">Cap Sede</span></th>
-                    <th scope="col" ><span jhiTranslate="rdcJhipsterApp.azienda.login">Login</span></th>
                     <th scope="col"></th>
                 </tr>
             </thead>
@@ -41,12 +41,8 @@
                     <td>{{ azienda.indirizzoSede }}</td>
                     <td>{{ azienda.provinciaSede }}</td>
                     <td>{{ azienda.ragioneSede }}</td>
+                    <td>{{ azienda.cittaSede }}</td>
                     <td>{{ azienda.capSede }}</td>
-                    <td>
-                        <div *ngIf="azienda.login">
-                            <a [routerLink]="['/login', azienda.login?.id, 'view']" >{{ azienda.login?.id }}</a>
-                        </div>
-                    </td>
                     <td class="text-right">
                         <div class="btn-group">
                             <button type="submit"

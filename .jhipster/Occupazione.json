@@ -3,7 +3,8 @@
   "fields": [
     {
       "fieldName": "codiceEsco",
-      "fieldType": "String"
+      "fieldType": "String",
+      "fieldValidateRules": ["required", "unique"]
     },
     {
       "fieldName": "nome",

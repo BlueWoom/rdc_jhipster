@@ -53,6 +53,12 @@ public class CvIstruzioneResource {
         if (cvIstruzione.getId() != null) {
             throw new BadRequestAlertException("A new cvIstruzione cannot already have an ID", ENTITY_NAME, "idexists");
         }
+        
+        Optional<CvIstruzione> alreadyExistingCvIstruzione = cvIstruzioneRepository.findByCodiceIstruzioneAndCfUtenteAndCodiceCv(cvIstruzione.getCodiceCv(), cvIstruzione.getCfUtente(), cvIstruzione.getCodiceCv());
+        if (alreadyExistingCvIstruzione.isPresent()) {
+            throw new BadRequestAlertException("An old cvIstruzione already has same codiceIstruzione/cfUtente/codiceCv", ENTITY_NAME, "idexists");
+        }
+        
         CvIstruzione result = cvIstruzioneRepository.save(cvIstruzione);
         return ResponseEntity.created(new URI("/api/cv-istruziones/" + result.getId()))
             .headers(HeaderUtil.createEntityCreationAlert(applicationName, true, ENTITY_NAME, result.getId().toString()))

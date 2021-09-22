@@ -1,23 +1,31 @@
 package it.dlvsystem.web.rest;
 
-import it.dlvsystem.domain.Cv;
-import it.dlvsystem.repository.CvRepository;
-import it.dlvsystem.web.rest.errors.BadRequestAlertException;
+import java.net.URI;
+import java.net.URISyntaxException;
+import java.util.List;
+import java.util.Optional;
 
-import io.github.jhipster.web.util.HeaderUtil;
-import io.github.jhipster.web.util.ResponseUtil;
+import javax.validation.Valid;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.ResponseEntity;
 import org.springframework.transaction.annotation.Transactional;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 
-import javax.validation.Valid;
-import java.net.URI;
-import java.net.URISyntaxException;
-import java.util.List;
-import java.util.Optional;
+import io.github.jhipster.web.util.HeaderUtil;
+import io.github.jhipster.web.util.ResponseUtil;
+import it.dlvsystem.domain.Cv;
+import it.dlvsystem.repository.CvRepository;
+import it.dlvsystem.web.rest.errors.BadRequestAlertException;
 
 /**
  * REST controller for managing {@link it.dlvsystem.domain.Cv}.
@@ -53,6 +61,12 @@ public class CvResource {
         if (cv.getId() != null) {
             throw new BadRequestAlertException("A new cv cannot already have an ID", ENTITY_NAME, "idexists");
         }
+        
+        Optional<Cv> alreadyExistingCV = cvRepository.findByCfUtenteAndCodice(cv.getCfUtente(), cv.getCodice());
+        if (alreadyExistingCV.isPresent()) {
+        	throw new BadRequestAlertException("A old cv already has same cfUtente/codice", ENTITY_NAME, "idexists");
+        }
+        
         Cv result = cvRepository.save(cv);
         return ResponseEntity.created(new URI("/api/cvs/" + result.getId()))
             .headers(HeaderUtil.createEntityCreationAlert(applicationName, true, ENTITY_NAME, result.getId().toString()))

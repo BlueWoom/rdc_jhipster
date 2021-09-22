@@ -1,14 +1,18 @@
 package it.dlvsystem.domain;
 
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-
-import javax.persistence.*;
-import javax.validation.constraints.*;
-
 import java.io.Serializable;
 import java.time.LocalDate;
 import java.util.HashSet;
 import java.util.Set;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.OneToMany;
+import javax.persistence.Table;
+import javax.validation.constraints.Pattern;
 
 /**
  * A Navigator.
@@ -63,10 +67,6 @@ public class Navigator implements Serializable {
 
     @OneToMany(mappedBy = "navigator")
     private Set<Candidato> candidatoes = new HashSet<>();
-
-    @ManyToOne
-    @JsonIgnoreProperties(value = "navigators", allowSetters = true)
-    private Login login;
 
     // jhipster-needle-entity-add-field - JHipster will add fields here
     public Long getId() {
@@ -256,19 +256,6 @@ public class Navigator implements Serializable {
 
     public void setCandidatoes(Set<Candidato> candidatoes) {
         this.candidatoes = candidatoes;
-    }
-
-    public Login getLogin() {
-        return login;
-    }
-
-    public Navigator login(Login login) {
-        this.login = login;
-        return this;
-    }
-
-    public void setLogin(Login login) {
-        this.login = login;
     }
     // jhipster-needle-entity-add-getters-setters - JHipster will add getters and setters here
 

@@ -74,10 +74,6 @@ public class Candidato implements Serializable {
     @JsonIgnoreProperties(value = "candidatoes", allowSetters = true)
     private Navigator navigator;
 
-    @ManyToOne
-    @JsonIgnoreProperties(value = "candidatoes", allowSetters = true)
-    private Login login;
-
     // jhipster-needle-entity-add-field - JHipster will add fields here
     public Long getId() {
         return id;
@@ -317,19 +313,6 @@ public class Candidato implements Serializable {
 
     public void setNavigator(Navigator navigator) {
         this.navigator = navigator;
-    }
-
-    public Login getLogin() {
-        return login;
-    }
-
-    public Candidato login(Login login) {
-        this.login = login;
-        return this;
-    }
-
-    public void setLogin(Login login) {
-        this.login = login;
     }
     // jhipster-needle-entity-add-getters-setters - JHipster will add getters and setters here
 

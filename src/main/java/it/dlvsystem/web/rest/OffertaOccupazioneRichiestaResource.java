@@ -53,6 +53,12 @@ public class OffertaOccupazioneRichiestaResource {
         if (offertaOccupazioneRichiesta.getId() != null) {
             throw new BadRequestAlertException("A new offertaOccupazioneRichiesta cannot already have an ID", ENTITY_NAME, "idexists");
         }
+        
+        Optional<OffertaOccupazioneRichiesta> alreadyExistingOffertaOccupazioneRichiesta = offertaOccupazioneRichiestaRepository.findByCodiceOffertaAndCodiceEscoOccupazione(offertaOccupazioneRichiesta.getCodiceOfferta(), offertaOccupazioneRichiesta.getCodiceEscoOccupazione());
+        if (alreadyExistingOffertaOccupazioneRichiesta.isPresent()) {
+        	throw new BadRequestAlertException("An old offertaOccupazioneRichiesta already has same codiceOfferta/codiceEscoOccupazione", ENTITY_NAME, "idexists");
+        }
+        
         OffertaOccupazioneRichiesta result = offertaOccupazioneRichiestaRepository.save(offertaOccupazioneRichiesta);
         return ResponseEntity.created(new URI("/api/offerta-occupazione-richiestas/" + result.getId()))
             .headers(HeaderUtil.createEntityCreationAlert(applicationName, true, ENTITY_NAME, result.getId().toString()))

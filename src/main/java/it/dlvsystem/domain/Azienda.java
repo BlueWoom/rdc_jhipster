@@ -1,6 +1,5 @@
 package it.dlvsystem.domain;
 
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import javax.persistence.*;
 import javax.validation.constraints.*;
@@ -37,16 +36,15 @@ public class Azienda implements Serializable {
     @Column(name = "ragione_sede")
     private String ragioneSede;
 
+    @Column(name = "citta_sede")
+    private String cittaSede;
+
     @Pattern(regexp = "[0-9]+")
     @Column(name = "cap_sede")
     private String capSede;
 
     @OneToMany(mappedBy = "azienda")
     private Set<Offerta> offertas = new HashSet<>();
-
-    @ManyToOne
-    @JsonIgnoreProperties(value = "aziendas", allowSetters = true)
-    private Login login;
 
     // jhipster-needle-entity-add-field - JHipster will add fields here
     public Long getId() {
@@ -122,6 +120,19 @@ public class Azienda implements Serializable {
         this.ragioneSede = ragioneSede;
     }
 
+    public String getCittaSede() {
+        return cittaSede;
+    }
+
+    public Azienda cittaSede(String cittaSede) {
+        this.cittaSede = cittaSede;
+        return this;
+    }
+
+    public void setCittaSede(String cittaSede) {
+        this.cittaSede = cittaSede;
+    }
+
     public String getCapSede() {
         return capSede;
     }
@@ -159,19 +170,6 @@ public class Azienda implements Serializable {
     public void setOffertas(Set<Offerta> offertas) {
         this.offertas = offertas;
     }
-
-    public Login getLogin() {
-        return login;
-    }
-
-    public Azienda login(Login login) {
-        this.login = login;
-        return this;
-    }
-
-    public void setLogin(Login login) {
-        this.login = login;
-    }
     // jhipster-needle-entity-add-getters-setters - JHipster will add getters and setters here
 
     @Override
@@ -200,6 +198,7 @@ public class Azienda implements Serializable {
             ", indirizzoSede='" + getIndirizzoSede() + "'" +
             ", provinciaSede='" + getProvinciaSede() + "'" +
             ", ragioneSede='" + getRagioneSede() + "'" +
+            ", cittaSede='" + getCittaSede() + "'" +
             ", capSede='" + getCapSede() + "'" +
             "}";
     }

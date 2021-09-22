@@ -52,6 +52,12 @@ public class SkillUtenteResource {
         if (skillUtente.getId() != null) {
             throw new BadRequestAlertException("A new skillUtente cannot already have an ID", ENTITY_NAME, "idexists");
         }
+        
+        Optional<SkillUtente> alreadyExistingSkillUtente = skillUtenteRepository.findByCfUtenteAndCodiceEscoSkill(skillUtente.getCfUtente(), skillUtente.getCodiceEscoSkill());
+        if (alreadyExistingSkillUtente.isPresent()) {
+        	throw new BadRequestAlertException("An old skillUtente already has same cfUtente/CodiceEscoSkill", ENTITY_NAME, "idexists");
+        }
+        
         SkillUtente result = skillUtenteRepository.save(skillUtente);
         return ResponseEntity.created(new URI("/api/skill-utentes/" + result.getId()))
             .headers(HeaderUtil.createEntityCreationAlert(applicationName, true, ENTITY_NAME, result.getId().toString()))

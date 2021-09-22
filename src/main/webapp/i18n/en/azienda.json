@@ -21,9 +21,9 @@
       "indirizzoSede": "Indirizzo Sede",
       "provinciaSede": "Provincia Sede",
       "ragioneSede": "Ragione Sede",
+      "cittaSede": "Citta Sede",
       "capSede": "Cap Sede",
-      "offerta": "Offerta",
-      "login": "Login"
+      "offerta": "Offerta"
     }
   }
 }

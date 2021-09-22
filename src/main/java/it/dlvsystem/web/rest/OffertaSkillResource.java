@@ -53,6 +53,12 @@ public class OffertaSkillResource {
         if (offertaSkill.getId() != null) {
             throw new BadRequestAlertException("A new offertaSkill cannot already have an ID", ENTITY_NAME, "idexists");
         }
+        
+        Optional<OffertaSkill> alreadyExistingOffertaSkill = offertaSkillRepository.findByCodiceOffertaAndCodiceEscoSkill(offertaSkill.getCodiceOfferta(), offertaSkill.getCodiceEscoSkill());
+        if(alreadyExistingOffertaSkill.isPresent()) {
+        	throw new BadRequestAlertException("An old offertaSkill already has same codiceOfferta/codiceEscoSkill", ENTITY_NAME, "idexists");
+        }
+        
         OffertaSkill result = offertaSkillRepository.save(offertaSkill);
         return ResponseEntity.created(new URI("/api/offerta-skills/" + result.getId()))
             .headers(HeaderUtil.createEntityCreationAlert(applicationName, true, ENTITY_NAME, result.getId().toString()))

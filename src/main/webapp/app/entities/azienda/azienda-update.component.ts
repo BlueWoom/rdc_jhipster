@@ -7,8 +7,6 @@ import { Observable } from 'rxjs';
 
 import { IAzienda, Azienda } from 'app/shared/model/azienda.model';
 import { AziendaService } from './azienda.service';
-import { ILogin } from 'app/shared/model/login.model';
-import { LoginService } from 'app/entities/login/login.service';
 
 @Component({
   selector: 'jhi-azienda-update',
@@ -16,7 +14,6 @@ import { LoginService } from 'app/entities/login/login.service';
 })
 export class AziendaUpdateComponent implements OnInit {
   isSaving = false;
-  logins: ILogin[] = [];
 
   editForm = this.fb.group({
     id: [],
@@ -25,22 +22,15 @@ export class AziendaUpdateComponent implements OnInit {
     indirizzoSede: [],
     provinciaSede: [],
     ragioneSede: [],
+    cittaSede: [],
     capSede: [null, [Validators.pattern('[0-9]+')]],
-    login: [],
   });
 
-  constructor(
-    protected aziendaService: AziendaService,
-    protected loginService: LoginService,
-    protected activatedRoute: ActivatedRoute,
-    private fb: FormBuilder
-  ) {}
+  constructor(protected aziendaService: AziendaService, protected activatedRoute: ActivatedRoute, private fb: FormBuilder) {}
 
   ngOnInit(): void {
     this.activatedRoute.data.subscribe(({ azienda }) => {
       this.updateForm(azienda);
-
-      this.loginService.query().subscribe((res: HttpResponse<ILogin[]>) => (this.logins = res.body || []));
     });
   }
 
@@ -52,8 +42,8 @@ export class AziendaUpdateComponent implements OnInit {
       indirizzoSede: azienda.indirizzoSede,
       provinciaSede: azienda.provinciaSede,
       ragioneSede: azienda.ragioneSede,
+      cittaSede: azienda.cittaSede,
       capSede: azienda.capSede,
-      login: azienda.login,
     });
   }
 
@@ -80,8 +70,8 @@ export class AziendaUpdateComponent implements OnInit {
       indirizzoSede: this.editForm.get(['indirizzoSede'])!.value,
       provinciaSede: this.editForm.get(['provinciaSede'])!.value,
       ragioneSede: this.editForm.get(['ragioneSede'])!.value,
+      cittaSede: this.editForm.get(['cittaSede'])!.value,
       capSede: this.editForm.get(['capSede'])!.value,
-      login: this.editForm.get(['login'])!.value,
     };
   }
 
@@ -99,9 +89,5 @@ export class AziendaUpdateComponent implements OnInit {
 
   protected onSaveError(): void {
     this.isSaving = false;
-  }
-
-  trackById(index: number, item: ILogin): any {
-    return item.id;
   }
 }

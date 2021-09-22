@@ -42,6 +42,12 @@
                 </div>
 
                 <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="rdcJhipsterApp.azienda.cittaSede" for="field_cittaSede">Citta Sede</label>
+                    <input type="text" class="form-control" name="cittaSede" id="field_cittaSede"
+                           formControlName="cittaSede"/>
+                </div>
+
+                <div class="form-group">
                     <label class="form-control-label" jhiTranslate="rdcJhipsterApp.azienda.capSede" for="field_capSede">Cap Sede</label>
                     <input type="text" class="form-control" name="capSede" id="field_capSede"
                            formControlName="capSede"/>
@@ -51,14 +57,6 @@
                             This field should follow pattern for "Cap Sede".
                         </small>
                     </div>
-                </div>
-
-                <div class="form-group">
-                    <label class="form-control-label" jhiTranslate="rdcJhipsterApp.azienda.login" for="field_login">Login</label>
-                    <select class="form-control" id="field_login" name="login" formControlName="login">
-                        <option [ngValue]="null"></option>
-                        <option [ngValue]="loginOption.id === editForm.get('login')!.value?.id ? editForm.get('login')!.value : loginOption" *ngFor="let loginOption of logins; trackBy: trackById">{{ loginOption.id }}</option>
-                    </select>
                 </div>
             </div>
 

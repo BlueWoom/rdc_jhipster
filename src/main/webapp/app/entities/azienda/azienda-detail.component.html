@@ -28,15 +28,13 @@
                 <dd>
                     <span>{{ azienda.ragioneSede }}</span>
                 </dd>
+                <dt><span jhiTranslate="rdcJhipsterApp.azienda.cittaSede">Citta Sede</span></dt>
+                <dd>
+                    <span>{{ azienda.cittaSede }}</span>
+                </dd>
                 <dt><span jhiTranslate="rdcJhipsterApp.azienda.capSede">Cap Sede</span></dt>
                 <dd>
                     <span>{{ azienda.capSede }}</span>
-                </dd>
-                <dt><span jhiTranslate="rdcJhipsterApp.azienda.login">Login</span></dt>
-                <dd>
-                    <div *ngIf="azienda.login">
-                        <a [routerLink]="['/login', azienda.login?.id, 'view']">{{ azienda.login?.id }}</a>
-                    </div>
                 </dd>
             </dl>
 
