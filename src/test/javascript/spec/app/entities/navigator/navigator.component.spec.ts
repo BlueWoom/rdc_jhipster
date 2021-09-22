@@ -2,7 +2,7 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { of } from 'rxjs';
 import { HttpHeaders, HttpResponse } from '@angular/common/http';
 
-import { RdcTestModule } from '../../../test.module';
+import { RdcJhipsterTestModule } from '../../../test.module';
 import { NavigatorComponent } from 'app/entities/navigator/navigator.component';
 import { NavigatorService } from 'app/entities/navigator/navigator.service';
 import { Navigator } from 'app/shared/model/navigator.model';
@@ -15,7 +15,7 @@ describe('Component Tests', () => {
 
     beforeEach(() => {
       TestBed.configureTestingModule({
-        imports: [RdcTestModule],
+        imports: [RdcJhipsterTestModule],
         declarations: [NavigatorComponent],
       })
         .overrideTemplate(NavigatorComponent, '')

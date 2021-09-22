@@ -1,0 +1,25 @@
+{
+  "rdcJhipsterApp": {
+    "skillUtente": {
+      "home": {
+        "title": "SkillUtentes",
+        "createLabel": "Genera un nuovo Skill Utente",
+        "createOrEditLabel": "Genera o modifica un Skill Utente",
+        "notFound": "No Skill Utentes found"
+      },
+      "created": "&Egrave; stato generato un nuovo Skill Utente con identificatore {{ param }}",
+      "updated": "&Egrave; stato aggiornato Skill Utente identificato da {{ param }}",
+      "deleted": "&Egrave; stato eliminato Skill Utente con identificatore {{ param }}",
+      "delete": {
+        "question": "Sei sicuro di volere eliminare Skill Utente {{ id }}?"
+      },
+      "detail": {
+        "title": "Skill Utente"
+      },
+      "cfUtente": "Cf Utente",
+      "codiceEscoSkill": "Codice Esco Skill",
+      "skill": "Skill",
+      "candidato": "Candidato"
+    }
+  }
+}

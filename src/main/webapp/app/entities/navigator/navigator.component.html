@@ -1,10 +1,10 @@
 <div>
     <h2 id="page-heading">
-        <span jhiTranslate="rdcApp.navigator.home.title">Navigators</span>
+        <span jhiTranslate="rdcJhipsterApp.navigator.home.title">Navigators</span>
 
         <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-navigator" [routerLink]="['/navigator/new']">
             <fa-icon icon="plus"></fa-icon>
-            <span  jhiTranslate="rdcApp.navigator.home.createLabel">
+            <span  jhiTranslate="rdcJhipsterApp.navigator.home.createLabel">
             Create a new Navigator
             </span>
         </button>
@@ -15,7 +15,7 @@
     <jhi-alert></jhi-alert>
 
     <div class="alert alert-warning" id="no-result" *ngIf="navigators?.length === 0">
-        <span jhiTranslate="rdcApp.navigator.home.notFound">No navigators found</span>
+        <span jhiTranslate="rdcJhipsterApp.navigator.home.notFound">No navigators found</span>
     </div>
 
     <div class="table-responsive" id="entities" *ngIf="navigators && navigators.length > 0">
@@ -23,19 +23,19 @@
             <thead>
                 <tr>
                     <th scope="col" ><span jhiTranslate="global.field.id">ID</span></th>
-                    <th scope="col" ><span jhiTranslate="rdcApp.navigator.cf">Cf</span></th>
-                    <th scope="col" ><span jhiTranslate="rdcApp.navigator.nome">Nome</span></th>
-                    <th scope="col" ><span jhiTranslate="rdcApp.navigator.cognome">Cognome</span></th>
-                    <th scope="col" ><span jhiTranslate="rdcApp.navigator.dataNascita">Data Nascita</span></th>
-                    <th scope="col" ><span jhiTranslate="rdcApp.navigator.sesso">Sesso</span></th>
-                    <th scope="col" ><span jhiTranslate="rdcApp.navigator.telefono">Telefono</span></th>
-                    <th scope="col" ><span jhiTranslate="rdcApp.navigator.email">Email</span></th>
-                    <th scope="col" ><span jhiTranslate="rdcApp.navigator.citta">Citta</span></th>
-                    <th scope="col" ><span jhiTranslate="rdcApp.navigator.indirizzo">Indirizzo</span></th>
-                    <th scope="col" ><span jhiTranslate="rdcApp.navigator.cap">Cap</span></th>
-                    <th scope="col" ><span jhiTranslate="rdcApp.navigator.provincia">Provincia</span></th>
-                    <th scope="col" ><span jhiTranslate="rdcApp.navigator.regione">Regione</span></th>
-                    <th scope="col" ><span jhiTranslate="rdcApp.navigator.login">Login</span></th>
+                    <th scope="col" ><span jhiTranslate="rdcJhipsterApp.navigator.cf">Cf</span></th>
+                    <th scope="col" ><span jhiTranslate="rdcJhipsterApp.navigator.nome">Nome</span></th>
+                    <th scope="col" ><span jhiTranslate="rdcJhipsterApp.navigator.cognome">Cognome</span></th>
+                    <th scope="col" ><span jhiTranslate="rdcJhipsterApp.navigator.dataNascita">Data Nascita</span></th>
+                    <th scope="col" ><span jhiTranslate="rdcJhipsterApp.navigator.sesso">Sesso</span></th>
+                    <th scope="col" ><span jhiTranslate="rdcJhipsterApp.navigator.telefono">Telefono</span></th>
+                    <th scope="col" ><span jhiTranslate="rdcJhipsterApp.navigator.email">Email</span></th>
+                    <th scope="col" ><span jhiTranslate="rdcJhipsterApp.navigator.citta">Citta</span></th>
+                    <th scope="col" ><span jhiTranslate="rdcJhipsterApp.navigator.indirizzo">Indirizzo</span></th>
+                    <th scope="col" ><span jhiTranslate="rdcJhipsterApp.navigator.cap">Cap</span></th>
+                    <th scope="col" ><span jhiTranslate="rdcJhipsterApp.navigator.provincia">Provincia</span></th>
+                    <th scope="col" ><span jhiTranslate="rdcJhipsterApp.navigator.regione">Regione</span></th>
+                    <th scope="col" ><span jhiTranslate="rdcJhipsterApp.navigator.login">Login</span></th>
                     <th scope="col"></th>
                 </tr>
             </thead>

@@ -1,16 +1,16 @@
 version: '2'
 services:
-  rdc-app:
-    image: rdc
+  rdc_jhipster-app:
+    image: rdc_jhipster
     environment:
       - _JAVA_OPTIONS=-Xmx512m -Xms256m
       - SPRING_PROFILES_ACTIVE=prod,swagger
       - MANAGEMENT_METRICS_EXPORT_PROMETHEUS_ENABLED=true
-      - SPRING_DATASOURCE_URL=jdbc:mysql://rdc-mysql:3306/rdc?useUnicode=true&characterEncoding=utf8&useSSL=false&useLegacyDatetimeCode=false&serverTimezone=UTC&createDatabaseIfNotExist=true
-      - JHIPSTER_SLEEP=30 # gives time for other services to boot before the application
+      - SPRING_DATASOURCE_URL=jdbc:mariadb://rdc_jhipster-mariadb:3306/rdc_jhipster?useLegacyDatetimeCode=false&serverTimezone=UTC
+      - JHIPSTER_SLEEP=120 # gives time for mariadb server to start
     ports:
       - 8080:8080
-  rdc-mysql:
+  rdc_jhipster-mariadb:
     extends:
-      file: mysql.yml
-      service: rdc-mysql
+      file: mariadb.yml
+      service: rdc_jhipster-mariadb

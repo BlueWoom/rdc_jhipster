@@ -1,0 +1,32 @@
+{
+  "rdcJhipsterApp": {
+    "offerta": {
+      "home": {
+        "title": "Offertas",
+        "createLabel": "Genera un nuovo Offerta",
+        "createOrEditLabel": "Genera o modifica un Offerta",
+        "notFound": "No Offertas found"
+      },
+      "created": "&Egrave; stato generato un nuovo Offerta con identificatore {{ param }}",
+      "updated": "&Egrave; stato aggiornato Offerta identificato da {{ param }}",
+      "deleted": "&Egrave; stato eliminato Offerta con identificatore {{ param }}",
+      "delete": {
+        "question": "Sei sicuro di volere eliminare Offerta {{ id }}?"
+      },
+      "detail": {
+        "title": "Offerta"
+      },
+      "codice": "Codice",
+      "data": "Data",
+      "indirizzoSede": "Indirizzo Sede",
+      "cittaSede": "Citta Sede",
+      "capSede": "Cap Sede",
+      "provinciaSede": "Provincia Sede",
+      "offertaSkill": "Offerta Skill",
+      "offertaOccupazioneRichiesta": "Offerta Occupazione Richiesta",
+      "istruzione": "Istruzione",
+      "azienda": "Azienda",
+      "occupazione": "Occupazione"
+    }
+  }
+}

@@ -15,7 +15,7 @@
     }
   ],
   "relationships": [],
-  "changelogDate": "20210922104620",
+  "changelogDate": "20210922112702",
   "entityTableName": "gap_analysis",
   "dto": "no",
   "pagination": "no",
@@ -25,5 +25,5 @@
   "readOnly": false,
   "embedded": false,
   "clientRootFolder": "",
-  "applications": ["rdc"]
+  "applications": "*"
 }

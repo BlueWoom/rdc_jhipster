@@ -1,7 +1,5 @@
 package it.dlvsystem.domain;
 
-import org.hibernate.annotations.Cache;
-import org.hibernate.annotations.CacheConcurrencyStrategy;
 
 import javax.persistence.*;
 
@@ -14,7 +12,6 @@ import java.util.Set;
  */
 @Entity
 @Table(name = "login")
-@Cache(usage = CacheConcurrencyStrategy.READ_WRITE)
 public class Login implements Serializable {
 
     private static final long serialVersionUID = 1L;
@@ -30,15 +27,12 @@ public class Login implements Serializable {
     private String ruolo;
 
     @OneToMany(mappedBy = "login")
-    @Cache(usage = CacheConcurrencyStrategy.READ_WRITE)
     private Set<Navigator> navigators = new HashSet<>();
 
     @OneToMany(mappedBy = "login")
-    @Cache(usage = CacheConcurrencyStrategy.READ_WRITE)
     private Set<Azienda> aziendas = new HashSet<>();
 
     @OneToMany(mappedBy = "login")
-    @Cache(usage = CacheConcurrencyStrategy.READ_WRITE)
     private Set<Candidato> candidatoes = new HashSet<>();
 
     // jhipster-needle-entity-add-field - JHipster will add fields here

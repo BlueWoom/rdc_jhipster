@@ -40,7 +40,7 @@ export const navigatorRoute: Routes = [
     component: NavigatorComponent,
     data: {
       authorities: [Authority.USER],
-      pageTitle: 'rdcApp.navigator.home.title',
+      pageTitle: 'rdcJhipsterApp.navigator.home.title',
     },
     canActivate: [UserRouteAccessService],
   },
@@ -52,7 +52,7 @@ export const navigatorRoute: Routes = [
     },
     data: {
       authorities: [Authority.USER],
-      pageTitle: 'rdcApp.navigator.home.title',
+      pageTitle: 'rdcJhipsterApp.navigator.home.title',
     },
     canActivate: [UserRouteAccessService],
   },
@@ -64,7 +64,7 @@ export const navigatorRoute: Routes = [
     },
     data: {
       authorities: [Authority.USER],
-      pageTitle: 'rdcApp.navigator.home.title',
+      pageTitle: 'rdcJhipsterApp.navigator.home.title',
     },
     canActivate: [UserRouteAccessService],
   },
@@ -76,7 +76,7 @@ export const navigatorRoute: Routes = [
     },
     data: {
       authorities: [Authority.USER],
-      pageTitle: 'rdcApp.navigator.home.title',
+      pageTitle: 'rdcJhipsterApp.navigator.home.title',
     },
     canActivate: [UserRouteAccessService],
   },

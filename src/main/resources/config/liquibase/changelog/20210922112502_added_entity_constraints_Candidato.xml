@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.9.xsd">
+    <!--
+        Added the constraints for entity Candidato.
+    -->
+    <changeSet id="20210922112502-2" author="jhipster">
+        
+        <addForeignKeyConstraint baseColumnNames="navigator_id"
+                                 baseTableName="candidato"
+                                 constraintName="fk_candidato_navigator_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="navigator"/>
+
+        <addForeignKeyConstraint baseColumnNames="login_id"
+                                 baseTableName="candidato"
+                                 constraintName="fk_candidato_login_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="login"/>
+
+    </changeSet>
+</databaseChangeLog>

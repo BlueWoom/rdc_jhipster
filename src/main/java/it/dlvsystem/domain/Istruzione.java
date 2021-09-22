@@ -1,7 +1,5 @@
 package it.dlvsystem.domain;
 
-import org.hibernate.annotations.Cache;
-import org.hibernate.annotations.CacheConcurrencyStrategy;
 
 import javax.persistence.*;
 import javax.validation.constraints.*;
@@ -15,7 +13,6 @@ import java.util.Set;
  */
 @Entity
 @Table(name = "istruzione")
-@Cache(usage = CacheConcurrencyStrategy.READ_WRITE)
 public class Istruzione implements Serializable {
 
     private static final long serialVersionUID = 1L;
@@ -50,11 +47,9 @@ public class Istruzione implements Serializable {
     private String tipoIstituto;
 
     @OneToMany(mappedBy = "istruzione")
-    @Cache(usage = CacheConcurrencyStrategy.READ_WRITE)
     private Set<Offerta> offertas = new HashSet<>();
 
     @OneToMany(mappedBy = "istruzione")
-    @Cache(usage = CacheConcurrencyStrategy.READ_WRITE)
     private Set<CvIstruzione> cvIstruziones = new HashSet<>();
 
     // jhipster-needle-entity-add-field - JHipster will add fields here

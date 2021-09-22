@@ -33,7 +33,7 @@ spring:
       enabled: false
   datasource:
     type: com.zaxxer.hikari.HikariDataSource
-    url: jdbc:mysql://localhost:3306/rdc?useUnicode=true&characterEncoding=utf8&useSSL=false&useLegacyDatetimeCode=false&serverTimezone=UTC&createDatabaseIfNotExist=true
+    url: jdbc:mariadb://localhost:3306/rdc_jhipster?useLegacyDatetimeCode=false&serverTimezone=UTC
     username: root
     password:
     hikari:
@@ -59,7 +59,7 @@ spring:
 
 # ===================================================================
 # To enable TLS in production, generate a certificate using:
-# keytool -genkey -alias rdc -storetype PKCS12 -keyalg RSA -keysize 2048 -keystore keystore.p12 -validity 3650
+# keytool -genkey -alias rdc_jhipster -storetype PKCS12 -keyalg RSA -keysize 2048 -keystore keystore.p12 -validity 3650
 #
 # You can also use Let's Encrypt:
 # https://maximilian-boehm.com/hp2121/Create-a-Java-Keystore-JKS-from-Let-s-Encrypt-Certificates.htm
@@ -93,10 +93,6 @@ jhipster:
   http:
     cache: # Used by the CachingHttpHeadersFilter
       timeToLiveInDays: 1461
-  cache: # Cache configuration
-    ehcache: # Ehcache configuration
-      time-to-live-seconds: 3600 # By default objects stay 1 hour in the cache
-      max-entries: 1000 # Number of objects in each cache entry
   security:
     authentication:
       jwt:
@@ -105,7 +101,7 @@ jhipster:
         # - In the JHipster Registry (which includes a Spring Cloud Config server)
         # - In a separate `application-prod.yml` file, in the same folder as your executable JAR file
         # - In the `JHIPSTER_SECURITY_AUTHENTICATION_JWT_BASE64_SECRET` environment variable
-        base64-secret: Yzk3NGVjNDg3ZTEyZmUxNzM5NmI4OTk4MjVmYWQxZDk0MTcyZTkyNTg0ZmRlMTRmMjk5YjlkNmJmMGRiMjhmNzUyNWRkMzUzY2QxZGY1MjU4NmI1NmU4NDQ5NmJlYThhODk3ZGFhOWRjYzdjOGRhODYwY2FiZDgwODA5Y2M5Y2E=
+        base64-secret: MWRkMTY1OGUwZmNlMDdmMDM0MTEyZWU4NjZmOTdhNjllNWQwMDFlMGY4MzM4NTc1Zjg2YWJiZGMwZTEyYjhjOGI1ZWMwOTYwYzFlZmEwMzdlM2UyZTVkYzBiOWY3ZTQ1YzA0YWMwMzQ4YTJiMDViOWZjOTc4NzkzNWZmNTc3YTA=
         # Token is valid 24 hours
         token-validity-in-seconds: 86400
         token-validity-in-seconds-for-remember-me: 2592000

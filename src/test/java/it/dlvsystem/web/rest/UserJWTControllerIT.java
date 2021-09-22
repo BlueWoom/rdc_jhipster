@@ -1,6 +1,6 @@
 package it.dlvsystem.web.rest;
 
-import it.dlvsystem.RdcApp;
+import it.dlvsystem.RdcJhipsterApp;
 import it.dlvsystem.domain.User;
 import it.dlvsystem.repository.UserRepository;
 import it.dlvsystem.web.rest.vm.LoginVM;
@@ -27,7 +27,7 @@ import static org.hamcrest.Matchers.not;
  * Integration tests for the {@link UserJWTController} REST controller.
  */
 @AutoConfigureMockMvc
-@SpringBootTest(classes = RdcApp.class)
+@SpringBootTest(classes = RdcJhipsterApp.class)
 public class UserJWTControllerIT {
 
     @Autowired

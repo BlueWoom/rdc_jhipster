@@ -1,7 +1,7 @@
 {
-  "name": "rdc",
+  "name": "rdc-jhipster",
   "version": "0.0.1-SNAPSHOT",
-  "description": "Description for rdc",
+  "description": "Description for rdc_jhipster",
   "private": true,
   "license": "UNLICENSED",
   "cacheDirectories": [

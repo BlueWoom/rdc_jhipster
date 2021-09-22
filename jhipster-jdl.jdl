@@ -1,16 +1,3 @@
-
-application {
-  config {
-    baseName rdc,
-    applicationType monolith,
-    packageName it.dlvsystem,
-    authenticationType jwt,
-    prodDatabaseType mysql,
-    clientFramework angular
-  }
-  entities *
-}
-
 entity Azienda {
 	cf String,
     ragioneSociale String,

@@ -40,7 +40,7 @@ export const occupazioneRoute: Routes = [
     component: OccupazioneComponent,
     data: {
       authorities: [Authority.USER],
-      pageTitle: 'rdcApp.occupazione.home.title',
+      pageTitle: 'rdcJhipsterApp.occupazione.home.title',
     },
     canActivate: [UserRouteAccessService],
   },
@@ -52,7 +52,7 @@ export const occupazioneRoute: Routes = [
     },
     data: {
       authorities: [Authority.USER],
-      pageTitle: 'rdcApp.occupazione.home.title',
+      pageTitle: 'rdcJhipsterApp.occupazione.home.title',
     },
     canActivate: [UserRouteAccessService],
   },
@@ -64,7 +64,7 @@ export const occupazioneRoute: Routes = [
     },
     data: {
       authorities: [Authority.USER],
-      pageTitle: 'rdcApp.occupazione.home.title',
+      pageTitle: 'rdcJhipsterApp.occupazione.home.title',
     },
     canActivate: [UserRouteAccessService],
   },
@@ -76,7 +76,7 @@ export const occupazioneRoute: Routes = [
     },
     data: {
       authorities: [Authority.USER],
-      pageTitle: 'rdcApp.occupazione.home.title',
+      pageTitle: 'rdcJhipsterApp.occupazione.home.title',
     },
     canActivate: [UserRouteAccessService],
   },

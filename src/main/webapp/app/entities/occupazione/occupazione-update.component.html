@@ -1,7 +1,7 @@
 <div class="row justify-content-center">
     <div class="col-8">
         <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
-            <h2 id="jhi-occupazione-heading" jhiTranslate="rdcApp.occupazione.home.createOrEditLabel">Create or edit a Occupazione</h2>
+            <h2 id="jhi-occupazione-heading" jhiTranslate="rdcJhipsterApp.occupazione.home.createOrEditLabel">Create or edit a Occupazione</h2>
 
             <div>
                 <jhi-alert-error></jhi-alert-error>
@@ -12,33 +12,33 @@
                 </div>
 
                 <div class="form-group">
-                    <label class="form-control-label" jhiTranslate="rdcApp.occupazione.codiceEsco" for="field_codiceEsco">Codice Esco</label>
+                    <label class="form-control-label" jhiTranslate="rdcJhipsterApp.occupazione.codiceEsco" for="field_codiceEsco">Codice Esco</label>
                     <input type="text" class="form-control" name="codiceEsco" id="field_codiceEsco"
                            formControlName="codiceEsco"/>
                 </div>
 
                 <div class="form-group">
-                    <label class="form-control-label" jhiTranslate="rdcApp.occupazione.nome" for="field_nome">Nome</label>
+                    <label class="form-control-label" jhiTranslate="rdcJhipsterApp.occupazione.nome" for="field_nome">Nome</label>
                     <input type="text" class="form-control" name="nome" id="field_nome"
                            formControlName="nome"/>
                 </div>
 
                 <div class="form-group">
-                    <label jhiTranslate="rdcApp.occupazione.esperienza" for="field_esperienzas">Esperienza</label>
+                    <label jhiTranslate="rdcJhipsterApp.occupazione.esperienza" for="field_esperienzas">Esperienza</label>
                     <select class="form-control" id="field_esperienzas" multiple name="esperienzas" formControlName="esperienzas">
                         <option [ngValue]="getSelected(editForm.get('esperienzas')!.value, esperienzaOption)" *ngFor="let esperienzaOption of esperienzas; trackBy: trackById">{{ esperienzaOption.id }}</option>
                     </select>
                 </div>
 
                 <div class="form-group">
-                    <label jhiTranslate="rdcApp.occupazione.offerta" for="field_offertas">Offerta</label>
+                    <label jhiTranslate="rdcJhipsterApp.occupazione.offerta" for="field_offertas">Offerta</label>
                     <select class="form-control" id="field_offertas" multiple name="offertas" formControlName="offertas">
                         <option [ngValue]="getSelected(editForm.get('offertas')!.value, offertaOption)" *ngFor="let offertaOption of offertas; trackBy: trackById">{{ offertaOption.id }}</option>
                     </select>
                 </div>
 
                 <div class="form-group">
-                    <label jhiTranslate="rdcApp.occupazione.skill" for="field_skills">Skill</label>
+                    <label jhiTranslate="rdcJhipsterApp.occupazione.skill" for="field_skills">Skill</label>
                     <select class="form-control" id="field_skills" multiple name="skills" formControlName="skills">
                         <option [ngValue]="getSelected(editForm.get('skills')!.value, skillOption)" *ngFor="let skillOption of skills; trackBy: trackById">{{ skillOption.id }}</option>
                     </select>

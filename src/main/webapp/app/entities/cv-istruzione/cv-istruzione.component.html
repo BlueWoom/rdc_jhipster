@@ -1,10 +1,10 @@
 <div>
     <h2 id="page-heading">
-        <span jhiTranslate="rdcApp.cvIstruzione.home.title">Cv Istruziones</span>
+        <span jhiTranslate="rdcJhipsterApp.cvIstruzione.home.title">Cv Istruziones</span>
 
         <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-cv-istruzione" [routerLink]="['/cv-istruzione/new']">
             <fa-icon icon="plus"></fa-icon>
-            <span  jhiTranslate="rdcApp.cvIstruzione.home.createLabel">
+            <span  jhiTranslate="rdcJhipsterApp.cvIstruzione.home.createLabel">
             Create a new Cv Istruzione
             </span>
         </button>
@@ -15,7 +15,7 @@
     <jhi-alert></jhi-alert>
 
     <div class="alert alert-warning" id="no-result" *ngIf="cvIstruziones?.length === 0">
-        <span jhiTranslate="rdcApp.cvIstruzione.home.notFound">No cvIstruziones found</span>
+        <span jhiTranslate="rdcJhipsterApp.cvIstruzione.home.notFound">No cvIstruziones found</span>
     </div>
 
     <div class="table-responsive" id="entities" *ngIf="cvIstruziones && cvIstruziones.length > 0">
@@ -23,12 +23,12 @@
             <thead>
                 <tr>
                     <th scope="col" ><span jhiTranslate="global.field.id">ID</span></th>
-                    <th scope="col" ><span jhiTranslate="rdcApp.cvIstruzione.codiceIstruzione">Codice Istruzione</span></th>
-                    <th scope="col" ><span jhiTranslate="rdcApp.cvIstruzione.cfUtente">Cf Utente</span></th>
-                    <th scope="col" ><span jhiTranslate="rdcApp.cvIstruzione.codiceCv">Codice Cv</span></th>
-                    <th scope="col" ><span jhiTranslate="rdcApp.cvIstruzione.punteggio">Punteggio</span></th>
-                    <th scope="col" ><span jhiTranslate="rdcApp.cvIstruzione.istruzione">Istruzione</span></th>
-                    <th scope="col" ><span jhiTranslate="rdcApp.cvIstruzione.cv">Cv</span></th>
+                    <th scope="col" ><span jhiTranslate="rdcJhipsterApp.cvIstruzione.codiceIstruzione">Codice Istruzione</span></th>
+                    <th scope="col" ><span jhiTranslate="rdcJhipsterApp.cvIstruzione.cfUtente">Cf Utente</span></th>
+                    <th scope="col" ><span jhiTranslate="rdcJhipsterApp.cvIstruzione.codiceCv">Codice Cv</span></th>
+                    <th scope="col" ><span jhiTranslate="rdcJhipsterApp.cvIstruzione.punteggio">Punteggio</span></th>
+                    <th scope="col" ><span jhiTranslate="rdcJhipsterApp.cvIstruzione.istruzione">Istruzione</span></th>
+                    <th scope="col" ><span jhiTranslate="rdcJhipsterApp.cvIstruzione.cv">Cv</span></th>
                     <th scope="col"></th>
                 </tr>
             </thead>

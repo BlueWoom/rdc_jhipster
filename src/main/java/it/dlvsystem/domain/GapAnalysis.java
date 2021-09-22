@@ -1,7 +1,5 @@
 package it.dlvsystem.domain;
 
-import org.hibernate.annotations.Cache;
-import org.hibernate.annotations.CacheConcurrencyStrategy;
 
 import javax.persistence.*;
 
@@ -12,7 +10,6 @@ import java.io.Serializable;
  */
 @Entity
 @Table(name = "gap_analysis")
-@Cache(usage = CacheConcurrencyStrategy.READ_WRITE)
 public class GapAnalysis implements Serializable {
 
     private static final long serialVersionUID = 1L;

@@ -42,7 +42,7 @@
       "ownerSide": true
     }
   ],
-  "changelogDate": "20210922105020",
+  "changelogDate": "20210922113102",
   "entityTableName": "occupazione",
   "dto": "no",
   "pagination": "no",
@@ -52,5 +52,5 @@
   "readOnly": false,
   "embedded": false,
   "clientRootFolder": "",
-  "applications": ["rdc"]
+  "applications": "*"
 }

@@ -2,7 +2,7 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { of } from 'rxjs';
 import { HttpHeaders, HttpResponse } from '@angular/common/http';
 
-import { RdcTestModule } from '../../../test.module';
+import { RdcJhipsterTestModule } from '../../../test.module';
 import { GapAnalysisComponent } from 'app/entities/gap-analysis/gap-analysis.component';
 import { GapAnalysisService } from 'app/entities/gap-analysis/gap-analysis.service';
 import { GapAnalysis } from 'app/shared/model/gap-analysis.model';
@@ -15,7 +15,7 @@ describe('Component Tests', () => {
 
     beforeEach(() => {
       TestBed.configureTestingModule({
-        imports: [RdcTestModule],
+        imports: [RdcJhipsterTestModule],
         declarations: [GapAnalysisComponent],
       })
         .overrideTemplate(GapAnalysisComponent, '')

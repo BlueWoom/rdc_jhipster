@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 
-import { RdcSharedModule } from 'app/shared/shared.module';
+import { RdcJhipsterSharedModule } from 'app/shared/shared.module';
 import { OffertaSkillComponent } from './offerta-skill.component';
 import { OffertaSkillDetailComponent } from './offerta-skill-detail.component';
 import { OffertaSkillUpdateComponent } from './offerta-skill-update.component';
@@ -9,8 +9,8 @@ import { OffertaSkillDeleteDialogComponent } from './offerta-skill-delete-dialog
 import { offertaSkillRoute } from './offerta-skill.route';
 
 @NgModule({
-  imports: [RdcSharedModule, RouterModule.forChild(offertaSkillRoute)],
+  imports: [RdcJhipsterSharedModule, RouterModule.forChild(offertaSkillRoute)],
   declarations: [OffertaSkillComponent, OffertaSkillDetailComponent, OffertaSkillUpdateComponent, OffertaSkillDeleteDialogComponent],
   entryComponents: [OffertaSkillDeleteDialogComponent],
 })
-export class RdcOffertaSkillModule {}
+export class RdcJhipsterOffertaSkillModule {}

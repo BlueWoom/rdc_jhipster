@@ -1,0 +1,29 @@
+{
+  "rdcJhipsterApp": {
+    "esperienza": {
+      "home": {
+        "title": "Esperienzas",
+        "createLabel": "Genera un nuovo Esperienza",
+        "createOrEditLabel": "Genera o modifica un Esperienza",
+        "notFound": "No Esperienzas found"
+      },
+      "created": "&Egrave; stato generato un nuovo Esperienza con identificatore {{ param }}",
+      "updated": "&Egrave; stato aggiornato Esperienza identificato da {{ param }}",
+      "deleted": "&Egrave; stato eliminato Esperienza con identificatore {{ param }}",
+      "delete": {
+        "question": "Sei sicuro di volere eliminare Esperienza {{ id }}?"
+      },
+      "detail": {
+        "title": "Esperienza"
+      },
+      "codice": "Codice",
+      "attivita": "Attivita",
+      "dal": "Dal",
+      "al": "Al",
+      "datoreLavoro": "Datore Lavoro",
+      "sedeLavoro": "Sede Lavoro",
+      "cv": "Cv",
+      "occupazione": "Occupazione"
+    }
+  }
+}

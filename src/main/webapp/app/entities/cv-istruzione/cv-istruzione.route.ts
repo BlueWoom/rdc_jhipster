@@ -40,7 +40,7 @@ export const cvIstruzioneRoute: Routes = [
     component: CvIstruzioneComponent,
     data: {
       authorities: [Authority.USER],
-      pageTitle: 'rdcApp.cvIstruzione.home.title',
+      pageTitle: 'rdcJhipsterApp.cvIstruzione.home.title',
     },
     canActivate: [UserRouteAccessService],
   },
@@ -52,7 +52,7 @@ export const cvIstruzioneRoute: Routes = [
     },
     data: {
       authorities: [Authority.USER],
-      pageTitle: 'rdcApp.cvIstruzione.home.title',
+      pageTitle: 'rdcJhipsterApp.cvIstruzione.home.title',
     },
     canActivate: [UserRouteAccessService],
   },
@@ -64,7 +64,7 @@ export const cvIstruzioneRoute: Routes = [
     },
     data: {
       authorities: [Authority.USER],
-      pageTitle: 'rdcApp.cvIstruzione.home.title',
+      pageTitle: 'rdcJhipsterApp.cvIstruzione.home.title',
     },
     canActivate: [UserRouteAccessService],
   },
@@ -76,7 +76,7 @@ export const cvIstruzioneRoute: Routes = [
     },
     data: {
       authorities: [Authority.USER],
-      pageTitle: 'rdcApp.cvIstruzione.home.title',
+      pageTitle: 'rdcJhipsterApp.cvIstruzione.home.title',
     },
     canActivate: [UserRouteAccessService],
   },

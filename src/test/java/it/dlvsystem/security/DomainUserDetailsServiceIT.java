@@ -1,6 +1,6 @@
 package it.dlvsystem.security;
 
-import it.dlvsystem.RdcApp;
+import it.dlvsystem.RdcJhipsterApp;
 import it.dlvsystem.domain.User;
 import it.dlvsystem.repository.UserRepository;
 
@@ -21,7 +21,7 @@ import static org.assertj.core.api.Assertions.assertThatExceptionOfType;
 /**
  * Integrations tests for {@link DomainUserDetailsService}.
  */
-@SpringBootTest(classes = RdcApp.class)
+@SpringBootTest(classes = RdcJhipsterApp.class)
 @Transactional
 public class DomainUserDetailsServiceIT {
 

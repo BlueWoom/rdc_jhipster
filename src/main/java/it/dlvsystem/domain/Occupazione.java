@@ -1,7 +1,5 @@
 package it.dlvsystem.domain;
 
-import org.hibernate.annotations.Cache;
-import org.hibernate.annotations.CacheConcurrencyStrategy;
 
 import javax.persistence.*;
 
@@ -14,7 +12,6 @@ import java.util.Set;
  */
 @Entity
 @Table(name = "occupazione")
-@Cache(usage = CacheConcurrencyStrategy.READ_WRITE)
 public class Occupazione implements Serializable {
 
     private static final long serialVersionUID = 1L;
@@ -30,25 +27,21 @@ public class Occupazione implements Serializable {
     private String nome;
 
     @OneToMany(mappedBy = "occupazione")
-    @Cache(usage = CacheConcurrencyStrategy.READ_WRITE)
     private Set<OffertaOccupazioneRichiesta> offertaOccupazioneRichiestas = new HashSet<>();
 
     @ManyToMany
-    @Cache(usage = CacheConcurrencyStrategy.READ_WRITE)
     @JoinTable(name = "occupazione_esperienza",
                joinColumns = @JoinColumn(name = "occupazione_id", referencedColumnName = "id"),
                inverseJoinColumns = @JoinColumn(name = "esperienza_id", referencedColumnName = "id"))
     private Set<Esperienza> esperienzas = new HashSet<>();
 
     @ManyToMany
-    @Cache(usage = CacheConcurrencyStrategy.READ_WRITE)
     @JoinTable(name = "occupazione_offerta",
                joinColumns = @JoinColumn(name = "occupazione_id", referencedColumnName = "id"),
                inverseJoinColumns = @JoinColumn(name = "offerta_id", referencedColumnName = "id"))
     private Set<Offerta> offertas = new HashSet<>();
 
     @ManyToMany
-    @Cache(usage = CacheConcurrencyStrategy.READ_WRITE)
     @JoinTable(name = "occupazione_skill",
                joinColumns = @JoinColumn(name = "occupazione_id", referencedColumnName = "id"),
                inverseJoinColumns = @JoinColumn(name = "skill_id", referencedColumnName = "id"))

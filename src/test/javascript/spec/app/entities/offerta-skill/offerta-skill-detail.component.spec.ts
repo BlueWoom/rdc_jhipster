@@ -2,7 +2,7 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { ActivatedRoute } from '@angular/router';
 import { of } from 'rxjs';
 
-import { RdcTestModule } from '../../../test.module';
+import { RdcJhipsterTestModule } from '../../../test.module';
 import { OffertaSkillDetailComponent } from 'app/entities/offerta-skill/offerta-skill-detail.component';
 import { OffertaSkill } from 'app/shared/model/offerta-skill.model';
 
@@ -14,7 +14,7 @@ describe('Component Tests', () => {
 
     beforeEach(() => {
       TestBed.configureTestingModule({
-        imports: [RdcTestModule],
+        imports: [RdcJhipsterTestModule],
         declarations: [OffertaSkillDetailComponent],
         providers: [{ provide: ActivatedRoute, useValue: route }],
       })

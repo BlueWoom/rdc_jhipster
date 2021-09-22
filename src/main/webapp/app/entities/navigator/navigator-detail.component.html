@@ -1,62 +1,62 @@
 <div class="row justify-content-center">
     <div class="col-8">
         <div *ngIf="navigator">
-            <h2><span jhiTranslate="rdcApp.navigator.detail.title">Navigator</span> {{ navigator.id }}</h2>
+            <h2><span jhiTranslate="rdcJhipsterApp.navigator.detail.title">Navigator</span> {{ navigator.id }}</h2>
 
             <hr>
 
             <jhi-alert-error></jhi-alert-error>
 
             <dl class="row-md jh-entity-details">
-                <dt><span jhiTranslate="rdcApp.navigator.cf">Cf</span></dt>
+                <dt><span jhiTranslate="rdcJhipsterApp.navigator.cf">Cf</span></dt>
                 <dd>
                     <span>{{ navigator.cf }}</span>
                 </dd>
-                <dt><span jhiTranslate="rdcApp.navigator.nome">Nome</span></dt>
+                <dt><span jhiTranslate="rdcJhipsterApp.navigator.nome">Nome</span></dt>
                 <dd>
                     <span>{{ navigator.nome }}</span>
                 </dd>
-                <dt><span jhiTranslate="rdcApp.navigator.cognome">Cognome</span></dt>
+                <dt><span jhiTranslate="rdcJhipsterApp.navigator.cognome">Cognome</span></dt>
                 <dd>
                     <span>{{ navigator.cognome }}</span>
                 </dd>
-                <dt><span jhiTranslate="rdcApp.navigator.dataNascita">Data Nascita</span></dt>
+                <dt><span jhiTranslate="rdcJhipsterApp.navigator.dataNascita">Data Nascita</span></dt>
                 <dd>
                     <span>{{ navigator.dataNascita }}</span>
                 </dd>
-                <dt><span jhiTranslate="rdcApp.navigator.sesso">Sesso</span></dt>
+                <dt><span jhiTranslate="rdcJhipsterApp.navigator.sesso">Sesso</span></dt>
                 <dd>
                     <span>{{ navigator.sesso }}</span>
                 </dd>
-                <dt><span jhiTranslate="rdcApp.navigator.telefono">Telefono</span></dt>
+                <dt><span jhiTranslate="rdcJhipsterApp.navigator.telefono">Telefono</span></dt>
                 <dd>
                     <span>{{ navigator.telefono }}</span>
                 </dd>
-                <dt><span jhiTranslate="rdcApp.navigator.email">Email</span></dt>
+                <dt><span jhiTranslate="rdcJhipsterApp.navigator.email">Email</span></dt>
                 <dd>
                     <span>{{ navigator.email }}</span>
                 </dd>
-                <dt><span jhiTranslate="rdcApp.navigator.citta">Citta</span></dt>
+                <dt><span jhiTranslate="rdcJhipsterApp.navigator.citta">Citta</span></dt>
                 <dd>
                     <span>{{ navigator.citta }}</span>
                 </dd>
-                <dt><span jhiTranslate="rdcApp.navigator.indirizzo">Indirizzo</span></dt>
+                <dt><span jhiTranslate="rdcJhipsterApp.navigator.indirizzo">Indirizzo</span></dt>
                 <dd>
                     <span>{{ navigator.indirizzo }}</span>
                 </dd>
-                <dt><span jhiTranslate="rdcApp.navigator.cap">Cap</span></dt>
+                <dt><span jhiTranslate="rdcJhipsterApp.navigator.cap">Cap</span></dt>
                 <dd>
                     <span>{{ navigator.cap }}</span>
                 </dd>
-                <dt><span jhiTranslate="rdcApp.navigator.provincia">Provincia</span></dt>
+                <dt><span jhiTranslate="rdcJhipsterApp.navigator.provincia">Provincia</span></dt>
                 <dd>
                     <span>{{ navigator.provincia }}</span>
                 </dd>
-                <dt><span jhiTranslate="rdcApp.navigator.regione">Regione</span></dt>
+                <dt><span jhiTranslate="rdcJhipsterApp.navigator.regione">Regione</span></dt>
                 <dd>
                     <span>{{ navigator.regione }}</span>
                 </dd>
-                <dt><span jhiTranslate="rdcApp.navigator.login">Login</span></dt>
+                <dt><span jhiTranslate="rdcJhipsterApp.navigator.login">Login</span></dt>
                 <dd>
                     <div *ngIf="navigator.login">
                         <a [routerLink]="['/login', navigator.login?.id, 'view']">{{ navigator.login?.id }}</a>

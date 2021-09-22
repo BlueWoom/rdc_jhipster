@@ -2,8 +2,6 @@ package it.dlvsystem.domain;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-import org.hibernate.annotations.Cache;
-import org.hibernate.annotations.CacheConcurrencyStrategy;
 
 import javax.persistence.*;
 import javax.validation.constraints.*;
@@ -18,7 +16,6 @@ import java.util.Set;
  */
 @Entity
 @Table(name = "offerta")
-@Cache(usage = CacheConcurrencyStrategy.READ_WRITE)
 public class Offerta implements Serializable {
 
     private static final long serialVersionUID = 1L;
@@ -48,11 +45,9 @@ public class Offerta implements Serializable {
     private String provinciaSede;
 
     @OneToMany(mappedBy = "offerta")
-    @Cache(usage = CacheConcurrencyStrategy.READ_WRITE)
     private Set<OffertaSkill> offertaSkills = new HashSet<>();
 
     @OneToMany(mappedBy = "offerta")
-    @Cache(usage = CacheConcurrencyStrategy.READ_WRITE)
     private Set<OffertaOccupazioneRichiesta> offertaOccupazioneRichiestas = new HashSet<>();
 
     @ManyToOne
@@ -64,7 +59,6 @@ public class Offerta implements Serializable {
     private Azienda azienda;
 
     @ManyToMany(mappedBy = "offertas")
-    @Cache(usage = CacheConcurrencyStrategy.READ_WRITE)
     @JsonIgnore
     private Set<Occupazione> occupaziones = new HashSet<>();
 

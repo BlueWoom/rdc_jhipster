@@ -1,6 +1,6 @@
 package it.dlvsystem.config.timezone;
 
-import it.dlvsystem.RdcApp;
+import it.dlvsystem.RdcJhipsterApp;
 import it.dlvsystem.repository.timezone.DateTimeWrapper;
 import it.dlvsystem.repository.timezone.DateTimeWrapperRepository;
 import org.junit.jupiter.api.BeforeEach;
@@ -21,7 +21,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 /**
  * Integration tests for the ZoneId Hibernate configuration.
  */
-@SpringBootTest(classes = RdcApp.class)
+@SpringBootTest(classes = RdcJhipsterApp.class)
 public class HibernateTimeZoneIT {
 
     @Autowired

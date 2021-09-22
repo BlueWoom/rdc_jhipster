@@ -1,10 +1,10 @@
 <div>
     <h2 id="page-heading">
-        <span jhiTranslate="rdcApp.cv.home.title">Cvs</span>
+        <span jhiTranslate="rdcJhipsterApp.cv.home.title">Cvs</span>
 
         <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-cv" [routerLink]="['/cv/new']">
             <fa-icon icon="plus"></fa-icon>
-            <span  jhiTranslate="rdcApp.cv.home.createLabel">
+            <span  jhiTranslate="rdcJhipsterApp.cv.home.createLabel">
             Create a new Cv
             </span>
         </button>
@@ -15,7 +15,7 @@
     <jhi-alert></jhi-alert>
 
     <div class="alert alert-warning" id="no-result" *ngIf="cvs?.length === 0">
-        <span jhiTranslate="rdcApp.cv.home.notFound">No cvs found</span>
+        <span jhiTranslate="rdcJhipsterApp.cv.home.notFound">No cvs found</span>
     </div>
 
     <div class="table-responsive" id="entities" *ngIf="cvs && cvs.length > 0">
@@ -23,10 +23,10 @@
             <thead>
                 <tr>
                     <th scope="col" ><span jhiTranslate="global.field.id">ID</span></th>
-                    <th scope="col" ><span jhiTranslate="rdcApp.cv.cfUtente">Cf Utente</span></th>
-                    <th scope="col" ><span jhiTranslate="rdcApp.cv.codice">Codice</span></th>
-                    <th scope="col" ><span jhiTranslate="rdcApp.cv.inserimento">Inserimento</span></th>
-                    <th scope="col" ><span jhiTranslate="rdcApp.cv.candidato">Candidato</span></th>
+                    <th scope="col" ><span jhiTranslate="rdcJhipsterApp.cv.cfUtente">Cf Utente</span></th>
+                    <th scope="col" ><span jhiTranslate="rdcJhipsterApp.cv.codice">Codice</span></th>
+                    <th scope="col" ><span jhiTranslate="rdcJhipsterApp.cv.inserimento">Inserimento</span></th>
+                    <th scope="col" ><span jhiTranslate="rdcJhipsterApp.cv.candidato">Candidato</span></th>
                     <th scope="col"></th>
                 </tr>
             </thead>

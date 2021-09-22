@@ -1,0 +1,26 @@
+{
+  "rdcJhipsterApp": {
+    "offertaSkill": {
+      "home": {
+        "title": "OffertaSkills",
+        "createLabel": "Genera un nuovo Offerta Skill",
+        "createOrEditLabel": "Genera o modifica un Offerta Skill",
+        "notFound": "No Offerta Skills found"
+      },
+      "created": "&Egrave; stato generato un nuovo Offerta Skill con identificatore {{ param }}",
+      "updated": "&Egrave; stato aggiornato Offerta Skill identificato da {{ param }}",
+      "deleted": "&Egrave; stato eliminato Offerta Skill con identificatore {{ param }}",
+      "delete": {
+        "question": "Sei sicuro di volere eliminare Offerta Skill {{ id }}?"
+      },
+      "detail": {
+        "title": "Offerta Skill"
+      },
+      "codiceOfferta": "Codice Offerta",
+      "codiceEscoSkill": "Codice Esco Skill",
+      "optional": "Optional",
+      "skill": "Skill",
+      "offerta": "Offerta"
+    }
+  }
+}

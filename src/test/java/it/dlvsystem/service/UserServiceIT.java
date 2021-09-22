@@ -1,6 +1,6 @@
 package it.dlvsystem.service;
 
-import it.dlvsystem.RdcApp;
+import it.dlvsystem.RdcJhipsterApp;
 import it.dlvsystem.config.Constants;
 import it.dlvsystem.domain.User;
 import it.dlvsystem.repository.UserRepository;
@@ -32,7 +32,7 @@ import static org.mockito.Mockito.when;
 /**
  * Integration tests for {@link UserService}.
  */
-@SpringBootTest(classes = RdcApp.class)
+@SpringBootTest(classes = RdcJhipsterApp.class)
 @Transactional
 public class UserServiceIT {
 

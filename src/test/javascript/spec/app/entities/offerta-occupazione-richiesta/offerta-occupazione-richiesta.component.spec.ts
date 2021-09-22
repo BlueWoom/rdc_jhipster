@@ -2,7 +2,7 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { of } from 'rxjs';
 import { HttpHeaders, HttpResponse } from '@angular/common/http';
 
-import { RdcTestModule } from '../../../test.module';
+import { RdcJhipsterTestModule } from '../../../test.module';
 import { OffertaOccupazioneRichiestaComponent } from 'app/entities/offerta-occupazione-richiesta/offerta-occupazione-richiesta.component';
 import { OffertaOccupazioneRichiestaService } from 'app/entities/offerta-occupazione-richiesta/offerta-occupazione-richiesta.service';
 import { OffertaOccupazioneRichiesta } from 'app/shared/model/offerta-occupazione-richiesta.model';
@@ -15,7 +15,7 @@ describe('Component Tests', () => {
 
     beforeEach(() => {
       TestBed.configureTestingModule({
-        imports: [RdcTestModule],
+        imports: [RdcJhipsterTestModule],
         declarations: [OffertaOccupazioneRichiestaComponent],
       })
         .overrideTemplate(OffertaOccupazioneRichiestaComponent, '')

@@ -1,38 +1,38 @@
 <div class="row justify-content-center">
     <div class="col-8">
         <div *ngIf="esperienza">
-            <h2><span jhiTranslate="rdcApp.esperienza.detail.title">Esperienza</span> {{ esperienza.id }}</h2>
+            <h2><span jhiTranslate="rdcJhipsterApp.esperienza.detail.title">Esperienza</span> {{ esperienza.id }}</h2>
 
             <hr>
 
             <jhi-alert-error></jhi-alert-error>
 
             <dl class="row-md jh-entity-details">
-                <dt><span jhiTranslate="rdcApp.esperienza.codice">Codice</span></dt>
+                <dt><span jhiTranslate="rdcJhipsterApp.esperienza.codice">Codice</span></dt>
                 <dd>
                     <span>{{ esperienza.codice }}</span>
                 </dd>
-                <dt><span jhiTranslate="rdcApp.esperienza.attivita">Attivita</span></dt>
+                <dt><span jhiTranslate="rdcJhipsterApp.esperienza.attivita">Attivita</span></dt>
                 <dd>
                     <span>{{ esperienza.attivita }}</span>
                 </dd>
-                <dt><span jhiTranslate="rdcApp.esperienza.dal">Dal</span></dt>
+                <dt><span jhiTranslate="rdcJhipsterApp.esperienza.dal">Dal</span></dt>
                 <dd>
                     <span>{{ esperienza.dal }}</span>
                 </dd>
-                <dt><span jhiTranslate="rdcApp.esperienza.al">Al</span></dt>
+                <dt><span jhiTranslate="rdcJhipsterApp.esperienza.al">Al</span></dt>
                 <dd>
                     <span>{{ esperienza.al }}</span>
                 </dd>
-                <dt><span jhiTranslate="rdcApp.esperienza.datoreLavoro">Datore Lavoro</span></dt>
+                <dt><span jhiTranslate="rdcJhipsterApp.esperienza.datoreLavoro">Datore Lavoro</span></dt>
                 <dd>
                     <span>{{ esperienza.datoreLavoro }}</span>
                 </dd>
-                <dt><span jhiTranslate="rdcApp.esperienza.sedeLavoro">Sede Lavoro</span></dt>
+                <dt><span jhiTranslate="rdcJhipsterApp.esperienza.sedeLavoro">Sede Lavoro</span></dt>
                 <dd>
                     <span>{{ esperienza.sedeLavoro }}</span>
                 </dd>
-                <dt><span jhiTranslate="rdcApp.esperienza.cv">Cv</span></dt>
+                <dt><span jhiTranslate="rdcJhipsterApp.esperienza.cv">Cv</span></dt>
                 <dd>
                     <div *ngIf="esperienza.cv">
                         <a [routerLink]="['/cv', esperienza.cv?.id, 'view']">{{ esperienza.cv?.id }}</a>

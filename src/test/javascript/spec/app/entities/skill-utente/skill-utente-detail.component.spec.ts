@@ -2,7 +2,7 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { ActivatedRoute } from '@angular/router';
 import { of } from 'rxjs';
 
-import { RdcTestModule } from '../../../test.module';
+import { RdcJhipsterTestModule } from '../../../test.module';
 import { SkillUtenteDetailComponent } from 'app/entities/skill-utente/skill-utente-detail.component';
 import { SkillUtente } from 'app/shared/model/skill-utente.model';
 
@@ -14,7 +14,7 @@ describe('Component Tests', () => {
 
     beforeEach(() => {
       TestBed.configureTestingModule({
-        imports: [RdcTestModule],
+        imports: [RdcJhipsterTestModule],
         declarations: [SkillUtenteDetailComponent],
         providers: [{ provide: ActivatedRoute, useValue: route }],
       })

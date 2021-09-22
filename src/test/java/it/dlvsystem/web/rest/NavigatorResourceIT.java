@@ -1,6 +1,6 @@
 package it.dlvsystem.web.rest;
 
-import it.dlvsystem.RdcApp;
+import it.dlvsystem.RdcJhipsterApp;
 import it.dlvsystem.domain.Navigator;
 import it.dlvsystem.repository.NavigatorRepository;
 
@@ -26,7 +26,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 /**
  * Integration tests for the {@link NavigatorResource} REST controller.
  */
-@SpringBootTest(classes = RdcApp.class)
+@SpringBootTest(classes = RdcJhipsterApp.class)
 @AutoConfigureMockMvc
 @WithMockUser
 public class NavigatorResourceIT {

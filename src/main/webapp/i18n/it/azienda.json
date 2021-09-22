@@ -1,0 +1,29 @@
+{
+  "rdcJhipsterApp": {
+    "azienda": {
+      "home": {
+        "title": "Aziendas",
+        "createLabel": "Genera un nuovo Azienda",
+        "createOrEditLabel": "Genera o modifica un Azienda",
+        "notFound": "No Aziendas found"
+      },
+      "created": "&Egrave; stato generato un nuovo Azienda con identificatore {{ param }}",
+      "updated": "&Egrave; stato aggiornato Azienda identificato da {{ param }}",
+      "deleted": "&Egrave; stato eliminato Azienda con identificatore {{ param }}",
+      "delete": {
+        "question": "Sei sicuro di volere eliminare Azienda {{ id }}?"
+      },
+      "detail": {
+        "title": "Azienda"
+      },
+      "cf": "Cf",
+      "ragioneSociale": "Ragione Sociale",
+      "indirizzoSede": "Indirizzo Sede",
+      "provinciaSede": "Provincia Sede",
+      "ragioneSede": "Ragione Sede",
+      "capSede": "Cap Sede",
+      "offerta": "Offerta",
+      "login": "Login"
+    }
+  }
+}

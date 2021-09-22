@@ -1,8 +1,6 @@
 package it.dlvsystem.domain;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-import org.hibernate.annotations.Cache;
-import org.hibernate.annotations.CacheConcurrencyStrategy;
 
 import javax.persistence.*;
 
@@ -13,7 +11,6 @@ import java.io.Serializable;
  */
 @Entity
 @Table(name = "skill_utente")
-@Cache(usage = CacheConcurrencyStrategy.READ_WRITE)
 public class SkillUtente implements Serializable {
 
     private static final long serialVersionUID = 1L;

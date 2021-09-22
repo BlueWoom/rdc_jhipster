@@ -24,7 +24,9 @@
     {
       "fieldName": "telefono",
       "fieldType": "String",
-      "fieldValidateRules": ["pattern"],
+      "fieldValidateRules": [
+        "pattern"
+      ],
       "fieldValidateRulesPattern": "[0-9]+"
     },
     {
@@ -42,7 +44,9 @@
     {
       "fieldName": "cap",
       "fieldType": "String",
-      "fieldValidateRules": ["pattern"],
+      "fieldValidateRules": [
+        "pattern"
+      ],
       "fieldValidateRulesPattern": "[0-9]+"
     },
     {
@@ -69,7 +73,7 @@
       "otherEntityField": "id"
     }
   ],
-  "changelogDate": "20210922104820",
+  "changelogDate": "20210922112902",
   "entityTableName": "navigator",
   "dto": "no",
   "pagination": "no",
@@ -79,5 +83,5 @@
   "readOnly": false,
   "embedded": false,
   "clientRootFolder": "",
-  "applications": ["rdc"]
+  "applications": "*"
 }

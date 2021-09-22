@@ -1,8 +1,6 @@
 package it.dlvsystem.domain;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-import org.hibernate.annotations.Cache;
-import org.hibernate.annotations.CacheConcurrencyStrategy;
 
 import javax.persistence.*;
 import javax.validation.constraints.*;
@@ -14,7 +12,6 @@ import java.io.Serializable;
  */
 @Entity
 @Table(name = "cv_istruzione")
-@Cache(usage = CacheConcurrencyStrategy.READ_WRITE)
 public class CvIstruzione implements Serializable {
 
     private static final long serialVersionUID = 1L;

@@ -40,7 +40,7 @@ export const aziendaRoute: Routes = [
     component: AziendaComponent,
     data: {
       authorities: [Authority.USER],
-      pageTitle: 'rdcApp.azienda.home.title',
+      pageTitle: 'rdcJhipsterApp.azienda.home.title',
     },
     canActivate: [UserRouteAccessService],
   },
@@ -52,7 +52,7 @@ export const aziendaRoute: Routes = [
     },
     data: {
       authorities: [Authority.USER],
-      pageTitle: 'rdcApp.azienda.home.title',
+      pageTitle: 'rdcJhipsterApp.azienda.home.title',
     },
     canActivate: [UserRouteAccessService],
   },
@@ -64,7 +64,7 @@ export const aziendaRoute: Routes = [
     },
     data: {
       authorities: [Authority.USER],
-      pageTitle: 'rdcApp.azienda.home.title',
+      pageTitle: 'rdcJhipsterApp.azienda.home.title',
     },
     canActivate: [UserRouteAccessService],
   },
@@ -76,7 +76,7 @@ export const aziendaRoute: Routes = [
     },
     data: {
       authorities: [Authority.USER],
-      pageTitle: 'rdcApp.azienda.home.title',
+      pageTitle: 'rdcJhipsterApp.azienda.home.title',
     },
     canActivate: [UserRouteAccessService],
   },

@@ -1,6 +1,6 @@
 package it.dlvsystem.web.rest;
 
-import it.dlvsystem.RdcApp;
+import it.dlvsystem.RdcJhipsterApp;
 import it.dlvsystem.domain.Offerta;
 import it.dlvsystem.repository.OffertaRepository;
 
@@ -26,7 +26,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 /**
  * Integration tests for the {@link OffertaResource} REST controller.
  */
-@SpringBootTest(classes = RdcApp.class)
+@SpringBootTest(classes = RdcJhipsterApp.class)
 @AutoConfigureMockMvc
 @WithMockUser
 public class OffertaResourceIT {

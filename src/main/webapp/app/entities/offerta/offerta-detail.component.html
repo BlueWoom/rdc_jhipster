@@ -1,44 +1,44 @@
 <div class="row justify-content-center">
     <div class="col-8">
         <div *ngIf="offerta">
-            <h2><span jhiTranslate="rdcApp.offerta.detail.title">Offerta</span> {{ offerta.id }}</h2>
+            <h2><span jhiTranslate="rdcJhipsterApp.offerta.detail.title">Offerta</span> {{ offerta.id }}</h2>
 
             <hr>
 
             <jhi-alert-error></jhi-alert-error>
 
             <dl class="row-md jh-entity-details">
-                <dt><span jhiTranslate="rdcApp.offerta.codice">Codice</span></dt>
+                <dt><span jhiTranslate="rdcJhipsterApp.offerta.codice">Codice</span></dt>
                 <dd>
                     <span>{{ offerta.codice }}</span>
                 </dd>
-                <dt><span jhiTranslate="rdcApp.offerta.data">Data</span></dt>
+                <dt><span jhiTranslate="rdcJhipsterApp.offerta.data">Data</span></dt>
                 <dd>
                     <span>{{ offerta.data }}</span>
                 </dd>
-                <dt><span jhiTranslate="rdcApp.offerta.indirizzoSede">Indirizzo Sede</span></dt>
+                <dt><span jhiTranslate="rdcJhipsterApp.offerta.indirizzoSede">Indirizzo Sede</span></dt>
                 <dd>
                     <span>{{ offerta.indirizzoSede }}</span>
                 </dd>
-                <dt><span jhiTranslate="rdcApp.offerta.cittaSede">Citta Sede</span></dt>
+                <dt><span jhiTranslate="rdcJhipsterApp.offerta.cittaSede">Citta Sede</span></dt>
                 <dd>
                     <span>{{ offerta.cittaSede }}</span>
                 </dd>
-                <dt><span jhiTranslate="rdcApp.offerta.capSede">Cap Sede</span></dt>
+                <dt><span jhiTranslate="rdcJhipsterApp.offerta.capSede">Cap Sede</span></dt>
                 <dd>
                     <span>{{ offerta.capSede }}</span>
                 </dd>
-                <dt><span jhiTranslate="rdcApp.offerta.provinciaSede">Provincia Sede</span></dt>
+                <dt><span jhiTranslate="rdcJhipsterApp.offerta.provinciaSede">Provincia Sede</span></dt>
                 <dd>
                     <span>{{ offerta.provinciaSede }}</span>
                 </dd>
-                <dt><span jhiTranslate="rdcApp.offerta.istruzione">Istruzione</span></dt>
+                <dt><span jhiTranslate="rdcJhipsterApp.offerta.istruzione">Istruzione</span></dt>
                 <dd>
                     <div *ngIf="offerta.istruzione">
                         <a [routerLink]="['/istruzione', offerta.istruzione?.id, 'view']">{{ offerta.istruzione?.id }}</a>
                     </div>
                 </dd>
-                <dt><span jhiTranslate="rdcApp.offerta.azienda">Azienda</span></dt>
+                <dt><span jhiTranslate="rdcJhipsterApp.offerta.azienda">Azienda</span></dt>
                 <dd>
                     <div *ngIf="offerta.azienda">
                         <a [routerLink]="['/azienda', offerta.azienda?.id, 'view']">{{ offerta.azienda?.id }}</a>

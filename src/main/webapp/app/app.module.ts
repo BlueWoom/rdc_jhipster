@@ -2,11 +2,11 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import './vendor';
-import { RdcSharedModule } from 'app/shared/shared.module';
-import { RdcCoreModule } from 'app/core/core.module';
-import { RdcAppRoutingModule } from './app-routing.module';
-import { RdcHomeModule } from './home/home.module';
-import { RdcEntityModule } from './entities/entity.module';
+import { RdcJhipsterSharedModule } from 'app/shared/shared.module';
+import { RdcJhipsterCoreModule } from 'app/core/core.module';
+import { RdcJhipsterAppRoutingModule } from './app-routing.module';
+import { RdcJhipsterHomeModule } from './home/home.module';
+import { RdcJhipsterEntityModule } from './entities/entity.module';
 // jhipster-needle-angular-add-module-import JHipster will add new module here
 import { MainComponent } from './layouts/main/main.component';
 import { NavbarComponent } from './layouts/navbar/navbar.component';
@@ -18,14 +18,14 @@ import { ErrorComponent } from './layouts/error/error.component';
 @NgModule({
   imports: [
     BrowserModule,
-    RdcSharedModule,
-    RdcCoreModule,
-    RdcHomeModule,
+    RdcJhipsterSharedModule,
+    RdcJhipsterCoreModule,
+    RdcJhipsterHomeModule,
     // jhipster-needle-angular-add-module JHipster will add new module here
-    RdcEntityModule,
-    RdcAppRoutingModule,
+    RdcJhipsterEntityModule,
+    RdcJhipsterAppRoutingModule,
   ],
   declarations: [MainComponent, NavbarComponent, ErrorComponent, PageRibbonComponent, ActiveMenuDirective, FooterComponent],
   bootstrap: [MainComponent],
 })
-export class RdcAppModule {}
+export class RdcJhipsterAppModule {}

@@ -1,26 +1,26 @@
 <div class="row justify-content-center">
     <div class="col-8">
         <div *ngIf="cv">
-            <h2><span jhiTranslate="rdcApp.cv.detail.title">Cv</span> {{ cv.id }}</h2>
+            <h2><span jhiTranslate="rdcJhipsterApp.cv.detail.title">Cv</span> {{ cv.id }}</h2>
 
             <hr>
 
             <jhi-alert-error></jhi-alert-error>
 
             <dl class="row-md jh-entity-details">
-                <dt><span jhiTranslate="rdcApp.cv.cfUtente">Cf Utente</span></dt>
+                <dt><span jhiTranslate="rdcJhipsterApp.cv.cfUtente">Cf Utente</span></dt>
                 <dd>
                     <span>{{ cv.cfUtente }}</span>
                 </dd>
-                <dt><span jhiTranslate="rdcApp.cv.codice">Codice</span></dt>
+                <dt><span jhiTranslate="rdcJhipsterApp.cv.codice">Codice</span></dt>
                 <dd>
                     <span>{{ cv.codice }}</span>
                 </dd>
-                <dt><span jhiTranslate="rdcApp.cv.inserimento">Inserimento</span></dt>
+                <dt><span jhiTranslate="rdcJhipsterApp.cv.inserimento">Inserimento</span></dt>
                 <dd>
                     <span>{{ cv.inserimento }}</span>
                 </dd>
-                <dt><span jhiTranslate="rdcApp.cv.candidato">Candidato</span></dt>
+                <dt><span jhiTranslate="rdcJhipsterApp.cv.candidato">Candidato</span></dt>
                 <dd>
                     <div *ngIf="cv.candidato">
                         <a [routerLink]="['/candidato', cv.candidato?.id, 'view']">{{ cv.candidato?.id }}</a>

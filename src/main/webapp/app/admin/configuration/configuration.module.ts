@@ -1,13 +1,13 @@
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
-import { RdcSharedModule } from 'app/shared/shared.module';
+import { RdcJhipsterSharedModule } from 'app/shared/shared.module';
 
 import { ConfigurationComponent } from './configuration.component';
 
 import { configurationRoute } from './configuration.route';
 
 @NgModule({
-  imports: [RdcSharedModule, RouterModule.forChild([configurationRoute])],
+  imports: [RdcJhipsterSharedModule, RouterModule.forChild([configurationRoute])],
   declarations: [ConfigurationComponent],
 })
 export class ConfigurationModule {}

@@ -1,7 +1,7 @@
 <div class="row justify-content-center">
     <div class="col-8">
         <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
-            <h2 id="jhi-istruzione-heading" jhiTranslate="rdcApp.istruzione.home.createOrEditLabel">Create or edit a Istruzione</h2>
+            <h2 id="jhi-istruzione-heading" jhiTranslate="rdcJhipsterApp.istruzione.home.createOrEditLabel">Create or edit a Istruzione</h2>
 
             <div>
                 <jhi-alert-error></jhi-alert-error>
@@ -12,7 +12,7 @@
                 </div>
 
                 <div class="form-group">
-                    <label class="form-control-label" jhiTranslate="rdcApp.istruzione.codice" for="field_codice">Codice</label>
+                    <label class="form-control-label" jhiTranslate="rdcJhipsterApp.istruzione.codice" for="field_codice">Codice</label>
                     <input type="text" class="form-control" name="codice" id="field_codice"
                            formControlName="codice"/>
                     <div *ngIf="editForm.get('codice')!.invalid && (editForm.get('codice')!.dirty || editForm.get('codice')!.touched)">
@@ -24,43 +24,43 @@
                 </div>
 
                 <div class="form-group">
-                    <label class="form-control-label" jhiTranslate="rdcApp.istruzione.codiceIsced" for="field_codiceIsced">Codice Isced</label>
+                    <label class="form-control-label" jhiTranslate="rdcJhipsterApp.istruzione.codiceIsced" for="field_codiceIsced">Codice Isced</label>
                     <input type="text" class="form-control" name="codiceIsced" id="field_codiceIsced"
                            formControlName="codiceIsced"/>
                 </div>
 
                 <div class="form-group">
-                    <label class="form-control-label" jhiTranslate="rdcApp.istruzione.codiceLivello" for="field_codiceLivello">Codice Livello</label>
+                    <label class="form-control-label" jhiTranslate="rdcJhipsterApp.istruzione.codiceLivello" for="field_codiceLivello">Codice Livello</label>
                     <input type="text" class="form-control" name="codiceLivello" id="field_codiceLivello"
                            formControlName="codiceLivello"/>
                 </div>
 
                 <div class="form-group">
-                    <label class="form-control-label" jhiTranslate="rdcApp.istruzione.nome" for="field_nome">Nome</label>
+                    <label class="form-control-label" jhiTranslate="rdcJhipsterApp.istruzione.nome" for="field_nome">Nome</label>
                     <input type="text" class="form-control" name="nome" id="field_nome"
                            formControlName="nome"/>
                 </div>
 
                 <div class="form-group">
-                    <label class="form-control-label" jhiTranslate="rdcApp.istruzione.campoStudio" for="field_campoStudio">Campo Studio</label>
+                    <label class="form-control-label" jhiTranslate="rdcJhipsterApp.istruzione.campoStudio" for="field_campoStudio">Campo Studio</label>
                     <input type="text" class="form-control" name="campoStudio" id="field_campoStudio"
                            formControlName="campoStudio"/>
                 </div>
 
                 <div class="form-group">
-                    <label class="form-control-label" jhiTranslate="rdcApp.istruzione.sinonimi" for="field_sinonimi">Sinonimi</label>
+                    <label class="form-control-label" jhiTranslate="rdcJhipsterApp.istruzione.sinonimi" for="field_sinonimi">Sinonimi</label>
                     <input type="text" class="form-control" name="sinonimi" id="field_sinonimi"
                            formControlName="sinonimi"/>
                 </div>
 
                 <div class="form-group">
-                    <label class="form-control-label" jhiTranslate="rdcApp.istruzione.codiceIstituto" for="field_codiceIstituto">Codice Istituto</label>
+                    <label class="form-control-label" jhiTranslate="rdcJhipsterApp.istruzione.codiceIstituto" for="field_codiceIstituto">Codice Istituto</label>
                     <input type="text" class="form-control" name="codiceIstituto" id="field_codiceIstituto"
                            formControlName="codiceIstituto"/>
                 </div>
 
                 <div class="form-group">
-                    <label class="form-control-label" jhiTranslate="rdcApp.istruzione.tipoIstituto" for="field_tipoIstituto">Tipo Istituto</label>
+                    <label class="form-control-label" jhiTranslate="rdcJhipsterApp.istruzione.tipoIstituto" for="field_tipoIstituto">Tipo Istituto</label>
                     <input type="text" class="form-control" name="tipoIstituto" id="field_tipoIstituto"
                            formControlName="tipoIstituto"/>
                 </div>

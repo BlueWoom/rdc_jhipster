@@ -1,10 +1,10 @@
 <div>
     <h2 id="page-heading">
-        <span jhiTranslate="rdcApp.login.home.title">Logins</span>
+        <span jhiTranslate="rdcJhipsterApp.login.home.title">Logins</span>
 
         <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-login" [routerLink]="['/login/new']">
             <fa-icon icon="plus"></fa-icon>
-            <span  jhiTranslate="rdcApp.login.home.createLabel">
+            <span  jhiTranslate="rdcJhipsterApp.login.home.createLabel">
             Create a new Login
             </span>
         </button>
@@ -15,7 +15,7 @@
     <jhi-alert></jhi-alert>
 
     <div class="alert alert-warning" id="no-result" *ngIf="logins?.length === 0">
-        <span jhiTranslate="rdcApp.login.home.notFound">No logins found</span>
+        <span jhiTranslate="rdcJhipsterApp.login.home.notFound">No logins found</span>
     </div>
 
     <div class="table-responsive" id="entities" *ngIf="logins && logins.length > 0">
@@ -23,8 +23,8 @@
             <thead>
                 <tr>
                     <th scope="col" ><span jhiTranslate="global.field.id">ID</span></th>
-                    <th scope="col" ><span jhiTranslate="rdcApp.login.username">Username</span></th>
-                    <th scope="col" ><span jhiTranslate="rdcApp.login.ruolo">Ruolo</span></th>
+                    <th scope="col" ><span jhiTranslate="rdcJhipsterApp.login.username">Username</span></th>
+                    <th scope="col" ><span jhiTranslate="rdcJhipsterApp.login.ruolo">Ruolo</span></th>
                     <th scope="col"></th>
                 </tr>
             </thead>

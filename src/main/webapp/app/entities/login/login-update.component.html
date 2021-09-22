@@ -1,7 +1,7 @@
 <div class="row justify-content-center">
     <div class="col-8">
         <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
-            <h2 id="jhi-login-heading" jhiTranslate="rdcApp.login.home.createOrEditLabel">Create or edit a Login</h2>
+            <h2 id="jhi-login-heading" jhiTranslate="rdcJhipsterApp.login.home.createOrEditLabel">Create or edit a Login</h2>
 
             <div>
                 <jhi-alert-error></jhi-alert-error>
@@ -12,13 +12,13 @@
                 </div>
 
                 <div class="form-group">
-                    <label class="form-control-label" jhiTranslate="rdcApp.login.username" for="field_username">Username</label>
+                    <label class="form-control-label" jhiTranslate="rdcJhipsterApp.login.username" for="field_username">Username</label>
                     <input type="text" class="form-control" name="username" id="field_username"
                            formControlName="username"/>
                 </div>
 
                 <div class="form-group">
-                    <label class="form-control-label" jhiTranslate="rdcApp.login.ruolo" for="field_ruolo">Ruolo</label>
+                    <label class="form-control-label" jhiTranslate="rdcJhipsterApp.login.ruolo" for="field_ruolo">Ruolo</label>
                     <input type="text" class="form-control" name="ruolo" id="field_ruolo"
                            formControlName="ruolo"/>
                 </div>

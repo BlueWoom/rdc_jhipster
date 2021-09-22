@@ -1,10 +1,10 @@
 <div>
     <h2 id="page-heading">
-        <span jhiTranslate="rdcApp.skillUtente.home.title">Skill Utentes</span>
+        <span jhiTranslate="rdcJhipsterApp.skillUtente.home.title">Skill Utentes</span>
 
         <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-skill-utente" [routerLink]="['/skill-utente/new']">
             <fa-icon icon="plus"></fa-icon>
-            <span  jhiTranslate="rdcApp.skillUtente.home.createLabel">
+            <span  jhiTranslate="rdcJhipsterApp.skillUtente.home.createLabel">
             Create a new Skill Utente
             </span>
         </button>
@@ -15,7 +15,7 @@
     <jhi-alert></jhi-alert>
 
     <div class="alert alert-warning" id="no-result" *ngIf="skillUtentes?.length === 0">
-        <span jhiTranslate="rdcApp.skillUtente.home.notFound">No skillUtentes found</span>
+        <span jhiTranslate="rdcJhipsterApp.skillUtente.home.notFound">No skillUtentes found</span>
     </div>
 
     <div class="table-responsive" id="entities" *ngIf="skillUtentes && skillUtentes.length > 0">
@@ -23,10 +23,10 @@
             <thead>
                 <tr>
                     <th scope="col" ><span jhiTranslate="global.field.id">ID</span></th>
-                    <th scope="col" ><span jhiTranslate="rdcApp.skillUtente.cfUtente">Cf Utente</span></th>
-                    <th scope="col" ><span jhiTranslate="rdcApp.skillUtente.codiceEscoSkill">Codice Esco Skill</span></th>
-                    <th scope="col" ><span jhiTranslate="rdcApp.skillUtente.skill">Skill</span></th>
-                    <th scope="col" ><span jhiTranslate="rdcApp.skillUtente.candidato">Candidato</span></th>
+                    <th scope="col" ><span jhiTranslate="rdcJhipsterApp.skillUtente.cfUtente">Cf Utente</span></th>
+                    <th scope="col" ><span jhiTranslate="rdcJhipsterApp.skillUtente.codiceEscoSkill">Codice Esco Skill</span></th>
+                    <th scope="col" ><span jhiTranslate="rdcJhipsterApp.skillUtente.skill">Skill</span></th>
+                    <th scope="col" ><span jhiTranslate="rdcJhipsterApp.skillUtente.candidato">Candidato</span></th>
                     <th scope="col"></th>
                 </tr>
             </thead>

@@ -1,7 +1,7 @@
 <div class="row justify-content-center">
     <div class="col-8">
         <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
-            <h2 id="jhi-esperienza-heading" jhiTranslate="rdcApp.esperienza.home.createOrEditLabel">Create or edit a Esperienza</h2>
+            <h2 id="jhi-esperienza-heading" jhiTranslate="rdcJhipsterApp.esperienza.home.createOrEditLabel">Create or edit a Esperienza</h2>
 
             <div>
                 <jhi-alert-error></jhi-alert-error>
@@ -12,7 +12,7 @@
                 </div>
 
                 <div class="form-group">
-                    <label class="form-control-label" jhiTranslate="rdcApp.esperienza.codice" for="field_codice">Codice</label>
+                    <label class="form-control-label" jhiTranslate="rdcJhipsterApp.esperienza.codice" for="field_codice">Codice</label>
                     <input type="text" class="form-control" name="codice" id="field_codice"
                            formControlName="codice"/>
                     <div *ngIf="editForm.get('codice')!.invalid && (editForm.get('codice')!.dirty || editForm.get('codice')!.touched)">
@@ -24,13 +24,13 @@
                 </div>
 
                 <div class="form-group">
-                    <label class="form-control-label" jhiTranslate="rdcApp.esperienza.attivita" for="field_attivita">Attivita</label>
+                    <label class="form-control-label" jhiTranslate="rdcJhipsterApp.esperienza.attivita" for="field_attivita">Attivita</label>
                     <input type="text" class="form-control" name="attivita" id="field_attivita"
                            formControlName="attivita"/>
                 </div>
 
                 <div class="form-group">
-                    <label class="form-control-label" jhiTranslate="rdcApp.esperienza.dal" for="field_dal">Dal</label>
+                    <label class="form-control-label" jhiTranslate="rdcJhipsterApp.esperienza.dal" for="field_dal">Dal</label>
                     <div class="input-group">
                         <input id="field_dal" type="text" class="form-control" name="dal" ngbDatepicker #dalDp="ngbDatepicker" formControlName="dal"/>
                         <span class="input-group-append">
@@ -40,7 +40,7 @@
                 </div>
 
                 <div class="form-group">
-                    <label class="form-control-label" jhiTranslate="rdcApp.esperienza.al" for="field_al">Al</label>
+                    <label class="form-control-label" jhiTranslate="rdcJhipsterApp.esperienza.al" for="field_al">Al</label>
                     <div class="input-group">
                         <input id="field_al" type="text" class="form-control" name="al" ngbDatepicker #alDp="ngbDatepicker" formControlName="al"/>
                         <span class="input-group-append">
@@ -50,19 +50,19 @@
                 </div>
 
                 <div class="form-group">
-                    <label class="form-control-label" jhiTranslate="rdcApp.esperienza.datoreLavoro" for="field_datoreLavoro">Datore Lavoro</label>
+                    <label class="form-control-label" jhiTranslate="rdcJhipsterApp.esperienza.datoreLavoro" for="field_datoreLavoro">Datore Lavoro</label>
                     <input type="text" class="form-control" name="datoreLavoro" id="field_datoreLavoro"
                            formControlName="datoreLavoro"/>
                 </div>
 
                 <div class="form-group">
-                    <label class="form-control-label" jhiTranslate="rdcApp.esperienza.sedeLavoro" for="field_sedeLavoro">Sede Lavoro</label>
+                    <label class="form-control-label" jhiTranslate="rdcJhipsterApp.esperienza.sedeLavoro" for="field_sedeLavoro">Sede Lavoro</label>
                     <input type="text" class="form-control" name="sedeLavoro" id="field_sedeLavoro"
                            formControlName="sedeLavoro"/>
                 </div>
 
                 <div class="form-group">
-                    <label class="form-control-label" jhiTranslate="rdcApp.esperienza.cv" for="field_cv">Cv</label>
+                    <label class="form-control-label" jhiTranslate="rdcJhipsterApp.esperienza.cv" for="field_cv">Cv</label>
                     <select class="form-control" id="field_cv" name="cv" formControlName="cv">
                         <option [ngValue]="null"></option>
                         <option [ngValue]="cvOption.id === editForm.get('cv')!.value?.id ? editForm.get('cv')!.value : cvOption" *ngFor="let cvOption of cvs; trackBy: trackById">{{ cvOption.id }}</option>

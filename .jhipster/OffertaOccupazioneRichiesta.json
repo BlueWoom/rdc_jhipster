@@ -4,7 +4,9 @@
     {
       "fieldName": "codiceOfferta",
       "fieldType": "String",
-      "fieldValidateRules": ["pattern"],
+      "fieldValidateRules": [
+        "pattern"
+      ],
       "fieldValidateRulesPattern": "[0-9]+"
     },
     {
@@ -32,7 +34,7 @@
       "otherEntityField": "id"
     }
   ],
-  "changelogDate": "20210922105720",
+  "changelogDate": "20210922113802",
   "entityTableName": "offerta_occupazione_richiesta",
   "dto": "no",
   "pagination": "no",
@@ -42,5 +44,5 @@
   "readOnly": false,
   "embedded": false,
   "clientRootFolder": "",
-  "applications": ["rdc"]
+  "applications": "*"
 }

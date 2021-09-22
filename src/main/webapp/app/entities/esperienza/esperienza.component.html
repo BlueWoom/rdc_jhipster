@@ -1,10 +1,10 @@
 <div>
     <h2 id="page-heading">
-        <span jhiTranslate="rdcApp.esperienza.home.title">Esperienzas</span>
+        <span jhiTranslate="rdcJhipsterApp.esperienza.home.title">Esperienzas</span>
 
         <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-esperienza" [routerLink]="['/esperienza/new']">
             <fa-icon icon="plus"></fa-icon>
-            <span  jhiTranslate="rdcApp.esperienza.home.createLabel">
+            <span  jhiTranslate="rdcJhipsterApp.esperienza.home.createLabel">
             Create a new Esperienza
             </span>
         </button>
@@ -15,7 +15,7 @@
     <jhi-alert></jhi-alert>
 
     <div class="alert alert-warning" id="no-result" *ngIf="esperienzas?.length === 0">
-        <span jhiTranslate="rdcApp.esperienza.home.notFound">No esperienzas found</span>
+        <span jhiTranslate="rdcJhipsterApp.esperienza.home.notFound">No esperienzas found</span>
     </div>
 
     <div class="table-responsive" id="entities" *ngIf="esperienzas && esperienzas.length > 0">
@@ -23,13 +23,13 @@
             <thead>
                 <tr>
                     <th scope="col" ><span jhiTranslate="global.field.id">ID</span></th>
-                    <th scope="col" ><span jhiTranslate="rdcApp.esperienza.codice">Codice</span></th>
-                    <th scope="col" ><span jhiTranslate="rdcApp.esperienza.attivita">Attivita</span></th>
-                    <th scope="col" ><span jhiTranslate="rdcApp.esperienza.dal">Dal</span></th>
-                    <th scope="col" ><span jhiTranslate="rdcApp.esperienza.al">Al</span></th>
-                    <th scope="col" ><span jhiTranslate="rdcApp.esperienza.datoreLavoro">Datore Lavoro</span></th>
-                    <th scope="col" ><span jhiTranslate="rdcApp.esperienza.sedeLavoro">Sede Lavoro</span></th>
-                    <th scope="col" ><span jhiTranslate="rdcApp.esperienza.cv">Cv</span></th>
+                    <th scope="col" ><span jhiTranslate="rdcJhipsterApp.esperienza.codice">Codice</span></th>
+                    <th scope="col" ><span jhiTranslate="rdcJhipsterApp.esperienza.attivita">Attivita</span></th>
+                    <th scope="col" ><span jhiTranslate="rdcJhipsterApp.esperienza.dal">Dal</span></th>
+                    <th scope="col" ><span jhiTranslate="rdcJhipsterApp.esperienza.al">Al</span></th>
+                    <th scope="col" ><span jhiTranslate="rdcJhipsterApp.esperienza.datoreLavoro">Datore Lavoro</span></th>
+                    <th scope="col" ><span jhiTranslate="rdcJhipsterApp.esperienza.sedeLavoro">Sede Lavoro</span></th>
+                    <th scope="col" ><span jhiTranslate="rdcJhipsterApp.esperienza.cv">Cv</span></th>
                     <th scope="col"></th>
                 </tr>
             </thead>

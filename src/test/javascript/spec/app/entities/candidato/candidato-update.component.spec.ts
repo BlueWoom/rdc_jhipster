@@ -3,7 +3,7 @@ import { HttpResponse } from '@angular/common/http';
 import { FormBuilder } from '@angular/forms';
 import { of } from 'rxjs';
 
-import { RdcTestModule } from '../../../test.module';
+import { RdcJhipsterTestModule } from '../../../test.module';
 import { CandidatoUpdateComponent } from 'app/entities/candidato/candidato-update.component';
 import { CandidatoService } from 'app/entities/candidato/candidato.service';
 import { Candidato } from 'app/shared/model/candidato.model';
@@ -16,7 +16,7 @@ describe('Component Tests', () => {
 
     beforeEach(() => {
       TestBed.configureTestingModule({
-        imports: [RdcTestModule],
+        imports: [RdcJhipsterTestModule],
         declarations: [CandidatoUpdateComponent],
         providers: [FormBuilder],
       })

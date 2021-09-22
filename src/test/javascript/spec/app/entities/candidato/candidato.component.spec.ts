@@ -2,7 +2,7 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { of } from 'rxjs';
 import { HttpHeaders, HttpResponse } from '@angular/common/http';
 
-import { RdcTestModule } from '../../../test.module';
+import { RdcJhipsterTestModule } from '../../../test.module';
 import { CandidatoComponent } from 'app/entities/candidato/candidato.component';
 import { CandidatoService } from 'app/entities/candidato/candidato.service';
 import { Candidato } from 'app/shared/model/candidato.model';
@@ -15,7 +15,7 @@ describe('Component Tests', () => {
 
     beforeEach(() => {
       TestBed.configureTestingModule({
-        imports: [RdcTestModule],
+        imports: [RdcJhipsterTestModule],
         declarations: [CandidatoComponent],
       })
         .overrideTemplate(CandidatoComponent, '')

@@ -26,7 +26,7 @@
       "otherEntityField": "id"
     }
   ],
-  "changelogDate": "20210922105620",
+  "changelogDate": "20210922113702",
   "entityTableName": "skill_utente",
   "dto": "no",
   "pagination": "no",
@@ -36,5 +36,5 @@
   "readOnly": false,
   "embedded": false,
   "clientRootFolder": "",
-  "applications": ["rdc"]
+  "applications": "*"
 }

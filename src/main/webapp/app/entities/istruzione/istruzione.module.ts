@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 
-import { RdcSharedModule } from 'app/shared/shared.module';
+import { RdcJhipsterSharedModule } from 'app/shared/shared.module';
 import { IstruzioneComponent } from './istruzione.component';
 import { IstruzioneDetailComponent } from './istruzione-detail.component';
 import { IstruzioneUpdateComponent } from './istruzione-update.component';
@@ -9,8 +9,8 @@ import { IstruzioneDeleteDialogComponent } from './istruzione-delete-dialog.comp
 import { istruzioneRoute } from './istruzione.route';
 
 @NgModule({
-  imports: [RdcSharedModule, RouterModule.forChild(istruzioneRoute)],
+  imports: [RdcJhipsterSharedModule, RouterModule.forChild(istruzioneRoute)],
   declarations: [IstruzioneComponent, IstruzioneDetailComponent, IstruzioneUpdateComponent, IstruzioneDeleteDialogComponent],
   entryComponents: [IstruzioneDeleteDialogComponent],
 })
-export class RdcIstruzioneModule {}
+export class RdcJhipsterIstruzioneModule {}

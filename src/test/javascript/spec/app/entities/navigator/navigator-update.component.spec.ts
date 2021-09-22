@@ -3,7 +3,7 @@ import { HttpResponse } from '@angular/common/http';
 import { FormBuilder } from '@angular/forms';
 import { of } from 'rxjs';
 
-import { RdcTestModule } from '../../../test.module';
+import { RdcJhipsterTestModule } from '../../../test.module';
 import { NavigatorUpdateComponent } from 'app/entities/navigator/navigator-update.component';
 import { NavigatorService } from 'app/entities/navigator/navigator.service';
 import { Navigator } from 'app/shared/model/navigator.model';
@@ -16,7 +16,7 @@ describe('Component Tests', () => {
 
     beforeEach(() => {
       TestBed.configureTestingModule({
-        imports: [RdcTestModule],
+        imports: [RdcJhipsterTestModule],
         declarations: [NavigatorUpdateComponent],
         providers: [FormBuilder],
       })

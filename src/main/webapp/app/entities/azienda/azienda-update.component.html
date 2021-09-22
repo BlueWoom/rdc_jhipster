@@ -1,7 +1,7 @@
 <div class="row justify-content-center">
     <div class="col-8">
         <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
-            <h2 id="jhi-azienda-heading" jhiTranslate="rdcApp.azienda.home.createOrEditLabel">Create or edit a Azienda</h2>
+            <h2 id="jhi-azienda-heading" jhiTranslate="rdcJhipsterApp.azienda.home.createOrEditLabel">Create or edit a Azienda</h2>
 
             <div>
                 <jhi-alert-error></jhi-alert-error>
@@ -12,37 +12,37 @@
                 </div>
 
                 <div class="form-group">
-                    <label class="form-control-label" jhiTranslate="rdcApp.azienda.cf" for="field_cf">Cf</label>
+                    <label class="form-control-label" jhiTranslate="rdcJhipsterApp.azienda.cf" for="field_cf">Cf</label>
                     <input type="text" class="form-control" name="cf" id="field_cf"
                            formControlName="cf"/>
                 </div>
 
                 <div class="form-group">
-                    <label class="form-control-label" jhiTranslate="rdcApp.azienda.ragioneSociale" for="field_ragioneSociale">Ragione Sociale</label>
+                    <label class="form-control-label" jhiTranslate="rdcJhipsterApp.azienda.ragioneSociale" for="field_ragioneSociale">Ragione Sociale</label>
                     <input type="text" class="form-control" name="ragioneSociale" id="field_ragioneSociale"
                            formControlName="ragioneSociale"/>
                 </div>
 
                 <div class="form-group">
-                    <label class="form-control-label" jhiTranslate="rdcApp.azienda.indirizzoSede" for="field_indirizzoSede">Indirizzo Sede</label>
+                    <label class="form-control-label" jhiTranslate="rdcJhipsterApp.azienda.indirizzoSede" for="field_indirizzoSede">Indirizzo Sede</label>
                     <input type="text" class="form-control" name="indirizzoSede" id="field_indirizzoSede"
                            formControlName="indirizzoSede"/>
                 </div>
 
                 <div class="form-group">
-                    <label class="form-control-label" jhiTranslate="rdcApp.azienda.provinciaSede" for="field_provinciaSede">Provincia Sede</label>
+                    <label class="form-control-label" jhiTranslate="rdcJhipsterApp.azienda.provinciaSede" for="field_provinciaSede">Provincia Sede</label>
                     <input type="text" class="form-control" name="provinciaSede" id="field_provinciaSede"
                            formControlName="provinciaSede"/>
                 </div>
 
                 <div class="form-group">
-                    <label class="form-control-label" jhiTranslate="rdcApp.azienda.ragioneSede" for="field_ragioneSede">Ragione Sede</label>
+                    <label class="form-control-label" jhiTranslate="rdcJhipsterApp.azienda.ragioneSede" for="field_ragioneSede">Ragione Sede</label>
                     <input type="text" class="form-control" name="ragioneSede" id="field_ragioneSede"
                            formControlName="ragioneSede"/>
                 </div>
 
                 <div class="form-group">
-                    <label class="form-control-label" jhiTranslate="rdcApp.azienda.capSede" for="field_capSede">Cap Sede</label>
+                    <label class="form-control-label" jhiTranslate="rdcJhipsterApp.azienda.capSede" for="field_capSede">Cap Sede</label>
                     <input type="text" class="form-control" name="capSede" id="field_capSede"
                            formControlName="capSede"/>
                     <div *ngIf="editForm.get('capSede')!.invalid && (editForm.get('capSede')!.dirty || editForm.get('capSede')!.touched)">
@@ -54,7 +54,7 @@
                 </div>
 
                 <div class="form-group">
-                    <label class="form-control-label" jhiTranslate="rdcApp.azienda.login" for="field_login">Login</label>
+                    <label class="form-control-label" jhiTranslate="rdcJhipsterApp.azienda.login" for="field_login">Login</label>
                     <select class="form-control" id="field_login" name="login" formControlName="login">
                         <option [ngValue]="null"></option>
                         <option [ngValue]="loginOption.id === editForm.get('login')!.value?.id ? editForm.get('login')!.value : loginOption" *ngFor="let loginOption of logins; trackBy: trackById">{{ loginOption.id }}</option>

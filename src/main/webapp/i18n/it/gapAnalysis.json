@@ -1,0 +1,24 @@
+{
+  "rdcJhipsterApp": {
+    "gapAnalysis": {
+      "home": {
+        "title": "GapAnalyses",
+        "createLabel": "Genera un nuovo Gap Analysis",
+        "createOrEditLabel": "Genera o modifica un Gap Analysis",
+        "notFound": "No Gap Analyses found"
+      },
+      "created": "&Egrave; stato generato un nuovo Gap Analysis con identificatore {{ param }}",
+      "updated": "&Egrave; stato aggiornato Gap Analysis identificato da {{ param }}",
+      "deleted": "&Egrave; stato eliminato Gap Analysis con identificatore {{ param }}",
+      "delete": {
+        "question": "Sei sicuro di volere eliminare Gap Analysis {{ id }}?"
+      },
+      "detail": {
+        "title": "Gap Analysis"
+      },
+      "codiceEsco": "Codice Esco",
+      "nome": "Nome",
+      "frequenza": "Frequenza"
+    }
+  }
+}

@@ -40,7 +40,7 @@ export const istruzioneRoute: Routes = [
     component: IstruzioneComponent,
     data: {
       authorities: [Authority.USER],
-      pageTitle: 'rdcApp.istruzione.home.title',
+      pageTitle: 'rdcJhipsterApp.istruzione.home.title',
     },
     canActivate: [UserRouteAccessService],
   },
@@ -52,7 +52,7 @@ export const istruzioneRoute: Routes = [
     },
     data: {
       authorities: [Authority.USER],
-      pageTitle: 'rdcApp.istruzione.home.title',
+      pageTitle: 'rdcJhipsterApp.istruzione.home.title',
     },
     canActivate: [UserRouteAccessService],
   },
@@ -64,7 +64,7 @@ export const istruzioneRoute: Routes = [
     },
     data: {
       authorities: [Authority.USER],
-      pageTitle: 'rdcApp.istruzione.home.title',
+      pageTitle: 'rdcJhipsterApp.istruzione.home.title',
     },
     canActivate: [UserRouteAccessService],
   },
@@ -76,7 +76,7 @@ export const istruzioneRoute: Routes = [
     },
     data: {
       authorities: [Authority.USER],
-      pageTitle: 'rdcApp.istruzione.home.title',
+      pageTitle: 'rdcJhipsterApp.istruzione.home.title',
     },
     canActivate: [UserRouteAccessService],
   },

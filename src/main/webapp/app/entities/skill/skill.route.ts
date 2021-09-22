@@ -40,7 +40,7 @@ export const skillRoute: Routes = [
     component: SkillComponent,
     data: {
       authorities: [Authority.USER],
-      pageTitle: 'rdcApp.skill.home.title',
+      pageTitle: 'rdcJhipsterApp.skill.home.title',
     },
     canActivate: [UserRouteAccessService],
   },
@@ -52,7 +52,7 @@ export const skillRoute: Routes = [
     },
     data: {
       authorities: [Authority.USER],
-      pageTitle: 'rdcApp.skill.home.title',
+      pageTitle: 'rdcJhipsterApp.skill.home.title',
     },
     canActivate: [UserRouteAccessService],
   },
@@ -64,7 +64,7 @@ export const skillRoute: Routes = [
     },
     data: {
       authorities: [Authority.USER],
-      pageTitle: 'rdcApp.skill.home.title',
+      pageTitle: 'rdcJhipsterApp.skill.home.title',
     },
     canActivate: [UserRouteAccessService],
   },
@@ -76,7 +76,7 @@ export const skillRoute: Routes = [
     },
     data: {
       authorities: [Authority.USER],
-      pageTitle: 'rdcApp.skill.home.title',
+      pageTitle: 'rdcJhipsterApp.skill.home.title',
     },
     canActivate: [UserRouteAccessService],
   },

@@ -3,7 +3,7 @@ import { HttpResponse } from '@angular/common/http';
 import { FormBuilder } from '@angular/forms';
 import { of } from 'rxjs';
 
-import { RdcTestModule } from '../../../test.module';
+import { RdcJhipsterTestModule } from '../../../test.module';
 import { GapAnalysisUpdateComponent } from 'app/entities/gap-analysis/gap-analysis-update.component';
 import { GapAnalysisService } from 'app/entities/gap-analysis/gap-analysis.service';
 import { GapAnalysis } from 'app/shared/model/gap-analysis.model';
@@ -16,7 +16,7 @@ describe('Component Tests', () => {
 
     beforeEach(() => {
       TestBed.configureTestingModule({
-        imports: [RdcTestModule],
+        imports: [RdcJhipsterTestModule],
         declarations: [GapAnalysisUpdateComponent],
         providers: [FormBuilder],
       })

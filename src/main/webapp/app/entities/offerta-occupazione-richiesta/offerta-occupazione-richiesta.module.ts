@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 
-import { RdcSharedModule } from 'app/shared/shared.module';
+import { RdcJhipsterSharedModule } from 'app/shared/shared.module';
 import { OffertaOccupazioneRichiestaComponent } from './offerta-occupazione-richiesta.component';
 import { OffertaOccupazioneRichiestaDetailComponent } from './offerta-occupazione-richiesta-detail.component';
 import { OffertaOccupazioneRichiestaUpdateComponent } from './offerta-occupazione-richiesta-update.component';
@@ -9,7 +9,7 @@ import { OffertaOccupazioneRichiestaDeleteDialogComponent } from './offerta-occu
 import { offertaOccupazioneRichiestaRoute } from './offerta-occupazione-richiesta.route';
 
 @NgModule({
-  imports: [RdcSharedModule, RouterModule.forChild(offertaOccupazioneRichiestaRoute)],
+  imports: [RdcJhipsterSharedModule, RouterModule.forChild(offertaOccupazioneRichiestaRoute)],
   declarations: [
     OffertaOccupazioneRichiestaComponent,
     OffertaOccupazioneRichiestaDetailComponent,
@@ -18,4 +18,4 @@ import { offertaOccupazioneRichiestaRoute } from './offerta-occupazione-richiest
   ],
   entryComponents: [OffertaOccupazioneRichiestaDeleteDialogComponent],
 })
-export class RdcOffertaOccupazioneRichiestaModule {}
+export class RdcJhipsterOffertaOccupazioneRichiestaModule {}

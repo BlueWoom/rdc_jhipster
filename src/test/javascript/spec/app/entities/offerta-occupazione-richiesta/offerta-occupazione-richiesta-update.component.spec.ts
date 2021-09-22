@@ -3,7 +3,7 @@ import { HttpResponse } from '@angular/common/http';
 import { FormBuilder } from '@angular/forms';
 import { of } from 'rxjs';
 
-import { RdcTestModule } from '../../../test.module';
+import { RdcJhipsterTestModule } from '../../../test.module';
 import { OffertaOccupazioneRichiestaUpdateComponent } from 'app/entities/offerta-occupazione-richiesta/offerta-occupazione-richiesta-update.component';
 import { OffertaOccupazioneRichiestaService } from 'app/entities/offerta-occupazione-richiesta/offerta-occupazione-richiesta.service';
 import { OffertaOccupazioneRichiesta } from 'app/shared/model/offerta-occupazione-richiesta.model';
@@ -16,7 +16,7 @@ describe('Component Tests', () => {
 
     beforeEach(() => {
       TestBed.configureTestingModule({
-        imports: [RdcTestModule],
+        imports: [RdcJhipsterTestModule],
         declarations: [OffertaOccupazioneRichiestaUpdateComponent],
         providers: [FormBuilder],
       })

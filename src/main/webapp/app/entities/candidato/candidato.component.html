@@ -1,10 +1,10 @@
 <div>
     <h2 id="page-heading">
-        <span jhiTranslate="rdcApp.candidato.home.title">Candidatoes</span>
+        <span jhiTranslate="rdcJhipsterApp.candidato.home.title">Candidatoes</span>
 
         <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-candidato" [routerLink]="['/candidato/new']">
             <fa-icon icon="plus"></fa-icon>
-            <span  jhiTranslate="rdcApp.candidato.home.createLabel">
+            <span  jhiTranslate="rdcJhipsterApp.candidato.home.createLabel">
             Create a new Candidato
             </span>
         </button>
@@ -15,7 +15,7 @@
     <jhi-alert></jhi-alert>
 
     <div class="alert alert-warning" id="no-result" *ngIf="candidatoes?.length === 0">
-        <span jhiTranslate="rdcApp.candidato.home.notFound">No candidatoes found</span>
+        <span jhiTranslate="rdcJhipsterApp.candidato.home.notFound">No candidatoes found</span>
     </div>
 
     <div class="table-responsive" id="entities" *ngIf="candidatoes && candidatoes.length > 0">
@@ -23,21 +23,21 @@
             <thead>
                 <tr>
                     <th scope="col" ><span jhiTranslate="global.field.id">ID</span></th>
-                    <th scope="col" ><span jhiTranslate="rdcApp.candidato.cf">Cf</span></th>
-                    <th scope="col" ><span jhiTranslate="rdcApp.candidato.nome">Nome</span></th>
-                    <th scope="col" ><span jhiTranslate="rdcApp.candidato.cognome">Cognome</span></th>
-                    <th scope="col" ><span jhiTranslate="rdcApp.candidato.dataNascita">Data Nascita</span></th>
-                    <th scope="col" ><span jhiTranslate="rdcApp.candidato.luogoNascita">Luogo Nascita</span></th>
-                    <th scope="col" ><span jhiTranslate="rdcApp.candidato.sesso">Sesso</span></th>
-                    <th scope="col" ><span jhiTranslate="rdcApp.candidato.telefono">Telefono</span></th>
-                    <th scope="col" ><span jhiTranslate="rdcApp.candidato.email">Email</span></th>
-                    <th scope="col" ><span jhiTranslate="rdcApp.candidato.citta">Citta</span></th>
-                    <th scope="col" ><span jhiTranslate="rdcApp.candidato.indirizzo">Indirizzo</span></th>
-                    <th scope="col" ><span jhiTranslate="rdcApp.candidato.cap">Cap</span></th>
-                    <th scope="col" ><span jhiTranslate="rdcApp.candidato.provincia">Provincia</span></th>
-                    <th scope="col" ><span jhiTranslate="rdcApp.candidato.regione">Regione</span></th>
-                    <th scope="col" ><span jhiTranslate="rdcApp.candidato.navigator">Navigator</span></th>
-                    <th scope="col" ><span jhiTranslate="rdcApp.candidato.login">Login</span></th>
+                    <th scope="col" ><span jhiTranslate="rdcJhipsterApp.candidato.cf">Cf</span></th>
+                    <th scope="col" ><span jhiTranslate="rdcJhipsterApp.candidato.nome">Nome</span></th>
+                    <th scope="col" ><span jhiTranslate="rdcJhipsterApp.candidato.cognome">Cognome</span></th>
+                    <th scope="col" ><span jhiTranslate="rdcJhipsterApp.candidato.dataNascita">Data Nascita</span></th>
+                    <th scope="col" ><span jhiTranslate="rdcJhipsterApp.candidato.luogoNascita">Luogo Nascita</span></th>
+                    <th scope="col" ><span jhiTranslate="rdcJhipsterApp.candidato.sesso">Sesso</span></th>
+                    <th scope="col" ><span jhiTranslate="rdcJhipsterApp.candidato.telefono">Telefono</span></th>
+                    <th scope="col" ><span jhiTranslate="rdcJhipsterApp.candidato.email">Email</span></th>
+                    <th scope="col" ><span jhiTranslate="rdcJhipsterApp.candidato.citta">Citta</span></th>
+                    <th scope="col" ><span jhiTranslate="rdcJhipsterApp.candidato.indirizzo">Indirizzo</span></th>
+                    <th scope="col" ><span jhiTranslate="rdcJhipsterApp.candidato.cap">Cap</span></th>
+                    <th scope="col" ><span jhiTranslate="rdcJhipsterApp.candidato.provincia">Provincia</span></th>
+                    <th scope="col" ><span jhiTranslate="rdcJhipsterApp.candidato.regione">Regione</span></th>
+                    <th scope="col" ><span jhiTranslate="rdcJhipsterApp.candidato.navigator">Navigator</span></th>
+                    <th scope="col" ><span jhiTranslate="rdcJhipsterApp.candidato.login">Login</span></th>
                     <th scope="col"></th>
                 </tr>
             </thead>

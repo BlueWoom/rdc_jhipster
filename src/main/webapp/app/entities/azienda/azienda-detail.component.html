@@ -1,38 +1,38 @@
 <div class="row justify-content-center">
     <div class="col-8">
         <div *ngIf="azienda">
-            <h2><span jhiTranslate="rdcApp.azienda.detail.title">Azienda</span> {{ azienda.id }}</h2>
+            <h2><span jhiTranslate="rdcJhipsterApp.azienda.detail.title">Azienda</span> {{ azienda.id }}</h2>
 
             <hr>
 
             <jhi-alert-error></jhi-alert-error>
 
             <dl class="row-md jh-entity-details">
-                <dt><span jhiTranslate="rdcApp.azienda.cf">Cf</span></dt>
+                <dt><span jhiTranslate="rdcJhipsterApp.azienda.cf">Cf</span></dt>
                 <dd>
                     <span>{{ azienda.cf }}</span>
                 </dd>
-                <dt><span jhiTranslate="rdcApp.azienda.ragioneSociale">Ragione Sociale</span></dt>
+                <dt><span jhiTranslate="rdcJhipsterApp.azienda.ragioneSociale">Ragione Sociale</span></dt>
                 <dd>
                     <span>{{ azienda.ragioneSociale }}</span>
                 </dd>
-                <dt><span jhiTranslate="rdcApp.azienda.indirizzoSede">Indirizzo Sede</span></dt>
+                <dt><span jhiTranslate="rdcJhipsterApp.azienda.indirizzoSede">Indirizzo Sede</span></dt>
                 <dd>
                     <span>{{ azienda.indirizzoSede }}</span>
                 </dd>
-                <dt><span jhiTranslate="rdcApp.azienda.provinciaSede">Provincia Sede</span></dt>
+                <dt><span jhiTranslate="rdcJhipsterApp.azienda.provinciaSede">Provincia Sede</span></dt>
                 <dd>
                     <span>{{ azienda.provinciaSede }}</span>
                 </dd>
-                <dt><span jhiTranslate="rdcApp.azienda.ragioneSede">Ragione Sede</span></dt>
+                <dt><span jhiTranslate="rdcJhipsterApp.azienda.ragioneSede">Ragione Sede</span></dt>
                 <dd>
                     <span>{{ azienda.ragioneSede }}</span>
                 </dd>
-                <dt><span jhiTranslate="rdcApp.azienda.capSede">Cap Sede</span></dt>
+                <dt><span jhiTranslate="rdcJhipsterApp.azienda.capSede">Cap Sede</span></dt>
                 <dd>
                     <span>{{ azienda.capSede }}</span>
                 </dd>
-                <dt><span jhiTranslate="rdcApp.azienda.login">Login</span></dt>
+                <dt><span jhiTranslate="rdcJhipsterApp.azienda.login">Login</span></dt>
                 <dd>
                     <div *ngIf="azienda.login">
                         <a [routerLink]="['/login', azienda.login?.id, 'view']">{{ azienda.login?.id }}</a>

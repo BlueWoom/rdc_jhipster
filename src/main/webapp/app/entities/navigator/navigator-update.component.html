@@ -1,7 +1,7 @@
 <div class="row justify-content-center">
     <div class="col-8">
         <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
-            <h2 id="jhi-navigator-heading" jhiTranslate="rdcApp.navigator.home.createOrEditLabel">Create or edit a Navigator</h2>
+            <h2 id="jhi-navigator-heading" jhiTranslate="rdcJhipsterApp.navigator.home.createOrEditLabel">Create or edit a Navigator</h2>
 
             <div>
                 <jhi-alert-error></jhi-alert-error>
@@ -12,25 +12,25 @@
                 </div>
 
                 <div class="form-group">
-                    <label class="form-control-label" jhiTranslate="rdcApp.navigator.cf" for="field_cf">Cf</label>
+                    <label class="form-control-label" jhiTranslate="rdcJhipsterApp.navigator.cf" for="field_cf">Cf</label>
                     <input type="text" class="form-control" name="cf" id="field_cf"
                            formControlName="cf"/>
                 </div>
 
                 <div class="form-group">
-                    <label class="form-control-label" jhiTranslate="rdcApp.navigator.nome" for="field_nome">Nome</label>
+                    <label class="form-control-label" jhiTranslate="rdcJhipsterApp.navigator.nome" for="field_nome">Nome</label>
                     <input type="text" class="form-control" name="nome" id="field_nome"
                            formControlName="nome"/>
                 </div>
 
                 <div class="form-group">
-                    <label class="form-control-label" jhiTranslate="rdcApp.navigator.cognome" for="field_cognome">Cognome</label>
+                    <label class="form-control-label" jhiTranslate="rdcJhipsterApp.navigator.cognome" for="field_cognome">Cognome</label>
                     <input type="text" class="form-control" name="cognome" id="field_cognome"
                            formControlName="cognome"/>
                 </div>
 
                 <div class="form-group">
-                    <label class="form-control-label" jhiTranslate="rdcApp.navigator.dataNascita" for="field_dataNascita">Data Nascita</label>
+                    <label class="form-control-label" jhiTranslate="rdcJhipsterApp.navigator.dataNascita" for="field_dataNascita">Data Nascita</label>
                     <div class="input-group">
                         <input id="field_dataNascita" type="text" class="form-control" name="dataNascita" ngbDatepicker #dataNascitaDp="ngbDatepicker" formControlName="dataNascita"/>
                         <span class="input-group-append">
@@ -40,13 +40,13 @@
                 </div>
 
                 <div class="form-group">
-                    <label class="form-control-label" jhiTranslate="rdcApp.navigator.sesso" for="field_sesso">Sesso</label>
+                    <label class="form-control-label" jhiTranslate="rdcJhipsterApp.navigator.sesso" for="field_sesso">Sesso</label>
                     <input type="text" class="form-control" name="sesso" id="field_sesso"
                            formControlName="sesso"/>
                 </div>
 
                 <div class="form-group">
-                    <label class="form-control-label" jhiTranslate="rdcApp.navigator.telefono" for="field_telefono">Telefono</label>
+                    <label class="form-control-label" jhiTranslate="rdcJhipsterApp.navigator.telefono" for="field_telefono">Telefono</label>
                     <input type="text" class="form-control" name="telefono" id="field_telefono"
                            formControlName="telefono"/>
                     <div *ngIf="editForm.get('telefono')!.invalid && (editForm.get('telefono')!.dirty || editForm.get('telefono')!.touched)">
@@ -58,25 +58,25 @@
                 </div>
 
                 <div class="form-group">
-                    <label class="form-control-label" jhiTranslate="rdcApp.navigator.email" for="field_email">Email</label>
+                    <label class="form-control-label" jhiTranslate="rdcJhipsterApp.navigator.email" for="field_email">Email</label>
                     <input type="text" class="form-control" name="email" id="field_email"
                            formControlName="email"/>
                 </div>
 
                 <div class="form-group">
-                    <label class="form-control-label" jhiTranslate="rdcApp.navigator.citta" for="field_citta">Citta</label>
+                    <label class="form-control-label" jhiTranslate="rdcJhipsterApp.navigator.citta" for="field_citta">Citta</label>
                     <input type="text" class="form-control" name="citta" id="field_citta"
                            formControlName="citta"/>
                 </div>
 
                 <div class="form-group">
-                    <label class="form-control-label" jhiTranslate="rdcApp.navigator.indirizzo" for="field_indirizzo">Indirizzo</label>
+                    <label class="form-control-label" jhiTranslate="rdcJhipsterApp.navigator.indirizzo" for="field_indirizzo">Indirizzo</label>
                     <input type="text" class="form-control" name="indirizzo" id="field_indirizzo"
                            formControlName="indirizzo"/>
                 </div>
 
                 <div class="form-group">
-                    <label class="form-control-label" jhiTranslate="rdcApp.navigator.cap" for="field_cap">Cap</label>
+                    <label class="form-control-label" jhiTranslate="rdcJhipsterApp.navigator.cap" for="field_cap">Cap</label>
                     <input type="text" class="form-control" name="cap" id="field_cap"
                            formControlName="cap"/>
                     <div *ngIf="editForm.get('cap')!.invalid && (editForm.get('cap')!.dirty || editForm.get('cap')!.touched)">
@@ -88,19 +88,19 @@
                 </div>
 
                 <div class="form-group">
-                    <label class="form-control-label" jhiTranslate="rdcApp.navigator.provincia" for="field_provincia">Provincia</label>
+                    <label class="form-control-label" jhiTranslate="rdcJhipsterApp.navigator.provincia" for="field_provincia">Provincia</label>
                     <input type="text" class="form-control" name="provincia" id="field_provincia"
                            formControlName="provincia"/>
                 </div>
 
                 <div class="form-group">
-                    <label class="form-control-label" jhiTranslate="rdcApp.navigator.regione" for="field_regione">Regione</label>
+                    <label class="form-control-label" jhiTranslate="rdcJhipsterApp.navigator.regione" for="field_regione">Regione</label>
                     <input type="text" class="form-control" name="regione" id="field_regione"
                            formControlName="regione"/>
                 </div>
 
                 <div class="form-group">
-                    <label class="form-control-label" jhiTranslate="rdcApp.navigator.login" for="field_login">Login</label>
+                    <label class="form-control-label" jhiTranslate="rdcJhipsterApp.navigator.login" for="field_login">Login</label>
                     <select class="form-control" id="field_login" name="login" formControlName="login">
                         <option [ngValue]="null"></option>
                         <option [ngValue]="loginOption.id === editForm.get('login')!.value?.id ? editForm.get('login')!.value : loginOption" *ngFor="let loginOption of logins; trackBy: trackById">{{ loginOption.id }}</option>

@@ -1,7 +1,7 @@
 <div class="row justify-content-center">
     <div class="col-8">
         <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
-            <h2 id="jhi-gap-analysis-heading" jhiTranslate="rdcApp.gapAnalysis.home.createOrEditLabel">Create or edit a Gap Analysis</h2>
+            <h2 id="jhi-gap-analysis-heading" jhiTranslate="rdcJhipsterApp.gapAnalysis.home.createOrEditLabel">Create or edit a Gap Analysis</h2>
 
             <div>
                 <jhi-alert-error></jhi-alert-error>
@@ -12,19 +12,19 @@
                 </div>
 
                 <div class="form-group">
-                    <label class="form-control-label" jhiTranslate="rdcApp.gapAnalysis.codiceEsco" for="field_codiceEsco">Codice Esco</label>
+                    <label class="form-control-label" jhiTranslate="rdcJhipsterApp.gapAnalysis.codiceEsco" for="field_codiceEsco">Codice Esco</label>
                     <input type="text" class="form-control" name="codiceEsco" id="field_codiceEsco"
                            formControlName="codiceEsco"/>
                 </div>
 
                 <div class="form-group">
-                    <label class="form-control-label" jhiTranslate="rdcApp.gapAnalysis.nome" for="field_nome">Nome</label>
+                    <label class="form-control-label" jhiTranslate="rdcJhipsterApp.gapAnalysis.nome" for="field_nome">Nome</label>
                     <input type="text" class="form-control" name="nome" id="field_nome"
                            formControlName="nome"/>
                 </div>
 
                 <div class="form-group">
-                    <label class="form-control-label" jhiTranslate="rdcApp.gapAnalysis.frequenza" for="field_frequenza">Frequenza</label>
+                    <label class="form-control-label" jhiTranslate="rdcJhipsterApp.gapAnalysis.frequenza" for="field_frequenza">Frequenza</label>
                     <input type="number" class="form-control" name="frequenza" id="field_frequenza"
                            formControlName="frequenza"/>
                 </div>

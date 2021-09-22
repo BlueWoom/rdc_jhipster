@@ -1,0 +1,27 @@
+{
+  "rdcJhipsterApp": {
+    "cv": {
+      "home": {
+        "title": "Cvs",
+        "createLabel": "Genera un nuovo Cv",
+        "createOrEditLabel": "Genera o modifica un Cv",
+        "notFound": "No Cvs found"
+      },
+      "created": "&Egrave; stato generato un nuovo Cv con identificatore {{ param }}",
+      "updated": "&Egrave; stato aggiornato Cv identificato da {{ param }}",
+      "deleted": "&Egrave; stato eliminato Cv con identificatore {{ param }}",
+      "delete": {
+        "question": "Sei sicuro di volere eliminare Cv {{ id }}?"
+      },
+      "detail": {
+        "title": "Cv"
+      },
+      "cfUtente": "Cf Utente",
+      "codice": "Codice",
+      "inserimento": "Inserimento",
+      "cvIstruzione": "Cv Istruzione",
+      "esperienza": "Esperienza",
+      "candidato": "Candidato"
+    }
+  }
+}

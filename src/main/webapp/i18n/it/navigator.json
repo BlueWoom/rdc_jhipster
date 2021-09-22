@@ -1,0 +1,35 @@
+{
+  "rdcJhipsterApp": {
+    "navigator": {
+      "home": {
+        "title": "Navigators",
+        "createLabel": "Genera un nuovo Navigator",
+        "createOrEditLabel": "Genera o modifica un Navigator",
+        "notFound": "No Navigators found"
+      },
+      "created": "&Egrave; stato generato un nuovo Navigator con identificatore {{ param }}",
+      "updated": "&Egrave; stato aggiornato Navigator identificato da {{ param }}",
+      "deleted": "&Egrave; stato eliminato Navigator con identificatore {{ param }}",
+      "delete": {
+        "question": "Sei sicuro di volere eliminare Navigator {{ id }}?"
+      },
+      "detail": {
+        "title": "Navigator"
+      },
+      "cf": "Cf",
+      "nome": "Nome",
+      "cognome": "Cognome",
+      "dataNascita": "Data Nascita",
+      "sesso": "Sesso",
+      "telefono": "Telefono",
+      "email": "Email",
+      "citta": "Citta",
+      "indirizzo": "Indirizzo",
+      "cap": "Cap",
+      "provincia": "Provincia",
+      "regione": "Regione",
+      "candidato": "Candidato",
+      "login": "Login"
+    }
+  }
+}

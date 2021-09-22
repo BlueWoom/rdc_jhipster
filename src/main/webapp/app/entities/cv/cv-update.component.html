@@ -1,7 +1,7 @@
 <div class="row justify-content-center">
     <div class="col-8">
         <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
-            <h2 id="jhi-cv-heading" jhiTranslate="rdcApp.cv.home.createOrEditLabel">Create or edit a Cv</h2>
+            <h2 id="jhi-cv-heading" jhiTranslate="rdcJhipsterApp.cv.home.createOrEditLabel">Create or edit a Cv</h2>
 
             <div>
                 <jhi-alert-error></jhi-alert-error>
@@ -12,13 +12,13 @@
                 </div>
 
                 <div class="form-group">
-                    <label class="form-control-label" jhiTranslate="rdcApp.cv.cfUtente" for="field_cfUtente">Cf Utente</label>
+                    <label class="form-control-label" jhiTranslate="rdcJhipsterApp.cv.cfUtente" for="field_cfUtente">Cf Utente</label>
                     <input type="text" class="form-control" name="cfUtente" id="field_cfUtente"
                            formControlName="cfUtente"/>
                 </div>
 
                 <div class="form-group">
-                    <label class="form-control-label" jhiTranslate="rdcApp.cv.codice" for="field_codice">Codice</label>
+                    <label class="form-control-label" jhiTranslate="rdcJhipsterApp.cv.codice" for="field_codice">Codice</label>
                     <input type="text" class="form-control" name="codice" id="field_codice"
                            formControlName="codice"/>
                     <div *ngIf="editForm.get('codice')!.invalid && (editForm.get('codice')!.dirty || editForm.get('codice')!.touched)">
@@ -30,7 +30,7 @@
                 </div>
 
                 <div class="form-group">
-                    <label class="form-control-label" jhiTranslate="rdcApp.cv.inserimento" for="field_inserimento">Inserimento</label>
+                    <label class="form-control-label" jhiTranslate="rdcJhipsterApp.cv.inserimento" for="field_inserimento">Inserimento</label>
                     <div class="input-group">
                         <input id="field_inserimento" type="text" class="form-control" name="inserimento" ngbDatepicker #inserimentoDp="ngbDatepicker" formControlName="inserimento"/>
                         <span class="input-group-append">
@@ -40,7 +40,7 @@
                 </div>
 
                 <div class="form-group">
-                    <label class="form-control-label" jhiTranslate="rdcApp.cv.candidato" for="field_candidato">Candidato</label>
+                    <label class="form-control-label" jhiTranslate="rdcJhipsterApp.cv.candidato" for="field_candidato">Candidato</label>
                     <select class="form-control" id="field_candidato" name="candidato" formControlName="candidato">
                         <option [ngValue]="null"></option>
                         <option [ngValue]="candidatoOption.id === editForm.get('candidato')!.value?.id ? editForm.get('candidato')!.value : candidatoOption" *ngFor="let candidatoOption of candidatoes; trackBy: trackById">{{ candidatoOption.id }}</option>

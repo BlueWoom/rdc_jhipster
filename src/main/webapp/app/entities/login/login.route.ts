@@ -40,7 +40,7 @@ export const loginRoute: Routes = [
     component: LoginComponent,
     data: {
       authorities: [Authority.USER],
-      pageTitle: 'rdcApp.login.home.title',
+      pageTitle: 'rdcJhipsterApp.login.home.title',
     },
     canActivate: [UserRouteAccessService],
   },
@@ -52,7 +52,7 @@ export const loginRoute: Routes = [
     },
     data: {
       authorities: [Authority.USER],
-      pageTitle: 'rdcApp.login.home.title',
+      pageTitle: 'rdcJhipsterApp.login.home.title',
     },
     canActivate: [UserRouteAccessService],
   },
@@ -64,7 +64,7 @@ export const loginRoute: Routes = [
     },
     data: {
       authorities: [Authority.USER],
-      pageTitle: 'rdcApp.login.home.title',
+      pageTitle: 'rdcJhipsterApp.login.home.title',
     },
     canActivate: [UserRouteAccessService],
   },
@@ -76,7 +76,7 @@ export const loginRoute: Routes = [
     },
     data: {
       authorities: [Authority.USER],
-      pageTitle: 'rdcApp.login.home.title',
+      pageTitle: 'rdcJhipsterApp.login.home.title',
     },
     canActivate: [UserRouteAccessService],
   },

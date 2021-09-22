@@ -3,7 +3,7 @@ import { HttpResponse } from '@angular/common/http';
 import { FormBuilder } from '@angular/forms';
 import { of } from 'rxjs';
 
-import { RdcTestModule } from '../../../test.module';
+import { RdcJhipsterTestModule } from '../../../test.module';
 import { OccupazioneUpdateComponent } from 'app/entities/occupazione/occupazione-update.component';
 import { OccupazioneService } from 'app/entities/occupazione/occupazione.service';
 import { Occupazione } from 'app/shared/model/occupazione.model';
@@ -16,7 +16,7 @@ describe('Component Tests', () => {
 
     beforeEach(() => {
       TestBed.configureTestingModule({
-        imports: [RdcTestModule],
+        imports: [RdcJhipsterTestModule],
         declarations: [OccupazioneUpdateComponent],
         providers: [FormBuilder],
       })

@@ -4,7 +4,9 @@
     {
       "fieldName": "codice",
       "fieldType": "String",
-      "fieldValidateRules": ["pattern"],
+      "fieldValidateRules": [
+        "pattern"
+      ],
       "fieldValidateRulesPattern": "[0-9]+"
     },
     {
@@ -50,7 +52,7 @@
       "relationshipName": "cvIstruzione"
     }
   ],
-  "changelogDate": "20210922104720",
+  "changelogDate": "20210922112802",
   "entityTableName": "istruzione",
   "dto": "no",
   "pagination": "no",
@@ -60,5 +62,5 @@
   "readOnly": false,
   "embedded": false,
   "clientRootFolder": "",
-  "applications": ["rdc"]
+  "applications": "*"
 }

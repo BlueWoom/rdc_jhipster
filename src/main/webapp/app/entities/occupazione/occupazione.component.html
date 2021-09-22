@@ -1,10 +1,10 @@
 <div>
     <h2 id="page-heading">
-        <span jhiTranslate="rdcApp.occupazione.home.title">Occupaziones</span>
+        <span jhiTranslate="rdcJhipsterApp.occupazione.home.title">Occupaziones</span>
 
         <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-occupazione" [routerLink]="['/occupazione/new']">
             <fa-icon icon="plus"></fa-icon>
-            <span  jhiTranslate="rdcApp.occupazione.home.createLabel">
+            <span  jhiTranslate="rdcJhipsterApp.occupazione.home.createLabel">
             Create a new Occupazione
             </span>
         </button>
@@ -15,7 +15,7 @@
     <jhi-alert></jhi-alert>
 
     <div class="alert alert-warning" id="no-result" *ngIf="occupaziones?.length === 0">
-        <span jhiTranslate="rdcApp.occupazione.home.notFound">No occupaziones found</span>
+        <span jhiTranslate="rdcJhipsterApp.occupazione.home.notFound">No occupaziones found</span>
     </div>
 
     <div class="table-responsive" id="entities" *ngIf="occupaziones && occupaziones.length > 0">
@@ -23,11 +23,11 @@
             <thead>
                 <tr>
                     <th scope="col" ><span jhiTranslate="global.field.id">ID</span></th>
-                    <th scope="col" ><span jhiTranslate="rdcApp.occupazione.codiceEsco">Codice Esco</span></th>
-                    <th scope="col" ><span jhiTranslate="rdcApp.occupazione.nome">Nome</span></th>
-                    <th scope="col" ><span jhiTranslate="rdcApp.occupazione.esperienza">Esperienza</span></th>
-                    <th scope="col" ><span jhiTranslate="rdcApp.occupazione.offerta">Offerta</span></th>
-                    <th scope="col" ><span jhiTranslate="rdcApp.occupazione.skill">Skill</span></th>
+                    <th scope="col" ><span jhiTranslate="rdcJhipsterApp.occupazione.codiceEsco">Codice Esco</span></th>
+                    <th scope="col" ><span jhiTranslate="rdcJhipsterApp.occupazione.nome">Nome</span></th>
+                    <th scope="col" ><span jhiTranslate="rdcJhipsterApp.occupazione.esperienza">Esperienza</span></th>
+                    <th scope="col" ><span jhiTranslate="rdcJhipsterApp.occupazione.offerta">Offerta</span></th>
+                    <th scope="col" ><span jhiTranslate="rdcJhipsterApp.occupazione.skill">Skill</span></th>
                     <th scope="col"></th>
                 </tr>
             </thead>

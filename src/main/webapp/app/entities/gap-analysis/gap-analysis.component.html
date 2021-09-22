@@ -1,10 +1,10 @@
 <div>
     <h2 id="page-heading">
-        <span jhiTranslate="rdcApp.gapAnalysis.home.title">Gap Analyses</span>
+        <span jhiTranslate="rdcJhipsterApp.gapAnalysis.home.title">Gap Analyses</span>
 
         <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-gap-analysis" [routerLink]="['/gap-analysis/new']">
             <fa-icon icon="plus"></fa-icon>
-            <span  jhiTranslate="rdcApp.gapAnalysis.home.createLabel">
+            <span  jhiTranslate="rdcJhipsterApp.gapAnalysis.home.createLabel">
             Create a new Gap Analysis
             </span>
         </button>
@@ -15,7 +15,7 @@
     <jhi-alert></jhi-alert>
 
     <div class="alert alert-warning" id="no-result" *ngIf="gapAnalyses?.length === 0">
-        <span jhiTranslate="rdcApp.gapAnalysis.home.notFound">No gapAnalyses found</span>
+        <span jhiTranslate="rdcJhipsterApp.gapAnalysis.home.notFound">No gapAnalyses found</span>
     </div>
 
     <div class="table-responsive" id="entities" *ngIf="gapAnalyses && gapAnalyses.length > 0">
@@ -23,9 +23,9 @@
             <thead>
                 <tr>
                     <th scope="col" ><span jhiTranslate="global.field.id">ID</span></th>
-                    <th scope="col" ><span jhiTranslate="rdcApp.gapAnalysis.codiceEsco">Codice Esco</span></th>
-                    <th scope="col" ><span jhiTranslate="rdcApp.gapAnalysis.nome">Nome</span></th>
-                    <th scope="col" ><span jhiTranslate="rdcApp.gapAnalysis.frequenza">Frequenza</span></th>
+                    <th scope="col" ><span jhiTranslate="rdcJhipsterApp.gapAnalysis.codiceEsco">Codice Esco</span></th>
+                    <th scope="col" ><span jhiTranslate="rdcJhipsterApp.gapAnalysis.nome">Nome</span></th>
+                    <th scope="col" ><span jhiTranslate="rdcJhipsterApp.gapAnalysis.frequenza">Frequenza</span></th>
                     <th scope="col"></th>
                 </tr>
             </thead>

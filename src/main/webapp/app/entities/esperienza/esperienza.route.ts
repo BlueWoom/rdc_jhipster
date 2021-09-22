@@ -40,7 +40,7 @@ export const esperienzaRoute: Routes = [
     component: EsperienzaComponent,
     data: {
       authorities: [Authority.USER],
-      pageTitle: 'rdcApp.esperienza.home.title',
+      pageTitle: 'rdcJhipsterApp.esperienza.home.title',
     },
     canActivate: [UserRouteAccessService],
   },
@@ -52,7 +52,7 @@ export const esperienzaRoute: Routes = [
     },
     data: {
       authorities: [Authority.USER],
-      pageTitle: 'rdcApp.esperienza.home.title',
+      pageTitle: 'rdcJhipsterApp.esperienza.home.title',
     },
     canActivate: [UserRouteAccessService],
   },
@@ -64,7 +64,7 @@ export const esperienzaRoute: Routes = [
     },
     data: {
       authorities: [Authority.USER],
-      pageTitle: 'rdcApp.esperienza.home.title',
+      pageTitle: 'rdcJhipsterApp.esperienza.home.title',
     },
     canActivate: [UserRouteAccessService],
   },
@@ -76,7 +76,7 @@ export const esperienzaRoute: Routes = [
     },
     data: {
       authorities: [Authority.USER],
-      pageTitle: 'rdcApp.esperienza.home.title',
+      pageTitle: 'rdcJhipsterApp.esperienza.home.title',
     },
     canActivate: [UserRouteAccessService],
   },

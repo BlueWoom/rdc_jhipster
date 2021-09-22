@@ -4,7 +4,9 @@
     {
       "fieldName": "codiceOfferta",
       "fieldType": "String",
-      "fieldValidateRules": ["pattern"],
+      "fieldValidateRules": [
+        "pattern"
+      ],
       "fieldValidateRulesPattern": "[0-9]+"
     },
     {
@@ -32,7 +34,7 @@
       "otherEntityField": "id"
     }
   ],
-  "changelogDate": "20210922105220",
+  "changelogDate": "20210922113302",
   "entityTableName": "offerta_skill",
   "dto": "no",
   "pagination": "no",
@@ -42,5 +44,5 @@
   "readOnly": false,
   "embedded": false,
   "clientRootFolder": "",
-  "applications": ["rdc"]
+  "applications": "*"
 }

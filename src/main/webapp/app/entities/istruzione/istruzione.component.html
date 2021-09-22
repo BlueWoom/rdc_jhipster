@@ -1,10 +1,10 @@
 <div>
     <h2 id="page-heading">
-        <span jhiTranslate="rdcApp.istruzione.home.title">Istruziones</span>
+        <span jhiTranslate="rdcJhipsterApp.istruzione.home.title">Istruziones</span>
 
         <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-istruzione" [routerLink]="['/istruzione/new']">
             <fa-icon icon="plus"></fa-icon>
-            <span  jhiTranslate="rdcApp.istruzione.home.createLabel">
+            <span  jhiTranslate="rdcJhipsterApp.istruzione.home.createLabel">
             Create a new Istruzione
             </span>
         </button>
@@ -15,7 +15,7 @@
     <jhi-alert></jhi-alert>
 
     <div class="alert alert-warning" id="no-result" *ngIf="istruziones?.length === 0">
-        <span jhiTranslate="rdcApp.istruzione.home.notFound">No istruziones found</span>
+        <span jhiTranslate="rdcJhipsterApp.istruzione.home.notFound">No istruziones found</span>
     </div>
 
     <div class="table-responsive" id="entities" *ngIf="istruziones && istruziones.length > 0">
@@ -23,14 +23,14 @@
             <thead>
                 <tr>
                     <th scope="col" ><span jhiTranslate="global.field.id">ID</span></th>
-                    <th scope="col" ><span jhiTranslate="rdcApp.istruzione.codice">Codice</span></th>
-                    <th scope="col" ><span jhiTranslate="rdcApp.istruzione.codiceIsced">Codice Isced</span></th>
-                    <th scope="col" ><span jhiTranslate="rdcApp.istruzione.codiceLivello">Codice Livello</span></th>
-                    <th scope="col" ><span jhiTranslate="rdcApp.istruzione.nome">Nome</span></th>
-                    <th scope="col" ><span jhiTranslate="rdcApp.istruzione.campoStudio">Campo Studio</span></th>
-                    <th scope="col" ><span jhiTranslate="rdcApp.istruzione.sinonimi">Sinonimi</span></th>
-                    <th scope="col" ><span jhiTranslate="rdcApp.istruzione.codiceIstituto">Codice Istituto</span></th>
-                    <th scope="col" ><span jhiTranslate="rdcApp.istruzione.tipoIstituto">Tipo Istituto</span></th>
+                    <th scope="col" ><span jhiTranslate="rdcJhipsterApp.istruzione.codice">Codice</span></th>
+                    <th scope="col" ><span jhiTranslate="rdcJhipsterApp.istruzione.codiceIsced">Codice Isced</span></th>
+                    <th scope="col" ><span jhiTranslate="rdcJhipsterApp.istruzione.codiceLivello">Codice Livello</span></th>
+                    <th scope="col" ><span jhiTranslate="rdcJhipsterApp.istruzione.nome">Nome</span></th>
+                    <th scope="col" ><span jhiTranslate="rdcJhipsterApp.istruzione.campoStudio">Campo Studio</span></th>
+                    <th scope="col" ><span jhiTranslate="rdcJhipsterApp.istruzione.sinonimi">Sinonimi</span></th>
+                    <th scope="col" ><span jhiTranslate="rdcJhipsterApp.istruzione.codiceIstituto">Codice Istituto</span></th>
+                    <th scope="col" ><span jhiTranslate="rdcJhipsterApp.istruzione.tipoIstituto">Tipo Istituto</span></th>
                     <th scope="col"></th>
                 </tr>
             </thead>

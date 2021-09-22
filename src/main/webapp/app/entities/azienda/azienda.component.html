@@ -1,10 +1,10 @@
 <div>
     <h2 id="page-heading">
-        <span jhiTranslate="rdcApp.azienda.home.title">Aziendas</span>
+        <span jhiTranslate="rdcJhipsterApp.azienda.home.title">Aziendas</span>
 
         <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-azienda" [routerLink]="['/azienda/new']">
             <fa-icon icon="plus"></fa-icon>
-            <span  jhiTranslate="rdcApp.azienda.home.createLabel">
+            <span  jhiTranslate="rdcJhipsterApp.azienda.home.createLabel">
             Create a new Azienda
             </span>
         </button>
@@ -15,7 +15,7 @@
     <jhi-alert></jhi-alert>
 
     <div class="alert alert-warning" id="no-result" *ngIf="aziendas?.length === 0">
-        <span jhiTranslate="rdcApp.azienda.home.notFound">No aziendas found</span>
+        <span jhiTranslate="rdcJhipsterApp.azienda.home.notFound">No aziendas found</span>
     </div>
 
     <div class="table-responsive" id="entities" *ngIf="aziendas && aziendas.length > 0">
@@ -23,13 +23,13 @@
             <thead>
                 <tr>
                     <th scope="col" ><span jhiTranslate="global.field.id">ID</span></th>
-                    <th scope="col" ><span jhiTranslate="rdcApp.azienda.cf">Cf</span></th>
-                    <th scope="col" ><span jhiTranslate="rdcApp.azienda.ragioneSociale">Ragione Sociale</span></th>
-                    <th scope="col" ><span jhiTranslate="rdcApp.azienda.indirizzoSede">Indirizzo Sede</span></th>
-                    <th scope="col" ><span jhiTranslate="rdcApp.azienda.provinciaSede">Provincia Sede</span></th>
-                    <th scope="col" ><span jhiTranslate="rdcApp.azienda.ragioneSede">Ragione Sede</span></th>
-                    <th scope="col" ><span jhiTranslate="rdcApp.azienda.capSede">Cap Sede</span></th>
-                    <th scope="col" ><span jhiTranslate="rdcApp.azienda.login">Login</span></th>
+                    <th scope="col" ><span jhiTranslate="rdcJhipsterApp.azienda.cf">Cf</span></th>
+                    <th scope="col" ><span jhiTranslate="rdcJhipsterApp.azienda.ragioneSociale">Ragione Sociale</span></th>
+                    <th scope="col" ><span jhiTranslate="rdcJhipsterApp.azienda.indirizzoSede">Indirizzo Sede</span></th>
+                    <th scope="col" ><span jhiTranslate="rdcJhipsterApp.azienda.provinciaSede">Provincia Sede</span></th>
+                    <th scope="col" ><span jhiTranslate="rdcJhipsterApp.azienda.ragioneSede">Ragione Sede</span></th>
+                    <th scope="col" ><span jhiTranslate="rdcJhipsterApp.azienda.capSede">Cap Sede</span></th>
+                    <th scope="col" ><span jhiTranslate="rdcJhipsterApp.azienda.login">Login</span></th>
                     <th scope="col"></th>
                 </tr>
             </thead>

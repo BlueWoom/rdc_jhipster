@@ -3,7 +3,7 @@ import { HttpResponse } from '@angular/common/http';
 import { FormBuilder } from '@angular/forms';
 import { of } from 'rxjs';
 
-import { RdcTestModule } from '../../../test.module';
+import { RdcJhipsterTestModule } from '../../../test.module';
 import { EsperienzaUpdateComponent } from 'app/entities/esperienza/esperienza-update.component';
 import { EsperienzaService } from 'app/entities/esperienza/esperienza.service';
 import { Esperienza } from 'app/shared/model/esperienza.model';
@@ -16,7 +16,7 @@ describe('Component Tests', () => {
 
     beforeEach(() => {
       TestBed.configureTestingModule({
-        imports: [RdcTestModule],
+        imports: [RdcJhipsterTestModule],
         declarations: [EsperienzaUpdateComponent],
         providers: [FormBuilder],
       })

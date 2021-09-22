@@ -40,7 +40,7 @@ export const gapAnalysisRoute: Routes = [
     component: GapAnalysisComponent,
     data: {
       authorities: [Authority.USER],
-      pageTitle: 'rdcApp.gapAnalysis.home.title',
+      pageTitle: 'rdcJhipsterApp.gapAnalysis.home.title',
     },
     canActivate: [UserRouteAccessService],
   },
@@ -52,7 +52,7 @@ export const gapAnalysisRoute: Routes = [
     },
     data: {
       authorities: [Authority.USER],
-      pageTitle: 'rdcApp.gapAnalysis.home.title',
+      pageTitle: 'rdcJhipsterApp.gapAnalysis.home.title',
     },
     canActivate: [UserRouteAccessService],
   },
@@ -64,7 +64,7 @@ export const gapAnalysisRoute: Routes = [
     },
     data: {
       authorities: [Authority.USER],
-      pageTitle: 'rdcApp.gapAnalysis.home.title',
+      pageTitle: 'rdcJhipsterApp.gapAnalysis.home.title',
     },
     canActivate: [UserRouteAccessService],
   },
@@ -76,7 +76,7 @@ export const gapAnalysisRoute: Routes = [
     },
     data: {
       authorities: [Authority.USER],
-      pageTitle: 'rdcApp.gapAnalysis.home.title',
+      pageTitle: 'rdcJhipsterApp.gapAnalysis.home.title',
     },
     canActivate: [UserRouteAccessService],
   },

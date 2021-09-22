@@ -1,6 +1,6 @@
 package it.dlvsystem.repository;
 
-import it.dlvsystem.RdcApp;
+import it.dlvsystem.RdcJhipsterApp;
 
 import it.dlvsystem.config.Constants;
 import it.dlvsystem.config.audit.AuditEventConverter;
@@ -28,7 +28,7 @@ import static it.dlvsystem.repository.CustomAuditEventRepository.EVENT_DATA_COLU
 /**
  * Integration tests for {@link CustomAuditEventRepository}.
  */
-@SpringBootTest(classes = RdcApp.class)
+@SpringBootTest(classes = RdcJhipsterApp.class)
 @Transactional
 public class CustomAuditEventRepositoryIT {
 

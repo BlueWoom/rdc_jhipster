@@ -1,0 +1,27 @@
+{
+  "rdcJhipsterApp": {
+    "cvIstruzione": {
+      "home": {
+        "title": "CvIstruziones",
+        "createLabel": "Genera un nuovo Cv Istruzione",
+        "createOrEditLabel": "Genera o modifica un Cv Istruzione",
+        "notFound": "No Cv Istruziones found"
+      },
+      "created": "&Egrave; stato generato un nuovo Cv Istruzione con identificatore {{ param }}",
+      "updated": "&Egrave; stato aggiornato Cv Istruzione identificato da {{ param }}",
+      "deleted": "&Egrave; stato eliminato Cv Istruzione con identificatore {{ param }}",
+      "delete": {
+        "question": "Sei sicuro di volere eliminare Cv Istruzione {{ id }}?"
+      },
+      "detail": {
+        "title": "Cv Istruzione"
+      },
+      "codiceIstruzione": "Codice Istruzione",
+      "cfUtente": "Cf Utente",
+      "codiceCv": "Codice Cv",
+      "punteggio": "Punteggio",
+      "istruzione": "Istruzione",
+      "cv": "Cv"
+    }
+  }
+}

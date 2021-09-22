@@ -1,8 +1,6 @@
 package it.dlvsystem.domain;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-import org.hibernate.annotations.Cache;
-import org.hibernate.annotations.CacheConcurrencyStrategy;
 
 import javax.persistence.*;
 import javax.validation.constraints.*;
@@ -17,7 +15,6 @@ import java.util.Set;
  */
 @Entity
 @Table(name = "navigator")
-@Cache(usage = CacheConcurrencyStrategy.READ_WRITE)
 public class Navigator implements Serializable {
 
     private static final long serialVersionUID = 1L;
@@ -65,7 +62,6 @@ public class Navigator implements Serializable {
     private String regione;
 
     @OneToMany(mappedBy = "navigator")
-    @Cache(usage = CacheConcurrencyStrategy.READ_WRITE)
     private Set<Candidato> candidatoes = new HashSet<>();
 
     @ManyToOne

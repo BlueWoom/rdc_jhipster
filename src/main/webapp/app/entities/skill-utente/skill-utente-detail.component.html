@@ -1,28 +1,28 @@
 <div class="row justify-content-center">
     <div class="col-8">
         <div *ngIf="skillUtente">
-            <h2><span jhiTranslate="rdcApp.skillUtente.detail.title">Skill Utente</span> {{ skillUtente.id }}</h2>
+            <h2><span jhiTranslate="rdcJhipsterApp.skillUtente.detail.title">Skill Utente</span> {{ skillUtente.id }}</h2>
 
             <hr>
 
             <jhi-alert-error></jhi-alert-error>
 
             <dl class="row-md jh-entity-details">
-                <dt><span jhiTranslate="rdcApp.skillUtente.cfUtente">Cf Utente</span></dt>
+                <dt><span jhiTranslate="rdcJhipsterApp.skillUtente.cfUtente">Cf Utente</span></dt>
                 <dd>
                     <span>{{ skillUtente.cfUtente }}</span>
                 </dd>
-                <dt><span jhiTranslate="rdcApp.skillUtente.codiceEscoSkill">Codice Esco Skill</span></dt>
+                <dt><span jhiTranslate="rdcJhipsterApp.skillUtente.codiceEscoSkill">Codice Esco Skill</span></dt>
                 <dd>
                     <span>{{ skillUtente.codiceEscoSkill }}</span>
                 </dd>
-                <dt><span jhiTranslate="rdcApp.skillUtente.skill">Skill</span></dt>
+                <dt><span jhiTranslate="rdcJhipsterApp.skillUtente.skill">Skill</span></dt>
                 <dd>
                     <div *ngIf="skillUtente.skill">
                         <a [routerLink]="['/skill', skillUtente.skill?.id, 'view']">{{ skillUtente.skill?.id }}</a>
                     </div>
                 </dd>
-                <dt><span jhiTranslate="rdcApp.skillUtente.candidato">Candidato</span></dt>
+                <dt><span jhiTranslate="rdcJhipsterApp.skillUtente.candidato">Candidato</span></dt>
                 <dd>
                     <div *ngIf="skillUtente.candidato">
                         <a [routerLink]="['/candidato', skillUtente.candidato?.id, 'view']">{{ skillUtente.candidato?.id }}</a>

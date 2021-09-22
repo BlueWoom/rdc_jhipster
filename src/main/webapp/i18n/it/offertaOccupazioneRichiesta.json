@@ -1,0 +1,26 @@
+{
+  "rdcJhipsterApp": {
+    "offertaOccupazioneRichiesta": {
+      "home": {
+        "title": "OffertaOccupazioneRichiestas",
+        "createLabel": "Genera un nuovo Offerta Occupazione Richiesta",
+        "createOrEditLabel": "Genera o modifica un Offerta Occupazione Richiesta",
+        "notFound": "No Offerta Occupazione Richiestas found"
+      },
+      "created": "&Egrave; stato generato un nuovo Offerta Occupazione Richiesta con identificatore {{ param }}",
+      "updated": "&Egrave; stato aggiornato Offerta Occupazione Richiesta identificato da {{ param }}",
+      "deleted": "&Egrave; stato eliminato Offerta Occupazione Richiesta con identificatore {{ param }}",
+      "delete": {
+        "question": "Sei sicuro di volere eliminare Offerta Occupazione Richiesta {{ id }}?"
+      },
+      "detail": {
+        "title": "Offerta Occupazione Richiesta"
+      },
+      "codiceOfferta": "Codice Offerta",
+      "codiceEscoOccupazione": "Codice Esco Occupazione",
+      "anni": "Anni",
+      "offerta": "Offerta",
+      "occupazione": "Occupazione"
+    }
+  }
+}

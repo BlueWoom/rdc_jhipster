@@ -28,7 +28,9 @@
     {
       "fieldName": "telefono",
       "fieldType": "String",
-      "fieldValidateRules": ["pattern"],
+      "fieldValidateRules": [
+        "pattern"
+      ],
       "fieldValidateRulesPattern": "[0-9]+"
     },
     {
@@ -46,7 +48,9 @@
     {
       "fieldName": "cap",
       "fieldType": "String",
-      "fieldValidateRules": ["pattern"],
+      "fieldValidateRules": [
+        "pattern"
+      ],
       "fieldValidateRulesPattern": "[0-9]+"
     },
     {
@@ -86,7 +90,7 @@
       "otherEntityField": "id"
     }
   ],
-  "changelogDate": "20210922104420",
+  "changelogDate": "20210922112502",
   "entityTableName": "candidato",
   "dto": "no",
   "pagination": "no",
@@ -96,5 +100,5 @@
   "readOnly": false,
   "embedded": false,
   "clientRootFolder": "",
-  "applications": ["rdc"]
+  "applications": "*"
 }

@@ -2,7 +2,7 @@ package it.dlvsystem.service;
 
 import it.dlvsystem.domain.PersistentAuditEvent;
 import it.dlvsystem.repository.PersistenceAuditEventRepository;
-import it.dlvsystem.RdcApp;
+import it.dlvsystem.RdcJhipsterApp;
 import io.github.jhipster.config.JHipsterProperties;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -17,7 +17,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 /**
  * Integration tests for {@link AuditEventService}.
  */
-@SpringBootTest(classes = RdcApp.class)
+@SpringBootTest(classes = RdcJhipsterApp.class)
 @Transactional
 public class AuditEventServiceIT {
     @Autowired
