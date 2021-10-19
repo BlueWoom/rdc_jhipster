@@ -106,18 +106,18 @@
                 </div>
 
                 <div class="form-group">
-                    <label class="form-control-label" jhiTranslate="rdcJhipsterApp.candidato.navigator" for="field_navigator">Navigator</label>
-                    <select class="form-control" id="field_navigator" name="navigator" formControlName="navigator">
+                    <label class="form-control-label" jhiTranslate="rdcJhipsterApp.candidato.internalUser" for="field_internalUser">Internal User</label>
+                    <select class="form-control" id="field_internalUser" name="internalUser" formControlName="internalUser">
                         <option [ngValue]="null"></option>
-                        <option [ngValue]="navigatorOption.id === editForm.get('navigator')!.value?.id ? editForm.get('navigator')!.value : navigatorOption" *ngFor="let navigatorOption of navigators; trackBy: trackById">{{ navigatorOption.id }}</option>
+                        <option [ngValue]="userOption.id === editForm.get('internalUser')!.value?.id ? editForm.get('internalUser')!.value : userOption" *ngFor="let userOption of users; trackBy: trackById">{{ userOption.id }}</option>
                     </select>
                 </div>
 
                 <div class="form-group">
-                    <label class="form-control-label" jhiTranslate="rdcJhipsterApp.candidato.login" for="field_login">Login</label>
-                    <select class="form-control" id="field_login" name="login" formControlName="login">
+                    <label class="form-control-label" jhiTranslate="rdcJhipsterApp.candidato.navigator" for="field_navigator">Navigator</label>
+                    <select class="form-control" id="field_navigator" name="navigator" formControlName="navigator">
                         <option [ngValue]="null"></option>
-                        <option [ngValue]="loginOption.id === editForm.get('login')!.value?.id ? editForm.get('login')!.value : loginOption" *ngFor="let loginOption of logins; trackBy: trackById">{{ loginOption.id }}</option>
+                        <option [ngValue]="navigatorOption.id === editForm.get('navigator')!.value?.id ? editForm.get('navigator')!.value : navigatorOption" *ngFor="let navigatorOption of navigators; trackBy: trackById">{{ navigatorOption.id }}</option>
                     </select>
                 </div>
             </div>

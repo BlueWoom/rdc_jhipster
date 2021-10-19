@@ -22,17 +22,23 @@
       "fieldType": "String"
     },
     {
-      "fieldName": "cittaSede",
-      "fieldType": "String"
-    },
-    {
       "fieldName": "capSede",
       "fieldType": "String",
-      "fieldValidateRules": ["pattern"],
+      "fieldValidateRules": [
+        "pattern"
+      ],
       "fieldValidateRulesPattern": "[0-9]+"
     }
   ],
   "relationships": [
+    {
+      "relationshipType": "one-to-one",
+      "otherEntityName": "user",
+      "otherEntityRelationshipName": "azienda",
+      "relationshipName": "internalUser",
+      "otherEntityField": "id",
+      "ownerSide": true
+    },
     {
       "relationshipType": "one-to-many",
       "otherEntityName": "offerta",
@@ -40,10 +46,10 @@
       "relationshipName": "offerta"
     }
   ],
-  "changelogDate": "20210922112402",
+  "changelogDate": "20211019152716",
   "entityTableName": "azienda",
   "dto": "no",
-  "pagination": "no",
+  "pagination": "pagination",
   "service": "no",
   "jpaMetamodelFiltering": false,
   "fluentMethods": true,

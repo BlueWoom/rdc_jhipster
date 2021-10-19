@@ -28,8 +28,8 @@
       "cap": "Cap",
       "provincia": "Provincia",
       "regione": "Regione",
-      "candidato": "Candidato",
-      "login": "Login"
+      "internalUser": "Internal User",
+      "candidato": "Candidato"
     }
   }
 }

@@ -29,10 +29,10 @@
       "cap": "Cap",
       "provincia": "Provincia",
       "regione": "Regione",
+      "internalUser": "Internal User",
       "skillUtente": "Skill Utente",
       "cv": "Cv",
-      "navigator": "Navigator",
-      "login": "Login"
+      "navigator": "Navigator"
     }
   }
 }

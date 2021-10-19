@@ -4,6 +4,7 @@
     "browsehappy": "Stai utilizzando un browser <strong> non aggiornato </ strong> <a href=\"http://browsehappy.com/?locale=it\"> Aggiorna il tuo browser per </a> migliorare la tua esperienza.",
     "menu": {
       "home": "Home",
+      "registers": "Registri",
       "jhipster-needle-menu-add-element": "JHipster will add additional menu entries here (do not translate!)",
       "entities": {
         "main": "Entità",
@@ -13,7 +14,6 @@
         "gapAnalysis": "Gap Analysis",
         "istruzione": "Istruzione",
         "navigator": "Navigator",
-        "login": "Login",
         "occupazione": "Occupazione",
         "offerta": "Offerta",
         "offertaSkill": "Offerta Skill",
@@ -150,5 +150,8 @@
       "not.image": "File was expected to be an image but was found to be \"{{ fileType }}\""
     }
   },
-  "footer": "Piè di pagina"
+  "footer": "Piè di pagina",
+  "registers": {
+    "title": "Registri"
+  }
 }

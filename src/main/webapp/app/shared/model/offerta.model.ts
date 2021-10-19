@@ -7,7 +7,6 @@ import { IOccupazione } from 'app/shared/model/occupazione.model';
 
 export interface IOfferta {
   id?: number;
-  codice?: string;
   data?: Moment;
   indirizzoSede?: string;
   cittaSede?: string;
@@ -23,7 +22,6 @@ export interface IOfferta {
 export class Offerta implements IOfferta {
   constructor(
     public id?: number,
-    public codice?: string,
     public data?: Moment,
     public indirizzoSede?: string,
     public cittaSede?: string,

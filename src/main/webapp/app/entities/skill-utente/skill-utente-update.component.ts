@@ -25,7 +25,6 @@ export class SkillUtenteUpdateComponent implements OnInit {
 
   editForm = this.fb.group({
     id: [],
-    cfUtente: [],
     codiceEscoSkill: [],
     skill: [],
     candidato: [],
@@ -52,7 +51,6 @@ export class SkillUtenteUpdateComponent implements OnInit {
   updateForm(skillUtente: ISkillUtente): void {
     this.editForm.patchValue({
       id: skillUtente.id,
-      cfUtente: skillUtente.cfUtente,
       codiceEscoSkill: skillUtente.codiceEscoSkill,
       skill: skillUtente.skill,
       candidato: skillUtente.candidato,
@@ -77,7 +75,6 @@ export class SkillUtenteUpdateComponent implements OnInit {
     return {
       ...new SkillUtente(),
       id: this.editForm.get(['id'])!.value,
-      cfUtente: this.editForm.get(['cfUtente'])!.value,
       codiceEscoSkill: this.editForm.get(['codiceEscoSkill'])!.value,
       skill: this.editForm.get(['skill'])!.value,
       candidato: this.editForm.get(['candidato'])!.value,

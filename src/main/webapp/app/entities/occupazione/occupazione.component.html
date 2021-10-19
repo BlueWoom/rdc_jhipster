@@ -21,13 +21,10 @@
     <div class="table-responsive" id="entities" *ngIf="occupaziones && occupaziones.length > 0">
         <table class="table table-striped" aria-describedby="page-heading">
             <thead>
-                <tr>
-                    <th scope="col" ><span jhiTranslate="global.field.id">ID</span></th>
-                    <th scope="col" ><span jhiTranslate="rdcJhipsterApp.occupazione.codiceEsco">Codice Esco</span></th>
-                    <th scope="col" ><span jhiTranslate="rdcJhipsterApp.occupazione.nome">Nome</span></th>
-                    <th scope="col" ><span jhiTranslate="rdcJhipsterApp.occupazione.esperienza">Esperienza</span></th>
-                    <th scope="col" ><span jhiTranslate="rdcJhipsterApp.occupazione.offerta">Offerta</span></th>
-                    <th scope="col" ><span jhiTranslate="rdcJhipsterApp.occupazione.skill">Skill</span></th>
+                <tr jhiSort [(predicate)]="predicate" [(ascending)]="ascending" [callback]="loadPage.bind(this)">
+                    <th scope="col"  jhiSortBy="id"><span jhiTranslate="global.field.id">ID</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="codiceEsco"><span jhiTranslate="rdcJhipsterApp.occupazione.codiceEsco">Codice Esco</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="nome"><span jhiTranslate="rdcJhipsterApp.occupazione.nome">Nome</span> <fa-icon icon="sort"></fa-icon></th>
                     <th scope="col"></th>
                 </tr>
             </thead>
@@ -36,21 +33,6 @@
                     <td><a [routerLink]="['/occupazione', occupazione.id, 'view']">{{ occupazione.id }}</a></td>
                     <td>{{ occupazione.codiceEsco }}</td>
                     <td>{{ occupazione.nome }}</td>
-                    <td>
-                        <span *ngFor="let esperienza of occupazione.esperienzas; let last = last">
-                            <a class="form-control-static" [routerLink]="['/esperienza', esperienza?.id, 'view']">{{ esperienza.id }}</a>{{ last ? '' : ', ' }}
-                        </span>
-                    </td>
-                    <td>
-                        <span *ngFor="let offerta of occupazione.offertas; let last = last">
-                            <a class="form-control-static" [routerLink]="['/offerta', offerta?.id, 'view']">{{ offerta.id }}</a>{{ last ? '' : ', ' }}
-                        </span>
-                    </td>
-                    <td>
-                        <span *ngFor="let skill of occupazione.skills; let last = last">
-                            <a class="form-control-static" [routerLink]="['/skill', skill?.id, 'view']">{{ skill.id }}</a>{{ last ? '' : ', ' }}
-                        </span>
-                    </td>
                     <td class="text-right">
                         <div class="btn-group">
                             <button type="submit"
@@ -77,5 +59,15 @@
                 </tr>
             </tbody>
         </table>
+    </div>
+
+    <div *ngIf="occupaziones && occupaziones.length > 0">
+        <div class="row justify-content-center">
+            <jhi-item-count [page]="page" [total]="totalItems" [itemsPerPage]="itemsPerPage"></jhi-item-count>
+        </div>
+
+        <div class="row justify-content-center">
+            <ngb-pagination [collectionSize]="totalItems" [(page)]="ngbPaginationPage" [pageSize]="itemsPerPage" [maxSize]="5" [rotate]="true" [boundaryLinks]="true" (pageChange)="loadPage($event)"></ngb-pagination>
+        </div>
     </div>
 </div>

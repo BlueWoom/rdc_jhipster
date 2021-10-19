@@ -4,7 +4,6 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import javax.persistence.*;
-import javax.validation.constraints.*;
 
 import java.io.Serializable;
 import java.time.LocalDate;
@@ -23,10 +22,6 @@ public class Esperienza implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-
-    @Pattern(regexp = "[0-9]+")
-    @Column(name = "codice")
-    private String codice;
 
     @Column(name = "attivita")
     private String attivita;
@@ -58,19 +53,6 @@ public class Esperienza implements Serializable {
 
     public void setId(Long id) {
         this.id = id;
-    }
-
-    public String getCodice() {
-        return codice;
-    }
-
-    public Esperienza codice(String codice) {
-        this.codice = codice;
-        return this;
-    }
-
-    public void setCodice(String codice) {
-        this.codice = codice;
     }
 
     public String getAttivita() {
@@ -198,7 +180,6 @@ public class Esperienza implements Serializable {
     public String toString() {
         return "Esperienza{" +
             "id=" + getId() +
-            ", codice='" + getCodice() + "'" +
             ", attivita='" + getAttivita() + "'" +
             ", dal='" + getDal() + "'" +
             ", al='" + getAl() + "'" +

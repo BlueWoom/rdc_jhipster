@@ -19,9 +19,6 @@ public class SkillUtente implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(name = "cf_utente")
-    private String cfUtente;
-
     @Column(name = "codice_esco_skill")
     private String codiceEscoSkill;
 
@@ -40,19 +37,6 @@ public class SkillUtente implements Serializable {
 
     public void setId(Long id) {
         this.id = id;
-    }
-
-    public String getCfUtente() {
-        return cfUtente;
-    }
-
-    public SkillUtente cfUtente(String cfUtente) {
-        this.cfUtente = cfUtente;
-        return this;
-    }
-
-    public void setCfUtente(String cfUtente) {
-        this.cfUtente = cfUtente;
     }
 
     public String getCodiceEscoSkill() {
@@ -116,7 +100,6 @@ public class SkillUtente implements Serializable {
     public String toString() {
         return "SkillUtente{" +
             "id=" + getId() +
-            ", cfUtente='" + getCfUtente() + "'" +
             ", codiceEscoSkill='" + getCodiceEscoSkill() + "'" +
             "}";
     }

@@ -31,12 +31,6 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 @WithMockUser
 public class CvResourceIT {
 
-    private static final String DEFAULT_CF_UTENTE = "AAAAAAAAAA";
-    private static final String UPDATED_CF_UTENTE = "BBBBBBBBBB";
-
-    private static final String DEFAULT_CODICE = "79762";
-    private static final String UPDATED_CODICE = "845";
-
     private static final LocalDate DEFAULT_INSERIMENTO = LocalDate.ofEpochDay(0L);
     private static final LocalDate UPDATED_INSERIMENTO = LocalDate.now(ZoneId.systemDefault());
 
@@ -59,8 +53,6 @@ public class CvResourceIT {
      */
     public static Cv createEntity(EntityManager em) {
         Cv cv = new Cv()
-            .cfUtente(DEFAULT_CF_UTENTE)
-            .codice(DEFAULT_CODICE)
             .inserimento(DEFAULT_INSERIMENTO);
         return cv;
     }
@@ -72,8 +64,6 @@ public class CvResourceIT {
      */
     public static Cv createUpdatedEntity(EntityManager em) {
         Cv cv = new Cv()
-            .cfUtente(UPDATED_CF_UTENTE)
-            .codice(UPDATED_CODICE)
             .inserimento(UPDATED_INSERIMENTO);
         return cv;
     }
@@ -97,8 +87,6 @@ public class CvResourceIT {
         List<Cv> cvList = cvRepository.findAll();
         assertThat(cvList).hasSize(databaseSizeBeforeCreate + 1);
         Cv testCv = cvList.get(cvList.size() - 1);
-        assertThat(testCv.getCfUtente()).isEqualTo(DEFAULT_CF_UTENTE);
-        assertThat(testCv.getCodice()).isEqualTo(DEFAULT_CODICE);
         assertThat(testCv.getInserimento()).isEqualTo(DEFAULT_INSERIMENTO);
     }
 
@@ -133,8 +121,6 @@ public class CvResourceIT {
             .andExpect(status().isOk())
             .andExpect(content().contentType(MediaType.APPLICATION_JSON_VALUE))
             .andExpect(jsonPath("$.[*].id").value(hasItem(cv.getId().intValue())))
-            .andExpect(jsonPath("$.[*].cfUtente").value(hasItem(DEFAULT_CF_UTENTE)))
-            .andExpect(jsonPath("$.[*].codice").value(hasItem(DEFAULT_CODICE)))
             .andExpect(jsonPath("$.[*].inserimento").value(hasItem(DEFAULT_INSERIMENTO.toString())));
     }
     
@@ -149,8 +135,6 @@ public class CvResourceIT {
             .andExpect(status().isOk())
             .andExpect(content().contentType(MediaType.APPLICATION_JSON_VALUE))
             .andExpect(jsonPath("$.id").value(cv.getId().intValue()))
-            .andExpect(jsonPath("$.cfUtente").value(DEFAULT_CF_UTENTE))
-            .andExpect(jsonPath("$.codice").value(DEFAULT_CODICE))
             .andExpect(jsonPath("$.inserimento").value(DEFAULT_INSERIMENTO.toString()));
     }
     @Test
@@ -174,8 +158,6 @@ public class CvResourceIT {
         // Disconnect from session so that the updates on updatedCv are not directly saved in db
         em.detach(updatedCv);
         updatedCv
-            .cfUtente(UPDATED_CF_UTENTE)
-            .codice(UPDATED_CODICE)
             .inserimento(UPDATED_INSERIMENTO);
 
         restCvMockMvc.perform(put("/api/cvs")
@@ -187,8 +169,6 @@ public class CvResourceIT {
         List<Cv> cvList = cvRepository.findAll();
         assertThat(cvList).hasSize(databaseSizeBeforeUpdate);
         Cv testCv = cvList.get(cvList.size() - 1);
-        assertThat(testCv.getCfUtente()).isEqualTo(UPDATED_CF_UTENTE);
-        assertThat(testCv.getCodice()).isEqualTo(UPDATED_CODICE);
         assertThat(testCv.getInserimento()).isEqualTo(UPDATED_INSERIMENTO);
     }
 

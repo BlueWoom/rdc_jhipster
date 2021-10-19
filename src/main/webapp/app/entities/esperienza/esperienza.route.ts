@@ -40,6 +40,7 @@ export const esperienzaRoute: Routes = [
     component: EsperienzaComponent,
     data: {
       authorities: [Authority.USER],
+      defaultSort: 'id,asc',
       pageTitle: 'rdcJhipsterApp.esperienza.home.title',
     },
     canActivate: [UserRouteAccessService],

@@ -36,12 +36,13 @@ public class Azienda implements Serializable {
     @Column(name = "ragione_sede")
     private String ragioneSede;
 
-    @Column(name = "citta_sede")
-    private String cittaSede;
-
     @Pattern(regexp = "[0-9]+")
     @Column(name = "cap_sede")
     private String capSede;
+
+    @OneToOne
+    @JoinColumn(unique = true)
+    private User internalUser;
 
     @OneToMany(mappedBy = "azienda")
     private Set<Offerta> offertas = new HashSet<>();
@@ -120,19 +121,6 @@ public class Azienda implements Serializable {
         this.ragioneSede = ragioneSede;
     }
 
-    public String getCittaSede() {
-        return cittaSede;
-    }
-
-    public Azienda cittaSede(String cittaSede) {
-        this.cittaSede = cittaSede;
-        return this;
-    }
-
-    public void setCittaSede(String cittaSede) {
-        this.cittaSede = cittaSede;
-    }
-
     public String getCapSede() {
         return capSede;
     }
@@ -144,6 +132,19 @@ public class Azienda implements Serializable {
 
     public void setCapSede(String capSede) {
         this.capSede = capSede;
+    }
+
+    public User getInternalUser() {
+        return internalUser;
+    }
+
+    public Azienda internalUser(User user) {
+        this.internalUser = user;
+        return this;
+    }
+
+    public void setInternalUser(User user) {
+        this.internalUser = user;
     }
 
     public Set<Offerta> getOffertas() {
@@ -198,7 +199,6 @@ public class Azienda implements Serializable {
             ", indirizzoSede='" + getIndirizzoSede() + "'" +
             ", provinciaSede='" + getProvinciaSede() + "'" +
             ", ragioneSede='" + getRagioneSede() + "'" +
-            ", cittaSede='" + getCittaSede() + "'" +
             ", capSede='" + getCapSede() + "'" +
             "}";
     }

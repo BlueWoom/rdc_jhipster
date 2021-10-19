@@ -100,10 +100,10 @@
                 </div>
 
                 <div class="form-group">
-                    <label class="form-control-label" jhiTranslate="rdcJhipsterApp.navigator.login" for="field_login">Login</label>
-                    <select class="form-control" id="field_login" name="login" formControlName="login">
+                    <label class="form-control-label" jhiTranslate="rdcJhipsterApp.navigator.internalUser" for="field_internalUser">Internal User</label>
+                    <select class="form-control" id="field_internalUser" name="internalUser" formControlName="internalUser">
                         <option [ngValue]="null"></option>
-                        <option [ngValue]="loginOption.id === editForm.get('login')!.value?.id ? editForm.get('login')!.value : loginOption" *ngFor="let loginOption of logins; trackBy: trackById">{{ loginOption.id }}</option>
+                        <option [ngValue]="userOption.id === editForm.get('internalUser')!.value?.id ? editForm.get('internalUser')!.value : userOption" *ngFor="let userOption of users; trackBy: trackById">{{ userOption.id }}</option>
                     </select>
                 </div>
             </div>

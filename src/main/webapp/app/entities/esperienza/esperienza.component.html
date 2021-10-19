@@ -21,22 +21,20 @@
     <div class="table-responsive" id="entities" *ngIf="esperienzas && esperienzas.length > 0">
         <table class="table table-striped" aria-describedby="page-heading">
             <thead>
-                <tr>
-                    <th scope="col" ><span jhiTranslate="global.field.id">ID</span></th>
-                    <th scope="col" ><span jhiTranslate="rdcJhipsterApp.esperienza.codice">Codice</span></th>
-                    <th scope="col" ><span jhiTranslate="rdcJhipsterApp.esperienza.attivita">Attivita</span></th>
-                    <th scope="col" ><span jhiTranslate="rdcJhipsterApp.esperienza.dal">Dal</span></th>
-                    <th scope="col" ><span jhiTranslate="rdcJhipsterApp.esperienza.al">Al</span></th>
-                    <th scope="col" ><span jhiTranslate="rdcJhipsterApp.esperienza.datoreLavoro">Datore Lavoro</span></th>
-                    <th scope="col" ><span jhiTranslate="rdcJhipsterApp.esperienza.sedeLavoro">Sede Lavoro</span></th>
-                    <th scope="col" ><span jhiTranslate="rdcJhipsterApp.esperienza.cv">Cv</span></th>
+                <tr jhiSort [(predicate)]="predicate" [(ascending)]="ascending" [callback]="loadPage.bind(this)">
+                    <th scope="col"  jhiSortBy="id"><span jhiTranslate="global.field.id">ID</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="attivita"><span jhiTranslate="rdcJhipsterApp.esperienza.attivita">Attivita</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="dal"><span jhiTranslate="rdcJhipsterApp.esperienza.dal">Dal</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="al"><span jhiTranslate="rdcJhipsterApp.esperienza.al">Al</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="datoreLavoro"><span jhiTranslate="rdcJhipsterApp.esperienza.datoreLavoro">Datore Lavoro</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="sedeLavoro"><span jhiTranslate="rdcJhipsterApp.esperienza.sedeLavoro">Sede Lavoro</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="cv.id"><span jhiTranslate="rdcJhipsterApp.esperienza.cv">Cv</span> <fa-icon icon="sort"></fa-icon></th>
                     <th scope="col"></th>
                 </tr>
             </thead>
             <tbody>
                 <tr *ngFor="let esperienza of esperienzas ;trackBy: trackId">
                     <td><a [routerLink]="['/esperienza', esperienza.id, 'view']">{{ esperienza.id }}</a></td>
-                    <td>{{ esperienza.codice }}</td>
                     <td>{{ esperienza.attivita }}</td>
                     <td>{{ esperienza.dal | date:'mediumDate' }}</td>
                     <td>{{ esperienza.al | date:'mediumDate' }}</td>
@@ -73,5 +71,15 @@
                 </tr>
             </tbody>
         </table>
+    </div>
+
+    <div *ngIf="esperienzas && esperienzas.length > 0">
+        <div class="row justify-content-center">
+            <jhi-item-count [page]="page" [total]="totalItems" [itemsPerPage]="itemsPerPage"></jhi-item-count>
+        </div>
+
+        <div class="row justify-content-center">
+            <ngb-pagination [collectionSize]="totalItems" [(page)]="ngbPaginationPage" [pageSize]="itemsPerPage" [maxSize]="5" [rotate]="true" [boundaryLinks]="true" (pageChange)="loadPage($event)"></ngb-pagination>
+        </div>
     </div>
 </div>

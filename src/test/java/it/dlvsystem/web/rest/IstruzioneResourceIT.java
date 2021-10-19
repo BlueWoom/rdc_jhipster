@@ -29,9 +29,6 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 @WithMockUser
 public class IstruzioneResourceIT {
 
-    private static final String DEFAULT_CODICE = "72890";
-    private static final String UPDATED_CODICE = "4708";
-
     private static final String DEFAULT_CODICE_ISCED = "AAAAAAAAAA";
     private static final String UPDATED_CODICE_ISCED = "BBBBBBBBBB";
 
@@ -72,7 +69,6 @@ public class IstruzioneResourceIT {
      */
     public static Istruzione createEntity(EntityManager em) {
         Istruzione istruzione = new Istruzione()
-            .codice(DEFAULT_CODICE)
             .codiceIsced(DEFAULT_CODICE_ISCED)
             .codiceLivello(DEFAULT_CODICE_LIVELLO)
             .nome(DEFAULT_NOME)
@@ -90,7 +86,6 @@ public class IstruzioneResourceIT {
      */
     public static Istruzione createUpdatedEntity(EntityManager em) {
         Istruzione istruzione = new Istruzione()
-            .codice(UPDATED_CODICE)
             .codiceIsced(UPDATED_CODICE_ISCED)
             .codiceLivello(UPDATED_CODICE_LIVELLO)
             .nome(UPDATED_NOME)
@@ -120,7 +115,6 @@ public class IstruzioneResourceIT {
         List<Istruzione> istruzioneList = istruzioneRepository.findAll();
         assertThat(istruzioneList).hasSize(databaseSizeBeforeCreate + 1);
         Istruzione testIstruzione = istruzioneList.get(istruzioneList.size() - 1);
-        assertThat(testIstruzione.getCodice()).isEqualTo(DEFAULT_CODICE);
         assertThat(testIstruzione.getCodiceIsced()).isEqualTo(DEFAULT_CODICE_ISCED);
         assertThat(testIstruzione.getCodiceLivello()).isEqualTo(DEFAULT_CODICE_LIVELLO);
         assertThat(testIstruzione.getNome()).isEqualTo(DEFAULT_NOME);
@@ -161,7 +155,6 @@ public class IstruzioneResourceIT {
             .andExpect(status().isOk())
             .andExpect(content().contentType(MediaType.APPLICATION_JSON_VALUE))
             .andExpect(jsonPath("$.[*].id").value(hasItem(istruzione.getId().intValue())))
-            .andExpect(jsonPath("$.[*].codice").value(hasItem(DEFAULT_CODICE)))
             .andExpect(jsonPath("$.[*].codiceIsced").value(hasItem(DEFAULT_CODICE_ISCED)))
             .andExpect(jsonPath("$.[*].codiceLivello").value(hasItem(DEFAULT_CODICE_LIVELLO)))
             .andExpect(jsonPath("$.[*].nome").value(hasItem(DEFAULT_NOME)))
@@ -182,7 +175,6 @@ public class IstruzioneResourceIT {
             .andExpect(status().isOk())
             .andExpect(content().contentType(MediaType.APPLICATION_JSON_VALUE))
             .andExpect(jsonPath("$.id").value(istruzione.getId().intValue()))
-            .andExpect(jsonPath("$.codice").value(DEFAULT_CODICE))
             .andExpect(jsonPath("$.codiceIsced").value(DEFAULT_CODICE_ISCED))
             .andExpect(jsonPath("$.codiceLivello").value(DEFAULT_CODICE_LIVELLO))
             .andExpect(jsonPath("$.nome").value(DEFAULT_NOME))
@@ -212,7 +204,6 @@ public class IstruzioneResourceIT {
         // Disconnect from session so that the updates on updatedIstruzione are not directly saved in db
         em.detach(updatedIstruzione);
         updatedIstruzione
-            .codice(UPDATED_CODICE)
             .codiceIsced(UPDATED_CODICE_ISCED)
             .codiceLivello(UPDATED_CODICE_LIVELLO)
             .nome(UPDATED_NOME)
@@ -230,7 +221,6 @@ public class IstruzioneResourceIT {
         List<Istruzione> istruzioneList = istruzioneRepository.findAll();
         assertThat(istruzioneList).hasSize(databaseSizeBeforeUpdate);
         Istruzione testIstruzione = istruzioneList.get(istruzioneList.size() - 1);
-        assertThat(testIstruzione.getCodice()).isEqualTo(UPDATED_CODICE);
         assertThat(testIstruzione.getCodiceIsced()).isEqualTo(UPDATED_CODICE_ISCED);
         assertThat(testIstruzione.getCodiceLivello()).isEqualTo(UPDATED_CODICE_LIVELLO);
         assertThat(testIstruzione.getNome()).isEqualTo(UPDATED_NOME);

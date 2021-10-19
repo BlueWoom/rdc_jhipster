@@ -21,23 +21,23 @@
     <div class="table-responsive" id="entities" *ngIf="candidatoes && candidatoes.length > 0">
         <table class="table table-striped" aria-describedby="page-heading">
             <thead>
-                <tr>
-                    <th scope="col" ><span jhiTranslate="global.field.id">ID</span></th>
-                    <th scope="col" ><span jhiTranslate="rdcJhipsterApp.candidato.cf">Cf</span></th>
-                    <th scope="col" ><span jhiTranslate="rdcJhipsterApp.candidato.nome">Nome</span></th>
-                    <th scope="col" ><span jhiTranslate="rdcJhipsterApp.candidato.cognome">Cognome</span></th>
-                    <th scope="col" ><span jhiTranslate="rdcJhipsterApp.candidato.dataNascita">Data Nascita</span></th>
-                    <th scope="col" ><span jhiTranslate="rdcJhipsterApp.candidato.luogoNascita">Luogo Nascita</span></th>
-                    <th scope="col" ><span jhiTranslate="rdcJhipsterApp.candidato.sesso">Sesso</span></th>
-                    <th scope="col" ><span jhiTranslate="rdcJhipsterApp.candidato.telefono">Telefono</span></th>
-                    <th scope="col" ><span jhiTranslate="rdcJhipsterApp.candidato.email">Email</span></th>
-                    <th scope="col" ><span jhiTranslate="rdcJhipsterApp.candidato.citta">Citta</span></th>
-                    <th scope="col" ><span jhiTranslate="rdcJhipsterApp.candidato.indirizzo">Indirizzo</span></th>
-                    <th scope="col" ><span jhiTranslate="rdcJhipsterApp.candidato.cap">Cap</span></th>
-                    <th scope="col" ><span jhiTranslate="rdcJhipsterApp.candidato.provincia">Provincia</span></th>
-                    <th scope="col" ><span jhiTranslate="rdcJhipsterApp.candidato.regione">Regione</span></th>
-                    <th scope="col" ><span jhiTranslate="rdcJhipsterApp.candidato.navigator">Navigator</span></th>
-                    <th scope="col" ><span jhiTranslate="rdcJhipsterApp.candidato.login">Login</span></th>
+                <tr jhiSort [(predicate)]="predicate" [(ascending)]="ascending" [callback]="loadPage.bind(this)">
+                    <th scope="col"  jhiSortBy="id"><span jhiTranslate="global.field.id">ID</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="cf"><span jhiTranslate="rdcJhipsterApp.candidato.cf">Cf</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="nome"><span jhiTranslate="rdcJhipsterApp.candidato.nome">Nome</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="cognome"><span jhiTranslate="rdcJhipsterApp.candidato.cognome">Cognome</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="dataNascita"><span jhiTranslate="rdcJhipsterApp.candidato.dataNascita">Data Nascita</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="luogoNascita"><span jhiTranslate="rdcJhipsterApp.candidato.luogoNascita">Luogo Nascita</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="sesso"><span jhiTranslate="rdcJhipsterApp.candidato.sesso">Sesso</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="telefono"><span jhiTranslate="rdcJhipsterApp.candidato.telefono">Telefono</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="email"><span jhiTranslate="rdcJhipsterApp.candidato.email">Email</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="citta"><span jhiTranslate="rdcJhipsterApp.candidato.citta">Citta</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="indirizzo"><span jhiTranslate="rdcJhipsterApp.candidato.indirizzo">Indirizzo</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="cap"><span jhiTranslate="rdcJhipsterApp.candidato.cap">Cap</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="provincia"><span jhiTranslate="rdcJhipsterApp.candidato.provincia">Provincia</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="regione"><span jhiTranslate="rdcJhipsterApp.candidato.regione">Regione</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="internalUser.id"><span jhiTranslate="rdcJhipsterApp.candidato.internalUser">Internal User</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="navigator.id"><span jhiTranslate="rdcJhipsterApp.candidato.navigator">Navigator</span> <fa-icon icon="sort"></fa-icon></th>
                     <th scope="col"></th>
                 </tr>
             </thead>
@@ -58,13 +58,11 @@
                     <td>{{ candidato.provincia }}</td>
                     <td>{{ candidato.regione }}</td>
                     <td>
-                        <div *ngIf="candidato.navigator">
-                            <a [routerLink]="['/navigator', candidato.navigator?.id, 'view']" >{{ candidato.navigator?.id }}</a>
-                        </div>
+                        {{ candidato.internalUser?.id }}
                     </td>
                     <td>
-                        <div *ngIf="candidato.login">
-                            <a [routerLink]="['/login', candidato.login?.id, 'view']" >{{ candidato.login?.id }}</a>
+                        <div *ngIf="candidato.navigator">
+                            <a [routerLink]="['/navigator', candidato.navigator?.id, 'view']" >{{ candidato.navigator?.id }}</a>
                         </div>
                     </td>
                     <td class="text-right">
@@ -93,5 +91,15 @@
                 </tr>
             </tbody>
         </table>
+    </div>
+
+    <div *ngIf="candidatoes && candidatoes.length > 0">
+        <div class="row justify-content-center">
+            <jhi-item-count [page]="page" [total]="totalItems" [itemsPerPage]="itemsPerPage"></jhi-item-count>
+        </div>
+
+        <div class="row justify-content-center">
+            <ngb-pagination [collectionSize]="totalItems" [(page)]="ngbPaginationPage" [pageSize]="itemsPerPage" [maxSize]="5" [rotate]="true" [boundaryLinks]="true" (pageChange)="loadPage($event)"></ngb-pagination>
+        </div>
     </div>
 </div>

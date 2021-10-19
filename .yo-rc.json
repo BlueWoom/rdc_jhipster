@@ -2,7 +2,7 @@
   "generator-jhipster": {
     "promptValues": {
       "packageName": "it.dlvsystem",
-      "nativeLanguage": "en"
+      "nativeLanguage": "it"
     },
     "jhipsterVersion": "6.10.5",
     "applicationType": "monolith",
@@ -21,22 +21,22 @@
     "serviceDiscoveryType": false,
     "buildTool": "maven",
     "enableSwaggerCodegen": false,
-    "jwtSecretKey": "MWRkMTY1OGUwZmNlMDdmMDM0MTEyZWU4NjZmOTdhNjllNWQwMDFlMGY4MzM4NTc1Zjg2YWJiZGMwZTEyYjhjOGI1ZWMwOTYwYzFlZmEwMzdlM2UyZTVkYzBiOWY3ZTQ1YzA0YWMwMzQ4YTJiMDViOWZjOTc4NzkzNWZmNTc3YTA=",
+    "jwtSecretKey": "NjRhZDAxZDg2N2YwZDdlZjUyOTA2MmFkM2Q0NTA1ZDk2NTJmYjA5Y2JlMzljYTJkZjlhMDVlZmJiNzU1ZTZkZTVmZDhiZmViYzM2MzY3MTdkZTczNmYyZDZjMjcwOWE0ZDRhNWM4MzUxMTJkYWJjYmVhZGVkMmI5MjgzZWQzZTk=",
     "embeddableLaunchScript": false,
     "useSass": true,
     "clientPackageManager": "npm",
     "clientFramework": "angularX",
     "clientTheme": "none",
     "clientThemeVariant": "",
-    "creationTimestamp": 1632309533221,
+    "creationTimestamp": 1634656915631,
     "testFrameworks": [],
     "jhiPrefix": "jhi",
     "entitySuffix": "",
     "dtoSuffix": "DTO",
     "otherModules": [],
     "enableTranslation": true,
-    "nativeLanguage": "en",
-    "languages": ["en", "it"],
+    "nativeLanguage": "it",
+    "languages": ["it"],
     "blueprints": []
   }
 }

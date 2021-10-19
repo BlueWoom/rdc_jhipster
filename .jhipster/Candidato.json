@@ -64,6 +64,14 @@
   ],
   "relationships": [
     {
+      "relationshipType": "one-to-one",
+      "otherEntityName": "user",
+      "otherEntityRelationshipName": "candidato",
+      "relationshipName": "internalUser",
+      "otherEntityField": "id",
+      "ownerSide": true
+    },
+    {
       "relationshipType": "one-to-many",
       "otherEntityName": "skillUtente",
       "otherEntityRelationshipName": "candidato",
@@ -81,19 +89,12 @@
       "otherEntityRelationshipName": "candidato",
       "relationshipName": "navigator",
       "otherEntityField": "id"
-    },
-    {
-      "relationshipType": "many-to-one",
-      "otherEntityName": "login",
-      "otherEntityRelationshipName": "candidato",
-      "relationshipName": "login",
-      "otherEntityField": "id"
     }
   ],
-  "changelogDate": "20210922112502",
+  "changelogDate": "20211019152816",
   "entityTableName": "candidato",
   "dto": "no",
-  "pagination": "no",
+  "pagination": "pagination",
   "service": "no",
   "jpaMetamodelFiltering": false,
   "fluentMethods": true,

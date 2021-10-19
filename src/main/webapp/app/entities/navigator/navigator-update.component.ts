@@ -7,8 +7,8 @@ import { Observable } from 'rxjs';
 
 import { INavigator, Navigator } from 'app/shared/model/navigator.model';
 import { NavigatorService } from './navigator.service';
-import { ILogin } from 'app/shared/model/login.model';
-import { LoginService } from 'app/entities/login/login.service';
+import { IUser } from 'app/core/user/user.model';
+import { UserService } from 'app/core/user/user.service';
 
 @Component({
   selector: 'jhi-navigator-update',
@@ -16,7 +16,7 @@ import { LoginService } from 'app/entities/login/login.service';
 })
 export class NavigatorUpdateComponent implements OnInit {
   isSaving = false;
-  logins: ILogin[] = [];
+  users: IUser[] = [];
   dataNascitaDp: any;
 
   editForm = this.fb.group({
@@ -33,12 +33,12 @@ export class NavigatorUpdateComponent implements OnInit {
     cap: [null, [Validators.pattern('[0-9]+')]],
     provincia: [],
     regione: [],
-    login: [],
+    internalUser: [],
   });
 
   constructor(
     protected navigatorService: NavigatorService,
-    protected loginService: LoginService,
+    protected userService: UserService,
     protected activatedRoute: ActivatedRoute,
     private fb: FormBuilder
   ) {}
@@ -47,7 +47,7 @@ export class NavigatorUpdateComponent implements OnInit {
     this.activatedRoute.data.subscribe(({ navigator }) => {
       this.updateForm(navigator);
 
-      this.loginService.query().subscribe((res: HttpResponse<ILogin[]>) => (this.logins = res.body || []));
+      this.userService.query().subscribe((res: HttpResponse<IUser[]>) => (this.users = res.body || []));
     });
   }
 
@@ -66,7 +66,7 @@ export class NavigatorUpdateComponent implements OnInit {
       cap: navigator.cap,
       provincia: navigator.provincia,
       regione: navigator.regione,
-      login: navigator.login,
+      internalUser: navigator.internalUser,
     });
   }
 
@@ -100,7 +100,7 @@ export class NavigatorUpdateComponent implements OnInit {
       cap: this.editForm.get(['cap'])!.value,
       provincia: this.editForm.get(['provincia'])!.value,
       regione: this.editForm.get(['regione'])!.value,
-      login: this.editForm.get(['login'])!.value,
+      internalUser: this.editForm.get(['internalUser'])!.value,
     };
   }
 
@@ -120,7 +120,7 @@ export class NavigatorUpdateComponent implements OnInit {
     this.isSaving = false;
   }
 
-  trackById(index: number, item: ILogin): any {
+  trackById(index: number, item: IUser): any {
     return item.id;
   }
 }

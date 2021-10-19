@@ -40,6 +40,7 @@ export const skillRoute: Routes = [
     component: SkillComponent,
     data: {
       authorities: [Authority.USER],
+      defaultSort: 'id,asc',
       pageTitle: 'rdcJhipsterApp.skill.home.title',
     },
     canActivate: [UserRouteAccessService],

@@ -21,15 +21,15 @@
     <div class="table-responsive" id="entities" *ngIf="aziendas && aziendas.length > 0">
         <table class="table table-striped" aria-describedby="page-heading">
             <thead>
-                <tr>
-                    <th scope="col" ><span jhiTranslate="global.field.id">ID</span></th>
-                    <th scope="col" ><span jhiTranslate="rdcJhipsterApp.azienda.cf">Cf</span></th>
-                    <th scope="col" ><span jhiTranslate="rdcJhipsterApp.azienda.ragioneSociale">Ragione Sociale</span></th>
-                    <th scope="col" ><span jhiTranslate="rdcJhipsterApp.azienda.indirizzoSede">Indirizzo Sede</span></th>
-                    <th scope="col" ><span jhiTranslate="rdcJhipsterApp.azienda.provinciaSede">Provincia Sede</span></th>
-                    <th scope="col" ><span jhiTranslate="rdcJhipsterApp.azienda.ragioneSede">Ragione Sede</span></th>
-                    <th scope="col" ><span jhiTranslate="rdcJhipsterApp.azienda.cittaSede">Citta Sede</span></th>
-                    <th scope="col" ><span jhiTranslate="rdcJhipsterApp.azienda.capSede">Cap Sede</span></th>
+                <tr jhiSort [(predicate)]="predicate" [(ascending)]="ascending" [callback]="loadPage.bind(this)">
+                    <th scope="col"  jhiSortBy="id"><span jhiTranslate="global.field.id">ID</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="cf"><span jhiTranslate="rdcJhipsterApp.azienda.cf">Cf</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="ragioneSociale"><span jhiTranslate="rdcJhipsterApp.azienda.ragioneSociale">Ragione Sociale</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="indirizzoSede"><span jhiTranslate="rdcJhipsterApp.azienda.indirizzoSede">Indirizzo Sede</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="provinciaSede"><span jhiTranslate="rdcJhipsterApp.azienda.provinciaSede">Provincia Sede</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="ragioneSede"><span jhiTranslate="rdcJhipsterApp.azienda.ragioneSede">Ragione Sede</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="capSede"><span jhiTranslate="rdcJhipsterApp.azienda.capSede">Cap Sede</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="internalUser.id"><span jhiTranslate="rdcJhipsterApp.azienda.internalUser">Internal User</span> <fa-icon icon="sort"></fa-icon></th>
                     <th scope="col"></th>
                 </tr>
             </thead>
@@ -41,8 +41,10 @@
                     <td>{{ azienda.indirizzoSede }}</td>
                     <td>{{ azienda.provinciaSede }}</td>
                     <td>{{ azienda.ragioneSede }}</td>
-                    <td>{{ azienda.cittaSede }}</td>
                     <td>{{ azienda.capSede }}</td>
+                    <td>
+                        {{ azienda.internalUser?.id }}
+                    </td>
                     <td class="text-right">
                         <div class="btn-group">
                             <button type="submit"
@@ -69,5 +71,15 @@
                 </tr>
             </tbody>
         </table>
+    </div>
+
+    <div *ngIf="aziendas && aziendas.length > 0">
+        <div class="row justify-content-center">
+            <jhi-item-count [page]="page" [total]="totalItems" [itemsPerPage]="itemsPerPage"></jhi-item-count>
+        </div>
+
+        <div class="row justify-content-center">
+            <ngb-pagination [collectionSize]="totalItems" [(page)]="ngbPaginationPage" [pageSize]="itemsPerPage" [maxSize]="5" [rotate]="true" [boundaryLinks]="true" (pageChange)="loadPage($event)"></ngb-pagination>
+        </div>
     </div>
 </div>

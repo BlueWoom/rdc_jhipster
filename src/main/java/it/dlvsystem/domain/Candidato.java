@@ -64,6 +64,10 @@ public class Candidato implements Serializable {
     @Column(name = "regione")
     private String regione;
 
+    @OneToOne
+    @JoinColumn(unique = true)
+    private User internalUser;
+
     @OneToMany(mappedBy = "candidato")
     private Set<SkillUtente> skillUtentes = new HashSet<>();
 
@@ -250,6 +254,19 @@ public class Candidato implements Serializable {
 
     public void setRegione(String regione) {
         this.regione = regione;
+    }
+
+    public User getInternalUser() {
+        return internalUser;
+    }
+
+    public Candidato internalUser(User user) {
+        this.internalUser = user;
+        return this;
+    }
+
+    public void setInternalUser(User user) {
+        this.internalUser = user;
     }
 
     public Set<SkillUtente> getSkillUtentes() {

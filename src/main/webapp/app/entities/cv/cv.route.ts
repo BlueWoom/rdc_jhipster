@@ -40,6 +40,7 @@ export const cvRoute: Routes = [
     component: CvComponent,
     data: {
       authorities: [Authority.USER],
+      defaultSort: 'id,asc',
       pageTitle: 'rdcJhipsterApp.cv.home.title',
     },
     canActivate: [UserRouteAccessService],

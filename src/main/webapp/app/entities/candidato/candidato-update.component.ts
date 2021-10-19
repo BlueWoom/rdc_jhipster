@@ -7,12 +7,12 @@ import { Observable } from 'rxjs';
 
 import { ICandidato, Candidato } from 'app/shared/model/candidato.model';
 import { CandidatoService } from './candidato.service';
+import { IUser } from 'app/core/user/user.model';
+import { UserService } from 'app/core/user/user.service';
 import { INavigator } from 'app/shared/model/navigator.model';
 import { NavigatorService } from 'app/entities/navigator/navigator.service';
-import { ILogin } from 'app/shared/model/login.model';
-import { LoginService } from 'app/entities/login/login.service';
 
-type SelectableEntity = INavigator | ILogin;
+type SelectableEntity = IUser | INavigator;
 
 @Component({
   selector: 'jhi-candidato-update',
@@ -20,8 +20,8 @@ type SelectableEntity = INavigator | ILogin;
 })
 export class CandidatoUpdateComponent implements OnInit {
   isSaving = false;
+  users: IUser[] = [];
   navigators: INavigator[] = [];
-  logins: ILogin[] = [];
   dataNascitaDp: any;
 
   editForm = this.fb.group({
@@ -39,14 +39,14 @@ export class CandidatoUpdateComponent implements OnInit {
     cap: [null, [Validators.pattern('[0-9]+')]],
     provincia: [],
     regione: [],
+    internalUser: [],
     navigator: [],
-    login: [],
   });
 
   constructor(
     protected candidatoService: CandidatoService,
+    protected userService: UserService,
     protected navigatorService: NavigatorService,
-    protected loginService: LoginService,
     protected activatedRoute: ActivatedRoute,
     private fb: FormBuilder
   ) {}
@@ -55,9 +55,9 @@ export class CandidatoUpdateComponent implements OnInit {
     this.activatedRoute.data.subscribe(({ candidato }) => {
       this.updateForm(candidato);
 
-      this.navigatorService.query().subscribe((res: HttpResponse<INavigator[]>) => (this.navigators = res.body || []));
+      this.userService.query().subscribe((res: HttpResponse<IUser[]>) => (this.users = res.body || []));
 
-      this.loginService.query().subscribe((res: HttpResponse<ILogin[]>) => (this.logins = res.body || []));
+      this.navigatorService.query().subscribe((res: HttpResponse<INavigator[]>) => (this.navigators = res.body || []));
     });
   }
 
@@ -77,8 +77,8 @@ export class CandidatoUpdateComponent implements OnInit {
       cap: candidato.cap,
       provincia: candidato.provincia,
       regione: candidato.regione,
+      internalUser: candidato.internalUser,
       navigator: candidato.navigator,
-      login: candidato.login,
     });
   }
 
@@ -113,8 +113,8 @@ export class CandidatoUpdateComponent implements OnInit {
       cap: this.editForm.get(['cap'])!.value,
       provincia: this.editForm.get(['provincia'])!.value,
       regione: this.editForm.get(['regione'])!.value,
+      internalUser: this.editForm.get(['internalUser'])!.value,
       navigator: this.editForm.get(['navigator'])!.value,
-      login: this.editForm.get(['login'])!.value,
     };
   }
 

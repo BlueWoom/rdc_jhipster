@@ -28,13 +28,13 @@
                 <dd>
                     <span>{{ azienda.ragioneSede }}</span>
                 </dd>
-                <dt><span jhiTranslate="rdcJhipsterApp.azienda.cittaSede">Citta Sede</span></dt>
-                <dd>
-                    <span>{{ azienda.cittaSede }}</span>
-                </dd>
                 <dt><span jhiTranslate="rdcJhipsterApp.azienda.capSede">Cap Sede</span></dt>
                 <dd>
                     <span>{{ azienda.capSede }}</span>
+                </dd>
+                <dt><span jhiTranslate="rdcJhipsterApp.azienda.internalUser">Internal User</span></dt>
+                <dd>
+                    {{ azienda.internalUser?.id }}
                 </dd>
             </dl>
 

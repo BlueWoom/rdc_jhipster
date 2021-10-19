@@ -3,7 +3,6 @@ package it.dlvsystem.domain;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import javax.persistence.*;
-import javax.validation.constraints.*;
 
 import java.io.Serializable;
 
@@ -19,17 +18,6 @@ public class CvIstruzione implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-
-    @Pattern(regexp = "[0-9]+")
-    @Column(name = "codice_istruzione")
-    private String codiceIstruzione;
-
-    @Column(name = "cf_utente")
-    private String cfUtente;
-
-    @Pattern(regexp = "[0-9]+")
-    @Column(name = "codice_cv")
-    private String codiceCv;
 
     @Column(name = "punteggio")
     private Integer punteggio;
@@ -49,45 +37,6 @@ public class CvIstruzione implements Serializable {
 
     public void setId(Long id) {
         this.id = id;
-    }
-
-    public String getCodiceIstruzione() {
-        return codiceIstruzione;
-    }
-
-    public CvIstruzione codiceIstruzione(String codiceIstruzione) {
-        this.codiceIstruzione = codiceIstruzione;
-        return this;
-    }
-
-    public void setCodiceIstruzione(String codiceIstruzione) {
-        this.codiceIstruzione = codiceIstruzione;
-    }
-
-    public String getCfUtente() {
-        return cfUtente;
-    }
-
-    public CvIstruzione cfUtente(String cfUtente) {
-        this.cfUtente = cfUtente;
-        return this;
-    }
-
-    public void setCfUtente(String cfUtente) {
-        this.cfUtente = cfUtente;
-    }
-
-    public String getCodiceCv() {
-        return codiceCv;
-    }
-
-    public CvIstruzione codiceCv(String codiceCv) {
-        this.codiceCv = codiceCv;
-        return this;
-    }
-
-    public void setCodiceCv(String codiceCv) {
-        this.codiceCv = codiceCv;
     }
 
     public Integer getPunteggio() {
@@ -151,9 +100,6 @@ public class CvIstruzione implements Serializable {
     public String toString() {
         return "CvIstruzione{" +
             "id=" + getId() +
-            ", codiceIstruzione='" + getCodiceIstruzione() + "'" +
-            ", cfUtente='" + getCfUtente() + "'" +
-            ", codiceCv='" + getCodiceCv() + "'" +
             ", punteggio=" + getPunteggio() +
             "}";
     }

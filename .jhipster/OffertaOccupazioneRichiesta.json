@@ -2,18 +2,6 @@
   "name": "OffertaOccupazioneRichiesta",
   "fields": [
     {
-      "fieldName": "codiceOfferta",
-      "fieldType": "String",
-      "fieldValidateRules": [
-        "pattern"
-      ],
-      "fieldValidateRulesPattern": "[0-9]+"
-    },
-    {
-      "fieldName": "codiceEscoOccupazione",
-      "fieldType": "String"
-    },
-    {
       "fieldName": "anni",
       "fieldType": "Integer"
     }
@@ -34,10 +22,10 @@
       "otherEntityField": "id"
     }
   ],
-  "changelogDate": "20210922113802",
+  "changelogDate": "20211019154016",
   "entityTableName": "offerta_occupazione_richiesta",
   "dto": "no",
-  "pagination": "no",
+  "pagination": "pagination",
   "service": "no",
   "jpaMetamodelFiltering": false,
   "fluentMethods": true,

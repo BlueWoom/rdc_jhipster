@@ -21,8 +21,6 @@ export class CvUpdateComponent implements OnInit {
 
   editForm = this.fb.group({
     id: [],
-    cfUtente: [],
-    codice: [null, [Validators.pattern('[0-9]+')]],
     inserimento: [],
     candidato: [],
   });
@@ -45,8 +43,6 @@ export class CvUpdateComponent implements OnInit {
   updateForm(cv: ICv): void {
     this.editForm.patchValue({
       id: cv.id,
-      cfUtente: cv.cfUtente,
-      codice: cv.codice,
       inserimento: cv.inserimento,
       candidato: cv.candidato,
     });
@@ -70,8 +66,6 @@ export class CvUpdateComponent implements OnInit {
     return {
       ...new Cv(),
       id: this.editForm.get(['id'])!.value,
-      cfUtente: this.editForm.get(['cfUtente'])!.value,
-      codice: this.editForm.get(['codice'])!.value,
       inserimento: this.editForm.get(['inserimento'])!.value,
       candidato: this.editForm.get(['candidato'])!.value,
     };

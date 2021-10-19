@@ -60,16 +60,14 @@
                 <dd>
                     <span>{{ candidato.regione }}</span>
                 </dd>
+                <dt><span jhiTranslate="rdcJhipsterApp.candidato.internalUser">Internal User</span></dt>
+                <dd>
+                    {{ candidato.internalUser?.id }}
+                </dd>
                 <dt><span jhiTranslate="rdcJhipsterApp.candidato.navigator">Navigator</span></dt>
                 <dd>
                     <div *ngIf="candidato.navigator">
                         <a [routerLink]="['/navigator', candidato.navigator?.id, 'view']">{{ candidato.navigator?.id }}</a>
-                    </div>
-                </dd>
-                <dt><span jhiTranslate="rdcJhipsterApp.candidato.login">Login</span></dt>
-                <dd>
-                    <div *ngIf="candidato.login">
-                        <a [routerLink]="['/login', candidato.login?.id, 'view']">{{ candidato.login?.id }}</a>
                     </div>
                 </dd>
             </dl>

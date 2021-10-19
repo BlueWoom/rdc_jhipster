@@ -29,10 +29,6 @@ import { RouterModule } from '@angular/router';
         loadChildren: () => import('./navigator/navigator.module').then(m => m.RdcJhipsterNavigatorModule),
       },
       {
-        path: 'login',
-        loadChildren: () => import('./login/login.module').then(m => m.RdcJhipsterLoginModule),
-      },
-      {
         path: 'occupazione',
         loadChildren: () => import('./occupazione/occupazione.module').then(m => m.RdcJhipsterOccupazioneModule),
       },

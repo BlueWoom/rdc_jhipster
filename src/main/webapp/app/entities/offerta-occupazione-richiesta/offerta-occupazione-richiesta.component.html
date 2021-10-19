@@ -21,21 +21,17 @@
     <div class="table-responsive" id="entities" *ngIf="offertaOccupazioneRichiestas && offertaOccupazioneRichiestas.length > 0">
         <table class="table table-striped" aria-describedby="page-heading">
             <thead>
-                <tr>
-                    <th scope="col" ><span jhiTranslate="global.field.id">ID</span></th>
-                    <th scope="col" ><span jhiTranslate="rdcJhipsterApp.offertaOccupazioneRichiesta.codiceOfferta">Codice Offerta</span></th>
-                    <th scope="col" ><span jhiTranslate="rdcJhipsterApp.offertaOccupazioneRichiesta.codiceEscoOccupazione">Codice Esco Occupazione</span></th>
-                    <th scope="col" ><span jhiTranslate="rdcJhipsterApp.offertaOccupazioneRichiesta.anni">Anni</span></th>
-                    <th scope="col" ><span jhiTranslate="rdcJhipsterApp.offertaOccupazioneRichiesta.offerta">Offerta</span></th>
-                    <th scope="col" ><span jhiTranslate="rdcJhipsterApp.offertaOccupazioneRichiesta.occupazione">Occupazione</span></th>
+                <tr jhiSort [(predicate)]="predicate" [(ascending)]="ascending" [callback]="loadPage.bind(this)">
+                    <th scope="col"  jhiSortBy="id"><span jhiTranslate="global.field.id">ID</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="anni"><span jhiTranslate="rdcJhipsterApp.offertaOccupazioneRichiesta.anni">Anni</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="offerta.id"><span jhiTranslate="rdcJhipsterApp.offertaOccupazioneRichiesta.offerta">Offerta</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="occupazione.id"><span jhiTranslate="rdcJhipsterApp.offertaOccupazioneRichiesta.occupazione">Occupazione</span> <fa-icon icon="sort"></fa-icon></th>
                     <th scope="col"></th>
                 </tr>
             </thead>
             <tbody>
                 <tr *ngFor="let offertaOccupazioneRichiesta of offertaOccupazioneRichiestas ;trackBy: trackId">
                     <td><a [routerLink]="['/offerta-occupazione-richiesta', offertaOccupazioneRichiesta.id, 'view']">{{ offertaOccupazioneRichiesta.id }}</a></td>
-                    <td>{{ offertaOccupazioneRichiesta.codiceOfferta }}</td>
-                    <td>{{ offertaOccupazioneRichiesta.codiceEscoOccupazione }}</td>
                     <td>{{ offertaOccupazioneRichiesta.anni }}</td>
                     <td>
                         <div *ngIf="offertaOccupazioneRichiesta.offerta">
@@ -73,5 +69,15 @@
                 </tr>
             </tbody>
         </table>
+    </div>
+
+    <div *ngIf="offertaOccupazioneRichiestas && offertaOccupazioneRichiestas.length > 0">
+        <div class="row justify-content-center">
+            <jhi-item-count [page]="page" [total]="totalItems" [itemsPerPage]="itemsPerPage"></jhi-item-count>
+        </div>
+
+        <div class="row justify-content-center">
+            <ngb-pagination [collectionSize]="totalItems" [(page)]="ngbPaginationPage" [pageSize]="itemsPerPage" [maxSize]="5" [rotate]="true" [boundaryLinks]="true" (pageChange)="loadPage($event)"></ngb-pagination>
+        </div>
     </div>
 </div>

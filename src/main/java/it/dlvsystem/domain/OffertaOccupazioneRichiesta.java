@@ -3,7 +3,6 @@ package it.dlvsystem.domain;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import javax.persistence.*;
-import javax.validation.constraints.*;
 
 import java.io.Serializable;
 
@@ -19,13 +18,6 @@ public class OffertaOccupazioneRichiesta implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-
-    @Pattern(regexp = "[0-9]+")
-    @Column(name = "codice_offerta")
-    private String codiceOfferta;
-
-    @Column(name = "codice_esco_occupazione")
-    private String codiceEscoOccupazione;
 
     @Column(name = "anni")
     private Integer anni;
@@ -45,32 +37,6 @@ public class OffertaOccupazioneRichiesta implements Serializable {
 
     public void setId(Long id) {
         this.id = id;
-    }
-
-    public String getCodiceOfferta() {
-        return codiceOfferta;
-    }
-
-    public OffertaOccupazioneRichiesta codiceOfferta(String codiceOfferta) {
-        this.codiceOfferta = codiceOfferta;
-        return this;
-    }
-
-    public void setCodiceOfferta(String codiceOfferta) {
-        this.codiceOfferta = codiceOfferta;
-    }
-
-    public String getCodiceEscoOccupazione() {
-        return codiceEscoOccupazione;
-    }
-
-    public OffertaOccupazioneRichiesta codiceEscoOccupazione(String codiceEscoOccupazione) {
-        this.codiceEscoOccupazione = codiceEscoOccupazione;
-        return this;
-    }
-
-    public void setCodiceEscoOccupazione(String codiceEscoOccupazione) {
-        this.codiceEscoOccupazione = codiceEscoOccupazione;
     }
 
     public Integer getAnni() {
@@ -134,8 +100,6 @@ public class OffertaOccupazioneRichiesta implements Serializable {
     public String toString() {
         return "OffertaOccupazioneRichiesta{" +
             "id=" + getId() +
-            ", codiceOfferta='" + getCodiceOfferta() + "'" +
-            ", codiceEscoOccupazione='" + getCodiceEscoOccupazione() + "'" +
             ", anni=" + getAnni() +
             "}";
     }

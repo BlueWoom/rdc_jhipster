@@ -26,7 +26,6 @@ export class OffertaUpdateComponent implements OnInit {
 
   editForm = this.fb.group({
     id: [],
-    codice: [null, [Validators.pattern('[0-9]+')]],
     data: [],
     indirizzoSede: [],
     cittaSede: [],
@@ -57,7 +56,6 @@ export class OffertaUpdateComponent implements OnInit {
   updateForm(offerta: IOfferta): void {
     this.editForm.patchValue({
       id: offerta.id,
-      codice: offerta.codice,
       data: offerta.data,
       indirizzoSede: offerta.indirizzoSede,
       cittaSede: offerta.cittaSede,
@@ -86,7 +84,6 @@ export class OffertaUpdateComponent implements OnInit {
     return {
       ...new Offerta(),
       id: this.editForm.get(['id'])!.value,
-      codice: this.editForm.get(['codice'])!.value,
       data: this.editForm.get(['data'])!.value,
       indirizzoSede: this.editForm.get(['indirizzoSede'])!.value,
       cittaSede: this.editForm.get(['cittaSede'])!.value,

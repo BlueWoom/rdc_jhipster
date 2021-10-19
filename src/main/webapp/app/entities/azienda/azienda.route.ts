@@ -40,6 +40,7 @@ export const aziendaRoute: Routes = [
     component: AziendaComponent,
     data: {
       authorities: [Authority.USER],
+      defaultSort: 'id,asc',
       pageTitle: 'rdcJhipsterApp.azienda.home.title',
     },
     canActivate: [UserRouteAccessService],

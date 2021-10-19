@@ -1,8 +1,8 @@
 import { Moment } from 'moment';
+import { IUser } from 'app/core/user/user.model';
 import { ISkillUtente } from 'app/shared/model/skill-utente.model';
 import { ICv } from 'app/shared/model/cv.model';
 import { INavigator } from 'app/shared/model/navigator.model';
-import { ILogin } from 'app/shared/model/login.model';
 
 export interface ICandidato {
   id?: number;
@@ -19,10 +19,10 @@ export interface ICandidato {
   cap?: string;
   provincia?: string;
   regione?: string;
+  internalUser?: IUser;
   skillUtentes?: ISkillUtente[];
   cvs?: ICv[];
   navigator?: INavigator;
-  login?: ILogin;
 }
 
 export class Candidato implements ICandidato {
@@ -41,9 +41,9 @@ export class Candidato implements ICandidato {
     public cap?: string,
     public provincia?: string,
     public regione?: string,
+    public internalUser?: IUser,
     public skillUtentes?: ISkillUtente[],
     public cvs?: ICv[],
-    public navigator?: INavigator,
-    public login?: ILogin
+    public navigator?: INavigator
   ) {}
 }

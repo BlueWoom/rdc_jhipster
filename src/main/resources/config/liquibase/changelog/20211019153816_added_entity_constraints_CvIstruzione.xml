@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.9.xsd">
+    <!--
+        Added the constraints for entity CvIstruzione.
+    -->
+    <changeSet id="20211019153816-2" author="jhipster">
+        
+        <addForeignKeyConstraint baseColumnNames="istruzione_id"
+                                 baseTableName="cv_istruzione"
+                                 constraintName="fk_cv_istruzione_istruzione_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="istruzione"/>
+
+        <addForeignKeyConstraint baseColumnNames="cv_id"
+                                 baseTableName="cv_istruzione"
+                                 constraintName="fk_cv_istruzione_cv_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="cv"/>
+
+    </changeSet>
+</databaseChangeLog>

@@ -29,12 +29,6 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 @WithMockUser
 public class OffertaSkillResourceIT {
 
-    private static final String DEFAULT_CODICE_OFFERTA = "966";
-    private static final String UPDATED_CODICE_OFFERTA = "7";
-
-    private static final String DEFAULT_CODICE_ESCO_SKILL = "AAAAAAAAAA";
-    private static final String UPDATED_CODICE_ESCO_SKILL = "BBBBBBBBBB";
-
     private static final Boolean DEFAULT_OPTIONAL = false;
     private static final Boolean UPDATED_OPTIONAL = true;
 
@@ -57,8 +51,6 @@ public class OffertaSkillResourceIT {
      */
     public static OffertaSkill createEntity(EntityManager em) {
         OffertaSkill offertaSkill = new OffertaSkill()
-            .codiceOfferta(DEFAULT_CODICE_OFFERTA)
-            .codiceEscoSkill(DEFAULT_CODICE_ESCO_SKILL)
             .optional(DEFAULT_OPTIONAL);
         return offertaSkill;
     }
@@ -70,8 +62,6 @@ public class OffertaSkillResourceIT {
      */
     public static OffertaSkill createUpdatedEntity(EntityManager em) {
         OffertaSkill offertaSkill = new OffertaSkill()
-            .codiceOfferta(UPDATED_CODICE_OFFERTA)
-            .codiceEscoSkill(UPDATED_CODICE_ESCO_SKILL)
             .optional(UPDATED_OPTIONAL);
         return offertaSkill;
     }
@@ -95,8 +85,6 @@ public class OffertaSkillResourceIT {
         List<OffertaSkill> offertaSkillList = offertaSkillRepository.findAll();
         assertThat(offertaSkillList).hasSize(databaseSizeBeforeCreate + 1);
         OffertaSkill testOffertaSkill = offertaSkillList.get(offertaSkillList.size() - 1);
-        assertThat(testOffertaSkill.getCodiceOfferta()).isEqualTo(DEFAULT_CODICE_OFFERTA);
-        assertThat(testOffertaSkill.getCodiceEscoSkill()).isEqualTo(DEFAULT_CODICE_ESCO_SKILL);
         assertThat(testOffertaSkill.isOptional()).isEqualTo(DEFAULT_OPTIONAL);
     }
 
@@ -131,8 +119,6 @@ public class OffertaSkillResourceIT {
             .andExpect(status().isOk())
             .andExpect(content().contentType(MediaType.APPLICATION_JSON_VALUE))
             .andExpect(jsonPath("$.[*].id").value(hasItem(offertaSkill.getId().intValue())))
-            .andExpect(jsonPath("$.[*].codiceOfferta").value(hasItem(DEFAULT_CODICE_OFFERTA)))
-            .andExpect(jsonPath("$.[*].codiceEscoSkill").value(hasItem(DEFAULT_CODICE_ESCO_SKILL)))
             .andExpect(jsonPath("$.[*].optional").value(hasItem(DEFAULT_OPTIONAL.booleanValue())));
     }
     
@@ -147,8 +133,6 @@ public class OffertaSkillResourceIT {
             .andExpect(status().isOk())
             .andExpect(content().contentType(MediaType.APPLICATION_JSON_VALUE))
             .andExpect(jsonPath("$.id").value(offertaSkill.getId().intValue()))
-            .andExpect(jsonPath("$.codiceOfferta").value(DEFAULT_CODICE_OFFERTA))
-            .andExpect(jsonPath("$.codiceEscoSkill").value(DEFAULT_CODICE_ESCO_SKILL))
             .andExpect(jsonPath("$.optional").value(DEFAULT_OPTIONAL.booleanValue()));
     }
     @Test
@@ -172,8 +156,6 @@ public class OffertaSkillResourceIT {
         // Disconnect from session so that the updates on updatedOffertaSkill are not directly saved in db
         em.detach(updatedOffertaSkill);
         updatedOffertaSkill
-            .codiceOfferta(UPDATED_CODICE_OFFERTA)
-            .codiceEscoSkill(UPDATED_CODICE_ESCO_SKILL)
             .optional(UPDATED_OPTIONAL);
 
         restOffertaSkillMockMvc.perform(put("/api/offerta-skills")
@@ -185,8 +167,6 @@ public class OffertaSkillResourceIT {
         List<OffertaSkill> offertaSkillList = offertaSkillRepository.findAll();
         assertThat(offertaSkillList).hasSize(databaseSizeBeforeUpdate);
         OffertaSkill testOffertaSkill = offertaSkillList.get(offertaSkillList.size() - 1);
-        assertThat(testOffertaSkill.getCodiceOfferta()).isEqualTo(UPDATED_CODICE_OFFERTA);
-        assertThat(testOffertaSkill.getCodiceEscoSkill()).isEqualTo(UPDATED_CODICE_ESCO_SKILL);
         assertThat(testOffertaSkill.isOptional()).isEqualTo(UPDATED_OPTIONAL);
     }
 

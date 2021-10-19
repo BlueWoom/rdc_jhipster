@@ -5,8 +5,6 @@ import { ICandidato } from 'app/shared/model/candidato.model';
 
 export interface ICv {
   id?: number;
-  cfUtente?: string;
-  codice?: string;
   inserimento?: Moment;
   cvIstruziones?: ICvIstruzione[];
   esperienzas?: IEsperienza[];
@@ -16,8 +14,6 @@ export interface ICv {
 export class Cv implements ICv {
   constructor(
     public id?: number,
-    public cfUtente?: string,
-    public codice?: string,
     public inserimento?: Moment,
     public cvIstruziones?: ICvIstruzione[],
     public esperienzas?: IEsperienza[],

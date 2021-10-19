@@ -22,7 +22,6 @@ export class EsperienzaUpdateComponent implements OnInit {
 
   editForm = this.fb.group({
     id: [],
-    codice: [null, [Validators.pattern('[0-9]+')]],
     attivita: [],
     dal: [],
     al: [],
@@ -49,7 +48,6 @@ export class EsperienzaUpdateComponent implements OnInit {
   updateForm(esperienza: IEsperienza): void {
     this.editForm.patchValue({
       id: esperienza.id,
-      codice: esperienza.codice,
       attivita: esperienza.attivita,
       dal: esperienza.dal,
       al: esperienza.al,
@@ -77,7 +75,6 @@ export class EsperienzaUpdateComponent implements OnInit {
     return {
       ...new Esperienza(),
       id: this.editForm.get(['id'])!.value,
-      codice: this.editForm.get(['codice'])!.value,
       attivita: this.editForm.get(['attivita'])!.value,
       dal: this.editForm.get(['dal'])!.value,
       al: this.editForm.get(['al'])!.value,

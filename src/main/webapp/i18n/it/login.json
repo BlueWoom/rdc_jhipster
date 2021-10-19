@@ -1,26 +1,19 @@
 {
-  "rdcJhipsterApp": {
-    "login": {
-      "home": {
-        "title": "Logins",
-        "createLabel": "Genera un nuovo Login",
-        "createOrEditLabel": "Genera o modifica un Login",
-        "notFound": "No Logins found"
-      },
-      "created": "&Egrave; stato generato un nuovo Login con identificatore {{ param }}",
-      "updated": "&Egrave; stato aggiornato Login identificato da {{ param }}",
-      "deleted": "&Egrave; stato eliminato Login con identificatore {{ param }}",
-      "delete": {
-        "question": "Sei sicuro di volere eliminare Login {{ id }}?"
-      },
-      "detail": {
-        "title": "Login"
-      },
-      "username": "Username",
-      "ruolo": "Ruolo",
-      "navigator": "Navigator",
-      "azienda": "Azienda",
-      "candidato": "Candidato"
+  "login": {
+    "title": "Accedi",
+    "form": {
+      "password": "Password",
+      "password.placeholder": "La tua password",
+      "rememberme": "Ricordami",
+      "button": "Accedi"
+    },
+    "messages": {
+      "error": {
+        "authentication": "<strong>Accesso non riuscito!</strong> Si prega di controllare le credenziali e riprovare."
+      }
+    },
+    "password": {
+      "forgot": "Password dimenticata?"
     }
   }
 }

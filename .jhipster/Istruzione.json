@@ -2,14 +2,6 @@
   "name": "Istruzione",
   "fields": [
     {
-      "fieldName": "codice",
-      "fieldType": "String",
-      "fieldValidateRules": [
-        "pattern"
-      ],
-      "fieldValidateRulesPattern": "[0-9]+"
-    },
-    {
       "fieldName": "codiceIsced",
       "fieldType": "String"
     },
@@ -52,10 +44,10 @@
       "relationshipName": "cvIstruzione"
     }
   ],
-  "changelogDate": "20210922112802",
+  "changelogDate": "20211019153116",
   "entityTableName": "istruzione",
   "dto": "no",
-  "pagination": "no",
+  "pagination": "pagination",
   "service": "no",
   "jpaMetamodelFiltering": false,
   "fluentMethods": true,

@@ -1,3 +1,4 @@
+import { IUser } from 'app/core/user/user.model';
 import { IOfferta } from 'app/shared/model/offerta.model';
 
 export interface IAzienda {
@@ -7,8 +8,8 @@ export interface IAzienda {
   indirizzoSede?: string;
   provinciaSede?: string;
   ragioneSede?: string;
-  cittaSede?: string;
   capSede?: string;
+  internalUser?: IUser;
   offertas?: IOfferta[];
 }
 
@@ -20,8 +21,8 @@ export class Azienda implements IAzienda {
     public indirizzoSede?: string,
     public provinciaSede?: string,
     public ragioneSede?: string,
-    public cittaSede?: string,
     public capSede?: string,
+    public internalUser?: IUser,
     public offertas?: IOfferta[]
   ) {}
 }

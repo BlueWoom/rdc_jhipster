@@ -5,15 +5,20 @@ import it.dlvsystem.repository.EsperienzaRepository;
 import it.dlvsystem.web.rest.errors.BadRequestAlertException;
 
 import io.github.jhipster.web.util.HeaderUtil;
+import io.github.jhipster.web.util.PaginationUtil;
 import io.github.jhipster.web.util.ResponseUtil;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
+import org.springframework.http.HttpHeaders;
+import org.springframework.http.HttpStatus;
+import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 import org.springframework.http.ResponseEntity;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.*;
 
-import javax.validation.Valid;
 import java.net.URI;
 import java.net.URISyntaxException;
 import java.util.List;
@@ -48,7 +53,7 @@ public class EsperienzaResource {
      * @throws URISyntaxException if the Location URI syntax is incorrect.
      */
     @PostMapping("/esperienzas")
-    public ResponseEntity<Esperienza> createEsperienza(@Valid @RequestBody Esperienza esperienza) throws URISyntaxException {
+    public ResponseEntity<Esperienza> createEsperienza(@RequestBody Esperienza esperienza) throws URISyntaxException {
         log.debug("REST request to save Esperienza : {}", esperienza);
         if (esperienza.getId() != null) {
             throw new BadRequestAlertException("A new esperienza cannot already have an ID", ENTITY_NAME, "idexists");
@@ -69,7 +74,7 @@ public class EsperienzaResource {
      * @throws URISyntaxException if the Location URI syntax is incorrect.
      */
     @PutMapping("/esperienzas")
-    public ResponseEntity<Esperienza> updateEsperienza(@Valid @RequestBody Esperienza esperienza) throws URISyntaxException {
+    public ResponseEntity<Esperienza> updateEsperienza(@RequestBody Esperienza esperienza) throws URISyntaxException {
         log.debug("REST request to update Esperienza : {}", esperienza);
         if (esperienza.getId() == null) {
             throw new BadRequestAlertException("Invalid id", ENTITY_NAME, "idnull");
@@ -83,12 +88,15 @@ public class EsperienzaResource {
     /**
      * {@code GET  /esperienzas} : get all the esperienzas.
      *
+     * @param pageable the pagination information.
      * @return the {@link ResponseEntity} with status {@code 200 (OK)} and the list of esperienzas in body.
      */
     @GetMapping("/esperienzas")
-    public List<Esperienza> getAllEsperienzas() {
-        log.debug("REST request to get all Esperienzas");
-        return esperienzaRepository.findAll();
+    public ResponseEntity<List<Esperienza>> getAllEsperienzas(Pageable pageable) {
+        log.debug("REST request to get a page of Esperienzas");
+        Page<Esperienza> page = esperienzaRepository.findAll(pageable);
+        HttpHeaders headers = PaginationUtil.generatePaginationHttpHeaders(ServletUriComponentsBuilder.fromCurrentRequest(), page);
+        return ResponseEntity.ok().headers(headers).body(page.getContent());
     }
 
     /**

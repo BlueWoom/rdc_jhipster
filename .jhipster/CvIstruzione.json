@@ -2,26 +2,6 @@
   "name": "CvIstruzione",
   "fields": [
     {
-      "fieldName": "codiceIstruzione",
-      "fieldType": "String",
-      "fieldValidateRules": [
-        "pattern"
-      ],
-      "fieldValidateRulesPattern": "[0-9]+"
-    },
-    {
-      "fieldName": "cfUtente",
-      "fieldType": "String"
-    },
-    {
-      "fieldName": "codiceCv",
-      "fieldType": "String",
-      "fieldValidateRules": [
-        "pattern"
-      ],
-      "fieldValidateRulesPattern": "[0-9]+"
-    },
-    {
       "fieldName": "punteggio",
       "fieldType": "Integer"
     }
@@ -42,10 +22,10 @@
       "otherEntityField": "id"
     }
   ],
-  "changelogDate": "20210922113602",
+  "changelogDate": "20211019153816",
   "entityTableName": "cv_istruzione",
   "dto": "no",
-  "pagination": "no",
+  "pagination": "pagination",
   "service": "no",
   "jpaMetamodelFiltering": false,
   "fluentMethods": true,

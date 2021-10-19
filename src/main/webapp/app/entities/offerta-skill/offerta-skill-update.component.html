@@ -12,24 +12,6 @@
                 </div>
 
                 <div class="form-group">
-                    <label class="form-control-label" jhiTranslate="rdcJhipsterApp.offertaSkill.codiceOfferta" for="field_codiceOfferta">Codice Offerta</label>
-                    <input type="text" class="form-control" name="codiceOfferta" id="field_codiceOfferta"
-                           formControlName="codiceOfferta"/>
-                    <div *ngIf="editForm.get('codiceOfferta')!.invalid && (editForm.get('codiceOfferta')!.dirty || editForm.get('codiceOfferta')!.touched)">
-                        <small class="form-text text-danger"
-                               *ngIf="editForm.get('codiceOfferta')?.errors?.pattern" jhiTranslate="entity.validation.pattern" [translateValues]="{ pattern: 'Codice Offerta' }">
-                            This field should follow pattern for "Codice Offerta".
-                        </small>
-                    </div>
-                </div>
-
-                <div class="form-group">
-                    <label class="form-control-label" jhiTranslate="rdcJhipsterApp.offertaSkill.codiceEscoSkill" for="field_codiceEscoSkill">Codice Esco Skill</label>
-                    <input type="text" class="form-control" name="codiceEscoSkill" id="field_codiceEscoSkill"
-                           formControlName="codiceEscoSkill"/>
-                </div>
-
-                <div class="form-group">
                     <label class="form-control-label" jhiTranslate="rdcJhipsterApp.offertaSkill.optional" for="field_optional">Optional</label>
                     <input type="checkbox" class="form-control" name="optional" id="field_optional"
                            formControlName="optional"/>

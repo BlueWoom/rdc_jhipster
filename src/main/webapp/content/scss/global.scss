@@ -192,4 +192,16 @@ ui bootstrap tweaks
   white-space: nowrap;
 }
 
+.big-btn {
+  height: 100%;
+  width: 100%;
+  min-height: 120px;
+  font-size: 20px;
+}
+
+.btn-rev {
+  color: white;
+  background-color: #a9d18e;
+}
+
 /* jhipster-needle-scss-add-main JHipster will add new css style */

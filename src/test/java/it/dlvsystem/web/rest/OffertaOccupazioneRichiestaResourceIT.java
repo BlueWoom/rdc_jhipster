@@ -29,12 +29,6 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 @WithMockUser
 public class OffertaOccupazioneRichiestaResourceIT {
 
-    private static final String DEFAULT_CODICE_OFFERTA = "50";
-    private static final String UPDATED_CODICE_OFFERTA = "4664";
-
-    private static final String DEFAULT_CODICE_ESCO_OCCUPAZIONE = "AAAAAAAAAA";
-    private static final String UPDATED_CODICE_ESCO_OCCUPAZIONE = "BBBBBBBBBB";
-
     private static final Integer DEFAULT_ANNI = 1;
     private static final Integer UPDATED_ANNI = 2;
 
@@ -57,8 +51,6 @@ public class OffertaOccupazioneRichiestaResourceIT {
      */
     public static OffertaOccupazioneRichiesta createEntity(EntityManager em) {
         OffertaOccupazioneRichiesta offertaOccupazioneRichiesta = new OffertaOccupazioneRichiesta()
-            .codiceOfferta(DEFAULT_CODICE_OFFERTA)
-            .codiceEscoOccupazione(DEFAULT_CODICE_ESCO_OCCUPAZIONE)
             .anni(DEFAULT_ANNI);
         return offertaOccupazioneRichiesta;
     }
@@ -70,8 +62,6 @@ public class OffertaOccupazioneRichiestaResourceIT {
      */
     public static OffertaOccupazioneRichiesta createUpdatedEntity(EntityManager em) {
         OffertaOccupazioneRichiesta offertaOccupazioneRichiesta = new OffertaOccupazioneRichiesta()
-            .codiceOfferta(UPDATED_CODICE_OFFERTA)
-            .codiceEscoOccupazione(UPDATED_CODICE_ESCO_OCCUPAZIONE)
             .anni(UPDATED_ANNI);
         return offertaOccupazioneRichiesta;
     }
@@ -95,8 +85,6 @@ public class OffertaOccupazioneRichiestaResourceIT {
         List<OffertaOccupazioneRichiesta> offertaOccupazioneRichiestaList = offertaOccupazioneRichiestaRepository.findAll();
         assertThat(offertaOccupazioneRichiestaList).hasSize(databaseSizeBeforeCreate + 1);
         OffertaOccupazioneRichiesta testOffertaOccupazioneRichiesta = offertaOccupazioneRichiestaList.get(offertaOccupazioneRichiestaList.size() - 1);
-        assertThat(testOffertaOccupazioneRichiesta.getCodiceOfferta()).isEqualTo(DEFAULT_CODICE_OFFERTA);
-        assertThat(testOffertaOccupazioneRichiesta.getCodiceEscoOccupazione()).isEqualTo(DEFAULT_CODICE_ESCO_OCCUPAZIONE);
         assertThat(testOffertaOccupazioneRichiesta.getAnni()).isEqualTo(DEFAULT_ANNI);
     }
 
@@ -131,8 +119,6 @@ public class OffertaOccupazioneRichiestaResourceIT {
             .andExpect(status().isOk())
             .andExpect(content().contentType(MediaType.APPLICATION_JSON_VALUE))
             .andExpect(jsonPath("$.[*].id").value(hasItem(offertaOccupazioneRichiesta.getId().intValue())))
-            .andExpect(jsonPath("$.[*].codiceOfferta").value(hasItem(DEFAULT_CODICE_OFFERTA)))
-            .andExpect(jsonPath("$.[*].codiceEscoOccupazione").value(hasItem(DEFAULT_CODICE_ESCO_OCCUPAZIONE)))
             .andExpect(jsonPath("$.[*].anni").value(hasItem(DEFAULT_ANNI)));
     }
     
@@ -147,8 +133,6 @@ public class OffertaOccupazioneRichiestaResourceIT {
             .andExpect(status().isOk())
             .andExpect(content().contentType(MediaType.APPLICATION_JSON_VALUE))
             .andExpect(jsonPath("$.id").value(offertaOccupazioneRichiesta.getId().intValue()))
-            .andExpect(jsonPath("$.codiceOfferta").value(DEFAULT_CODICE_OFFERTA))
-            .andExpect(jsonPath("$.codiceEscoOccupazione").value(DEFAULT_CODICE_ESCO_OCCUPAZIONE))
             .andExpect(jsonPath("$.anni").value(DEFAULT_ANNI));
     }
     @Test
@@ -172,8 +156,6 @@ public class OffertaOccupazioneRichiestaResourceIT {
         // Disconnect from session so that the updates on updatedOffertaOccupazioneRichiesta are not directly saved in db
         em.detach(updatedOffertaOccupazioneRichiesta);
         updatedOffertaOccupazioneRichiesta
-            .codiceOfferta(UPDATED_CODICE_OFFERTA)
-            .codiceEscoOccupazione(UPDATED_CODICE_ESCO_OCCUPAZIONE)
             .anni(UPDATED_ANNI);
 
         restOffertaOccupazioneRichiestaMockMvc.perform(put("/api/offerta-occupazione-richiestas")
@@ -185,8 +167,6 @@ public class OffertaOccupazioneRichiestaResourceIT {
         List<OffertaOccupazioneRichiesta> offertaOccupazioneRichiestaList = offertaOccupazioneRichiestaRepository.findAll();
         assertThat(offertaOccupazioneRichiestaList).hasSize(databaseSizeBeforeUpdate);
         OffertaOccupazioneRichiesta testOffertaOccupazioneRichiesta = offertaOccupazioneRichiestaList.get(offertaOccupazioneRichiestaList.size() - 1);
-        assertThat(testOffertaOccupazioneRichiesta.getCodiceOfferta()).isEqualTo(UPDATED_CODICE_OFFERTA);
-        assertThat(testOffertaOccupazioneRichiesta.getCodiceEscoOccupazione()).isEqualTo(UPDATED_CODICE_ESCO_OCCUPAZIONE);
         assertThat(testOffertaOccupazioneRichiesta.getAnni()).isEqualTo(UPDATED_ANNI);
     }
 

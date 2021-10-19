@@ -24,7 +24,7 @@ describe('Service Tests', () => {
       httpMock = injector.get(HttpTestingController);
       currentDate = moment();
 
-      elemDefault = new Cv(0, 'AAAAAAA', 'AAAAAAA', currentDate);
+      elemDefault = new Cv(0, currentDate);
     });
 
     describe('Service methods', () => {
@@ -69,8 +69,6 @@ describe('Service Tests', () => {
       it('should update a Cv', () => {
         const returnedFromService = Object.assign(
           {
-            cfUtente: 'BBBBBB',
-            codice: 'BBBBBB',
             inserimento: currentDate.format(DATE_FORMAT),
           },
           elemDefault
@@ -93,8 +91,6 @@ describe('Service Tests', () => {
       it('should return a list of Cv', () => {
         const returnedFromService = Object.assign(
           {
-            cfUtente: 'BBBBBB',
-            codice: 'BBBBBB',
             inserimento: currentDate.format(DATE_FORMAT),
           },
           elemDefault

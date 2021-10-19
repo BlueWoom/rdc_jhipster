@@ -20,7 +20,7 @@ describe('Service Tests', () => {
       service = injector.get(OffertaSkillService);
       httpMock = injector.get(HttpTestingController);
 
-      elemDefault = new OffertaSkill(0, 'AAAAAAA', 'AAAAAAA', false);
+      elemDefault = new OffertaSkill(0, false);
     });
 
     describe('Service methods', () => {
@@ -54,8 +54,6 @@ describe('Service Tests', () => {
       it('should update a OffertaSkill', () => {
         const returnedFromService = Object.assign(
           {
-            codiceOfferta: 'BBBBBB',
-            codiceEscoSkill: 'BBBBBB',
             optional: true,
           },
           elemDefault
@@ -73,8 +71,6 @@ describe('Service Tests', () => {
       it('should return a list of OffertaSkill', () => {
         const returnedFromService = Object.assign(
           {
-            codiceOfferta: 'BBBBBB',
-            codiceEscoSkill: 'BBBBBB',
             optional: true,
           },
           elemDefault

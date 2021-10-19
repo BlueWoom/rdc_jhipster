@@ -15,12 +15,6 @@
                     <label class="form-control-label" jhiTranslate="rdcJhipsterApp.occupazione.codiceEsco" for="field_codiceEsco">Codice Esco</label>
                     <input type="text" class="form-control" name="codiceEsco" id="field_codiceEsco"
                            formControlName="codiceEsco"/>
-                    <div *ngIf="editForm.get('codiceEsco')!.invalid && (editForm.get('codiceEsco')!.dirty || editForm.get('codiceEsco')!.touched)">
-                        <small class="form-text text-danger"
-                               *ngIf="editForm.get('codiceEsco')?.errors?.required" jhiTranslate="entity.validation.required">
-                        This field is required.
-                        </small>
-                    </div>
                 </div>
 
                 <div class="form-group">

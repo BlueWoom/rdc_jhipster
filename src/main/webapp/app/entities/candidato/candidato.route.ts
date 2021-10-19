@@ -40,6 +40,7 @@ export const candidatoRoute: Routes = [
     component: CandidatoComponent,
     data: {
       authorities: [Authority.USER],
+      defaultSort: 'id,asc',
       pageTitle: 'rdcJhipsterApp.candidato.home.title',
     },
     canActivate: [UserRouteAccessService],

@@ -20,7 +20,7 @@ describe('Service Tests', () => {
       service = injector.get(IstruzioneService);
       httpMock = injector.get(HttpTestingController);
 
-      elemDefault = new Istruzione(0, 'AAAAAAA', 'AAAAAAA', 'AAAAAAA', 'AAAAAAA', 'AAAAAAA', 'AAAAAAA', 'AAAAAAA', 'AAAAAAA');
+      elemDefault = new Istruzione(0, 'AAAAAAA', 'AAAAAAA', 'AAAAAAA', 'AAAAAAA', 'AAAAAAA', 'AAAAAAA', 'AAAAAAA');
     });
 
     describe('Service methods', () => {
@@ -54,7 +54,6 @@ describe('Service Tests', () => {
       it('should update a Istruzione', () => {
         const returnedFromService = Object.assign(
           {
-            codice: 'BBBBBB',
             codiceIsced: 'BBBBBB',
             codiceLivello: 'BBBBBB',
             nome: 'BBBBBB',
@@ -78,7 +77,6 @@ describe('Service Tests', () => {
       it('should return a list of Istruzione', () => {
         const returnedFromService = Object.assign(
           {
-            codice: 'BBBBBB',
             codiceIsced: 'BBBBBB',
             codiceLivello: 'BBBBBB',
             nome: 'BBBBBB',

@@ -44,7 +44,6 @@ import static org.mockito.Mockito.*;
 public class MailServiceIT {
 
     private static final String[] languages = {
-        "en",
         "it"
         // jhipster-needle-i18n-language-constant - JHipster will add/remove languages in this array
     };

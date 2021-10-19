@@ -24,7 +24,6 @@ entity Candidato {
 }
 
 entity Esperienza {
-	codice String pattern(/[0-9]+/),
     attivita String,
     dal LocalDate,
     al LocalDate,
@@ -39,7 +38,6 @@ entity GapAnalysis {
 }
 
 entity Istruzione {
-	codice String pattern(/[0-9]+/),
     codiceIsced String,
     codiceLivello String,
     nome String,
@@ -64,18 +62,12 @@ entity Navigator {
     regione String
 }
 
-entity Login {
-	username String,
-    ruolo String
-}
-
 entity Occupazione {
 	codiceEsco String,
     nome String
 }
 
 entity Offerta {
-	codice String pattern(/[0-9]+/),
     data LocalDate,
     indirizzoSede String,
     cittaSede String,
@@ -84,8 +76,6 @@ entity Offerta {
 }
 
 entity OffertaSkill {
-    codiceOfferta String pattern(/[0-9]+/),
-    codiceEscoSkill String, 
 	optional Boolean
 }
 
@@ -96,26 +86,18 @@ entity Skill {
 }
 
 entity Cv {
-  	cfUtente String,
-  	codice String pattern(/[0-9]+/), 
 	inserimento LocalDate
 }
 
 entity CvIstruzione {
-	codiceIstruzione String pattern(/[0-9]+/), 
-    cfUtente String,
-    codiceCv String pattern(/[0-9]+/),
 	punteggio Integer
 }
 
 entity SkillUtente {
-	cfUtente String,
     codiceEscoSkill String
 }
 
 entity OffertaOccupazioneRichiesta {
-	codiceOfferta String pattern(/[0-9]+/),
-    codiceEscoOccupazione String,
 	anni Integer
 }
 
@@ -125,7 +107,6 @@ relationship OneToMany {
     Offerta to OffertaSkill,
     Offerta to OffertaOccupazioneRichiesta,
     Istruzione to Offerta,
-    Istruzione to Offerta,
     Istruzione to CvIstruzione,
     Azienda to Offerta,
     Candidato to SkillUtente,
@@ -133,10 +114,7 @@ relationship OneToMany {
     Cv to CvIstruzione,
     Cv to Esperienza,
     Occupazione to OffertaOccupazioneRichiesta,
-    Navigator to Candidato,
-    Login to Navigator,
-    Login to Azienda,
-    Login to Candidato
+    Navigator to Candidato
 }
 
 relationship ManyToMany {
@@ -144,3 +122,11 @@ relationship ManyToMany {
     Occupazione to Offerta,
     Occupazione to Skill 
 }  
+
+relationship OneToOne {
+  Azienda{internalUser} to User,
+  Candidato{internalUser} to User,
+  Navigator{internalUser} to User
+}
+
+paginate * with pagination

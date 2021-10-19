@@ -20,7 +20,7 @@ describe('Service Tests', () => {
       service = injector.get(SkillUtenteService);
       httpMock = injector.get(HttpTestingController);
 
-      elemDefault = new SkillUtente(0, 'AAAAAAA', 'AAAAAAA');
+      elemDefault = new SkillUtente(0, 'AAAAAAA');
     });
 
     describe('Service methods', () => {
@@ -54,7 +54,6 @@ describe('Service Tests', () => {
       it('should update a SkillUtente', () => {
         const returnedFromService = Object.assign(
           {
-            cfUtente: 'BBBBBB',
             codiceEscoSkill: 'BBBBBB',
           },
           elemDefault
@@ -72,7 +71,6 @@ describe('Service Tests', () => {
       it('should return a list of SkillUtente', () => {
         const returnedFromService = Object.assign(
           {
-            cfUtente: 'BBBBBB',
             codiceEscoSkill: 'BBBBBB',
           },
           elemDefault

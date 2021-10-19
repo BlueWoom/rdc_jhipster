@@ -7,6 +7,8 @@ import { Observable } from 'rxjs';
 
 import { IAzienda, Azienda } from 'app/shared/model/azienda.model';
 import { AziendaService } from './azienda.service';
+import { IUser } from 'app/core/user/user.model';
+import { UserService } from 'app/core/user/user.service';
 
 @Component({
   selector: 'jhi-azienda-update',
@@ -14,6 +16,7 @@ import { AziendaService } from './azienda.service';
 })
 export class AziendaUpdateComponent implements OnInit {
   isSaving = false;
+  users: IUser[] = [];
 
   editForm = this.fb.group({
     id: [],
@@ -22,15 +25,22 @@ export class AziendaUpdateComponent implements OnInit {
     indirizzoSede: [],
     provinciaSede: [],
     ragioneSede: [],
-    cittaSede: [],
     capSede: [null, [Validators.pattern('[0-9]+')]],
+    internalUser: [],
   });
 
-  constructor(protected aziendaService: AziendaService, protected activatedRoute: ActivatedRoute, private fb: FormBuilder) {}
+  constructor(
+    protected aziendaService: AziendaService,
+    protected userService: UserService,
+    protected activatedRoute: ActivatedRoute,
+    private fb: FormBuilder
+  ) {}
 
   ngOnInit(): void {
     this.activatedRoute.data.subscribe(({ azienda }) => {
       this.updateForm(azienda);
+
+      this.userService.query().subscribe((res: HttpResponse<IUser[]>) => (this.users = res.body || []));
     });
   }
 
@@ -42,8 +52,8 @@ export class AziendaUpdateComponent implements OnInit {
       indirizzoSede: azienda.indirizzoSede,
       provinciaSede: azienda.provinciaSede,
       ragioneSede: azienda.ragioneSede,
-      cittaSede: azienda.cittaSede,
       capSede: azienda.capSede,
+      internalUser: azienda.internalUser,
     });
   }
 
@@ -70,8 +80,8 @@ export class AziendaUpdateComponent implements OnInit {
       indirizzoSede: this.editForm.get(['indirizzoSede'])!.value,
       provinciaSede: this.editForm.get(['provinciaSede'])!.value,
       ragioneSede: this.editForm.get(['ragioneSede'])!.value,
-      cittaSede: this.editForm.get(['cittaSede'])!.value,
       capSede: this.editForm.get(['capSede'])!.value,
+      internalUser: this.editForm.get(['internalUser'])!.value,
     };
   }
 
@@ -89,5 +99,9 @@ export class AziendaUpdateComponent implements OnInit {
 
   protected onSaveError(): void {
     this.isSaving = false;
+  }
+
+  trackById(index: number, item: IUser): any {
+    return item.id;
   }
 }

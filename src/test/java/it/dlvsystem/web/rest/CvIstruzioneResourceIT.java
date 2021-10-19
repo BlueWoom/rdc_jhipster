@@ -29,15 +29,6 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 @WithMockUser
 public class CvIstruzioneResourceIT {
 
-    private static final String DEFAULT_CODICE_ISTRUZIONE = "437";
-    private static final String UPDATED_CODICE_ISTRUZIONE = "8592";
-
-    private static final String DEFAULT_CF_UTENTE = "AAAAAAAAAA";
-    private static final String UPDATED_CF_UTENTE = "BBBBBBBBBB";
-
-    private static final String DEFAULT_CODICE_CV = "644397";
-    private static final String UPDATED_CODICE_CV = "51772";
-
     private static final Integer DEFAULT_PUNTEGGIO = 1;
     private static final Integer UPDATED_PUNTEGGIO = 2;
 
@@ -60,9 +51,6 @@ public class CvIstruzioneResourceIT {
      */
     public static CvIstruzione createEntity(EntityManager em) {
         CvIstruzione cvIstruzione = new CvIstruzione()
-            .codiceIstruzione(DEFAULT_CODICE_ISTRUZIONE)
-            .cfUtente(DEFAULT_CF_UTENTE)
-            .codiceCv(DEFAULT_CODICE_CV)
             .punteggio(DEFAULT_PUNTEGGIO);
         return cvIstruzione;
     }
@@ -74,9 +62,6 @@ public class CvIstruzioneResourceIT {
      */
     public static CvIstruzione createUpdatedEntity(EntityManager em) {
         CvIstruzione cvIstruzione = new CvIstruzione()
-            .codiceIstruzione(UPDATED_CODICE_ISTRUZIONE)
-            .cfUtente(UPDATED_CF_UTENTE)
-            .codiceCv(UPDATED_CODICE_CV)
             .punteggio(UPDATED_PUNTEGGIO);
         return cvIstruzione;
     }
@@ -100,9 +85,6 @@ public class CvIstruzioneResourceIT {
         List<CvIstruzione> cvIstruzioneList = cvIstruzioneRepository.findAll();
         assertThat(cvIstruzioneList).hasSize(databaseSizeBeforeCreate + 1);
         CvIstruzione testCvIstruzione = cvIstruzioneList.get(cvIstruzioneList.size() - 1);
-        assertThat(testCvIstruzione.getCodiceIstruzione()).isEqualTo(DEFAULT_CODICE_ISTRUZIONE);
-        assertThat(testCvIstruzione.getCfUtente()).isEqualTo(DEFAULT_CF_UTENTE);
-        assertThat(testCvIstruzione.getCodiceCv()).isEqualTo(DEFAULT_CODICE_CV);
         assertThat(testCvIstruzione.getPunteggio()).isEqualTo(DEFAULT_PUNTEGGIO);
     }
 
@@ -137,9 +119,6 @@ public class CvIstruzioneResourceIT {
             .andExpect(status().isOk())
             .andExpect(content().contentType(MediaType.APPLICATION_JSON_VALUE))
             .andExpect(jsonPath("$.[*].id").value(hasItem(cvIstruzione.getId().intValue())))
-            .andExpect(jsonPath("$.[*].codiceIstruzione").value(hasItem(DEFAULT_CODICE_ISTRUZIONE)))
-            .andExpect(jsonPath("$.[*].cfUtente").value(hasItem(DEFAULT_CF_UTENTE)))
-            .andExpect(jsonPath("$.[*].codiceCv").value(hasItem(DEFAULT_CODICE_CV)))
             .andExpect(jsonPath("$.[*].punteggio").value(hasItem(DEFAULT_PUNTEGGIO)));
     }
     
@@ -154,9 +133,6 @@ public class CvIstruzioneResourceIT {
             .andExpect(status().isOk())
             .andExpect(content().contentType(MediaType.APPLICATION_JSON_VALUE))
             .andExpect(jsonPath("$.id").value(cvIstruzione.getId().intValue()))
-            .andExpect(jsonPath("$.codiceIstruzione").value(DEFAULT_CODICE_ISTRUZIONE))
-            .andExpect(jsonPath("$.cfUtente").value(DEFAULT_CF_UTENTE))
-            .andExpect(jsonPath("$.codiceCv").value(DEFAULT_CODICE_CV))
             .andExpect(jsonPath("$.punteggio").value(DEFAULT_PUNTEGGIO));
     }
     @Test
@@ -180,9 +156,6 @@ public class CvIstruzioneResourceIT {
         // Disconnect from session so that the updates on updatedCvIstruzione are not directly saved in db
         em.detach(updatedCvIstruzione);
         updatedCvIstruzione
-            .codiceIstruzione(UPDATED_CODICE_ISTRUZIONE)
-            .cfUtente(UPDATED_CF_UTENTE)
-            .codiceCv(UPDATED_CODICE_CV)
             .punteggio(UPDATED_PUNTEGGIO);
 
         restCvIstruzioneMockMvc.perform(put("/api/cv-istruziones")
@@ -194,9 +167,6 @@ public class CvIstruzioneResourceIT {
         List<CvIstruzione> cvIstruzioneList = cvIstruzioneRepository.findAll();
         assertThat(cvIstruzioneList).hasSize(databaseSizeBeforeUpdate);
         CvIstruzione testCvIstruzione = cvIstruzioneList.get(cvIstruzioneList.size() - 1);
-        assertThat(testCvIstruzione.getCodiceIstruzione()).isEqualTo(UPDATED_CODICE_ISTRUZIONE);
-        assertThat(testCvIstruzione.getCfUtente()).isEqualTo(UPDATED_CF_UTENTE);
-        assertThat(testCvIstruzione.getCodiceCv()).isEqualTo(UPDATED_CODICE_CV);
         assertThat(testCvIstruzione.getPunteggio()).isEqualTo(UPDATED_PUNTEGGIO);
     }
 

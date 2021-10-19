@@ -40,6 +40,7 @@ export const istruzioneRoute: Routes = [
     component: IstruzioneComponent,
     data: {
       authorities: [Authority.USER],
+      defaultSort: 'id,asc',
       pageTitle: 'rdcJhipsterApp.istruzione.home.title',
     },
     canActivate: [UserRouteAccessService],

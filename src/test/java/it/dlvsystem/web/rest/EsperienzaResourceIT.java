@@ -31,9 +31,6 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 @WithMockUser
 public class EsperienzaResourceIT {
 
-    private static final String DEFAULT_CODICE = "703";
-    private static final String UPDATED_CODICE = "462591";
-
     private static final String DEFAULT_ATTIVITA = "AAAAAAAAAA";
     private static final String UPDATED_ATTIVITA = "BBBBBBBBBB";
 
@@ -68,7 +65,6 @@ public class EsperienzaResourceIT {
      */
     public static Esperienza createEntity(EntityManager em) {
         Esperienza esperienza = new Esperienza()
-            .codice(DEFAULT_CODICE)
             .attivita(DEFAULT_ATTIVITA)
             .dal(DEFAULT_DAL)
             .al(DEFAULT_AL)
@@ -84,7 +80,6 @@ public class EsperienzaResourceIT {
      */
     public static Esperienza createUpdatedEntity(EntityManager em) {
         Esperienza esperienza = new Esperienza()
-            .codice(UPDATED_CODICE)
             .attivita(UPDATED_ATTIVITA)
             .dal(UPDATED_DAL)
             .al(UPDATED_AL)
@@ -112,7 +107,6 @@ public class EsperienzaResourceIT {
         List<Esperienza> esperienzaList = esperienzaRepository.findAll();
         assertThat(esperienzaList).hasSize(databaseSizeBeforeCreate + 1);
         Esperienza testEsperienza = esperienzaList.get(esperienzaList.size() - 1);
-        assertThat(testEsperienza.getCodice()).isEqualTo(DEFAULT_CODICE);
         assertThat(testEsperienza.getAttivita()).isEqualTo(DEFAULT_ATTIVITA);
         assertThat(testEsperienza.getDal()).isEqualTo(DEFAULT_DAL);
         assertThat(testEsperienza.getAl()).isEqualTo(DEFAULT_AL);
@@ -151,7 +145,6 @@ public class EsperienzaResourceIT {
             .andExpect(status().isOk())
             .andExpect(content().contentType(MediaType.APPLICATION_JSON_VALUE))
             .andExpect(jsonPath("$.[*].id").value(hasItem(esperienza.getId().intValue())))
-            .andExpect(jsonPath("$.[*].codice").value(hasItem(DEFAULT_CODICE)))
             .andExpect(jsonPath("$.[*].attivita").value(hasItem(DEFAULT_ATTIVITA)))
             .andExpect(jsonPath("$.[*].dal").value(hasItem(DEFAULT_DAL.toString())))
             .andExpect(jsonPath("$.[*].al").value(hasItem(DEFAULT_AL.toString())))
@@ -170,7 +163,6 @@ public class EsperienzaResourceIT {
             .andExpect(status().isOk())
             .andExpect(content().contentType(MediaType.APPLICATION_JSON_VALUE))
             .andExpect(jsonPath("$.id").value(esperienza.getId().intValue()))
-            .andExpect(jsonPath("$.codice").value(DEFAULT_CODICE))
             .andExpect(jsonPath("$.attivita").value(DEFAULT_ATTIVITA))
             .andExpect(jsonPath("$.dal").value(DEFAULT_DAL.toString()))
             .andExpect(jsonPath("$.al").value(DEFAULT_AL.toString()))
@@ -198,7 +190,6 @@ public class EsperienzaResourceIT {
         // Disconnect from session so that the updates on updatedEsperienza are not directly saved in db
         em.detach(updatedEsperienza);
         updatedEsperienza
-            .codice(UPDATED_CODICE)
             .attivita(UPDATED_ATTIVITA)
             .dal(UPDATED_DAL)
             .al(UPDATED_AL)
@@ -214,7 +205,6 @@ public class EsperienzaResourceIT {
         List<Esperienza> esperienzaList = esperienzaRepository.findAll();
         assertThat(esperienzaList).hasSize(databaseSizeBeforeUpdate);
         Esperienza testEsperienza = esperienzaList.get(esperienzaList.size() - 1);
-        assertThat(testEsperienza.getCodice()).isEqualTo(UPDATED_CODICE);
         assertThat(testEsperienza.getAttivita()).isEqualTo(UPDATED_ATTIVITA);
         assertThat(testEsperienza.getDal()).isEqualTo(UPDATED_DAL);
         assertThat(testEsperienza.getAl()).isEqualTo(UPDATED_AL);

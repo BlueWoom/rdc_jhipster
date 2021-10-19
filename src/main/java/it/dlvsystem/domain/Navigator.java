@@ -1,18 +1,13 @@
 package it.dlvsystem.domain;
 
+
+import javax.persistence.*;
+import javax.validation.constraints.*;
+
 import java.io.Serializable;
 import java.time.LocalDate;
 import java.util.HashSet;
 import java.util.Set;
-
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.OneToMany;
-import javax.persistence.Table;
-import javax.validation.constraints.Pattern;
 
 /**
  * A Navigator.
@@ -64,6 +59,10 @@ public class Navigator implements Serializable {
 
     @Column(name = "regione")
     private String regione;
+
+    @OneToOne
+    @JoinColumn(unique = true)
+    private User internalUser;
 
     @OneToMany(mappedBy = "navigator")
     private Set<Candidato> candidatoes = new HashSet<>();
@@ -231,6 +230,19 @@ public class Navigator implements Serializable {
 
     public void setRegione(String regione) {
         this.regione = regione;
+    }
+
+    public User getInternalUser() {
+        return internalUser;
+    }
+
+    public Navigator internalUser(User user) {
+        this.internalUser = user;
+        return this;
+    }
+
+    public void setInternalUser(User user) {
+        this.internalUser = user;
     }
 
     public Set<Candidato> getCandidatoes() {

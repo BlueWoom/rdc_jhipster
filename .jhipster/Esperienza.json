@@ -2,14 +2,6 @@
   "name": "Esperienza",
   "fields": [
     {
-      "fieldName": "codice",
-      "fieldType": "String",
-      "fieldValidateRules": [
-        "pattern"
-      ],
-      "fieldValidateRulesPattern": "[0-9]+"
-    },
-    {
       "fieldName": "attivita",
       "fieldType": "String"
     },
@@ -47,10 +39,10 @@
       "ownerSide": false
     }
   ],
-  "changelogDate": "20210922112602",
+  "changelogDate": "20211019152916",
   "entityTableName": "esperienza",
   "dto": "no",
-  "pagination": "no",
+  "pagination": "pagination",
   "service": "no",
   "jpaMetamodelFiltering": false,
   "fluentMethods": true,

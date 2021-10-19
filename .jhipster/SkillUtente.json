@@ -2,10 +2,6 @@
   "name": "SkillUtente",
   "fields": [
     {
-      "fieldName": "cfUtente",
-      "fieldType": "String"
-    },
-    {
       "fieldName": "codiceEscoSkill",
       "fieldType": "String"
     }
@@ -26,10 +22,10 @@
       "otherEntityField": "id"
     }
   ],
-  "changelogDate": "20210922113702",
+  "changelogDate": "20211019153916",
   "entityTableName": "skill_utente",
   "dto": "no",
-  "pagination": "no",
+  "pagination": "pagination",
   "service": "no",
   "jpaMetamodelFiltering": false,
   "fluentMethods": true,

@@ -17,7 +17,7 @@ export class SkillUpdateComponent implements OnInit {
 
   editForm = this.fb.group({
     id: [],
-    codiceEsco: [null, [Validators.required, Validators.pattern('[0-9]+')]],
+    codiceEsco: [null, [Validators.pattern('[0-9]+')]],
     nome: [],
     tipo: [],
   });

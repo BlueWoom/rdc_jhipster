@@ -3,8 +3,7 @@
   "fields": [
     {
       "fieldName": "codiceEsco",
-      "fieldType": "String",
-      "fieldValidateRules": ["required", "unique"]
+      "fieldType": "String"
     },
     {
       "fieldName": "nome",
@@ -43,10 +42,10 @@
       "ownerSide": true
     }
   ],
-  "changelogDate": "20210922113102",
+  "changelogDate": "20211019153316",
   "entityTableName": "occupazione",
   "dto": "no",
-  "pagination": "no",
+  "pagination": "pagination",
   "service": "no",
   "jpaMetamodelFiltering": false,
   "fluentMethods": true,

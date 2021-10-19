@@ -2,18 +2,6 @@
   "name": "OffertaSkill",
   "fields": [
     {
-      "fieldName": "codiceOfferta",
-      "fieldType": "String",
-      "fieldValidateRules": [
-        "pattern"
-      ],
-      "fieldValidateRulesPattern": "[0-9]+"
-    },
-    {
-      "fieldName": "codiceEscoSkill",
-      "fieldType": "String"
-    },
-    {
       "fieldName": "optional",
       "fieldType": "Boolean"
     }
@@ -34,10 +22,10 @@
       "otherEntityField": "id"
     }
   ],
-  "changelogDate": "20210922113302",
+  "changelogDate": "20211019153516",
   "entityTableName": "offerta_skill",
   "dto": "no",
-  "pagination": "no",
+  "pagination": "pagination",
   "service": "no",
   "jpaMetamodelFiltering": false,
   "fluentMethods": true,

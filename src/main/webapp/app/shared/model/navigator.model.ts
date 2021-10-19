@@ -1,6 +1,6 @@
 import { Moment } from 'moment';
+import { IUser } from 'app/core/user/user.model';
 import { ICandidato } from 'app/shared/model/candidato.model';
-import { ILogin } from 'app/shared/model/login.model';
 
 export interface INavigator {
   id?: number;
@@ -16,8 +16,8 @@ export interface INavigator {
   cap?: string;
   provincia?: string;
   regione?: string;
+  internalUser?: IUser;
   candidatoes?: ICandidato[];
-  login?: ILogin;
 }
 
 export class Navigator implements INavigator {
@@ -35,7 +35,7 @@ export class Navigator implements INavigator {
     public cap?: string,
     public provincia?: string,
     public regione?: string,
-    public candidatoes?: ICandidato[],
-    public login?: ILogin
+    public internalUser?: IUser,
+    public candidatoes?: ICandidato[]
   ) {}
 }

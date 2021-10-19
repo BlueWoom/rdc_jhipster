@@ -40,6 +40,7 @@ export const cvIstruzioneRoute: Routes = [
     component: CvIstruzioneComponent,
     data: {
       authorities: [Authority.USER],
+      defaultSort: 'id,asc',
       pageTitle: 'rdcJhipsterApp.cvIstruzione.home.title',
     },
     canActivate: [UserRouteAccessService],

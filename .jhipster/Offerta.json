@@ -2,14 +2,6 @@
   "name": "Offerta",
   "fields": [
     {
-      "fieldName": "codice",
-      "fieldType": "String",
-      "fieldValidateRules": [
-        "pattern"
-      ],
-      "fieldValidateRulesPattern": "[0-9]+"
-    },
-    {
       "fieldName": "data",
       "fieldType": "LocalDate"
     },
@@ -70,10 +62,10 @@
       "ownerSide": false
     }
   ],
-  "changelogDate": "20210922113202",
+  "changelogDate": "20211019153416",
   "entityTableName": "offerta",
   "dto": "no",
-  "pagination": "no",
+  "pagination": "pagination",
   "service": "no",
   "jpaMetamodelFiltering": false,
   "fluentMethods": true,

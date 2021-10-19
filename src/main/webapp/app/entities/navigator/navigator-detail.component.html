@@ -56,11 +56,9 @@
                 <dd>
                     <span>{{ navigator.regione }}</span>
                 </dd>
-                <dt><span jhiTranslate="rdcJhipsterApp.navigator.login">Login</span></dt>
+                <dt><span jhiTranslate="rdcJhipsterApp.navigator.internalUser">Internal User</span></dt>
                 <dd>
-                    <div *ngIf="navigator.login">
-                        <a [routerLink]="['/login', navigator.login?.id, 'view']">{{ navigator.login?.id }}</a>
-                    </div>
+                    {{ navigator.internalUser?.id }}
                 </dd>
             </dl>
 

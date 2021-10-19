@@ -31,9 +31,6 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 @WithMockUser
 public class OffertaResourceIT {
 
-    private static final String DEFAULT_CODICE = "500672";
-    private static final String UPDATED_CODICE = "9";
-
     private static final LocalDate DEFAULT_DATA = LocalDate.ofEpochDay(0L);
     private static final LocalDate UPDATED_DATA = LocalDate.now(ZoneId.systemDefault());
 
@@ -43,8 +40,8 @@ public class OffertaResourceIT {
     private static final String DEFAULT_CITTA_SEDE = "AAAAAAAAAA";
     private static final String UPDATED_CITTA_SEDE = "BBBBBBBBBB";
 
-    private static final String DEFAULT_CAP_SEDE = "30737";
-    private static final String UPDATED_CAP_SEDE = "31002";
+    private static final String DEFAULT_CAP_SEDE = "645624";
+    private static final String UPDATED_CAP_SEDE = "2300";
 
     private static final String DEFAULT_PROVINCIA_SEDE = "AAAAAAAAAA";
     private static final String UPDATED_PROVINCIA_SEDE = "BBBBBBBBBB";
@@ -68,7 +65,6 @@ public class OffertaResourceIT {
      */
     public static Offerta createEntity(EntityManager em) {
         Offerta offerta = new Offerta()
-            .codice(DEFAULT_CODICE)
             .data(DEFAULT_DATA)
             .indirizzoSede(DEFAULT_INDIRIZZO_SEDE)
             .cittaSede(DEFAULT_CITTA_SEDE)
@@ -84,7 +80,6 @@ public class OffertaResourceIT {
      */
     public static Offerta createUpdatedEntity(EntityManager em) {
         Offerta offerta = new Offerta()
-            .codice(UPDATED_CODICE)
             .data(UPDATED_DATA)
             .indirizzoSede(UPDATED_INDIRIZZO_SEDE)
             .cittaSede(UPDATED_CITTA_SEDE)
@@ -112,7 +107,6 @@ public class OffertaResourceIT {
         List<Offerta> offertaList = offertaRepository.findAll();
         assertThat(offertaList).hasSize(databaseSizeBeforeCreate + 1);
         Offerta testOfferta = offertaList.get(offertaList.size() - 1);
-        assertThat(testOfferta.getCodice()).isEqualTo(DEFAULT_CODICE);
         assertThat(testOfferta.getData()).isEqualTo(DEFAULT_DATA);
         assertThat(testOfferta.getIndirizzoSede()).isEqualTo(DEFAULT_INDIRIZZO_SEDE);
         assertThat(testOfferta.getCittaSede()).isEqualTo(DEFAULT_CITTA_SEDE);
@@ -151,7 +145,6 @@ public class OffertaResourceIT {
             .andExpect(status().isOk())
             .andExpect(content().contentType(MediaType.APPLICATION_JSON_VALUE))
             .andExpect(jsonPath("$.[*].id").value(hasItem(offerta.getId().intValue())))
-            .andExpect(jsonPath("$.[*].codice").value(hasItem(DEFAULT_CODICE)))
             .andExpect(jsonPath("$.[*].data").value(hasItem(DEFAULT_DATA.toString())))
             .andExpect(jsonPath("$.[*].indirizzoSede").value(hasItem(DEFAULT_INDIRIZZO_SEDE)))
             .andExpect(jsonPath("$.[*].cittaSede").value(hasItem(DEFAULT_CITTA_SEDE)))
@@ -170,7 +163,6 @@ public class OffertaResourceIT {
             .andExpect(status().isOk())
             .andExpect(content().contentType(MediaType.APPLICATION_JSON_VALUE))
             .andExpect(jsonPath("$.id").value(offerta.getId().intValue()))
-            .andExpect(jsonPath("$.codice").value(DEFAULT_CODICE))
             .andExpect(jsonPath("$.data").value(DEFAULT_DATA.toString()))
             .andExpect(jsonPath("$.indirizzoSede").value(DEFAULT_INDIRIZZO_SEDE))
             .andExpect(jsonPath("$.cittaSede").value(DEFAULT_CITTA_SEDE))
@@ -198,7 +190,6 @@ public class OffertaResourceIT {
         // Disconnect from session so that the updates on updatedOfferta are not directly saved in db
         em.detach(updatedOfferta);
         updatedOfferta
-            .codice(UPDATED_CODICE)
             .data(UPDATED_DATA)
             .indirizzoSede(UPDATED_INDIRIZZO_SEDE)
             .cittaSede(UPDATED_CITTA_SEDE)
@@ -214,7 +205,6 @@ public class OffertaResourceIT {
         List<Offerta> offertaList = offertaRepository.findAll();
         assertThat(offertaList).hasSize(databaseSizeBeforeUpdate);
         Offerta testOfferta = offertaList.get(offertaList.size() - 1);
-        assertThat(testOfferta.getCodice()).isEqualTo(UPDATED_CODICE);
         assertThat(testOfferta.getData()).isEqualTo(UPDATED_DATA);
         assertThat(testOfferta.getIndirizzoSede()).isEqualTo(UPDATED_INDIRIZZO_SEDE);
         assertThat(testOfferta.getCittaSede()).isEqualTo(UPDATED_CITTA_SEDE);

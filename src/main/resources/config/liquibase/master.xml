@@ -14,32 +14,32 @@
     <property name="uuidType" value="varchar(36)" dbms="h2, mysql, mariadb"/>
 
     <include file="config/liquibase/changelog/00000000000000_initial_schema.xml" relativeToChangelogFile="false"/>
-    <include file="config/liquibase/changelog/20210922112402_added_entity_Azienda.xml" relativeToChangelogFile="false"/>
-    <include file="config/liquibase/changelog/20210922112502_added_entity_Candidato.xml" relativeToChangelogFile="false"/>
-    <include file="config/liquibase/changelog/20210922112602_added_entity_Esperienza.xml" relativeToChangelogFile="false"/>
-    <include file="config/liquibase/changelog/20210922112702_added_entity_GapAnalysis.xml" relativeToChangelogFile="false"/>
-    <include file="config/liquibase/changelog/20210922112802_added_entity_Istruzione.xml" relativeToChangelogFile="false"/>
-    <include file="config/liquibase/changelog/20210922112902_added_entity_Navigator.xml" relativeToChangelogFile="false"/>
-    <include file="config/liquibase/changelog/20210922113102_added_entity_Occupazione.xml" relativeToChangelogFile="false"/>
-    <include file="config/liquibase/changelog/20210922113202_added_entity_Offerta.xml" relativeToChangelogFile="false"/>
-    <include file="config/liquibase/changelog/20210922113302_added_entity_OffertaSkill.xml" relativeToChangelogFile="false"/>
-    <include file="config/liquibase/changelog/20210922113402_added_entity_Skill.xml" relativeToChangelogFile="false"/>
-    <include file="config/liquibase/changelog/20210922113502_added_entity_Cv.xml" relativeToChangelogFile="false"/>
-    <include file="config/liquibase/changelog/20210922113602_added_entity_CvIstruzione.xml" relativeToChangelogFile="false"/>
-    <include file="config/liquibase/changelog/20210922113702_added_entity_SkillUtente.xml" relativeToChangelogFile="false"/>
-    <include file="config/liquibase/changelog/20210922113802_added_entity_OffertaOccupazioneRichiesta.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20211019152716_added_entity_Azienda.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20211019152816_added_entity_Candidato.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20211019152916_added_entity_Esperienza.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20211019153016_added_entity_GapAnalysis.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20211019153116_added_entity_Istruzione.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20211019153216_added_entity_Navigator.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20211019153316_added_entity_Occupazione.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20211019153416_added_entity_Offerta.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20211019153516_added_entity_OffertaSkill.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20211019153616_added_entity_Skill.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20211019153716_added_entity_Cv.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20211019153816_added_entity_CvIstruzione.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20211019153916_added_entity_SkillUtente.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20211019154016_added_entity_OffertaOccupazioneRichiesta.xml" relativeToChangelogFile="false"/>
     <!-- jhipster-needle-liquibase-add-changelog - JHipster will add liquibase changelogs here -->
-    <include file="config/liquibase/changelog/20210922112402_added_entity_constraints_Azienda.xml" relativeToChangelogFile="false"/>
-    <include file="config/liquibase/changelog/20210922112502_added_entity_constraints_Candidato.xml" relativeToChangelogFile="false"/>
-    <include file="config/liquibase/changelog/20210922112602_added_entity_constraints_Esperienza.xml" relativeToChangelogFile="false"/>
-    <include file="config/liquibase/changelog/20210922112902_added_entity_constraints_Navigator.xml" relativeToChangelogFile="false"/>
-    <include file="config/liquibase/changelog/20210922113102_added_entity_constraints_Occupazione.xml" relativeToChangelogFile="false"/>
-    <include file="config/liquibase/changelog/20210922113202_added_entity_constraints_Offerta.xml" relativeToChangelogFile="false"/>
-    <include file="config/liquibase/changelog/20210922113302_added_entity_constraints_OffertaSkill.xml" relativeToChangelogFile="false"/>
-    <include file="config/liquibase/changelog/20210922113502_added_entity_constraints_Cv.xml" relativeToChangelogFile="false"/>
-    <include file="config/liquibase/changelog/20210922113602_added_entity_constraints_CvIstruzione.xml" relativeToChangelogFile="false"/>
-    <include file="config/liquibase/changelog/20210922113702_added_entity_constraints_SkillUtente.xml" relativeToChangelogFile="false"/>
-    <include file="config/liquibase/changelog/20210922113802_added_entity_constraints_OffertaOccupazioneRichiesta.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20211019152716_added_entity_constraints_Azienda.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20211019152816_added_entity_constraints_Candidato.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20211019152916_added_entity_constraints_Esperienza.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20211019153216_added_entity_constraints_Navigator.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20211019153316_added_entity_constraints_Occupazione.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20211019153416_added_entity_constraints_Offerta.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20211019153516_added_entity_constraints_OffertaSkill.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20211019153716_added_entity_constraints_Cv.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20211019153816_added_entity_constraints_CvIstruzione.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20211019153916_added_entity_constraints_SkillUtente.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20211019154016_added_entity_constraints_OffertaOccupazioneRichiesta.xml" relativeToChangelogFile="false"/>
     <!-- jhipster-needle-liquibase-add-constraints-changelog - JHipster will add liquibase constraints changelogs here -->
     <!-- jhipster-needle-liquibase-add-incremental-changelog - JHipster will add incremental liquibase changelogs here -->
 </databaseChangeLog>

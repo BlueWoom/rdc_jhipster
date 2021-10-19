@@ -4,7 +4,9 @@
     {
       "fieldName": "codiceEsco",
       "fieldType": "String",
-      "fieldValidateRules": ["pattern", "required", "unique"],
+      "fieldValidateRules": [
+        "pattern"
+      ],
       "fieldValidateRulesPattern": "[0-9]+"
     },
     {
@@ -38,10 +40,10 @@
       "ownerSide": false
     }
   ],
-  "changelogDate": "20210922113402",
+  "changelogDate": "20211019153616",
   "entityTableName": "skill",
   "dto": "no",
-  "pagination": "no",
+  "pagination": "pagination",
   "service": "no",
   "jpaMetamodelFiltering": false,
   "fluentMethods": true,

@@ -17,7 +17,6 @@ export class IstruzioneUpdateComponent implements OnInit {
 
   editForm = this.fb.group({
     id: [],
-    codice: [null, [Validators.pattern('[0-9]+')]],
     codiceIsced: [],
     codiceLivello: [],
     nome: [],
@@ -38,7 +37,6 @@ export class IstruzioneUpdateComponent implements OnInit {
   updateForm(istruzione: IIstruzione): void {
     this.editForm.patchValue({
       id: istruzione.id,
-      codice: istruzione.codice,
       codiceIsced: istruzione.codiceIsced,
       codiceLivello: istruzione.codiceLivello,
       nome: istruzione.nome,
@@ -67,7 +65,6 @@ export class IstruzioneUpdateComponent implements OnInit {
     return {
       ...new Istruzione(),
       id: this.editForm.get(['id'])!.value,
-      codice: this.editForm.get(['codice'])!.value,
       codiceIsced: this.editForm.get(['codiceIsced'])!.value,
       codiceLivello: this.editForm.get(['codiceLivello'])!.value,
       nome: this.editForm.get(['nome'])!.value,

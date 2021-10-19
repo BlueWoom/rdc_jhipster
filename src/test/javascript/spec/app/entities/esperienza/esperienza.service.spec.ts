@@ -24,7 +24,7 @@ describe('Service Tests', () => {
       httpMock = injector.get(HttpTestingController);
       currentDate = moment();
 
-      elemDefault = new Esperienza(0, 'AAAAAAA', 'AAAAAAA', currentDate, currentDate, 'AAAAAAA', 'AAAAAAA');
+      elemDefault = new Esperienza(0, 'AAAAAAA', currentDate, currentDate, 'AAAAAAA', 'AAAAAAA');
     });
 
     describe('Service methods', () => {
@@ -72,7 +72,6 @@ describe('Service Tests', () => {
       it('should update a Esperienza', () => {
         const returnedFromService = Object.assign(
           {
-            codice: 'BBBBBB',
             attivita: 'BBBBBB',
             dal: currentDate.format(DATE_FORMAT),
             al: currentDate.format(DATE_FORMAT),
@@ -100,7 +99,6 @@ describe('Service Tests', () => {
       it('should return a list of Esperienza', () => {
         const returnedFromService = Object.assign(
           {
-            codice: 'BBBBBB',
             attivita: 'BBBBBB',
             dal: currentDate.format(DATE_FORMAT),
             al: currentDate.format(DATE_FORMAT),

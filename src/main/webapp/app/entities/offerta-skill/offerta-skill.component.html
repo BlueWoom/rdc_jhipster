@@ -21,21 +21,17 @@
     <div class="table-responsive" id="entities" *ngIf="offertaSkills && offertaSkills.length > 0">
         <table class="table table-striped" aria-describedby="page-heading">
             <thead>
-                <tr>
-                    <th scope="col" ><span jhiTranslate="global.field.id">ID</span></th>
-                    <th scope="col" ><span jhiTranslate="rdcJhipsterApp.offertaSkill.codiceOfferta">Codice Offerta</span></th>
-                    <th scope="col" ><span jhiTranslate="rdcJhipsterApp.offertaSkill.codiceEscoSkill">Codice Esco Skill</span></th>
-                    <th scope="col" ><span jhiTranslate="rdcJhipsterApp.offertaSkill.optional">Optional</span></th>
-                    <th scope="col" ><span jhiTranslate="rdcJhipsterApp.offertaSkill.skill">Skill</span></th>
-                    <th scope="col" ><span jhiTranslate="rdcJhipsterApp.offertaSkill.offerta">Offerta</span></th>
+                <tr jhiSort [(predicate)]="predicate" [(ascending)]="ascending" [callback]="loadPage.bind(this)">
+                    <th scope="col"  jhiSortBy="id"><span jhiTranslate="global.field.id">ID</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="optional"><span jhiTranslate="rdcJhipsterApp.offertaSkill.optional">Optional</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="skill.id"><span jhiTranslate="rdcJhipsterApp.offertaSkill.skill">Skill</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="offerta.id"><span jhiTranslate="rdcJhipsterApp.offertaSkill.offerta">Offerta</span> <fa-icon icon="sort"></fa-icon></th>
                     <th scope="col"></th>
                 </tr>
             </thead>
             <tbody>
                 <tr *ngFor="let offertaSkill of offertaSkills ;trackBy: trackId">
                     <td><a [routerLink]="['/offerta-skill', offertaSkill.id, 'view']">{{ offertaSkill.id }}</a></td>
-                    <td>{{ offertaSkill.codiceOfferta }}</td>
-                    <td>{{ offertaSkill.codiceEscoSkill }}</td>
                     <td>{{ offertaSkill.optional }}</td>
                     <td>
                         <div *ngIf="offertaSkill.skill">
@@ -73,5 +69,15 @@
                 </tr>
             </tbody>
         </table>
+    </div>
+
+    <div *ngIf="offertaSkills && offertaSkills.length > 0">
+        <div class="row justify-content-center">
+            <jhi-item-count [page]="page" [total]="totalItems" [itemsPerPage]="itemsPerPage"></jhi-item-count>
+        </div>
+
+        <div class="row justify-content-center">
+            <ngb-pagination [collectionSize]="totalItems" [(page)]="ngbPaginationPage" [pageSize]="itemsPerPage" [maxSize]="5" [rotate]="true" [boundaryLinks]="true" (pageChange)="loadPage($event)"></ngb-pagination>
+        </div>
     </div>
 </div>

@@ -21,23 +21,21 @@
     <div class="table-responsive" id="entities" *ngIf="istruziones && istruziones.length > 0">
         <table class="table table-striped" aria-describedby="page-heading">
             <thead>
-                <tr>
-                    <th scope="col" ><span jhiTranslate="global.field.id">ID</span></th>
-                    <th scope="col" ><span jhiTranslate="rdcJhipsterApp.istruzione.codice">Codice</span></th>
-                    <th scope="col" ><span jhiTranslate="rdcJhipsterApp.istruzione.codiceIsced">Codice Isced</span></th>
-                    <th scope="col" ><span jhiTranslate="rdcJhipsterApp.istruzione.codiceLivello">Codice Livello</span></th>
-                    <th scope="col" ><span jhiTranslate="rdcJhipsterApp.istruzione.nome">Nome</span></th>
-                    <th scope="col" ><span jhiTranslate="rdcJhipsterApp.istruzione.campoStudio">Campo Studio</span></th>
-                    <th scope="col" ><span jhiTranslate="rdcJhipsterApp.istruzione.sinonimi">Sinonimi</span></th>
-                    <th scope="col" ><span jhiTranslate="rdcJhipsterApp.istruzione.codiceIstituto">Codice Istituto</span></th>
-                    <th scope="col" ><span jhiTranslate="rdcJhipsterApp.istruzione.tipoIstituto">Tipo Istituto</span></th>
+                <tr jhiSort [(predicate)]="predicate" [(ascending)]="ascending" [callback]="loadPage.bind(this)">
+                    <th scope="col"  jhiSortBy="id"><span jhiTranslate="global.field.id">ID</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="codiceIsced"><span jhiTranslate="rdcJhipsterApp.istruzione.codiceIsced">Codice Isced</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="codiceLivello"><span jhiTranslate="rdcJhipsterApp.istruzione.codiceLivello">Codice Livello</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="nome"><span jhiTranslate="rdcJhipsterApp.istruzione.nome">Nome</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="campoStudio"><span jhiTranslate="rdcJhipsterApp.istruzione.campoStudio">Campo Studio</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="sinonimi"><span jhiTranslate="rdcJhipsterApp.istruzione.sinonimi">Sinonimi</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="codiceIstituto"><span jhiTranslate="rdcJhipsterApp.istruzione.codiceIstituto">Codice Istituto</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="tipoIstituto"><span jhiTranslate="rdcJhipsterApp.istruzione.tipoIstituto">Tipo Istituto</span> <fa-icon icon="sort"></fa-icon></th>
                     <th scope="col"></th>
                 </tr>
             </thead>
             <tbody>
                 <tr *ngFor="let istruzione of istruziones ;trackBy: trackId">
                     <td><a [routerLink]="['/istruzione', istruzione.id, 'view']">{{ istruzione.id }}</a></td>
-                    <td>{{ istruzione.codice }}</td>
                     <td>{{ istruzione.codiceIsced }}</td>
                     <td>{{ istruzione.codiceLivello }}</td>
                     <td>{{ istruzione.nome }}</td>
@@ -71,5 +69,15 @@
                 </tr>
             </tbody>
         </table>
+    </div>
+
+    <div *ngIf="istruziones && istruziones.length > 0">
+        <div class="row justify-content-center">
+            <jhi-item-count [page]="page" [total]="totalItems" [itemsPerPage]="itemsPerPage"></jhi-item-count>
+        </div>
+
+        <div class="row justify-content-center">
+            <ngb-pagination [collectionSize]="totalItems" [(page)]="ngbPaginationPage" [pageSize]="itemsPerPage" [maxSize]="5" [rotate]="true" [boundaryLinks]="true" (pageChange)="loadPage($event)"></ngb-pagination>
+        </div>
     </div>
 </div>

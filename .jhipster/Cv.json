@@ -2,18 +2,6 @@
   "name": "Cv",
   "fields": [
     {
-      "fieldName": "cfUtente",
-      "fieldType": "String"
-    },
-    {
-      "fieldName": "codice",
-      "fieldType": "String",
-      "fieldValidateRules": [
-        "pattern"
-      ],
-      "fieldValidateRulesPattern": "[0-9]+"
-    },
-    {
       "fieldName": "inserimento",
       "fieldType": "LocalDate"
     }
@@ -39,10 +27,10 @@
       "otherEntityField": "id"
     }
   ],
-  "changelogDate": "20210922113502",
+  "changelogDate": "20211019153716",
   "entityTableName": "cv",
   "dto": "no",
-  "pagination": "no",
+  "pagination": "pagination",
   "service": "no",
   "jpaMetamodelFiltering": false,
   "fluentMethods": true,

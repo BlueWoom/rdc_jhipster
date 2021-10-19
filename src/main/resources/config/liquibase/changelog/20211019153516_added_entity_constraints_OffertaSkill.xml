@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.9.xsd">
+    <!--
+        Added the constraints for entity OffertaSkill.
+    -->
+    <changeSet id="20211019153516-2" author="jhipster">
+        
+        <addForeignKeyConstraint baseColumnNames="skill_id"
+                                 baseTableName="offerta_skill"
+                                 constraintName="fk_offerta_skill_skill_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="skill"/>
+
+        <addForeignKeyConstraint baseColumnNames="offerta_id"
+                                 baseTableName="offerta_skill"
+                                 constraintName="fk_offerta_skill_offerta_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="offerta"/>
+
+    </changeSet>
+</databaseChangeLog>

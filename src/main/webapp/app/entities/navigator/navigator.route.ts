@@ -40,6 +40,7 @@ export const navigatorRoute: Routes = [
     component: NavigatorComponent,
     data: {
       authorities: [Authority.USER],
+      defaultSort: 'id,asc',
       pageTitle: 'rdcJhipsterApp.navigator.home.title',
     },
     canActivate: [UserRouteAccessService],

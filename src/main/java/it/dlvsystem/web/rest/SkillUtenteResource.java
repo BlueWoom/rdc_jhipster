@@ -5,10 +5,16 @@ import it.dlvsystem.repository.SkillUtenteRepository;
 import it.dlvsystem.web.rest.errors.BadRequestAlertException;
 
 import io.github.jhipster.web.util.HeaderUtil;
+import io.github.jhipster.web.util.PaginationUtil;
 import io.github.jhipster.web.util.ResponseUtil;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
+import org.springframework.http.HttpHeaders;
+import org.springframework.http.HttpStatus;
+import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 import org.springframework.http.ResponseEntity;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.*;
@@ -52,12 +58,6 @@ public class SkillUtenteResource {
         if (skillUtente.getId() != null) {
             throw new BadRequestAlertException("A new skillUtente cannot already have an ID", ENTITY_NAME, "idexists");
         }
-        
-        Optional<SkillUtente> alreadyExistingSkillUtente = skillUtenteRepository.findByCfUtenteAndCodiceEscoSkill(skillUtente.getCfUtente(), skillUtente.getCodiceEscoSkill());
-        if (alreadyExistingSkillUtente.isPresent()) {
-        	throw new BadRequestAlertException("An old skillUtente already has same cfUtente/CodiceEscoSkill", ENTITY_NAME, "idexists");
-        }
-        
         SkillUtente result = skillUtenteRepository.save(skillUtente);
         return ResponseEntity.created(new URI("/api/skill-utentes/" + result.getId()))
             .headers(HeaderUtil.createEntityCreationAlert(applicationName, true, ENTITY_NAME, result.getId().toString()))
@@ -88,12 +88,15 @@ public class SkillUtenteResource {
     /**
      * {@code GET  /skill-utentes} : get all the skillUtentes.
      *
+     * @param pageable the pagination information.
      * @return the {@link ResponseEntity} with status {@code 200 (OK)} and the list of skillUtentes in body.
      */
     @GetMapping("/skill-utentes")
-    public List<SkillUtente> getAllSkillUtentes() {
-        log.debug("REST request to get all SkillUtentes");
-        return skillUtenteRepository.findAll();
+    public ResponseEntity<List<SkillUtente>> getAllSkillUtentes(Pageable pageable) {
+        log.debug("REST request to get a page of SkillUtentes");
+        Page<SkillUtente> page = skillUtenteRepository.findAll(pageable);
+        HttpHeaders headers = PaginationUtil.generatePaginationHttpHeaders(ServletUriComponentsBuilder.fromCurrentRequest(), page);
+        return ResponseEntity.ok().headers(headers).body(page.getContent());
     }
 
     /**

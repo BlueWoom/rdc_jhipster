@@ -2,7 +2,6 @@ package it.dlvsystem.domain;
 
 
 import javax.persistence.*;
-import javax.validation.constraints.*;
 
 import java.io.Serializable;
 import java.util.HashSet;
@@ -20,10 +19,6 @@ public class Istruzione implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-
-    @Pattern(regexp = "[0-9]+")
-    @Column(name = "codice")
-    private String codice;
 
     @Column(name = "codice_isced")
     private String codiceIsced;
@@ -59,19 +54,6 @@ public class Istruzione implements Serializable {
 
     public void setId(Long id) {
         this.id = id;
-    }
-
-    public String getCodice() {
-        return codice;
-    }
-
-    public Istruzione codice(String codice) {
-        this.codice = codice;
-        return this;
-    }
-
-    public void setCodice(String codice) {
-        this.codice = codice;
     }
 
     public String getCodiceIsced() {
@@ -237,7 +219,6 @@ public class Istruzione implements Serializable {
     public String toString() {
         return "Istruzione{" +
             "id=" + getId() +
-            ", codice='" + getCodice() + "'" +
             ", codiceIsced='" + getCodiceIsced() + "'" +
             ", codiceLivello='" + getCodiceLivello() + "'" +
             ", nome='" + getNome() + "'" +

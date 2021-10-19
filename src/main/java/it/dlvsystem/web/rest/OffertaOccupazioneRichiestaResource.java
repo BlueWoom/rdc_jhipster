@@ -5,15 +5,20 @@ import it.dlvsystem.repository.OffertaOccupazioneRichiestaRepository;
 import it.dlvsystem.web.rest.errors.BadRequestAlertException;
 
 import io.github.jhipster.web.util.HeaderUtil;
+import io.github.jhipster.web.util.PaginationUtil;
 import io.github.jhipster.web.util.ResponseUtil;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
+import org.springframework.http.HttpHeaders;
+import org.springframework.http.HttpStatus;
+import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 import org.springframework.http.ResponseEntity;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.*;
 
-import javax.validation.Valid;
 import java.net.URI;
 import java.net.URISyntaxException;
 import java.util.List;
@@ -48,17 +53,11 @@ public class OffertaOccupazioneRichiestaResource {
      * @throws URISyntaxException if the Location URI syntax is incorrect.
      */
     @PostMapping("/offerta-occupazione-richiestas")
-    public ResponseEntity<OffertaOccupazioneRichiesta> createOffertaOccupazioneRichiesta(@Valid @RequestBody OffertaOccupazioneRichiesta offertaOccupazioneRichiesta) throws URISyntaxException {
+    public ResponseEntity<OffertaOccupazioneRichiesta> createOffertaOccupazioneRichiesta(@RequestBody OffertaOccupazioneRichiesta offertaOccupazioneRichiesta) throws URISyntaxException {
         log.debug("REST request to save OffertaOccupazioneRichiesta : {}", offertaOccupazioneRichiesta);
         if (offertaOccupazioneRichiesta.getId() != null) {
             throw new BadRequestAlertException("A new offertaOccupazioneRichiesta cannot already have an ID", ENTITY_NAME, "idexists");
         }
-        
-        Optional<OffertaOccupazioneRichiesta> alreadyExistingOffertaOccupazioneRichiesta = offertaOccupazioneRichiestaRepository.findByCodiceOffertaAndCodiceEscoOccupazione(offertaOccupazioneRichiesta.getCodiceOfferta(), offertaOccupazioneRichiesta.getCodiceEscoOccupazione());
-        if (alreadyExistingOffertaOccupazioneRichiesta.isPresent()) {
-        	throw new BadRequestAlertException("An old offertaOccupazioneRichiesta already has same codiceOfferta/codiceEscoOccupazione", ENTITY_NAME, "idexists");
-        }
-        
         OffertaOccupazioneRichiesta result = offertaOccupazioneRichiestaRepository.save(offertaOccupazioneRichiesta);
         return ResponseEntity.created(new URI("/api/offerta-occupazione-richiestas/" + result.getId()))
             .headers(HeaderUtil.createEntityCreationAlert(applicationName, true, ENTITY_NAME, result.getId().toString()))
@@ -75,7 +74,7 @@ public class OffertaOccupazioneRichiestaResource {
      * @throws URISyntaxException if the Location URI syntax is incorrect.
      */
     @PutMapping("/offerta-occupazione-richiestas")
-    public ResponseEntity<OffertaOccupazioneRichiesta> updateOffertaOccupazioneRichiesta(@Valid @RequestBody OffertaOccupazioneRichiesta offertaOccupazioneRichiesta) throws URISyntaxException {
+    public ResponseEntity<OffertaOccupazioneRichiesta> updateOffertaOccupazioneRichiesta(@RequestBody OffertaOccupazioneRichiesta offertaOccupazioneRichiesta) throws URISyntaxException {
         log.debug("REST request to update OffertaOccupazioneRichiesta : {}", offertaOccupazioneRichiesta);
         if (offertaOccupazioneRichiesta.getId() == null) {
             throw new BadRequestAlertException("Invalid id", ENTITY_NAME, "idnull");
@@ -89,12 +88,15 @@ public class OffertaOccupazioneRichiestaResource {
     /**
      * {@code GET  /offerta-occupazione-richiestas} : get all the offertaOccupazioneRichiestas.
      *
+     * @param pageable the pagination information.
      * @return the {@link ResponseEntity} with status {@code 200 (OK)} and the list of offertaOccupazioneRichiestas in body.
      */
     @GetMapping("/offerta-occupazione-richiestas")
-    public List<OffertaOccupazioneRichiesta> getAllOffertaOccupazioneRichiestas() {
-        log.debug("REST request to get all OffertaOccupazioneRichiestas");
-        return offertaOccupazioneRichiestaRepository.findAll();
+    public ResponseEntity<List<OffertaOccupazioneRichiesta>> getAllOffertaOccupazioneRichiestas(Pageable pageable) {
+        log.debug("REST request to get a page of OffertaOccupazioneRichiestas");
+        Page<OffertaOccupazioneRichiesta> page = offertaOccupazioneRichiestaRepository.findAll(pageable);
+        HttpHeaders headers = PaginationUtil.generatePaginationHttpHeaders(ServletUriComponentsBuilder.fromCurrentRequest(), page);
+        return ResponseEntity.ok().headers(headers).body(page.getContent());
     }
 
     /**

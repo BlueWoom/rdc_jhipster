@@ -15,10 +15,10 @@
     }
   ],
   "relationships": [],
-  "changelogDate": "20210922112702",
+  "changelogDate": "20211019153016",
   "entityTableName": "gap_analysis",
   "dto": "no",
-  "pagination": "no",
+  "pagination": "pagination",
   "service": "no",
   "jpaMetamodelFiltering": false,
   "fluentMethods": true,

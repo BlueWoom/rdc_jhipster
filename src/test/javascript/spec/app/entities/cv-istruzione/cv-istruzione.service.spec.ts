@@ -20,7 +20,7 @@ describe('Service Tests', () => {
       service = injector.get(CvIstruzioneService);
       httpMock = injector.get(HttpTestingController);
 
-      elemDefault = new CvIstruzione(0, 'AAAAAAA', 'AAAAAAA', 'AAAAAAA', 0);
+      elemDefault = new CvIstruzione(0, 0);
     });
 
     describe('Service methods', () => {
@@ -54,9 +54,6 @@ describe('Service Tests', () => {
       it('should update a CvIstruzione', () => {
         const returnedFromService = Object.assign(
           {
-            codiceIstruzione: 'BBBBBB',
-            cfUtente: 'BBBBBB',
-            codiceCv: 'BBBBBB',
             punteggio: 1,
           },
           elemDefault
@@ -74,9 +71,6 @@ describe('Service Tests', () => {
       it('should return a list of CvIstruzione', () => {
         const returnedFromService = Object.assign(
           {
-            codiceIstruzione: 'BBBBBB',
-            cfUtente: 'BBBBBB',
-            codiceCv: 'BBBBBB',
             punteggio: 1,
           },
           elemDefault

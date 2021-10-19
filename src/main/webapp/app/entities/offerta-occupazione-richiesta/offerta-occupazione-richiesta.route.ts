@@ -40,6 +40,7 @@ export const offertaOccupazioneRichiestaRoute: Routes = [
     component: OffertaOccupazioneRichiestaComponent,
     data: {
       authorities: [Authority.USER],
+      defaultSort: 'id,asc',
       pageTitle: 'rdcJhipsterApp.offertaOccupazioneRichiesta.home.title',
     },
     canActivate: [UserRouteAccessService],

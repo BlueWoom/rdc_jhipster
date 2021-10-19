@@ -127,25 +127,6 @@ public class OccupazioneResourceIT {
 
     @Test
     @Transactional
-    public void checkCodiceEscoIsRequired() throws Exception {
-        int databaseSizeBeforeTest = occupazioneRepository.findAll().size();
-        // set the field null
-        occupazione.setCodiceEsco(null);
-
-        // Create the Occupazione, which fails.
-
-
-        restOccupazioneMockMvc.perform(post("/api/occupaziones")
-            .contentType(MediaType.APPLICATION_JSON)
-            .content(TestUtil.convertObjectToJsonBytes(occupazione)))
-            .andExpect(status().isBadRequest());
-
-        List<Occupazione> occupazioneList = occupazioneRepository.findAll();
-        assertThat(occupazioneList).hasSize(databaseSizeBeforeTest);
-    }
-
-    @Test
-    @Transactional
     public void getAllOccupaziones() throws Exception {
         // Initialize the database
         occupazioneRepository.saveAndFlush(occupazione);

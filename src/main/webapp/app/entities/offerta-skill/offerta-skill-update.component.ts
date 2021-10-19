@@ -25,8 +25,6 @@ export class OffertaSkillUpdateComponent implements OnInit {
 
   editForm = this.fb.group({
     id: [],
-    codiceOfferta: [null, [Validators.pattern('[0-9]+')]],
-    codiceEscoSkill: [],
     optional: [],
     skill: [],
     offerta: [],
@@ -53,8 +51,6 @@ export class OffertaSkillUpdateComponent implements OnInit {
   updateForm(offertaSkill: IOffertaSkill): void {
     this.editForm.patchValue({
       id: offertaSkill.id,
-      codiceOfferta: offertaSkill.codiceOfferta,
-      codiceEscoSkill: offertaSkill.codiceEscoSkill,
       optional: offertaSkill.optional,
       skill: offertaSkill.skill,
       offerta: offertaSkill.offerta,
@@ -79,8 +75,6 @@ export class OffertaSkillUpdateComponent implements OnInit {
     return {
       ...new OffertaSkill(),
       id: this.editForm.get(['id'])!.value,
-      codiceOfferta: this.editForm.get(['codiceOfferta'])!.value,
-      codiceEscoSkill: this.editForm.get(['codiceEscoSkill'])!.value,
       optional: this.editForm.get(['optional'])!.value,
       skill: this.editForm.get(['skill'])!.value,
       offerta: this.editForm.get(['offerta'])!.value,

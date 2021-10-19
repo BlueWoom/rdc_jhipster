@@ -17,10 +17,6 @@
                            formControlName="codiceEsco"/>
                     <div *ngIf="editForm.get('codiceEsco')!.invalid && (editForm.get('codiceEsco')!.dirty || editForm.get('codiceEsco')!.touched)">
                         <small class="form-text text-danger"
-                               *ngIf="editForm.get('codiceEsco')?.errors?.required" jhiTranslate="entity.validation.required">
-                        This field is required.
-                        </small>
-                        <small class="form-text text-danger"
                                *ngIf="editForm.get('codiceEsco')?.errors?.pattern" jhiTranslate="entity.validation.pattern" [translateValues]="{ pattern: 'Codice Esco' }">
                             This field should follow pattern for "Codice Esco".
                         </small>

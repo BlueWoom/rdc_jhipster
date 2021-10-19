@@ -3,7 +3,6 @@ import { ICvIstruzione } from 'app/shared/model/cv-istruzione.model';
 
 export interface IIstruzione {
   id?: number;
-  codice?: string;
   codiceIsced?: string;
   codiceLivello?: string;
   nome?: string;
@@ -18,7 +17,6 @@ export interface IIstruzione {
 export class Istruzione implements IIstruzione {
   constructor(
     public id?: number,
-    public codice?: string,
     public codiceIsced?: string,
     public codiceLivello?: string,
     public nome?: string,

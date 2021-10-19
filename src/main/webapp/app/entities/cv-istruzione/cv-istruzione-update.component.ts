@@ -25,9 +25,6 @@ export class CvIstruzioneUpdateComponent implements OnInit {
 
   editForm = this.fb.group({
     id: [],
-    codiceIstruzione: [null, [Validators.pattern('[0-9]+')]],
-    cfUtente: [],
-    codiceCv: [null, [Validators.pattern('[0-9]+')]],
     punteggio: [],
     istruzione: [],
     cv: [],
@@ -54,9 +51,6 @@ export class CvIstruzioneUpdateComponent implements OnInit {
   updateForm(cvIstruzione: ICvIstruzione): void {
     this.editForm.patchValue({
       id: cvIstruzione.id,
-      codiceIstruzione: cvIstruzione.codiceIstruzione,
-      cfUtente: cvIstruzione.cfUtente,
-      codiceCv: cvIstruzione.codiceCv,
       punteggio: cvIstruzione.punteggio,
       istruzione: cvIstruzione.istruzione,
       cv: cvIstruzione.cv,
@@ -81,9 +75,6 @@ export class CvIstruzioneUpdateComponent implements OnInit {
     return {
       ...new CvIstruzione(),
       id: this.editForm.get(['id'])!.value,
-      codiceIstruzione: this.editForm.get(['codiceIstruzione'])!.value,
-      cfUtente: this.editForm.get(['cfUtente'])!.value,
-      codiceCv: this.editForm.get(['codiceCv'])!.value,
       punteggio: this.editForm.get(['punteggio'])!.value,
       istruzione: this.editForm.get(['istruzione'])!.value,
       cv: this.editForm.get(['cv'])!.value,

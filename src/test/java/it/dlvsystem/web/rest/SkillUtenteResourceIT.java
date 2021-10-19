@@ -29,9 +29,6 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 @WithMockUser
 public class SkillUtenteResourceIT {
 
-    private static final String DEFAULT_CF_UTENTE = "AAAAAAAAAA";
-    private static final String UPDATED_CF_UTENTE = "BBBBBBBBBB";
-
     private static final String DEFAULT_CODICE_ESCO_SKILL = "AAAAAAAAAA";
     private static final String UPDATED_CODICE_ESCO_SKILL = "BBBBBBBBBB";
 
@@ -54,7 +51,6 @@ public class SkillUtenteResourceIT {
      */
     public static SkillUtente createEntity(EntityManager em) {
         SkillUtente skillUtente = new SkillUtente()
-            .cfUtente(DEFAULT_CF_UTENTE)
             .codiceEscoSkill(DEFAULT_CODICE_ESCO_SKILL);
         return skillUtente;
     }
@@ -66,7 +62,6 @@ public class SkillUtenteResourceIT {
      */
     public static SkillUtente createUpdatedEntity(EntityManager em) {
         SkillUtente skillUtente = new SkillUtente()
-            .cfUtente(UPDATED_CF_UTENTE)
             .codiceEscoSkill(UPDATED_CODICE_ESCO_SKILL);
         return skillUtente;
     }
@@ -90,7 +85,6 @@ public class SkillUtenteResourceIT {
         List<SkillUtente> skillUtenteList = skillUtenteRepository.findAll();
         assertThat(skillUtenteList).hasSize(databaseSizeBeforeCreate + 1);
         SkillUtente testSkillUtente = skillUtenteList.get(skillUtenteList.size() - 1);
-        assertThat(testSkillUtente.getCfUtente()).isEqualTo(DEFAULT_CF_UTENTE);
         assertThat(testSkillUtente.getCodiceEscoSkill()).isEqualTo(DEFAULT_CODICE_ESCO_SKILL);
     }
 
@@ -125,7 +119,6 @@ public class SkillUtenteResourceIT {
             .andExpect(status().isOk())
             .andExpect(content().contentType(MediaType.APPLICATION_JSON_VALUE))
             .andExpect(jsonPath("$.[*].id").value(hasItem(skillUtente.getId().intValue())))
-            .andExpect(jsonPath("$.[*].cfUtente").value(hasItem(DEFAULT_CF_UTENTE)))
             .andExpect(jsonPath("$.[*].codiceEscoSkill").value(hasItem(DEFAULT_CODICE_ESCO_SKILL)));
     }
     
@@ -140,7 +133,6 @@ public class SkillUtenteResourceIT {
             .andExpect(status().isOk())
             .andExpect(content().contentType(MediaType.APPLICATION_JSON_VALUE))
             .andExpect(jsonPath("$.id").value(skillUtente.getId().intValue()))
-            .andExpect(jsonPath("$.cfUtente").value(DEFAULT_CF_UTENTE))
             .andExpect(jsonPath("$.codiceEscoSkill").value(DEFAULT_CODICE_ESCO_SKILL));
     }
     @Test
@@ -164,7 +156,6 @@ public class SkillUtenteResourceIT {
         // Disconnect from session so that the updates on updatedSkillUtente are not directly saved in db
         em.detach(updatedSkillUtente);
         updatedSkillUtente
-            .cfUtente(UPDATED_CF_UTENTE)
             .codiceEscoSkill(UPDATED_CODICE_ESCO_SKILL);
 
         restSkillUtenteMockMvc.perform(put("/api/skill-utentes")
@@ -176,7 +167,6 @@ public class SkillUtenteResourceIT {
         List<SkillUtente> skillUtenteList = skillUtenteRepository.findAll();
         assertThat(skillUtenteList).hasSize(databaseSizeBeforeUpdate);
         SkillUtente testSkillUtente = skillUtenteList.get(skillUtenteList.size() - 1);
-        assertThat(testSkillUtente.getCfUtente()).isEqualTo(UPDATED_CF_UTENTE);
         assertThat(testSkillUtente.getCodiceEscoSkill()).isEqualTo(UPDATED_CODICE_ESCO_SKILL);
     }
 

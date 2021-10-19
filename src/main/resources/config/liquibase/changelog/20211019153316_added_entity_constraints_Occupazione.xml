@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.9.xsd">
+    <!--
+        Added the constraints for entity Occupazione.
+    -->
+    <changeSet id="20211019153316-2" author="jhipster">
+        
+        <addForeignKeyConstraint baseColumnNames="occupazione_id"
+                                 baseTableName="occupazione_esperienza"
+                                 constraintName="fk_occupazione_esperienza_occupazione_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="occupazione"/>
+
+        <addForeignKeyConstraint baseColumnNames="esperienza_id"
+                                 baseTableName="occupazione_esperienza"
+                                 constraintName="fk_occupazione_esperienza_esperienza_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="esperienza"/>
+        
+        <addForeignKeyConstraint baseColumnNames="occupazione_id"
+                                 baseTableName="occupazione_offerta"
+                                 constraintName="fk_occupazione_offerta_occupazione_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="occupazione"/>
+
+        <addForeignKeyConstraint baseColumnNames="offerta_id"
+                                 baseTableName="occupazione_offerta"
+                                 constraintName="fk_occupazione_offerta_offerta_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="offerta"/>
+        
+        <addForeignKeyConstraint baseColumnNames="occupazione_id"
+                                 baseTableName="occupazione_skill"
+                                 constraintName="fk_occupazione_skill_occupazione_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="occupazione"/>
+
+        <addForeignKeyConstraint baseColumnNames="skill_id"
+                                 baseTableName="occupazione_skill"
+                                 constraintName="fk_occupazione_skill_skill_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="skill"/>
+        
+    </changeSet>
+</databaseChangeLog>

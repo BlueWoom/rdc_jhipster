@@ -2,7 +2,6 @@ package it.dlvsystem.domain;
 
 
 import javax.persistence.*;
-import javax.validation.constraints.*;
 
 import java.io.Serializable;
 import java.util.HashSet;
@@ -21,8 +20,7 @@ public class Occupazione implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @NotNull
-    @Column(name = "codice_esco", nullable = false, unique = true)
+    @Column(name = "codice_esco")
     private String codiceEsco;
 
     @Column(name = "nome")

@@ -40,6 +40,7 @@ export const gapAnalysisRoute: Routes = [
     component: GapAnalysisComponent,
     data: {
       authorities: [Authority.USER],
+      defaultSort: 'id,asc',
       pageTitle: 'rdcJhipsterApp.gapAnalysis.home.title',
     },
     canActivate: [UserRouteAccessService],
