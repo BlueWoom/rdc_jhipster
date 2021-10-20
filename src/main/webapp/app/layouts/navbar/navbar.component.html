@@ -26,7 +26,7 @@
         </a>
       </li>
 
-      <li class="nav-item" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">
+      <li class="nav-item" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" *jhiHasAnyAuthority="'ROLE_ADMIN'">
         <a class="nav-link" routerLink="/registers/home" (click)="collapseNavbar()">
           <span>
             <fa-icon icon="registered"></fa-icon>

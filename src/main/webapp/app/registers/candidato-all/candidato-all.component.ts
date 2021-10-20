@@ -5,18 +5,17 @@ import { Subscription, combineLatest } from 'rxjs';
 import { JhiEventManager } from 'ng-jhipster';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 
-import { IAzienda } from 'app/shared/model/azienda.model';
+import { ICandidato } from 'app/shared/model/candidato.model';
 
 import { ITEMS_PER_PAGE } from 'app/shared/constants/pagination.constants';
-import { AziendaService } from './../azienda.service';
-// import { AziendaDeleteDialogComponent } from './azienda-delete-dialog.component';
+import { CandidatoService } from '../candidato.service';
 
 @Component({
-  selector: 'jhi-azienda-all',
-  templateUrl: './azienda-all.component.html',
+  selector: 'jhi-candidato-all',
+  templateUrl: './candidato-all.component.html',
 })
-export class AziendaAllComponent implements OnInit, OnDestroy {
-  aziendas?: IAzienda[];
+export class CandidatoAllComponent implements OnInit, OnDestroy {
+  candidatoes?: ICandidato[];
   eventSubscriber?: Subscription;
   totalItems = 0;
   itemsPerPage = ITEMS_PER_PAGE;
@@ -26,7 +25,7 @@ export class AziendaAllComponent implements OnInit, OnDestroy {
   ngbPaginationPage = 1;
 
   constructor(
-    protected aziendaService: AziendaService,
+    protected candidatoService: CandidatoService,
     protected activatedRoute: ActivatedRoute,
     protected router: Router,
     protected eventManager: JhiEventManager,
@@ -36,21 +35,21 @@ export class AziendaAllComponent implements OnInit, OnDestroy {
   loadPage(page?: number, dontNavigate?: boolean): void {
     const pageToLoad: number = page || this.page || 1;
 
-    this.aziendaService
+    this.candidatoService
       .query({
         page: pageToLoad - 1,
         size: this.itemsPerPage,
         sort: this.sort(),
       })
       .subscribe(
-        (res: HttpResponse<IAzienda[]>) => this.onSuccess(res.body, res.headers, pageToLoad, !dontNavigate),
+        (res: HttpResponse<ICandidato[]>) => this.onSuccess(res.body, res.headers, pageToLoad, !dontNavigate),
         () => this.onError()
       );
   }
 
   ngOnInit(): void {
     this.handleNavigation();
-    this.registerChangeInAziendas();
+    this.registerChangeInCandidatoes();
   }
 
   protected handleNavigation(): void {
@@ -74,18 +73,18 @@ export class AziendaAllComponent implements OnInit, OnDestroy {
     }
   }
 
-  trackId(index: number, item: IAzienda): number {
+  trackId(index: number, item: ICandidato): number {
     // eslint-disable-next-line @typescript-eslint/no-unnecessary-type-assertion
     return item.id!;
   }
 
-  registerChangeInAziendas(): void {
-    this.eventSubscriber = this.eventManager.subscribe('aziendaListModification', () => this.loadPage());
+  registerChangeInCandidatoes(): void {
+    this.eventSubscriber = this.eventManager.subscribe('candidatoListModification', () => this.loadPage());
   }
 
-  /* delete(azienda: IAzienda): void {
-    const modalRef = this.modalService.open(AziendaDeleteDialogComponent, { size: 'lg', backdrop: 'static' });
-    modalRef.componentInstance.azienda = azienda;
+  /* delete(candidato: ICandidato): void {
+    const modalRef = this.modalService.open(CandidatoDeleteDialogComponent, { size: 'lg', backdrop: 'static' });
+    modalRef.componentInstance.candidato = candidato;
   } */
 
   sort(): string[] {
@@ -96,11 +95,11 @@ export class AziendaAllComponent implements OnInit, OnDestroy {
     return result;
   }
 
-  protected onSuccess(data: IAzienda[] | null, headers: HttpHeaders, page: number, navigate: boolean): void {
+  protected onSuccess(data: ICandidato[] | null, headers: HttpHeaders, page: number, navigate: boolean): void {
     this.totalItems = Number(headers.get('X-Total-Count'));
     this.page = page;
     if (navigate) {
-      this.router.navigate(['/azienda'], {
+      this.router.navigate(['/candidato'], {
         queryParams: {
           page: this.page,
           size: this.itemsPerPage,
@@ -108,7 +107,7 @@ export class AziendaAllComponent implements OnInit, OnDestroy {
         },
       });
     }
-    this.aziendas = data || [];
+    this.candidatoes = data || [];
     this.ngbPaginationPage = this.page;
   }
 

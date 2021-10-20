@@ -2,7 +2,7 @@
   "rdcJhipsterApp": {
     "offerta": {
       "home": {
-        "title": "Offertas",
+        "title": "Registro Offerte",
         "createLabel": "Genera un nuovo Offerta",
         "createOrEditLabel": "Genera o modifica un Offerta",
         "notFound": "No Offertas found"

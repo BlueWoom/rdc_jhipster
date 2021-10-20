@@ -1,0 +1,114 @@
+<div class="card">
+  <div class="card-header">
+    <div>
+      <h2 id="page-heading">
+        <span jhiTranslate="rdcJhipsterApp.offerta.home.title">Registro Offerte</span>
+
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-offerta" [routerLink]="['/offerta/new']">
+          <fa-icon icon="plus"></fa-icon>
+          <span jhiTranslate="rdcJhipsterApp.offerta.home.createLabel"> Create a new Offerta </span>
+        </button>
+      </h2>
+    </div>
+  </div>
+
+  <div class="card-body">
+    <jhi-alert-error></jhi-alert-error>
+
+    <jhi-alert></jhi-alert>
+
+    <div class="alert alert-warning" id="no-result" *ngIf="offertas?.length === 0">
+      <span jhiTranslate="rdcJhipsterApp.offerta.home.notFound">No offertas found</span>
+    </div>
+
+    <div class="table-responsive" id="entities" *ngIf="offertas && offertas.length > 0">
+      <table class="table table-striped" aria-describedby="page-heading">
+        <thead>
+          <tr jhiSort [(predicate)]="predicate" [(ascending)]="ascending" [callback]="loadPage.bind(this)">
+            <th scope="col" jhiSortBy="id"><span jhiTranslate="global.field.id">ID</span> <fa-icon icon="sort"></fa-icon></th>
+            <th scope="col" jhiSortBy="data">
+              <span jhiTranslate="rdcJhipsterApp.offerta.data">Data</span> <fa-icon icon="sort"></fa-icon>
+            </th>
+            <th scope="col" jhiSortBy="indirizzoSede">
+              <span jhiTranslate="rdcJhipsterApp.offerta.indirizzoSede">Indirizzo Sede</span> <fa-icon icon="sort"></fa-icon>
+            </th>
+            <th scope="col" jhiSortBy="cittaSede">
+              <span jhiTranslate="rdcJhipsterApp.offerta.cittaSede">Citta Sede</span> <fa-icon icon="sort"></fa-icon>
+            </th>
+            <th scope="col" jhiSortBy="capSede">
+              <span jhiTranslate="rdcJhipsterApp.offerta.capSede">Cap Sede</span> <fa-icon icon="sort"></fa-icon>
+            </th>
+            <th scope="col" jhiSortBy="provinciaSede">
+              <span jhiTranslate="rdcJhipsterApp.offerta.provinciaSede">Provincia Sede</span> <fa-icon icon="sort"></fa-icon>
+            </th>
+            <th scope="col" jhiSortBy="istruzione.id">
+              <span jhiTranslate="rdcJhipsterApp.offerta.istruzione">Istruzione</span> <fa-icon icon="sort"></fa-icon>
+            </th>
+            <th scope="col" jhiSortBy="azienda.id">
+              <span jhiTranslate="rdcJhipsterApp.offerta.azienda">Azienda</span> <fa-icon icon="sort"></fa-icon>
+            </th>
+            <th scope="col"></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let offerta of offertas; trackBy: trackId">
+            <td>
+              <a [routerLink]="['/offerta', offerta.id, 'view']">{{ offerta.id }}</a>
+            </td>
+            <td>{{ offerta.data | date: 'mediumDate' }}</td>
+            <td>{{ offerta.indirizzoSede }}</td>
+            <td>{{ offerta.cittaSede }}</td>
+            <td>{{ offerta.capSede }}</td>
+            <td>{{ offerta.provinciaSede }}</td>
+            <td>
+              <div *ngIf="offerta.istruzione">
+                <a [routerLink]="['/istruzione', offerta.istruzione?.id, 'view']">{{ offerta.istruzione?.id }}</a>
+              </div>
+            </td>
+            <td>
+              <div *ngIf="offerta.azienda">
+                <a [routerLink]="['/azienda', offerta.azienda?.id, 'view']">{{ offerta.azienda?.id }}</a>
+              </div>
+            </td>
+            <td class="text-right">
+              <div class="btn-group">
+                <button type="submit" class="btn btn-info btn-sm">
+                  <fa-icon icon="eye"></fa-icon>
+                  <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                </button>
+
+                <button type="submit" class="btn btn-primary btn-sm">
+                  <fa-icon icon="pencil-alt"></fa-icon>
+                  <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                </button>
+
+                <button type="submit" class="btn btn-danger btn-sm">
+                  <fa-icon icon="times"></fa-icon>
+                  <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                </button>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div *ngIf="offertas && offertas.length > 0">
+      <div class="row justify-content-center">
+        <jhi-item-count [page]="page" [total]="totalItems" [itemsPerPage]="itemsPerPage"></jhi-item-count>
+      </div>
+
+      <div class="row justify-content-center">
+        <ngb-pagination
+          [collectionSize]="totalItems"
+          [(page)]="ngbPaginationPage"
+          [pageSize]="itemsPerPage"
+          [maxSize]="5"
+          [rotate]="true"
+          [boundaryLinks]="true"
+          (pageChange)="loadPage($event)"
+        ></ngb-pagination>
+      </div>
+    </div>
+  </div>
+</div>

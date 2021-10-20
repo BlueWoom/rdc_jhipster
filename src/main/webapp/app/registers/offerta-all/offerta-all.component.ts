@@ -5,18 +5,17 @@ import { Subscription, combineLatest } from 'rxjs';
 import { JhiEventManager } from 'ng-jhipster';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 
-import { IAzienda } from 'app/shared/model/azienda.model';
+import { IOfferta } from 'app/shared/model/offerta.model';
 
 import { ITEMS_PER_PAGE } from 'app/shared/constants/pagination.constants';
-import { AziendaService } from './../azienda.service';
-// import { AziendaDeleteDialogComponent } from './azienda-delete-dialog.component';
+import { OffertaService } from '../offerta.service';
 
 @Component({
-  selector: 'jhi-azienda-all',
-  templateUrl: './azienda-all.component.html',
+  selector: 'jhi-offerta-all',
+  templateUrl: './offerta-all.component.html',
 })
-export class AziendaAllComponent implements OnInit, OnDestroy {
-  aziendas?: IAzienda[];
+export class OffertaAllComponent implements OnInit, OnDestroy {
+  offertas?: IOfferta[];
   eventSubscriber?: Subscription;
   totalItems = 0;
   itemsPerPage = ITEMS_PER_PAGE;
@@ -26,7 +25,7 @@ export class AziendaAllComponent implements OnInit, OnDestroy {
   ngbPaginationPage = 1;
 
   constructor(
-    protected aziendaService: AziendaService,
+    protected offertaService: OffertaService,
     protected activatedRoute: ActivatedRoute,
     protected router: Router,
     protected eventManager: JhiEventManager,
@@ -36,21 +35,21 @@ export class AziendaAllComponent implements OnInit, OnDestroy {
   loadPage(page?: number, dontNavigate?: boolean): void {
     const pageToLoad: number = page || this.page || 1;
 
-    this.aziendaService
+    this.offertaService
       .query({
         page: pageToLoad - 1,
         size: this.itemsPerPage,
         sort: this.sort(),
       })
       .subscribe(
-        (res: HttpResponse<IAzienda[]>) => this.onSuccess(res.body, res.headers, pageToLoad, !dontNavigate),
+        (res: HttpResponse<IOfferta[]>) => this.onSuccess(res.body, res.headers, pageToLoad, !dontNavigate),
         () => this.onError()
       );
   }
 
   ngOnInit(): void {
     this.handleNavigation();
-    this.registerChangeInAziendas();
+    this.registerChangeInOffertas();
   }
 
   protected handleNavigation(): void {
@@ -74,18 +73,18 @@ export class AziendaAllComponent implements OnInit, OnDestroy {
     }
   }
 
-  trackId(index: number, item: IAzienda): number {
+  trackId(index: number, item: IOfferta): number {
     // eslint-disable-next-line @typescript-eslint/no-unnecessary-type-assertion
     return item.id!;
   }
 
-  registerChangeInAziendas(): void {
-    this.eventSubscriber = this.eventManager.subscribe('aziendaListModification', () => this.loadPage());
+  registerChangeInOffertas(): void {
+    this.eventSubscriber = this.eventManager.subscribe('offertaListModification', () => this.loadPage());
   }
 
-  /* delete(azienda: IAzienda): void {
-    const modalRef = this.modalService.open(AziendaDeleteDialogComponent, { size: 'lg', backdrop: 'static' });
-    modalRef.componentInstance.azienda = azienda;
+  /* delete(offerta: IOfferta): void {
+    const modalRef = this.modalService.open(OffertaDeleteDialogComponent, { size: 'lg', backdrop: 'static' });
+    modalRef.componentInstance.offerta = offerta;
   } */
 
   sort(): string[] {
@@ -96,11 +95,11 @@ export class AziendaAllComponent implements OnInit, OnDestroy {
     return result;
   }
 
-  protected onSuccess(data: IAzienda[] | null, headers: HttpHeaders, page: number, navigate: boolean): void {
+  protected onSuccess(data: IOfferta[] | null, headers: HttpHeaders, page: number, navigate: boolean): void {
     this.totalItems = Number(headers.get('X-Total-Count'));
     this.page = page;
     if (navigate) {
-      this.router.navigate(['/azienda'], {
+      this.router.navigate(['/offerta'], {
         queryParams: {
           page: this.page,
           size: this.itemsPerPage,
@@ -108,7 +107,7 @@ export class AziendaAllComponent implements OnInit, OnDestroy {
         },
       });
     }
-    this.aziendas = data || [];
+    this.offertas = data || [];
     this.ngbPaginationPage = this.page;
   }
 

@@ -2,7 +2,7 @@
   "rdcJhipsterApp": {
     "candidato": {
       "home": {
-        "title": "Candidatoes",
+        "title": "Registro Candidati",
         "createLabel": "Genera un nuovo Candidato",
         "createOrEditLabel": "Genera o modifica un Candidato",
         "notFound": "No Candidatoes found"

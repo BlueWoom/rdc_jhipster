@@ -1,0 +1,140 @@
+<div class="card-body">
+  <div class="card-header">
+    <h2 id="page-heading">
+      <span jhiTranslate="rdcJhipsterApp.candidato.home.title">Registro Candidati</span>
+
+      <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-candidato" [routerLink]="['/candidato/new']">
+        <fa-icon icon="plus"></fa-icon>
+        <span jhiTranslate="rdcJhipsterApp.candidato.home.createLabel"> Create a new Candidato </span>
+      </button>
+    </h2>
+  </div>
+
+  <div class="card-body">
+    <jhi-alert-error></jhi-alert-error>
+
+    <jhi-alert></jhi-alert>
+
+    <div class="alert alert-warning" id="no-result" *ngIf="candidatoes?.length === 0">
+      <span jhiTranslate="rdcJhipsterApp.candidato.home.notFound">No candidatoes found</span>
+    </div>
+
+    <div class="table-responsive" id="entities" *ngIf="candidatoes && candidatoes.length > 0">
+      <table class="table table-striped" aria-describedby="page-heading">
+        <thead>
+          <tr jhiSort [(predicate)]="predicate" [(ascending)]="ascending" [callback]="loadPage.bind(this)">
+            <th scope="col" jhiSortBy="id"><span jhiTranslate="global.field.id">ID</span> <fa-icon icon="sort"></fa-icon></th>
+            <th scope="col" jhiSortBy="cf"><span jhiTranslate="rdcJhipsterApp.candidato.cf">Cf</span> <fa-icon icon="sort"></fa-icon></th>
+            <th scope="col" jhiSortBy="nome">
+              <span jhiTranslate="rdcJhipsterApp.candidato.nome">Nome</span> <fa-icon icon="sort"></fa-icon>
+            </th>
+            <th scope="col" jhiSortBy="cognome">
+              <span jhiTranslate="rdcJhipsterApp.candidato.cognome">Cognome</span> <fa-icon icon="sort"></fa-icon>
+            </th>
+            <th scope="col" jhiSortBy="dataNascita">
+              <span jhiTranslate="rdcJhipsterApp.candidato.dataNascita">Data Nascita</span> <fa-icon icon="sort"></fa-icon>
+            </th>
+            <th scope="col" jhiSortBy="luogoNascita">
+              <span jhiTranslate="rdcJhipsterApp.candidato.luogoNascita">Luogo Nascita</span> <fa-icon icon="sort"></fa-icon>
+            </th>
+            <th scope="col" jhiSortBy="sesso">
+              <span jhiTranslate="rdcJhipsterApp.candidato.sesso">Sesso</span> <fa-icon icon="sort"></fa-icon>
+            </th>
+            <th scope="col" jhiSortBy="telefono">
+              <span jhiTranslate="rdcJhipsterApp.candidato.telefono">Telefono</span> <fa-icon icon="sort"></fa-icon>
+            </th>
+            <th scope="col" jhiSortBy="email">
+              <span jhiTranslate="rdcJhipsterApp.candidato.email">Email</span> <fa-icon icon="sort"></fa-icon>
+            </th>
+            <th scope="col" jhiSortBy="citta">
+              <span jhiTranslate="rdcJhipsterApp.candidato.citta">Citta</span> <fa-icon icon="sort"></fa-icon>
+            </th>
+            <th scope="col" jhiSortBy="indirizzo">
+              <span jhiTranslate="rdcJhipsterApp.candidato.indirizzo">Indirizzo</span> <fa-icon icon="sort"></fa-icon>
+            </th>
+            <th scope="col" jhiSortBy="cap">
+              <span jhiTranslate="rdcJhipsterApp.candidato.cap">Cap</span> <fa-icon icon="sort"></fa-icon>
+            </th>
+            <th scope="col" jhiSortBy="provincia">
+              <span jhiTranslate="rdcJhipsterApp.candidato.provincia">Provincia</span> <fa-icon icon="sort"></fa-icon>
+            </th>
+            <th scope="col" jhiSortBy="regione">
+              <span jhiTranslate="rdcJhipsterApp.candidato.regione">Regione</span> <fa-icon icon="sort"></fa-icon>
+            </th>
+            <th scope="col" jhiSortBy="internalUser.id">
+              <span jhiTranslate="rdcJhipsterApp.candidato.internalUser">Internal User</span> <fa-icon icon="sort"></fa-icon>
+            </th>
+            <th scope="col" jhiSortBy="navigator.id">
+              <span jhiTranslate="rdcJhipsterApp.candidato.navigator">Navigator</span> <fa-icon icon="sort"></fa-icon>
+            </th>
+            <th scope="col"></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let candidato of candidatoes; trackBy: trackId">
+            <td>
+              <a [routerLink]="['/candidato', candidato.id, 'view']">{{ candidato.id }}</a>
+            </td>
+            <td>{{ candidato.cf }}</td>
+            <td>{{ candidato.nome }}</td>
+            <td>{{ candidato.cognome }}</td>
+            <td>{{ candidato.dataNascita | date: 'mediumDate' }}</td>
+            <td>{{ candidato.luogoNascita }}</td>
+            <td>{{ candidato.sesso }}</td>
+            <td>{{ candidato.telefono }}</td>
+            <td>{{ candidato.email }}</td>
+            <td>{{ candidato.citta }}</td>
+            <td>{{ candidato.indirizzo }}</td>
+            <td>{{ candidato.cap }}</td>
+            <td>{{ candidato.provincia }}</td>
+            <td>{{ candidato.regione }}</td>
+            <td>
+              {{ candidato.internalUser?.id }}
+            </td>
+            <td>
+              <div *ngIf="candidato.navigator">
+                <a [routerLink]="['/navigator', candidato.navigator?.id, 'view']">{{ candidato.navigator?.id }}</a>
+              </div>
+            </td>
+            <td class="text-right">
+              <div class="btn-group">
+                <button type="submit" class="btn btn-info btn-sm">
+                  <fa-icon icon="eye"></fa-icon>
+                  <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                </button>
+
+                <button type="submit" class="btn btn-primary btn-sm">
+                  <fa-icon icon="pencil-alt"></fa-icon>
+                  <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                </button>
+
+                <button type="submit" class="btn btn-danger btn-sm">
+                  <fa-icon icon="times"></fa-icon>
+                  <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                </button>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div *ngIf="candidatoes && candidatoes.length > 0">
+      <div class="row justify-content-center">
+        <jhi-item-count [page]="page" [total]="totalItems" [itemsPerPage]="itemsPerPage"></jhi-item-count>
+      </div>
+
+      <div class="row justify-content-center">
+        <ngb-pagination
+          [collectionSize]="totalItems"
+          [(page)]="ngbPaginationPage"
+          [pageSize]="itemsPerPage"
+          [maxSize]="5"
+          [rotate]="true"
+          [boundaryLinks]="true"
+          (pageChange)="loadPage($event)"
+        ></ngb-pagination>
+      </div>
+    </div>
+  </div>
+</div>

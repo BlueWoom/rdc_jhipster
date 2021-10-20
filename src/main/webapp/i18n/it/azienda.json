@@ -2,7 +2,7 @@
   "rdcJhipsterApp": {
     "azienda": {
       "home": {
-        "title": "Aziendas",
+        "title": "Registro Aziende",
         "createLabel": "Genera un nuovo Azienda",
         "createOrEditLabel": "Genera o modifica un Azienda",
         "notFound": "No Aziendas found"
