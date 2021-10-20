@@ -3,7 +3,11 @@
     <h2 id="page-heading">
       <span jhiTranslate="rdcJhipsterApp.azienda.home.title">Registro Aziende</span>
 
-      <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-azienda" [routerLink]="['/azienda/new']">
+      <button
+        id="jh-create-entity"
+        class="btn btn-primary float-right jh-create-entity create-azienda"
+        [routerLink]="['/registers/azienda/create-update']"
+      >
         <fa-icon icon="plus"></fa-icon>
         <span jhiTranslate="rdcJhipsterApp.azienda.home.createLabel"> Create a new Azienda </span>
       </button>
@@ -34,8 +38,8 @@
             <th scope="col" jhiSortBy="provinciaSede">
               <span jhiTranslate="rdcJhipsterApp.azienda.provinciaSede">Provincia Sede</span> <fa-icon icon="sort"></fa-icon>
             </th>
-            <th scope="col" jhiSortBy="ragioneSede">
-              <span jhiTranslate="rdcJhipsterApp.azienda.ragioneSede">Ragione Sede</span> <fa-icon icon="sort"></fa-icon>
+            <th scope="col" jhiSortBy="regioneSede">
+              <span jhiTranslate="rdcJhipsterApp.azienda.regioneSede">Ragione Sede</span> <fa-icon icon="sort"></fa-icon>
             </th>
             <th scope="col" jhiSortBy="capSede">
               <span jhiTranslate="rdcJhipsterApp.azienda.capSede">Cap Sede</span> <fa-icon icon="sort"></fa-icon>
@@ -55,7 +59,7 @@
             <td>{{ azienda.ragioneSociale }}</td>
             <td>{{ azienda.indirizzoSede }}</td>
             <td>{{ azienda.provinciaSede }}</td>
-            <td>{{ azienda.ragioneSede }}</td>
+            <td>{{ azienda.regioneSede }}</td>
             <td>{{ azienda.capSede }}</td>
             <td>
               {{ azienda.internalUser?.id }}

@@ -1,76 +1,87 @@
 <div class="row justify-content-center">
-    <div class="col-8">
-        <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
-            <h2 id="jhi-azienda-heading" jhiTranslate="rdcJhipsterApp.azienda.home.createOrEditLabel">Create or edit a Azienda</h2>
+  <div class="col-8">
+    <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+      <h2 id="jhi-azienda-heading" jhiTranslate="rdcJhipsterApp.azienda.home.createOrEditLabel">Create or edit a Azienda</h2>
 
-            <div>
-                <jhi-alert-error></jhi-alert-error>
+      <div>
+        <jhi-alert-error></jhi-alert-error>
 
-                <div class="form-group" [hidden]="!editForm.get('id')!.value">
-                    <label for="id" jhiTranslate="global.field.id">ID</label>
-                    <input type="text" class="form-control" id="id" name="id" formControlName="id" readonly />
-                </div>
+        <div class="form-group" [hidden]="!editForm.get('id')!.value">
+          <label for="id" jhiTranslate="global.field.id">ID</label>
+          <input type="text" class="form-control" id="id" name="id" formControlName="id" readonly />
+        </div>
 
-                <div class="form-group">
-                    <label class="form-control-label" jhiTranslate="rdcJhipsterApp.azienda.cf" for="field_cf">Cf</label>
-                    <input type="text" class="form-control" name="cf" id="field_cf"
-                           formControlName="cf"/>
-                </div>
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="rdcJhipsterApp.azienda.cf" for="field_cf">Cf</label>
+          <input type="text" class="form-control" name="cf" id="field_cf" formControlName="cf" />
+        </div>
 
-                <div class="form-group">
-                    <label class="form-control-label" jhiTranslate="rdcJhipsterApp.azienda.ragioneSociale" for="field_ragioneSociale">Ragione Sociale</label>
-                    <input type="text" class="form-control" name="ragioneSociale" id="field_ragioneSociale"
-                           formControlName="ragioneSociale"/>
-                </div>
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="rdcJhipsterApp.azienda.ragioneSociale" for="field_ragioneSociale"
+            >Ragione Sociale</label
+          >
+          <input type="text" class="form-control" name="ragioneSociale" id="field_ragioneSociale" formControlName="ragioneSociale" />
+        </div>
 
-                <div class="form-group">
-                    <label class="form-control-label" jhiTranslate="rdcJhipsterApp.azienda.indirizzoSede" for="field_indirizzoSede">Indirizzo Sede</label>
-                    <input type="text" class="form-control" name="indirizzoSede" id="field_indirizzoSede"
-                           formControlName="indirizzoSede"/>
-                </div>
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="rdcJhipsterApp.azienda.indirizzoSede" for="field_indirizzoSede"
+            >Indirizzo Sede</label
+          >
+          <input type="text" class="form-control" name="indirizzoSede" id="field_indirizzoSede" formControlName="indirizzoSede" />
+        </div>
 
-                <div class="form-group">
-                    <label class="form-control-label" jhiTranslate="rdcJhipsterApp.azienda.provinciaSede" for="field_provinciaSede">Provincia Sede</label>
-                    <input type="text" class="form-control" name="provinciaSede" id="field_provinciaSede"
-                           formControlName="provinciaSede"/>
-                </div>
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="rdcJhipsterApp.azienda.provinciaSede" for="field_provinciaSede"
+            >Provincia Sede</label
+          >
+          <input type="text" class="form-control" name="provinciaSede" id="field_provinciaSede" formControlName="provinciaSede" />
+        </div>
 
-                <div class="form-group">
-                    <label class="form-control-label" jhiTranslate="rdcJhipsterApp.azienda.ragioneSede" for="field_ragioneSede">Ragione Sede</label>
-                    <input type="text" class="form-control" name="ragioneSede" id="field_ragioneSede"
-                           formControlName="ragioneSede"/>
-                </div>
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="rdcJhipsterApp.azienda.regioneSede" for="field_ragioneSede">Ragione Sede</label>
+          <input type="text" class="form-control" name="regioneSede" id="field_ragioneSede" formControlName="regioneSede" />
+        </div>
 
-                <div class="form-group">
-                    <label class="form-control-label" jhiTranslate="rdcJhipsterApp.azienda.capSede" for="field_capSede">Cap Sede</label>
-                    <input type="text" class="form-control" name="capSede" id="field_capSede"
-                           formControlName="capSede"/>
-                    <div *ngIf="editForm.get('capSede')!.invalid && (editForm.get('capSede')!.dirty || editForm.get('capSede')!.touched)">
-                        <small class="form-text text-danger"
-                               *ngIf="editForm.get('capSede')?.errors?.pattern" jhiTranslate="entity.validation.pattern" [translateValues]="{ pattern: 'Cap Sede' }">
-                            This field should follow pattern for "Cap Sede".
-                        </small>
-                    </div>
-                </div>
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="rdcJhipsterApp.azienda.capSede" for="field_capSede">Cap Sede</label>
+          <input type="text" class="form-control" name="capSede" id="field_capSede" formControlName="capSede" />
+          <div *ngIf="editForm.get('capSede')!.invalid && (editForm.get('capSede')!.dirty || editForm.get('capSede')!.touched)">
+            <small
+              class="form-text text-danger"
+              *ngIf="editForm.get('capSede')?.errors?.pattern"
+              jhiTranslate="entity.validation.pattern"
+              [translateValues]="{ pattern: 'Cap Sede' }"
+            >
+              This field should follow pattern for "Cap Sede".
+            </small>
+          </div>
+        </div>
 
-                <div class="form-group">
-                    <label class="form-control-label" jhiTranslate="rdcJhipsterApp.azienda.internalUser" for="field_internalUser">Internal User</label>
-                    <select class="form-control" id="field_internalUser" name="internalUser" formControlName="internalUser">
-                        <option [ngValue]="null"></option>
-                        <option [ngValue]="userOption.id === editForm.get('internalUser')!.value?.id ? editForm.get('internalUser')!.value : userOption" *ngFor="let userOption of users; trackBy: trackById">{{ userOption.id }}</option>
-                    </select>
-                </div>
-            </div>
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="rdcJhipsterApp.azienda.internalUser" for="field_internalUser"
+            >Internal User</label
+          >
+          <select class="form-control" id="field_internalUser" name="internalUser" formControlName="internalUser">
+            <option [ngValue]="null"></option>
+            <option
+              [ngValue]="userOption.id === editForm.get('internalUser')!.value?.id ? editForm.get('internalUser')!.value : userOption"
+              *ngFor="let userOption of users; trackBy: trackById"
+            >
+              {{ userOption.id }}
+            </option>
+          </select>
+        </div>
+      </div>
 
-            <div>
-                <button type="button" id="cancel-save" class="btn btn-secondary" (click)="previousState()">
-                    <fa-icon icon="ban"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
-                </button>
+      <div>
+        <button type="button" id="cancel-save" class="btn btn-secondary" (click)="previousState()">
+          <fa-icon icon="ban"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+        </button>
 
-                <button type="submit" id="save-entity" [disabled]="editForm.invalid || isSaving" class="btn btn-primary">
-                    <fa-icon icon="save"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
-                </button>
-            </div>
-        </form>
-    </div>
+        <button type="submit" id="save-entity" [disabled]="editForm.invalid || isSaving" class="btn btn-primary">
+          <fa-icon icon="save"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+        </button>
+      </div>
+    </form>
+  </div>
 </div>

@@ -1,4 +1,5 @@
 import {
+  faHome,
   faUser,
   faSort,
   faSortUp,
@@ -8,6 +9,7 @@ import {
   faBan,
   faTimes,
   faArrowLeft,
+  faArrowRight,
   faSave,
   faPlus,
   faPencilAlt,
@@ -36,8 +38,9 @@ import {
   faBuilding,
   faAddressBook,
   faBriefcase,
+  faArrowCircleLeft,
+  faArrowCircleRight,
   // jhipster-needle-add-icon-import
-  faHome,
 } from '@fortawesome/free-solid-svg-icons';
 
 export const fontAwesomeIcons = [
@@ -50,6 +53,7 @@ export const fontAwesomeIcons = [
   faBan,
   faTimes,
   faArrowLeft,
+  faArrowRight,
   faSave,
   faPlus,
   faPencilAlt,
@@ -78,6 +82,8 @@ export const fontAwesomeIcons = [
   faBuilding,
   faAddressBook,
   faBriefcase,
+  faArrowCircleLeft,
+  faArrowCircleRight,
   // jhipster-needle-add-icon-import
   faAsterisk,
 ];

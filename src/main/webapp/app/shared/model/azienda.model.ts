@@ -7,7 +7,7 @@ export interface IAzienda {
   ragioneSociale?: string;
   indirizzoSede?: string;
   provinciaSede?: string;
-  ragioneSede?: string;
+  regioneSede?: string;
   capSede?: string;
   internalUser?: IUser;
   offertas?: IOfferta[];
@@ -17,7 +17,7 @@ export class Azienda implements IAzienda {
   constructor(
     public id?: number,
     public cf?: string,
-    public ragioneSociale?: string,
+    public regioneSociale?: string,
     public indirizzoSede?: string,
     public provinciaSede?: string,
     public ragioneSede?: string,

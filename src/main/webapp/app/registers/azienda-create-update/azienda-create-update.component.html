@@ -1,0 +1,166 @@
+<div class="card">
+  <div class="card-header" style="padding-bottom: 0px">
+    <div class="row wrap-tab">
+      <div class="col-9">
+        <ul class="nav nav-tabs">
+          <li class="nav-item">
+            <a class="nav-link" [class.active]="tabGeneral" jhiTranslate="rdcJhipsterApp.azienda.tab.tabGeneral">Generale</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" [class.active]="tabUser" jhiTranslate="rdcJhipsterApp.azienda.tab.tabOfferte">Offerte</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" [class.active]="tabDashboarding" jhiTranslate="rdcJhipsterApp.azienda.tab.tabDipendenti">Dipendenti</a>
+          </li>
+        </ul>
+      </div>
+      <div class="col-3" style="text-align: right">
+        <span jhiTranslate="rdcJhipsterApp.azienda.home.createOrEditLabel">Registro Aziende</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="card-body">
+    <jhi-alert-error></jhi-alert-error>
+
+    <jhi-alert></jhi-alert>
+
+    <div class="row">
+      <div class="col">
+        <form name="editForm" role="form" novalidate [formGroup]="editForm">
+          <h2 id="jhi-azienda-heading" jhiTranslate="rdcJhipsterApp.azienda.home.createOrEditLabel">Create or edit a Azienda</h2>
+
+          <div>
+            <div class="form-group" [hidden]="!editForm.get('id')!.value">
+              <label for="id" jhiTranslate="global.field.id">ID</label>
+              <input type="text" class="form-control" id="id" name="id" formControlName="id" readonly />
+            </div>
+
+            <div class="form-group">
+              <label class="form-control-label" jhiTranslate="rdcJhipsterApp.azienda.cf" for="field_cf">Cf</label>
+              <input type="text" class="form-control" name="cf" id="field_cf" formControlName="cf" />
+              <div *ngIf="editForm.get('cf')!.invalid && (editForm.get('cf')!.dirty || editForm.get('cf')!.touched)">
+                <small class="form-text text-danger" *ngIf="editForm.get('cf')?.errors?.required" jhiTranslate="entity.validation.required"
+                  >This field is required.</small
+                >
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label class="form-control-label" jhiTranslate="rdcJhipsterApp.azienda.ragioneSociale" for="field_ragioneSociale"
+                >Ragione Sociale</label
+              >
+              <input type="text" class="form-control" name="ragioneSociale" id="field_ragioneSociale" formControlName="ragioneSociale" />
+              <div
+                *ngIf="
+                  editForm.get('ragioneSociale')!.invalid &&
+                  (editForm.get('ragioneSociale')!.dirty || editForm.get('ragioneSociale')!.touched)
+                "
+              >
+                <small
+                  class="form-text text-danger"
+                  *ngIf="editForm.get('ragioneSociale')?.errors?.required"
+                  jhiTranslate="entity.validation.required"
+                  >This field is required.</small
+                >
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label class="form-control-label" jhiTranslate="rdcJhipsterApp.azienda.indirizzoSede" for="field_indirizzoSede"
+                >Indirizzo Sede</label
+              >
+              <input type="text" class="form-control" name="indirizzoSede" id="field_indirizzoSede" formControlName="indirizzoSede" />
+              <div
+                *ngIf="
+                  editForm.get('indirizzoSede')!.invalid && (editForm.get('indirizzoSede')!.dirty || editForm.get('indirizzoSede')!.touched)
+                "
+              >
+                <small
+                  class="form-text text-danger"
+                  *ngIf="editForm.get('indirizzoSede')?.errors?.required"
+                  jhiTranslate="entity.validation.required"
+                  >This field is required.</small
+                >
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label class="form-control-label" jhiTranslate="rdcJhipsterApp.azienda.provinciaSede" for="field_provinciaSede"
+                >Provincia Sede</label
+              >
+              <input type="text" class="form-control" name="provinciaSede" id="field_provinciaSede" formControlName="provinciaSede" />
+              <div
+                *ngIf="
+                  editForm.get('provinciaSede')!.invalid && (editForm.get('provinciaSede')!.dirty || editForm.get('provinciaSede')!.touched)
+                "
+              >
+                <small
+                  class="form-text text-danger"
+                  *ngIf="editForm.get('provinciaSede')?.errors?.required"
+                  jhiTranslate="entity.validation.required"
+                  >This field is required.</small
+                >
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label class="form-control-label" jhiTranslate="rdcJhipsterApp.azienda.regioneSede" for="field_regioneSede"
+                >Regione Sede</label
+              >
+              <input type="text" class="form-control" name="regioneSede" id="field_regioneSede" formControlName="regioneSede" />
+              <div
+                *ngIf="editForm.get('regioneSede')!.invalid && (editForm.get('regioneSede')!.dirty || editForm.get('regioneSede')!.touched)"
+              >
+                <small
+                  class="form-text text-danger"
+                  *ngIf="editForm.get('regioneSede')?.errors?.required"
+                  jhiTranslate="entity.validation.required"
+                  >This field is required.</small
+                >
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label class="form-control-label" jhiTranslate="rdcJhipsterApp.azienda.capSede" for="field_capSede">Cap Sede</label>
+              <input type="text" class="form-control" name="capSede" id="field_capSede" formControlName="capSede" />
+              <div *ngIf="editForm.get('capSede')!.invalid && (editForm.get('capSede')!.dirty || editForm.get('capSede')!.touched)">
+                <small
+                  class="form-text text-danger"
+                  *ngIf="editForm.get('capSede')?.errors?.pattern"
+                  jhiTranslate="entity.validation.pattern"
+                  [translateValues]="{ pattern: 'Cap Sede' }"
+                >
+                  This field should follow pattern for "Cap Sede".
+                </small>
+                <small
+                  class="form-text text-danger"
+                  *ngIf="editForm.get('capSede')?.errors?.required"
+                  jhiTranslate="entity.validation.required"
+                  >This field is required.</small
+                >
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <div class="row justify-content-right footrow-rev">
+    <div class="col p-3">
+      <button type="button" class="btn btn-light">
+        <fa-icon icon="arrow-circle-left" style="font-size: large"></fa-icon>
+      </button>
+
+      <button type="button" class="btn btn-light">
+        <fa-icon icon="arrow-circle-right" style="font-size: large"></fa-icon>
+      </button>
+    </div>
+    <div class="col p-3" style="text-align: right">
+      <button type="button" class="btn btn-secondary" (click)="previousState()">Cancel</button>
+      <button type="button" class="btn btn-primary" *ngIf="!isModified && !editForm.dirty">Next</button>
+      <button type="submit" class="btn btn-primary" form="editForm" *ngIf="isModified || editForm.dirty">Save</button>
+    </div>
+  </div>
+</div>

@@ -3,13 +3,13 @@
     "azienda": {
       "home": {
         "title": "Registro Aziende",
-        "createLabel": "Genera un nuovo Azienda",
-        "createOrEditLabel": "Genera o modifica un Azienda",
-        "notFound": "No Aziendas found"
+        "createLabel": "Crea Azienda",
+        "createOrEditLabel": "Crea o Modifica Azienda",
+        "notFound": "Nessuna Azienda Trovata"
       },
-      "created": "&Egrave; stato generato un nuovo Azienda con identificatore {{ param }}",
-      "updated": "&Egrave; stato aggiornato Azienda identificato da {{ param }}",
-      "deleted": "&Egrave; stato eliminato Azienda con identificatore {{ param }}",
+      "created": "&Egrave; è stata generata una nuova Azienda con identificatore {{ param }}",
+      "updated": "&Egrave; è stata aggiornata una Azienda identificata da {{ param }}",
+      "deleted": "&Egrave; è stata eliminata una Azienda con identificatore {{ param }}",
       "delete": {
         "question": "Sei sicuro di volere eliminare Azienda {{ id }}?"
       },
@@ -20,10 +20,15 @@
       "ragioneSociale": "Ragione Sociale",
       "indirizzoSede": "Indirizzo Sede",
       "provinciaSede": "Provincia Sede",
-      "ragioneSede": "Ragione Sede",
+      "regioneSede": "Regione Sede",
       "capSede": "Cap Sede",
       "internalUser": "Internal User",
-      "offerta": "Offerta"
+      "offerta": "Offerta",
+      "tab": {
+        "tabGeneral": "Info Generali",
+        "tabOfferte": "Offerte",
+        "tabDipendenti": "Dipendenti"
+      }
     }
   }
 }

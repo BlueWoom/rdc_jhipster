@@ -24,7 +24,7 @@ export class AziendaUpdateComponent implements OnInit {
     ragioneSociale: [],
     indirizzoSede: [],
     provinciaSede: [],
-    ragioneSede: [],
+    regioneSede: [],
     capSede: [null, [Validators.pattern('[0-9]+')]],
     internalUser: [],
   });
@@ -51,7 +51,7 @@ export class AziendaUpdateComponent implements OnInit {
       ragioneSociale: azienda.ragioneSociale,
       indirizzoSede: azienda.indirizzoSede,
       provinciaSede: azienda.provinciaSede,
-      ragioneSede: azienda.ragioneSede,
+      regioneSede: azienda.regioneSede,
       capSede: azienda.capSede,
       internalUser: azienda.internalUser,
     });
@@ -79,7 +79,7 @@ export class AziendaUpdateComponent implements OnInit {
       ragioneSociale: this.editForm.get(['ragioneSociale'])!.value,
       indirizzoSede: this.editForm.get(['indirizzoSede'])!.value,
       provinciaSede: this.editForm.get(['provinciaSede'])!.value,
-      ragioneSede: this.editForm.get(['ragioneSede'])!.value,
+      regioneSede: this.editForm.get(['regioneSede'])!.value,
       capSede: this.editForm.get(['capSede'])!.value,
       internalUser: this.editForm.get(['internalUser'])!.value,
     };
