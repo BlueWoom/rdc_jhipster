@@ -41,8 +41,8 @@ public class AziendaResourceIT {
     private static final String DEFAULT_PROVINCIA_SEDE = "AAAAAAAAAA";
     private static final String UPDATED_PROVINCIA_SEDE = "BBBBBBBBBB";
 
-    private static final String DEFAULT_RAGIONE_SEDE = "AAAAAAAAAA";
-    private static final String UPDATED_RAGIONE_SEDE = "BBBBBBBBBB";
+    private static final String DEFAULT_REGIONE_SEDE = "AAAAAAAAAA";
+    private static final String UPDATED_REGIONE_SEDE = "BBBBBBBBBB";
 
     private static final String DEFAULT_CAP_SEDE = "73580";
     private static final String UPDATED_CAP_SEDE = "99";
@@ -70,7 +70,7 @@ public class AziendaResourceIT {
             .ragioneSociale(DEFAULT_RAGIONE_SOCIALE)
             .indirizzoSede(DEFAULT_INDIRIZZO_SEDE)
             .provinciaSede(DEFAULT_PROVINCIA_SEDE)
-            .ragioneSede(DEFAULT_RAGIONE_SEDE)
+            .regioneSede(DEFAULT_REGIONE_SEDE)
             .capSede(DEFAULT_CAP_SEDE);
         return azienda;
     }
@@ -86,7 +86,7 @@ public class AziendaResourceIT {
             .ragioneSociale(UPDATED_RAGIONE_SOCIALE)
             .indirizzoSede(UPDATED_INDIRIZZO_SEDE)
             .provinciaSede(UPDATED_PROVINCIA_SEDE)
-            .ragioneSede(UPDATED_RAGIONE_SEDE)
+            .regioneSede(UPDATED_REGIONE_SEDE)
             .capSede(UPDATED_CAP_SEDE);
         return azienda;
     }
@@ -114,7 +114,7 @@ public class AziendaResourceIT {
         assertThat(testAzienda.getRagioneSociale()).isEqualTo(DEFAULT_RAGIONE_SOCIALE);
         assertThat(testAzienda.getIndirizzoSede()).isEqualTo(DEFAULT_INDIRIZZO_SEDE);
         assertThat(testAzienda.getProvinciaSede()).isEqualTo(DEFAULT_PROVINCIA_SEDE);
-        assertThat(testAzienda.getRagioneSede()).isEqualTo(DEFAULT_RAGIONE_SEDE);
+        assertThat(testAzienda.getRegioneSede()).isEqualTo(DEFAULT_REGIONE_SEDE);
         assertThat(testAzienda.getCapSede()).isEqualTo(DEFAULT_CAP_SEDE);
     }
 
@@ -153,7 +153,7 @@ public class AziendaResourceIT {
             .andExpect(jsonPath("$.[*].ragioneSociale").value(hasItem(DEFAULT_RAGIONE_SOCIALE)))
             .andExpect(jsonPath("$.[*].indirizzoSede").value(hasItem(DEFAULT_INDIRIZZO_SEDE)))
             .andExpect(jsonPath("$.[*].provinciaSede").value(hasItem(DEFAULT_PROVINCIA_SEDE)))
-            .andExpect(jsonPath("$.[*].ragioneSede").value(hasItem(DEFAULT_RAGIONE_SEDE)))
+            .andExpect(jsonPath("$.[*].regioneSede").value(hasItem(DEFAULT_REGIONE_SEDE)))
             .andExpect(jsonPath("$.[*].capSede").value(hasItem(DEFAULT_CAP_SEDE)));
     }
     
@@ -172,7 +172,7 @@ public class AziendaResourceIT {
             .andExpect(jsonPath("$.ragioneSociale").value(DEFAULT_RAGIONE_SOCIALE))
             .andExpect(jsonPath("$.indirizzoSede").value(DEFAULT_INDIRIZZO_SEDE))
             .andExpect(jsonPath("$.provinciaSede").value(DEFAULT_PROVINCIA_SEDE))
-            .andExpect(jsonPath("$.ragioneSede").value(DEFAULT_RAGIONE_SEDE))
+            .andExpect(jsonPath("$.regioneSede").value(DEFAULT_REGIONE_SEDE))
             .andExpect(jsonPath("$.capSede").value(DEFAULT_CAP_SEDE));
     }
     @Test
@@ -200,7 +200,7 @@ public class AziendaResourceIT {
             .ragioneSociale(UPDATED_RAGIONE_SOCIALE)
             .indirizzoSede(UPDATED_INDIRIZZO_SEDE)
             .provinciaSede(UPDATED_PROVINCIA_SEDE)
-            .ragioneSede(UPDATED_RAGIONE_SEDE)
+            .regioneSede(UPDATED_REGIONE_SEDE)
             .capSede(UPDATED_CAP_SEDE);
 
         restAziendaMockMvc.perform(put("/api/aziendas")
@@ -216,7 +216,7 @@ public class AziendaResourceIT {
         assertThat(testAzienda.getRagioneSociale()).isEqualTo(UPDATED_RAGIONE_SOCIALE);
         assertThat(testAzienda.getIndirizzoSede()).isEqualTo(UPDATED_INDIRIZZO_SEDE);
         assertThat(testAzienda.getProvinciaSede()).isEqualTo(UPDATED_PROVINCIA_SEDE);
-        assertThat(testAzienda.getRagioneSede()).isEqualTo(UPDATED_RAGIONE_SEDE);
+        assertThat(testAzienda.getRegioneSede()).isEqualTo(UPDATED_REGIONE_SEDE);
         assertThat(testAzienda.getCapSede()).isEqualTo(UPDATED_CAP_SEDE);
     }
 

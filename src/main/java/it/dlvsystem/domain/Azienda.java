@@ -33,8 +33,8 @@ public class Azienda implements Serializable {
     @Column(name = "provincia_sede")
     private String provinciaSede;
 
-    @Column(name = "ragione_sede")
-    private String ragioneSede;
+    @Column(name = "regione_sede")
+    private String regioneSede;
 
     @Pattern(regexp = "[0-9]+")
     @Column(name = "cap_sede")
@@ -108,17 +108,17 @@ public class Azienda implements Serializable {
         this.provinciaSede = provinciaSede;
     }
 
-    public String getRagioneSede() {
-        return ragioneSede;
+    public String getRegioneSede() {
+        return regioneSede;
     }
 
-    public Azienda ragioneSede(String ragioneSede) {
-        this.ragioneSede = ragioneSede;
+    public Azienda regioneSede(String regioneSede) {
+        this.regioneSede = regioneSede;
         return this;
     }
 
-    public void setRagioneSede(String ragioneSede) {
-        this.ragioneSede = ragioneSede;
+    public void setRegioneSede(String regioneSede) {
+        this.regioneSede = regioneSede;
     }
 
     public String getCapSede() {
@@ -198,7 +198,7 @@ public class Azienda implements Serializable {
             ", ragioneSociale='" + getRagioneSociale() + "'" +
             ", indirizzoSede='" + getIndirizzoSede() + "'" +
             ", provinciaSede='" + getProvinciaSede() + "'" +
-            ", ragioneSede='" + getRagioneSede() + "'" +
+            ", regioneSede='" + getRegioneSede() + "'" +
             ", capSede='" + getCapSede() + "'" +
             "}";
     }

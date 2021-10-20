@@ -28,7 +28,7 @@
             <column name="provincia_sede" type="varchar(255)">
                 <constraints nullable="true" />
             </column>
-            <column name="ragione_sede" type="varchar(255)">
+            <column name="regione_sede" type="varchar(255)">
                 <constraints nullable="true" />
             </column>
             <column name="cap_sede" type="varchar(255)">
@@ -64,7 +64,7 @@
             <column name="ragione_sociale" type="string"/>
             <column name="indirizzo_sede" type="string"/>
             <column name="provincia_sede" type="string"/>
-            <column name="ragione_sede" type="string"/>
+            <column name="regione_sede" type="string"/>
             <column name="cap_sede" type="string"/>
             <!-- jhipster-needle-liquibase-add-loadcolumn - JHipster (and/or extensions) can add load columns here -->
         </loadData>

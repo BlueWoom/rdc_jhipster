@@ -18,15 +18,13 @@
       "fieldType": "String"
     },
     {
-      "fieldName": "ragioneSede",
+      "fieldName": "regioneSede",
       "fieldType": "String"
     },
     {
       "fieldName": "capSede",
       "fieldType": "String",
-      "fieldValidateRules": [
-        "pattern"
-      ],
+      "fieldValidateRules": ["pattern"],
       "fieldValidateRulesPattern": "[0-9]+"
     }
   ],

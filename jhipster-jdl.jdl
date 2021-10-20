@@ -3,7 +3,7 @@ entity Azienda {
     ragioneSociale String,
     indirizzoSede String,
     provinciaSede String,
-    ragioneSede String,
+    regioneSede String,
     capSede String pattern(/[0-9]+/)
 }
 
