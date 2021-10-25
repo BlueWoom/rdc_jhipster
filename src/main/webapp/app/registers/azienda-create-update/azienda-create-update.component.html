@@ -27,7 +27,7 @@
 
     <div class="row">
       <div class="col">
-        <form name="editForm" role="form" novalidate [formGroup]="editForm">
+        <form id="editForm" name="editForm" role="form" (ngSubmit)="saveGeneral()" [formGroup]="editForm">
           <h2 id="jhi-azienda-heading" jhiTranslate="rdcJhipsterApp.azienda.home.createOrEditLabel">Create or edit a Azienda</h2>
 
           <div>

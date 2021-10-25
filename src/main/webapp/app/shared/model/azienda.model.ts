@@ -17,7 +17,7 @@ export class Azienda implements IAzienda {
   constructor(
     public id?: number,
     public cf?: string,
-    public regioneSociale?: string,
+    public ragioneSociale?: string,
     public indirizzoSede?: string,
     public provinciaSede?: string,
     public ragioneSede?: string,
