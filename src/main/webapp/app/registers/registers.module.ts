@@ -14,6 +14,7 @@ import { RdcJhipsterCandidatoModule } from './../entities/candidato/candidato.mo
 import { CandidatoAllComponent } from './candidato-all/candidato-all.component';
 import { OffertaAllComponent } from './offerta-all/offerta-all.component';
 import { RdcJhipsterOffertaModule } from './../entities/offerta/offerta.module';
+import { OffertaCreateUpdateComponent } from './offerta-create-update/offerta-create-update.component';
 
 @NgModule({
   imports: [
@@ -23,7 +24,14 @@ import { RdcJhipsterOffertaModule } from './../entities/offerta/offerta.module';
     RdcJhipsterOffertaModule,
     RouterModule.forChild(registersRoute),
   ],
-  declarations: [RegistersComponent, AziendaAllComponent, AziendaCreateUpdateComponent, CandidatoAllComponent, OffertaAllComponent],
+  declarations: [
+    RegistersComponent,
+    AziendaAllComponent,
+    AziendaCreateUpdateComponent,
+    CandidatoAllComponent,
+    OffertaAllComponent,
+    OffertaCreateUpdateComponent,
+  ],
   entryComponents: [],
 })
 export class RegistersModule {}
