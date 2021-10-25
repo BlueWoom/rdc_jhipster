@@ -8,7 +8,7 @@ import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { IAzienda } from 'app/shared/model/azienda.model';
 
 import { ITEMS_PER_PAGE } from 'app/shared/constants/pagination.constants';
-import { AziendaService } from './../azienda.service';
+import { AziendaService } from 'app/entities/azienda/azienda.service';
 // import { AziendaDeleteDialogComponent } from './azienda-delete-dialog.component';
 
 @Component({

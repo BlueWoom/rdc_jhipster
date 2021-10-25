@@ -7,7 +7,7 @@ import { flatMap } from 'rxjs/operators';
 import { Authority } from 'app/shared/constants/authority.constants';
 import { UserRouteAccessService } from 'app/core/auth/user-route-access-service';
 import { IAzienda, Azienda } from 'app/shared/model/azienda.model';
-import { AziendaService } from '../azienda.service';
+import { AziendaService } from 'app/entities/azienda/azienda.service';
 import { AziendaCreateUpdateComponent } from './azienda-create-update.component';
 
 @Injectable({ providedIn: 'root' })
@@ -40,6 +40,9 @@ export const aziendaCreateUpdateRoute: Route[] = [
       authorities: [Authority.USER],
       defaultSort: 'id,asc',
       pageTitle: 'rdcJhipsterApp.azienda.home.title',
+    },
+    resolve: {
+      azienda: AziendaResolve,
     },
     canActivate: [UserRouteAccessService],
   },

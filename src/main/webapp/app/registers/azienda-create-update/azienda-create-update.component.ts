@@ -5,9 +5,10 @@ import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { FormBuilder, Validators } from '@angular/forms';
 
 import { IAzienda, Azienda } from './../../shared/model/azienda.model';
-import { AziendaService } from '../azienda.service';
+import { AziendaService } from 'app/entities/azienda/azienda.service';
 import { HttpResponse } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { RegisterService } from '../register.service';
 
 @Component({
   selector: 'jhi-azienda-create-update',
@@ -40,10 +41,15 @@ export class AziendaCreateUpdateComponent implements OnInit, OnDestroy {
     protected activatedRoute: ActivatedRoute,
     protected router: Router,
     protected eventManager: JhiEventManager,
-    protected modalService: NgbModal
+    protected modalService: NgbModal,
+    protected registerService: RegisterService
   ) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.activatedRoute.data.subscribe(({ azienda }) => {
+      this.updateForm(azienda);
+    });
+  }
 
   ngOnDestroy(): void {}
 
@@ -96,7 +102,7 @@ export class AziendaCreateUpdateComponent implements OnInit, OnDestroy {
     this.isSaving = true;
     const azienda = this.createFromForm();
     if (azienda.id !== undefined && azienda.id !== null) {
-      this.subscribeToSaveResponse(this.aziendaService.update(azienda));
+      this.subscribeToSaveResponse(this.registerService.updateAziendaGeneralInfo(azienda));
     } else {
       this.subscribeToSaveResponse(this.aziendaService.create(azienda));
     }

@@ -8,7 +8,7 @@ import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { IOfferta } from 'app/shared/model/offerta.model';
 
 import { ITEMS_PER_PAGE } from 'app/shared/constants/pagination.constants';
-import { OffertaService } from '../offerta.service';
+import { OffertaService } from 'app/entities/offerta/offerta.service';
 
 @Component({
   selector: 'jhi-offerta-all',

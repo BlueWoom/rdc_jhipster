@@ -53,7 +53,7 @@
         <tbody>
           <tr *ngFor="let azienda of aziendas; trackBy: trackId">
             <td>
-              <a [routerLink]="['/azienda', azienda.id, 'view']">{{ azienda.id }}</a>
+              <a [routerLink]="['/registers/azienda/create-update/', azienda.id]">{{ azienda.id }}</a>
             </td>
             <td>{{ azienda.cf }}</td>
             <td>{{ azienda.ragioneSociale }}</td>
@@ -66,12 +66,7 @@
             </td>
             <td class="text-right">
               <div class="btn-group">
-                <button type="submit" [routerLink]="['/azienda', azienda.id, 'view']" class="btn btn-info btn-sm">
-                  <fa-icon icon="eye"></fa-icon>
-                  <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
-                </button>
-
-                <button type="submit" [routerLink]="['/azienda', azienda.id, 'edit']" class="btn btn-primary btn-sm">
+                <button type="submit" [routerLink]="['/registers/azienda/create-update/', azienda.id]" class="btn btn-primary btn-sm">
                   <fa-icon icon="pencil-alt"></fa-icon>
                   <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
                 </button>

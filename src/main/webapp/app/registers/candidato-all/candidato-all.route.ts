@@ -7,7 +7,7 @@ import { flatMap } from 'rxjs/operators';
 import { Authority } from 'app/shared/constants/authority.constants';
 import { UserRouteAccessService } from 'app/core/auth/user-route-access-service';
 import { ICandidato, Candidato } from 'app/shared/model/candidato.model';
-import { CandidatoService } from '../candidato.service';
+import { CandidatoService } from 'app/entities/candidato/candidato.service';
 import { CandidatoAllComponent } from './candidato-all.component';
 
 @Injectable({ providedIn: 'root' })

@@ -7,7 +7,7 @@ import { flatMap } from 'rxjs/operators';
 import { Authority } from 'app/shared/constants/authority.constants';
 import { UserRouteAccessService } from 'app/core/auth/user-route-access-service';
 import { IOfferta, Offerta } from 'app/shared/model/offerta.model';
-import { OffertaService } from '../offerta.service';
+import { OffertaService } from 'app/entities/offerta/offerta.service';
 import { OffertaAllComponent } from './offerta-all.component';
 
 @Injectable({ providedIn: 'root' })

@@ -8,7 +8,7 @@ import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { ICandidato } from 'app/shared/model/candidato.model';
 
 import { ITEMS_PER_PAGE } from 'app/shared/constants/pagination.constants';
-import { CandidatoService } from '../candidato.service';
+import { CandidatoService } from 'app/entities/candidato/candidato.service';
 
 @Component({
   selector: 'jhi-candidato-all',
