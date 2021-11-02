@@ -4,6 +4,7 @@ import { Observable } from 'rxjs';
 
 import { SERVER_API_URL } from 'app/app.constants';
 import { IAzienda } from 'app/shared/model/azienda.model';
+import { IOfferta } from 'app/shared/model/offert.model';
 
 @Injectable({ providedIn: 'root' })
 export class RegisterService {
@@ -13,5 +14,9 @@ export class RegisterService {
 
   updateAziendaGeneralInfo(azienda: IAzienda): Observable<HttpResponse<IAzienda>> {
     return this.http.put<IAzienda>(`${this.resourceUrl}/azienda/updateGeneral`, azienda, { observe: 'response' });
+  }
+
+  updateOffertaGeneralInfo(offerta: IOfferta): Observable<HttpResponse<IOfferta>> {
+    return this.http.put<IOfferta>(`${this.resourceUrl}/offerta/updateGeneral`, offerta, { observe: 'response' });
   }
 }

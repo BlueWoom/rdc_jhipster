@@ -17,7 +17,9 @@ import org.springframework.web.bind.annotation.RestController;
 
 import io.github.jhipster.web.util.HeaderUtil;
 import it.dlvsystem.domain.Azienda;
+import it.dlvsystem.domain.Offerta;
 import it.dlvsystem.repository.AziendaRepository;
+import it.dlvsystem.repository.OffertaRepository;
 import it.dlvsystem.web.rest.errors.BadRequestAlertException;
 
 /**
@@ -39,8 +41,11 @@ public class RegistersResource
     @Autowired
     private AziendaRepository aziendaRepository;
 
+    @Autowired
+    private OffertaRepository offertaRepository;
+
     @PutMapping("/azienda/updateGeneral")
-    public ResponseEntity<Azienda> updateGeneral(@Valid @RequestBody final Azienda azienda) throws URISyntaxException
+    public ResponseEntity<Azienda> updateAziendaGeneral(@Valid @RequestBody final Azienda azienda) throws URISyntaxException
     {
         log.debug("REST request to update Azienda General Info : {}", azienda); //$NON-NLS-1$
         if (azienda.getId() == null)
@@ -59,6 +64,31 @@ public class RegistersResource
         currentAzienda.setRegioneSede(azienda.getRegioneSede());
         currentAzienda.setCapSede(azienda.getCapSede());
         final Azienda result = aziendaRepository.save(azienda);
+
+        return ResponseEntity.ok()
+                .headers(HeaderUtil.createEntityUpdateAlert(applicationName, true, ENTITY_NAME, azienda.getId().toString()))
+                .body(result);
+    }
+
+    @PutMapping("/offerta/updateGeneral")
+    public ResponseEntity<Azienda> updateOffertaGeneral(@Valid @RequestBody final Offerta offerta) throws URISyntaxException
+    {
+        log.debug("REST request to update Azienda General Info : {}", offerta); //$NON-NLS-1$
+        if (offerta.getId() == null)
+        {
+            throw new BadRequestAlertException("Invalid id for Azienda", ENTITY_NAME, "idnull"); //$NON-NLS-1$ //$NON-NLS-2$
+        }
+
+        Offerta currentOfferta = null;
+        currentOfferta = offertaRepository.findById(offerta.getId())
+                .orElseThrow(() -> new BadRequestAlertException("Invalid id for Offerta", ENTITY_NAME, "idnull")); //$NON-NLS-1$ //$NON-NLS-2$
+
+        currentOfferta.setData(offerta.getData());
+        currentOfferta.setIndirizzoSede(offerta.getIndirizzoSede());
+        currentOfferta.setCittaSede(offerta.getCittaSede());
+        currentOfferta.setCapSede(offerta.getCapSede());
+        currentOfferta.setProvinciaSede(offerta.getProvinciaSede());
+        final Offerta result = offertaRepository.save(offerta);
 
         return ResponseEntity.ok()
                 .headers(HeaderUtil.createEntityUpdateAlert(applicationName, true, ENTITY_NAME, azienda.getId().toString()))

@@ -11,6 +11,7 @@ import { IIstruzione } from 'app/shared/model/istruzione.model';
 import { IstruzioneService } from 'app/entities/istruzione/istruzione.service';
 import { IAzienda } from 'app/shared/model/azienda.model';
 import { AziendaService } from 'app/entities/azienda/azienda.service';
+import { RegisterService } from '../register.service';
 
 type SelectableEntity = IIstruzione | IAzienda;
 
@@ -24,6 +25,8 @@ export class OffertaCreateUpdateComponent implements OnInit {
   istruziones: IIstruzione[] = [];
   aziendas: IAzienda[] = [];
   dataDp: any;
+
+  tabGeneral = true;
 
   editForm = this.fb.group({
     id: [],
@@ -40,6 +43,7 @@ export class OffertaCreateUpdateComponent implements OnInit {
     protected offertaService: OffertaService,
     protected istruzioneService: IstruzioneService,
     protected aziendaService: AziendaService,
+    protected registerService: RegisterService,
     protected activatedRoute: ActivatedRoute,
     private fb: FormBuilder
   ) {}
@@ -75,7 +79,7 @@ export class OffertaCreateUpdateComponent implements OnInit {
     this.isSaving = true;
     const offerta = this.createFromForm();
     if (offerta.id !== undefined) {
-      this.subscribeToSaveResponse(this.offertaService.update(offerta));
+      this.subscribeToSaveResponse(this.registerService.updateOffertaGeneralInfo(offerta));
     } else {
       this.subscribeToSaveResponse(this.offertaService.create(offerta));
     }

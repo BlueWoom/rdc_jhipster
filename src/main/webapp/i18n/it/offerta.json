@@ -25,7 +25,10 @@
       "offertaOccupazioneRichiesta": "Offerta Occupazione Richiesta",
       "istruzione": "Istruzione",
       "azienda": "Azienda",
-      "occupazione": "Occupazione"
+      "occupazione": "Occupazione",
+      "tab": {
+        "tabGeneral": "Generale"
+      }
     }
   }
 }
