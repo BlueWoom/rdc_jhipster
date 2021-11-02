@@ -32,7 +32,10 @@
       "internalUser": "Internal User",
       "skillUtente": "Skill Utente",
       "cv": "Cv",
-      "navigator": "Navigator"
+      "navigator": "Navigator",
+      "tab": {
+        "tabGeneral": "Generale"
+      }
     }
   }
 }

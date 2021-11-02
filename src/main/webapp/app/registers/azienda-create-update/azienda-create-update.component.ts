@@ -92,13 +92,14 @@ export class AziendaCreateUpdateComponent implements OnInit, OnDestroy {
   protected onSaveSuccess(): void {
     this.isSaving = false;
     this.isModified = false;
+    this.editForm.markAsPristine();
   }
 
   protected onSaveError(): void {
     this.isSaving = false;
   }
 
-  saveGeneral(): void {
+  save(): void {
     this.isSaving = true;
     const azienda = this.createFromForm();
     if (azienda.id !== undefined && azienda.id !== null) {

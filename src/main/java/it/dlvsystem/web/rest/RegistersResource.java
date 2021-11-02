@@ -17,8 +17,10 @@ import org.springframework.web.bind.annotation.RestController;
 
 import io.github.jhipster.web.util.HeaderUtil;
 import it.dlvsystem.domain.Azienda;
+import it.dlvsystem.domain.Candidato;
 import it.dlvsystem.domain.Offerta;
 import it.dlvsystem.repository.AziendaRepository;
+import it.dlvsystem.repository.CandidatoRepository;
 import it.dlvsystem.repository.OffertaRepository;
 import it.dlvsystem.web.rest.errors.BadRequestAlertException;
 
@@ -44,6 +46,9 @@ public class RegistersResource
     @Autowired
     private OffertaRepository offertaRepository;
 
+    @Autowired
+    private CandidatoRepository candidatoRepository;
+
     @PutMapping("/azienda/updateGeneral")
     public ResponseEntity<Azienda> updateAziendaGeneral(@Valid @RequestBody final Azienda azienda) throws URISyntaxException
     {
@@ -63,20 +68,54 @@ public class RegistersResource
         currentAzienda.setProvinciaSede(azienda.getProvinciaSede());
         currentAzienda.setRegioneSede(azienda.getRegioneSede());
         currentAzienda.setCapSede(azienda.getCapSede());
-        final Azienda result = aziendaRepository.save(azienda);
+        final Azienda result = aziendaRepository.save(currentAzienda);
 
         return ResponseEntity.ok()
                 .headers(HeaderUtil.createEntityUpdateAlert(applicationName, true, ENTITY_NAME, azienda.getId().toString()))
                 .body(result);
     }
 
+    @PutMapping("/candidato/updateGeneral")
+    public ResponseEntity<Candidato> updateCandidatoGeneral(@Valid @RequestBody final Candidato candidato)
+            throws URISyntaxException
+    {
+        log.debug("REST request to update Candidato General Info : {}", candidato); //$NON-NLS-1$
+        if (candidato.getId() == null)
+        {
+            throw new BadRequestAlertException("Invalid id for Azienda", ENTITY_NAME, "idnull"); //$NON-NLS-1$ //$NON-NLS-2$
+        }
+
+        Candidato currentCandidato = null;
+        currentCandidato = candidatoRepository.findById(candidato.getId())
+                .orElseThrow(() -> new BadRequestAlertException("Invalid id for Candidato", ENTITY_NAME, "idnull")); //$NON-NLS-1$ //$NON-NLS-2$
+
+        currentCandidato.setCf(candidato.getCf());
+        currentCandidato.setNome(candidato.getNome());
+        currentCandidato.setCognome(candidato.getCognome());
+        currentCandidato.setDataNascita(candidato.getDataNascita());
+        currentCandidato.setLuogoNascita(candidato.getLuogoNascita());
+        currentCandidato.setSesso(candidato.getSesso());
+        currentCandidato.setTelefono(candidato.getTelefono());
+        currentCandidato.setEmail(candidato.getEmail());
+        currentCandidato.setCitta(candidato.getCitta());
+        currentCandidato.setIndirizzo(candidato.getIndirizzo());
+        currentCandidato.setCap(candidato.getCap());
+        currentCandidato.setProvincia(candidato.getProvincia());
+        currentCandidato.setRegione(candidato.getRegione());
+        final Candidato result = candidatoRepository.save(currentCandidato);
+
+        return ResponseEntity.ok()
+                .headers(HeaderUtil.createEntityUpdateAlert(applicationName, true, ENTITY_NAME, candidato.getId().toString()))
+                .body(result);
+    }
+
     @PutMapping("/offerta/updateGeneral")
-    public ResponseEntity<Azienda> updateOffertaGeneral(@Valid @RequestBody final Offerta offerta) throws URISyntaxException
+    public ResponseEntity<Offerta> updateOffertaGeneral(@Valid @RequestBody final Offerta offerta) throws URISyntaxException
     {
         log.debug("REST request to update Azienda General Info : {}", offerta); //$NON-NLS-1$
         if (offerta.getId() == null)
         {
-            throw new BadRequestAlertException("Invalid id for Azienda", ENTITY_NAME, "idnull"); //$NON-NLS-1$ //$NON-NLS-2$
+            throw new BadRequestAlertException("Invalid id for Candidato", ENTITY_NAME, "idnull"); //$NON-NLS-1$ //$NON-NLS-2$
         }
 
         Offerta currentOfferta = null;
@@ -88,10 +127,10 @@ public class RegistersResource
         currentOfferta.setCittaSede(offerta.getCittaSede());
         currentOfferta.setCapSede(offerta.getCapSede());
         currentOfferta.setProvinciaSede(offerta.getProvinciaSede());
-        final Offerta result = offertaRepository.save(offerta);
+        final Offerta result = offertaRepository.save(currentOfferta);
 
         return ResponseEntity.ok()
-                .headers(HeaderUtil.createEntityUpdateAlert(applicationName, true, ENTITY_NAME, azienda.getId().toString()))
+                .headers(HeaderUtil.createEntityUpdateAlert(applicationName, true, ENTITY_NAME, offerta.getId().toString()))
                 .body(result);
     }
 }

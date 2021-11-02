@@ -15,6 +15,7 @@ import { CandidatoAllComponent } from './candidato-all/candidato-all.component';
 import { OffertaAllComponent } from './offerta-all/offerta-all.component';
 import { RdcJhipsterOffertaModule } from './../entities/offerta/offerta.module';
 import { OffertaCreateUpdateComponent } from './offerta-create-update/offerta-create-update.component';
+import { CandidatoCreateUpdateComponent } from './candidato-create-update/candidato-create-update.component';
 
 @NgModule({
   imports: [
@@ -29,6 +30,7 @@ import { OffertaCreateUpdateComponent } from './offerta-create-update/offerta-cr
     AziendaAllComponent,
     AziendaCreateUpdateComponent,
     CandidatoAllComponent,
+    CandidatoCreateUpdateComponent,
     OffertaAllComponent,
     OffertaCreateUpdateComponent,
   ],

@@ -30,11 +30,11 @@ export class OffertaCreateUpdateComponent implements OnInit {
 
   editForm = this.fb.group({
     id: [],
-    data: [],
-    indirizzoSede: [],
-    cittaSede: [],
+    data: [null, [Validators.required]],
+    indirizzoSede: [null, [Validators.required]],
+    cittaSede: [null, [Validators.required]],
     capSede: [null, [Validators.pattern('[0-9]+')]],
-    provinciaSede: [],
+    provinciaSede: [null, [Validators.required]],
     istruzione: [],
     azienda: [],
   });
@@ -108,7 +108,8 @@ export class OffertaCreateUpdateComponent implements OnInit {
 
   protected onSaveSuccess(): void {
     this.isSaving = false;
-    this.previousState();
+    this.isModified = false;
+    this.editForm.markAsPristine();
   }
 
   protected onSaveError(): void {

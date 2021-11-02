@@ -3,7 +3,11 @@
     <h2 id="page-heading">
       <span jhiTranslate="rdcJhipsterApp.candidato.home.title">Registro Candidati</span>
 
-      <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-candidato" [routerLink]="['/candidato/new']">
+      <button
+        id="jh-create-entity"
+        class="btn btn-primary float-right jh-create-entity create-candidato"
+        [routerLink]="['/registers/candidato/create-update']"
+      >
         <fa-icon icon="plus"></fa-icon>
         <span jhiTranslate="rdcJhipsterApp.candidato.home.createLabel"> Create a new Candidato </span>
       </button>
@@ -94,7 +98,12 @@
               <div class="btn-group">
                 <button type="submit" class="btn btn-primary btn-sm">
                   <fa-icon icon="pencil-alt"></fa-icon>
-                  <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                  <span
+                    class="d-none d-md-inline"
+                    [routerLink]="['/registers/candidato/create-update/', candidato.id]"
+                    jhiTranslate="entity.action.edit"
+                    >Edit</span
+                  >
                 </button>
 
                 <button type="submit" class="btn btn-danger btn-sm">
