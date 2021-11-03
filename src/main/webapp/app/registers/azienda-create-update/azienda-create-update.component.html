@@ -89,7 +89,11 @@
               <label class="form-control-label" jhiTranslate="rdcJhipsterApp.azienda.provinciaSede" for="field_provinciaSede"
                 >Provincia Sede</label
               >
-              <input type="text" class="form-control" name="provinciaSede" id="field_provinciaSede" formControlName="provinciaSede" />
+              <select type="text" class="form-control" name="provinciaSede" id="field_provinciaSede" formControlName="provinciaSede">
+                <option *ngFor="let provincia of province" [value]="provincia">
+                  {{ provincia }}
+                </option>
+              </select>
               <div
                 *ngIf="
                   editForm.get('provinciaSede')!.invalid && (editForm.get('provinciaSede')!.dirty || editForm.get('provinciaSede')!.touched)
@@ -108,7 +112,11 @@
               <label class="form-control-label" jhiTranslate="rdcJhipsterApp.azienda.regioneSede" for="field_regioneSede"
                 >Regione Sede</label
               >
-              <input type="text" class="form-control" name="regioneSede" id="field_regioneSede" formControlName="regioneSede" />
+              <select class="form-control" name="regioneSede" id="field_regioneSede" formControlName="regioneSede">
+                <option *ngFor="let regione of regioni" [value]="regione">
+                  {{ regione }}
+                </option>
+              </select>
               <div
                 *ngIf="editForm.get('regioneSede')!.invalid && (editForm.get('regioneSede')!.dirty || editForm.get('regioneSede')!.touched)"
               >

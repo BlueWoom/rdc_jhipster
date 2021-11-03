@@ -4,7 +4,7 @@ import { Observable } from 'rxjs';
 
 import { SERVER_API_URL } from 'app/app.constants';
 import { IAzienda } from 'app/shared/model/azienda.model';
-import { IOfferta } from 'app/shared/model/offert.model';
+import { IOfferta } from 'app/shared/model/offerta.model';
 import { ICandidato } from 'app/shared/model/candidato.model';
 
 @Injectable({ providedIn: 'root' })

@@ -13,6 +13,9 @@ import { INavigator } from 'app/shared/model/navigator.model';
 import { NavigatorService } from 'app/entities/navigator/navigator.service';
 import { RegisterService } from '../register.service';
 
+import { Provincia } from 'app/shared/enum/provincia.ts';
+import { Regione } from 'app/shared/enum/regione.ts';
+
 type SelectableEntity = IUser | INavigator;
 
 @Component({
@@ -28,6 +31,9 @@ export class CandidatoCreateUpdateComponent implements OnInit {
   isModified = false;
 
   tabGeneral = true;
+
+  province = Object.values(Provincia);
+  regioni = Object.values(Regione);
 
   editForm = this.fb.group({
     id: [],

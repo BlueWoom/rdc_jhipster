@@ -13,6 +13,8 @@ import { IAzienda } from 'app/shared/model/azienda.model';
 import { AziendaService } from 'app/entities/azienda/azienda.service';
 import { RegisterService } from '../register.service';
 
+import { Provincia } from 'app/shared/enum/provincia.ts';
+
 type SelectableEntity = IIstruzione | IAzienda;
 
 @Component({
@@ -27,6 +29,8 @@ export class OffertaCreateUpdateComponent implements OnInit {
   dataDp: any;
 
   tabGeneral = true;
+
+  province = Object.values(Provincia);
 
   editForm = this.fb.group({
     id: [],

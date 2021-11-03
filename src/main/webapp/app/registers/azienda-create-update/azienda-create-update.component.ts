@@ -10,6 +10,9 @@ import { HttpResponse } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { RegisterService } from '../register.service';
 
+import { Provincia } from 'app/shared/enum/provincia.ts';
+import { Regione } from 'app/shared/enum/regione.ts';
+
 @Component({
   selector: 'jhi-azienda-create-update',
   templateUrl: './azienda-create-update.component.html',
@@ -34,6 +37,9 @@ export class AziendaCreateUpdateComponent implements OnInit, OnDestroy {
   });
 
   azienda: IAzienda = new Azienda();
+
+  province = Object.values(Provincia);
+  regioni = Object.values(Regione);
 
   constructor(
     private fb: FormBuilder,
